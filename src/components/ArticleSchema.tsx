@@ -7,9 +7,7 @@ interface ArticleSchemaProps {
   author: string;
   datePublished: string;
   dateModified?: string;
-  image?: string;
   url?: string;
-  articleSection?: string;
   wordCount?: number;
   readingTime?: string;
   keywords?: string[];
@@ -21,75 +19,48 @@ const ArticleSchema = ({
   author,
   datePublished,
   dateModified,
-  image = "https://dunkcalculator.com/og-image.jpg",
   url,
-  articleSection = "Sports Training",
   wordCount,
   readingTime,
-  keywords = []
+  keywords
 }: ArticleSchemaProps) => {
   const articleData = {
-    headline,
-    description,
-    image: [image],
-    datePublished,
-    dateModified: dateModified || datePublished,
-    author: {
+    "@type": "Article",
+    "headline": headline,
+    "description": description,
+    "author": {
       "@type": "Person",
-      name: author,
-      url: "https://dunkcalculator.com/about"
+      "name": author
     },
-    publisher: {
+    "datePublished": datePublished,
+    "dateModified": dateModified || datePublished,
+    "publisher": {
       "@type": "Organization",
-      name: "Dunk Calculator",
-      logo: {
+      "name": "Dunk Calculator",
+      "logo": {
         "@type": "ImageObject",
-        url: "https://dunkcalculator.com/logo.png",
-        width: 300,
-        height: 300
+        "url": "https://dunkcalculator.com/logo.png"
       }
     },
-    mainEntityOfPage: {
+    "mainEntityOfPage": {
       "@type": "WebPage",
-      "@id": url || "https://dunkcalculator.com/"
+      "@id": url || "https://dunkcalculator.com"
     },
-    url: url || "https://dunkcalculator.com/",
-    articleSection,
-    ...(wordCount && { wordCount }),
-    ...(readingTime && { 
-      timeRequired: readingTime,
-      readingTime: readingTime 
-    }),
-    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
-    inLanguage: "en-US",
-    about: [
+    "image": "https://dunkcalculator.com/og-image.jpg",
+    ...(wordCount && { "wordCount": wordCount }),
+    ...(readingTime && { "timeRequired": readingTime }),
+    ...(keywords && { "keywords": keywords }),
+    "articleSection": "Sports Training",
+    "about": [
       {
         "@type": "Thing",
-        name: "Basketball Training",
-        sameAs: "https://en.wikipedia.org/wiki/Basketball"
+        "name": "Basketball Training"
       },
       {
-        "@type": "Thing",
-        name: "Vertical Jump",
-        sameAs: "https://en.wikipedia.org/wiki/Vertical_jump"
+        "@type": "Thing", 
+        "name": "Vertical Jump"
       }
-    ],
-    mentions: [
-      {
-        "@type": "SportsOrganization",
-        name: "NBA",
-        sameAs: "https://www.nba.com"
-      }
-    ],
-    isPartOf: {
-      "@type": "Blog",
-      name: "Dunk Calculator Blog",
-      url: "https://dunkcalculator.com/blog"
-    },
-    potentialAction: {
-      "@type": "ReadAction",
-      target: url || "https://dunkcalculator.com/"
-    }
+    ]
   };
 
   return <StructuredData type="Article" data={articleData} />;

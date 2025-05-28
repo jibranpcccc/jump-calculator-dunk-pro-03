@@ -1,6 +1,8 @@
+
 import React from 'react';
 import DunkCalculator from '../components/DunkCalculator';
 import { GlobalSEO } from '../components/SEOComponents';
+import BreadcrumbNavigation from '../components/BreadcrumbNavigation';
 import { Calculator, Target, TrendingUp, Users, ArrowRight, Ruler, Dumbbell, Zap } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
@@ -21,17 +23,17 @@ const Index = () => {
                 <Link to="/measurements" className="text-gray-700 hover:text-orange-600 font-medium">
                   Measurements
                 </Link>
-                <Link to="/vertical-jump-training" className="text-gray-700 hover:text-orange-600 font-medium">
-                  Training
-                </Link>
-                <Link to="/dunking-skills" className="text-gray-700 hover:text-orange-600 font-medium">
-                  Dunking Skills
-                </Link>
                 <Link to="/blog" className="text-gray-700 hover:text-orange-600 font-medium">
                   Blog
                 </Link>
+                <Link to="/faq" className="text-gray-700 hover:text-orange-600 font-medium">
+                  FAQ
+                </Link>
                 <Link to="/about" className="text-gray-700 hover:text-orange-600 font-medium">
                   About
+                </Link>
+                <Link to="/contact" className="text-gray-700 hover:text-orange-600 font-medium">
+                  Contact
                 </Link>
               </div>
             </nav>
@@ -39,6 +41,8 @@ const Index = () => {
         </header>
 
         <div className="container mx-auto px-4 py-8">
+          <BreadcrumbNavigation />
+          
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
@@ -136,7 +140,6 @@ const Index = () => {
             </div>
           </div>
 
-          {/* Key Factors Section */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">
               The 5 Key Ingredients to Unleashing Your Inner Dunker
@@ -150,8 +153,8 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">
                   The engine of your dunk. Raw jumping ability that can be significantly improved with proper training.
                 </p>
-                <Link to="/vertical-jump-training" className="text-orange-600 font-semibold hover:text-orange-700">
-                  Ultimate Guide to Increasing Vertical Jump →
+                <Link to="/measurements/vertical-jump" className="text-orange-600 font-semibold hover:text-orange-700">
+                  Learn to Measure Vertical Jump →
                 </Link>
               </div>
 
@@ -176,8 +179,8 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">
                   Efficiency in motion. Proper approach, takeoff, and timing can add inches to your jump.
                 </p>
-                <Link to="/dunking-skills/first-dunk-guide" className="text-orange-600 font-semibold hover:text-orange-700">
-                  First Dunk Guide →
+                <Link to="/measurements/vertical-jump" className="text-orange-600 font-semibold hover:text-orange-700">
+                  Vertical Jump Testing Guide →
                 </Link>
               </div>
 
@@ -189,8 +192,8 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">
                   Securing the slam. Hand size and grip strength determine which dunks you can perform.
                 </p>
-                <Link to="/dunking-skills/how-to-palm-basketball" className="text-orange-600 font-semibold hover:text-orange-700">
-                  How to Palm a Basketball →
+                <Link to="/measurements/other-measurements" className="text-orange-600 font-semibold hover:text-orange-700">
+                  Hand Measurement Guide →
                 </Link>
               </div>
 
@@ -202,8 +205,8 @@ const Index = () => {
                 <p className="text-gray-600 mb-4">
                   Building a resilient athletic body. Strength training provides the foundation for explosive power and injury prevention.
                 </p>
-                <Link to="/vertical-jump-training/strength-training" className="text-orange-600 font-semibold hover:text-orange-700">
-                  Strength Training for Vertical Jump →
+                <Link to="/blog" className="text-orange-600 font-semibold hover:text-orange-700">
+                  Training Articles & Tips →
                 </Link>
               </div>
             </div>
@@ -217,18 +220,18 @@ const Index = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Link 
-                to="/vertical-jump-training"
+                to="/measurements"
                 className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-bold rounded-lg hover:bg-gray-100 transition-colors"
               >
                 <TrendingUp className="w-5 h-5 mr-2" />
-                Start Improving Your Vertical Jump Now!
+                Learn Measurement Techniques
               </Link>
               <Link 
-                to="/dunking-skills/first-dunk-guide"
+                to="/blog"
                 className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-orange-600 transition-colors"
               >
                 <Target className="w-5 h-5 mr-2" />
-                Master Dunking Techniques & Skills!
+                Read Training Articles
               </Link>
             </div>
           </div>
@@ -253,11 +256,11 @@ const Index = () => {
                 </ul>
               </div>
               <div>
-                <h4 className="font-semibold mb-4">Training</h4>
+                <h4 className="font-semibold mb-4">Resources</h4>
                 <ul className="space-y-2 text-gray-400">
-                  <li><Link to="/vertical-jump-training" className="hover:text-white">Vertical Jump Guide</Link></li>
-                  <li><Link to="/vertical-jump-training/plyometrics" className="hover:text-white">Plyometrics</Link></li>
-                  <li><Link to="/vertical-jump-training/strength-training" className="hover:text-white">Strength Training</Link></li>
+                  <li><Link to="/blog" className="hover:text-white">Training Blog</Link></li>
+                  <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
+                  <li><Link to="/measurements" className="hover:text-white">All Measurements</Link></li>
                 </ul>
               </div>
               <div>
@@ -265,8 +268,6 @@ const Index = () => {
                 <ul className="space-y-2 text-gray-400">
                   <li><Link to="/about" className="hover:text-white">About Us</Link></li>
                   <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-                  <li><Link to="/privacy-policy" className="hover:text-white">Privacy Policy</Link></li>
-                  <li><Link to="/terms-of-service" className="hover:text-white">Terms of Service</Link></li>
                 </ul>
               </div>
             </div>

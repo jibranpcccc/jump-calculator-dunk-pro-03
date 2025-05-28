@@ -1,3 +1,4 @@
+
 import MetaTags from "./MetaTags";
 import Performance from "./Performance";
 import StructuredData from "./StructuredData";
@@ -10,23 +11,6 @@ const GlobalSEO = () => {
     name: "Dunk Calculator",
     description: "Free online basketball dunk calculator and comprehensive vertical jump training resources for players of all levels. Test if you can dunk a basketball with our accurate calculator used by over 100,000 athletes worldwide.",
     url: "https://dunkcalculator.com",
-    potentialAction: {
-      "@type": "SearchAction",
-      target: "https://dunkcalculator.com/search?q={search_term_string}",
-      "query-input": "required name=search_term_string"
-    },
-    sameAs: [
-      "https://dunkcalculator.com/blog",
-      "https://dunkcalculator.com/vertical-jump-training",
-      "https://dunkcalculator.com/basketball-dunk-tips",
-      "https://dunkcalculator.com/calculators",
-      "https://dunkcalculator.com/faq",
-      "https://dunkcalculator.com/basketball-bmi-calculator",
-      "https://dunkcalculator.com/hangtime-calculator",
-      "https://dunkcalculator.com/reach-calculator",
-      "https://dunkcalculator.com/basketball-position-calculator",
-      "https://dunkcalculator.com/vertical-jump-test"
-    ],
     mainEntity: {
       "@type": "WebApplication",
       name: "Basketball Dunk Calculator",
@@ -186,8 +170,8 @@ const GlobalSEO = () => {
       {
         "@type": "ListItem",
         "position": 2,
-        "name": "Calculators",
-        "item": "https://dunkcalculator.com/calculators"
+        "name": "Measurements",
+        "item": "https://dunkcalculator.com/measurements"
       },
       {
         "@type": "ListItem",
@@ -198,24 +182,6 @@ const GlobalSEO = () => {
       {
         "@type": "ListItem",
         "position": 4,
-        "name": "Vertical Jump Training",
-        "item": "https://dunkcalculator.com/vertical-jump-training"
-      },
-      {
-        "@type": "ListItem",
-        "position": 5,
-        "name": "Basketball Dunk Tips",
-        "item": "https://dunkcalculator.com/basketball-dunk-tips"
-      },
-      {
-        "@type": "ListItem",
-        "position": 6,
-        "name": "Basketball BMI Calculator",
-        "item": "https://dunkcalculator.com/basketball-bmi-calculator"
-      },
-      {
-        "@type": "ListItem",
-        "position": 7,
         "name": "FAQ",
         "item": "https://dunkcalculator.com/faq"
       }
