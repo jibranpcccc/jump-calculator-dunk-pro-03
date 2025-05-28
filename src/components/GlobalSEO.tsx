@@ -3,6 +3,7 @@ import MetaTags from "./MetaTags";
 import Performance from "./Performance";
 import StructuredData from "./StructuredData";
 import OrganizationSchema from "./OrganizationSchema";
+import WebSiteSchema from "./WebSiteSchema";
 import SEOAnalytics from "./SEOAnalytics";
 
 const GlobalSEO = () => {
@@ -49,6 +50,7 @@ const GlobalSEO = () => {
       />
       <Performance />
       <OrganizationSchema />
+      <WebSiteSchema />
       <SEOAnalytics />
       <StructuredData type="WebSite" data={websiteData} />
     </>

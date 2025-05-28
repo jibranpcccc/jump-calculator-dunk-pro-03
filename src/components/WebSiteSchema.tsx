@@ -4,19 +4,18 @@ import StructuredData from "./StructuredData";
 const WebSiteSchema = () => {
   const websiteData = {
     name: "Dunk Calculator",
-    alternateName: "Basketball Dunk Calculator",
-    description: "Free online basketball dunk calculator and vertical jump training resources. Test if you can dunk a basketball instantly.",
+    description: "Free online basketball dunk calculator and vertical jump training resources",
     url: "https://dunkcalculator.com",
-    inLanguage: "en-US",
-    copyrightYear: "2024",
-    copyrightHolder: {
-      "@type": "Organization",
-      name: "Dunk Calculator"
+    potentialAction: {
+      "@type": "SearchAction",
+      target: "https://dunkcalculator.com/search?q={search_term_string}",
+      "query-input": "required name=search_term_string"
     },
-    creator: {
-      "@type": "Organization",
-      name: "Dunk Calculator"
-    },
+    sameAs: [
+      "https://dunkcalculator.com/blog",
+      "https://dunkcalculator.com/vertical-jump-training",
+      "https://dunkcalculator.com/basketball-dunk-tips"
+    ],
     publisher: {
       "@type": "Organization",
       name: "Dunk Calculator",
@@ -25,47 +24,12 @@ const WebSiteSchema = () => {
         url: "https://dunkcalculator.com/logo.png"
       }
     },
-    potentialAction: [
-      {
-        "@type": "SearchAction",
-        target: {
-          "@type": "EntryPoint",
-          urlTemplate: "https://dunkcalculator.com/search?q={search_term_string}"
-        },
-        "query-input": "required name=search_term_string"
-      },
-      {
-        "@type": "UseAction",
-        object: {
-          "@type": "WebApplication",
-          name: "Dunk Calculator Tool"
-        }
-      }
-    ],
-    mainEntity: {
-      "@type": "WebApplication",
-      name: "Basketball Dunk Calculator",
-      applicationCategory: "SportsApplication",
-      operatingSystem: "All"
+    copyrightHolder: {
+      "@type": "Organization",
+      name: "Dunk Calculator"
     },
-    about: [
-      {
-        "@type": "Thing",
-        name: "Basketball"
-      },
-      {
-        "@type": "Thing", 
-        name: "Vertical Jump Training"
-      },
-      {
-        "@type": "Thing",
-        name: "Sports Performance"
-      }
-    ],
-    audience: {
-      "@type": "Audience",
-      audienceType: "Basketball Players"
-    }
+    copyrightYear: "2024",
+    inLanguage: "en-US"
   };
 
   return <StructuredData type="WebSite" data={websiteData} />;

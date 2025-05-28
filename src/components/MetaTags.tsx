@@ -7,9 +7,9 @@ interface MetaTagsProps {
   keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
-  ogType?: string;
   noindex?: boolean;
   author?: string;
+  viewport?: string;
 }
 
 const MetaTags = ({
@@ -18,9 +18,9 @@ const MetaTags = ({
   keywords,
   canonicalUrl,
   ogImage = "https://dunkcalculator.com/og-image.jpg",
-  ogType = "website",
   noindex = false,
-  author = "Dunk Calculator Team"
+  author = "Dunk Calculator Team",
+  viewport = "width=device-width, initial-scale=1.0"
 }: MetaTagsProps) => {
   const fullTitle = title.includes("Dunk Calculator") ? title : `${title} | Dunk Calculator`;
 
@@ -28,44 +28,37 @@ const MetaTags = ({
     <Helmet>
       <title>{fullTitle}</title>
       <meta name="description" content={description} />
-      {keywords && <meta name="keywords" content={keywords} />}
-      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      <meta name="viewport" content={viewport} />
       <meta name="author" content={author} />
       
-      {/* Robots */}
+      {keywords && <meta name="keywords" content={keywords} />}
+      {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
+      
       {noindex ? (
         <meta name="robots" content="noindex, nofollow" />
       ) : (
         <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
       )}
       
-      {/* Open Graph */}
+      {/* Basic Open Graph */}
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={description} />
-      <meta property="og:type" content={ogType} />
-      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
-      <meta property="og:site_name" content="Dunk Calculator" />
+      <meta property="og:type" content="website" />
       <meta property="og:image" content={ogImage} />
-      <meta property="og:image:width" content="1200" />
-      <meta property="og:image:height" content="630" />
-      <meta property="og:locale" content="en_US" />
+      <meta property="og:site_name" content="Dunk Calculator" />
+      {canonicalUrl && <meta property="og:url" content={canonicalUrl} />}
       
-      {/* Twitter */}
+      {/* Twitter Card */}
       <meta name="twitter:card" content="summary_large_image" />
       <meta name="twitter:title" content={fullTitle} />
       <meta name="twitter:description" content={description} />
       <meta name="twitter:image" content={ogImage} />
-      <meta name="twitter:site" content="@dunkcalculator" />
       
-      {/* Additional SEO */}
+      {/* Additional Meta */}
       <meta name="theme-color" content="#ea580c" />
-      <meta name="mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-capable" content="yes" />
-      <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-      <meta name="apple-mobile-web-app-title" content="Dunk Calculator" />
-      
-      {/* Manifest */}
-      <link rel="manifest" href="/manifest.json" />
+      <meta name="msapplication-TileColor" content="#ea580c" />
+      <link rel="icon" href="/favicon.ico" />
+      <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
     </Helmet>
   );
 };
