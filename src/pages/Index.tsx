@@ -1,43 +1,42 @@
 
-import { Helmet } from "react-helmet";
+import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DunkCalculator from "@/components/DunkCalculator";
+import CallToAction from "@/components/CallToAction";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, TrendingUp, BookOpen, Users } from "lucide-react";
+import { Target, TrendingUp, BookOpen, Users, Star, Clock, Shield } from "lucide-react";
 
 const Index = () => {
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "name": "Free Dunk Calculator | Basketball Dunk Test",
+    "description": "Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required!",
+    "url": "https://dunkcalculator.com/",
+    "isPartOf": {
+      "@type": "WebSite",
+      "name": "Dunk Calculator",
+      "url": "https://dunkcalculator.com"
+    },
+    "mainEntity": {
+      "@type": "WebApplication",
+      "name": "Basketball Dunk Calculator",
+      "description": "Calculate if you can dunk a basketball based on your measurements",
+      "applicationCategory": "SportsApplication"
+    }
+  };
+
   return (
     <>
-      <Helmet>
-        <title>Free Dunk Calculator | Can You Dunk a Basketball? Test Now</title>
-        <meta name="description" content="Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required!" />
-        <meta name="keywords" content="dunk calculator, can you dunk, basketball dunk test, vertical jump calculator, dunk height calculator, free dunk test" />
-        <link rel="canonical" href="https://dunkcalculator.com/" />
-        
-        <meta property="og:title" content="Free Dunk Calculator | Can You Dunk a Basketball?" />
-        <meta property="og:description" content="Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required!" />
-        <meta property="og:url" content="https://dunkcalculator.com/" />
-        <meta property="og:type" content="website" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebApplication",
-            "name": "Dunk Calculator",
-            "description": "Free basketball dunk calculator to test if you can dunk",
-            "url": "https://dunkcalculator.com",
-            "applicationCategory": "Sports",
-            "operatingSystem": "All",
-            "offers": {
-              "@type": "Offer",
-              "price": "0",
-              "priceCurrency": "USD"
-            }
-          })}
-        </script>
-      </Helmet>
+      <SEOHead
+        title="Free Dunk Calculator | Can You Dunk a Basketball? Test Now"
+        description="Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required!"
+        keywords="dunk calculator, can you dunk, basketball dunk test, vertical jump calculator, dunk height calculator, free dunk test, basketball training"
+        canonicalUrl="https://dunkcalculator.com/"
+        schemaData={schemaData}
+      />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
         <Header />
@@ -47,11 +46,31 @@ const Index = () => {
           <section className="py-12 px-4">
             <div className="container mx-auto text-center">
               <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Can You Dunk?
+                Can You Dunk a Basketball?
               </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-                Find out instantly with our free dunk calculator. Enter your height, reach, and vertical jump to see if you can dunk a basketball!
+              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
+                Find out instantly with our <strong>free dunk calculator</strong>. Enter your height, standing reach, and vertical jump to see if you can dunk a basketball! Used by thousands of basketball players worldwide.
               </p>
+              
+              {/* Trust Indicators */}
+              <div className="flex flex-wrap justify-center items-center gap-6 mb-8 text-sm text-gray-500">
+                <div className="flex items-center">
+                  <Shield className="h-4 w-4 mr-1 text-green-500" />
+                  100% Free
+                </div>
+                <div className="flex items-center">
+                  <Clock className="h-4 w-4 mr-1 text-blue-500" />
+                  Instant Results
+                </div>
+                <div className="flex items-center">
+                  <Star className="h-4 w-4 mr-1 text-yellow-500" />
+                  No Registration
+                </div>
+                <div className="flex items-center">
+                  <Users className="h-4 w-4 mr-1 text-purple-500" />
+                  10,000+ Users
+                </div>
+              </div>
             </div>
           </section>
 
@@ -65,27 +84,30 @@ const Index = () => {
           {/* How It Works */}
           <section className="py-16 px-4 bg-white">
             <div className="container mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">How the Dunk Calculator Works</h2>
+              <h2 className="text-3xl font-bold text-center mb-4">How Our Dunk Calculator Works</h2>
+              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Our basketball dunk calculator uses simple physics to determine if you can reach the 10-foot NBA rim height.
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card>
-                  <CardContent className="p-6 text-center">
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
                     <Target className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">Enter Your Measurements</h3>
-                    <p className="text-gray-600">Input your height, standing reach, and vertical jump distance in inches.</p>
+                    <h3 className="text-xl font-semibold mb-2">1. Enter Your Measurements</h3>
+                    <p className="text-gray-600">Input your height, standing reach, and vertical jump distance in inches. Be as accurate as possible for best results.</p>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardContent className="p-6 text-center">
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
                     <TrendingUp className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">We Calculate Your Max Reach</h3>
-                    <p className="text-gray-600">We add your height + standing reach + vertical jump to find your maximum reach.</p>
+                    <h3 className="text-xl font-semibold mb-2">2. We Calculate Your Max Reach</h3>
+                    <p className="text-gray-600">We add your height + standing reach + vertical jump to find your maximum reach when jumping.</p>
                   </CardContent>
                 </Card>
-                <Card>
-                  <CardContent className="p-6 text-center">
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
                     <Users className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">Compare to NBA Rim</h3>
-                    <p className="text-gray-600">Basketball rims are 10 feet (120 inches) high. If you can reach that high, you can dunk!</p>
+                    <h3 className="text-xl font-semibold mb-2">3. Compare to NBA Rim Height</h3>
+                    <p className="text-gray-600">Basketball rims are exactly 10 feet (120 inches) high. If you can reach that high or higher, you can dunk!</p>
                   </CardContent>
                 </Card>
               </div>
@@ -95,40 +117,47 @@ const Index = () => {
           {/* Quick Tips */}
           <section className="py-16 px-4 bg-gray-50">
             <div className="container mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Quick Dunking Tips</h2>
+              <h2 className="text-3xl font-bold text-center mb-4">Improve Your Dunking Ability</h2>
+              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Whether you can dunk now or need to improve, these resources will help you reach your basketball goals.
+              </p>
               <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-4">
-                    <h3 className="font-semibold mb-2">Improve Your Jump</h3>
-                    <p className="text-sm text-gray-600">Focus on plyometric exercises like box jumps and squat jumps.</p>
-                    <Link to="/vertical-jump-training" className="text-orange-600 text-sm hover:underline">
-                      Learn more →
+                    <TrendingUp className="h-8 w-8 text-orange-600 mb-3" />
+                    <h3 className="font-semibold mb-2">Increase Your Vertical Jump</h3>
+                    <p className="text-sm text-gray-600 mb-3">Focus on plyometric exercises like box jumps, squat jumps, and depth jumps to build explosive power.</p>
+                    <Link to="/vertical-jump-training" className="text-orange-600 text-sm hover:underline font-medium">
+                      Learn vertical training →
                     </Link>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-4">
+                    <Target className="h-8 w-8 text-orange-600 mb-3" />
                     <h3 className="font-semibold mb-2">Perfect Your Technique</h3>
-                    <p className="text-sm text-gray-600">Learn proper dunking form and approach techniques.</p>
-                    <Link to="/basketball-dunk-tips" className="text-orange-600 text-sm hover:underline">
-                      Read tips →
+                    <p className="text-sm text-gray-600 mb-3">Learn proper dunking form, approach techniques, and timing for successful dunks.</p>
+                    <Link to="/basketball-dunk-tips" className="text-orange-600 text-sm hover:underline font-medium">
+                      Read dunk tips →
                     </Link>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-4">
-                    <h3 className="font-semibold mb-2">Build Strength</h3>
-                    <p className="text-sm text-gray-600">Develop leg and core strength for explosive jumping power.</p>
-                    <Link to="/blog/increase-vertical-jump-exercises" className="text-orange-600 text-sm hover:underline">
+                    <BookOpen className="h-8 w-8 text-orange-600 mb-3" />
+                    <h3 className="font-semibold mb-2">Build Leg Strength</h3>
+                    <p className="text-sm text-gray-600 mb-3">Develop leg and core strength through targeted exercises for explosive jumping power.</p>
+                    <Link to="/blog/increase-vertical-jump-exercises" className="text-orange-600 text-sm hover:underline font-medium">
                       View exercises →
                     </Link>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-4">
-                    <h3 className="font-semibold mb-2">Start Small</h3>
-                    <p className="text-sm text-gray-600">Practice on lower rims and gradually work your way up.</p>
-                    <Link to="/blog/how-to-dunk-beginners" className="text-orange-600 text-sm hover:underline">
+                    <Users className="h-8 w-8 text-orange-600 mb-3" />
+                    <h3 className="font-semibold mb-2">Start Small & Practice</h3>
+                    <p className="text-sm text-gray-600 mb-3">Practice on lower rims (8-9 feet) and gradually work your way up to regulation height.</p>
+                    <Link to="/blog/how-to-dunk-beginners" className="text-orange-600 text-sm hover:underline font-medium">
                       Beginner guide →
                     </Link>
                   </CardContent>
@@ -137,34 +166,100 @@ const Index = () => {
             </div>
           </section>
 
+          {/* Call to Action */}
+          <section className="py-16 px-4">
+            <div className="container mx-auto">
+              <CallToAction
+                title="Test Your Dunk Potential Now!"
+                description="Join thousands of basketball players who've used our free calculator to test their dunking ability."
+                buttonText="Use Free Calculator"
+                buttonLink="#calculator"
+              />
+            </div>
+          </section>
+
           {/* FAQ Preview */}
           <section className="py-16 px-4 bg-white">
             <div className="container mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Frequently Asked Questions</h2>
+              <h2 className="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
+              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Get answers to common questions about dunking, vertical jumps, and basketball training.
+              </p>
               <div className="max-w-3xl mx-auto space-y-6">
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">What height do you need to dunk?</h3>
-                    <p className="text-gray-600">It depends on your arm span and vertical jump! Generally, players 6'0" and above have a better chance, but shorter players with exceptional jumping ability can also dunk.</p>
+                    <h3 className="font-semibold mb-2 text-lg">What height do you need to dunk a basketball?</h3>
+                    <p className="text-gray-600">It depends on your arm span and vertical jump! Generally, players 6'0" and above have a better chance, but shorter players with exceptional jumping ability can also dunk. The key factors are your standing reach and how high you can jump.</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">How accurate is this calculator?</h3>
-                    <p className="text-gray-600">Our calculator gives you a good estimate based on basic physics. Real dunking also requires technique, timing, and ball handling skills.</p>
+                    <h3 className="font-semibold mb-2 text-lg">How accurate is this dunk calculator?</h3>
+                    <p className="text-gray-600">Our calculator gives you a scientifically-based estimate using basic physics. However, real dunking also requires proper technique, timing, ball handling skills, and practice. Use this as a starting point to understand your potential.</p>
                   </CardContent>
                 </Card>
-                <Card>
+                <Card className="hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2">Can I improve my vertical jump?</h3>
-                    <p className="text-gray-600">Absolutely! With proper training, most people can add 4-12 inches to their vertical jump through exercises and technique improvement.</p>
+                    <h3 className="font-semibold mb-2 text-lg">Can I improve my vertical jump to dunk?</h3>
+                    <p className="text-gray-600">Absolutely! With proper training, most people can add 4-12 inches to their vertical jump through targeted exercises, plyometrics, strength training, and technique improvement. Check out our training guides for specific workout plans.</p>
                   </CardContent>
                 </Card>
               </div>
               <div className="text-center mt-8">
-                <Link to="/faq" className="text-orange-600 hover:underline font-medium">
-                  View all FAQs →
+                <Link to="/faq" className="text-orange-600 hover:underline font-medium text-lg">
+                  View All Frequently Asked Questions →
                 </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* Related Tools */}
+          <section className="py-16 px-4 bg-gray-50">
+            <div className="container mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">Explore More Basketball Tools & Guides</h2>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card className="hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <TrendingUp className="h-10 w-10 text-blue-600 mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">
+                      <Link to="/blog/how-to-measure-vertical-jump" className="hover:text-blue-600">
+                        How to Measure Vertical Jump
+                      </Link>
+                    </h3>
+                    <p className="text-gray-600 mb-4">Learn the proper techniques to accurately measure your vertical jump at home or in the gym.</p>
+                    <Link to="/blog/how-to-measure-vertical-jump" className="text-blue-600 hover:underline text-sm font-medium">
+                      Read Guide →
+                    </Link>
+                  </CardContent>
+                </Card>
+                <Card className="hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <Target className="h-10 w-10 text-green-600 mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">
+                      <Link to="/blog/best-vertical-jump-exercises" className="hover:text-green-600">
+                        Best Vertical Jump Exercises
+                      </Link>
+                    </h3>
+                    <p className="text-gray-600 mb-4">Discover the most effective exercises to increase your vertical jump and dunking ability.</p>
+                    <Link to="/blog/best-vertical-jump-exercises" className="text-green-600 hover:underline text-sm font-medium">
+                      View Exercises →
+                    </Link>
+                  </CardContent>
+                </Card>
+                <Card className="hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <BookOpen className="h-10 w-10 text-purple-600 mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">
+                      <Link to="/blog/dunk-if-you-are-short" className="hover:text-purple-600">
+                        Can Short Players Dunk?
+                      </Link>
+                    </h3>
+                    <p className="text-gray-600 mb-4">Explore strategies and success stories of shorter basketball players who learned to dunk.</p>
+                    <Link to="/blog/dunk-if-you-are-short" className="text-purple-600 hover:underline text-sm font-medium">
+                      Learn More →
+                    </Link>
+                  </CardContent>
+                </Card>
               </div>
             </div>
           </section>
