@@ -1,46 +1,34 @@
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from "@/components/ui/toaster";
-import { Toaster as Sonner } from "@/components/ui/sonner";
-import { TooltipProvider } from "@/components/ui/tooltip";
-import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import Index from "./pages/Index";
-import DunkCalculatorPage from "./pages/DunkCalculator";
-import VerticalJumpTraining from "./pages/VerticalJumpTraining";
-import BasketballDunkTips from "./pages/BasketballDunkTips";
-import BasketballBMICalculator from "./pages/BasketballBMICalculator";
+import Index from './pages/Index';
+import About from './pages/About';
+import Contact from './pages/Contact';
+import MeasurementGuides from './pages/MeasurementGuides';
+import StandingReachGuide from './pages/StandingReachGuide';
+import VerticalJumpGuide from './pages/VerticalJumpGuide';
+import { ComprehensiveSEO } from './components/SEOComponents';
 
-const queryClient = new QueryClient();
-
-const App = () => {
+function App() {
   return (
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Router>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/dunk-calculator" element={<DunkCalculatorPage />} />
-            <Route path="/vertical-jump-training" element={<VerticalJumpTraining />} />
-            <Route path="/basketball-dunk-tips" element={<BasketballDunkTips />} />
-            <Route path="/basketball-bmi-calculator" element={<BasketballBMICalculator />} />
-            {/* Additional routes that would be added */}
-            <Route path="/calculators" element={<Index />} />
-            <Route path="/blog" element={<Index />} />
-            <Route path="/faq" element={<Index />} />
-            <Route path="/about" element={<Index />} />
-            <Route path="/contact" element={<Index />} />
-            <Route path="/hangtime-calculator" element={<Index />} />
-            <Route path="/reach-calculator" element={<Index />} />
-            <Route path="/basketball-position-calculator" element={<Index />} />
-            <Route path="/vertical-jump-test" element={<Index />} />
-            {/* Catch all route */}
-            <Route path="*" element={<Index />} />
-          </Routes>
-          <Toaster />
-          <Sonner />
-        </Router>
-      </TooltipProvider>
-    </QueryClientProvider>
+    <Router>
+      <ComprehensiveSEO
+        title="Dunk Calculator - Can You Dunk a Basketball? Test Your Potential!"
+        description="Free basketball dunk calculator to test if you can dunk! Enter your height, reach, and vertical jump for instant results. Get personalized training tips from experts."
+        keywords="dunk calculator, can you dunk, basketball dunk test, vertical jump calculator, basketball training, how to dunk"
+        canonicalUrl="https://dunkcalculator.com/"
+      />
+      <Routes>
+        <Route path="/" element={<Index />} />
+        <Route path="/about" element={<About />} />
+        <Route path="/contact" element={<Contact />} />
+        <Route path="/measurements" element={<MeasurementGuides />} />
+        <Route path="/measurements/standing-reach" element={<StandingReachGuide />} />
+        <Route path="/measurements/vertical-jump" element={<VerticalJumpGuide />} />
+      </Routes>
+      <Toaster />
+    </Router>
   );
-};
+}
 
 export default App;
