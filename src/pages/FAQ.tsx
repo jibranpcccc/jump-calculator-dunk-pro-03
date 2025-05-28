@@ -1,9 +1,10 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Calculator, ArrowLeft } from "lucide-react";
+import { Calculator } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Header from "@/components/Header";
+import Footer from "@/components/Footer";
 
 const FAQ = () => {
   const faqData = [
@@ -77,6 +78,8 @@ const FAQ = () => {
         <meta property="og:description" content="Get answers to common questions about dunking, vertical jumps, and our dunk calculator tool." />
         <meta property="og:type" content="website" />
         
+        <link rel="canonical" href="https://dunkcalculator.com/faq" />
+        
         {/* FAQ Schema */}
         <script type="application/ld+json">
           {JSON.stringify({
@@ -95,25 +98,7 @@ const FAQ = () => {
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
-        {/* Header */}
-        <header className="bg-white shadow-sm border-b">
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex items-center justify-between" role="navigation" aria-label="Main Navigation">
-              <Link to="/" className="flex items-center space-x-2">
-                <Calculator className="h-8 w-8 text-orange-600" aria-hidden="true" />
-                <h1 className="text-xl font-bold text-gray-900">Dunk Calculator</h1>
-              </Link>
-              <div className="hidden md:flex space-x-6">
-                <Link to="/vertical-jump-training" className="text-gray-600 hover:text-orange-600 transition-colors">Vertical Training</Link>
-                <Link to="/basketball-dunk-tips" className="text-gray-600 hover:text-orange-600 transition-colors">Dunk Tips</Link>
-                <Link to="/blog" className="text-gray-600 hover:text-orange-600 transition-colors">Blog</Link>
-                <Link to="/faq" className="text-orange-600 font-medium">FAQ</Link>
-                <Link to="/about" className="text-gray-600 hover:text-orange-600 transition-colors">About</Link>
-                <Link to="/contact" className="text-gray-600 hover:text-orange-600 transition-colors">Contact</Link>
-              </div>
-            </nav>
-          </div>
-        </header>
+        <Header />
 
         <main className="container mx-auto px-4 py-12">
           <div className="max-w-4xl mx-auto">
@@ -166,7 +151,6 @@ const FAQ = () => {
               </CardContent>
             </Card>
 
-            {/* Quick Links */}
             <Card className="mb-8">
               <CardContent className="p-6">
                 <h2 className="text-xl font-bold text-gray-900 mb-4">Still Have Questions?</h2>
@@ -201,6 +185,8 @@ const FAQ = () => {
             </Card>
           </div>
         </main>
+
+        <Footer />
       </div>
     </>
   );

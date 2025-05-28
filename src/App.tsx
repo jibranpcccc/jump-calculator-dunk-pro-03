@@ -12,6 +12,8 @@ import BasketballDunkTips from "./pages/BasketballDunkTips";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import TermsOfUse from "./pages/TermsOfUse";
 import IncreaseVerticalJumpExercises from "./pages/blog/IncreaseVerticalJumpExercises";
 import HowToDunkBeginners from "./pages/blog/HowToDunkBeginners";
 import NotFound from "./pages/NotFound";
@@ -59,6 +61,8 @@ const App = () => (
           <Route path="/blog" element={<Blog />} />
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-use" element={<TermsOfUse />} />
           <Route path="/blog/increase-vertical-jump-exercises" element={<IncreaseVerticalJumpExercises />} />
           <Route path="/blog/how-to-dunk-beginners" element={<HowToDunkBeginners />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
