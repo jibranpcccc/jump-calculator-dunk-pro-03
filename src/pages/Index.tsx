@@ -8,9 +8,10 @@ import QuickStats from "@/components/QuickStats";
 import SEOManager from "@/components/SEOManager";
 import FAQStructuredData from "@/components/FAQStructuredData";
 import EnhancedHero from "@/components/EnhancedHero";
+import FeaturedImageCard from "@/components/FeaturedImageCard";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, TrendingUp, BookOpen, Users, Calculator, Activity } from "lucide-react";
+import { Target, TrendingUp, BookOpen, Users, Calculator, Activity, Clock, Ruler } from "lucide-react";
 
 const Index = () => {
   const faqData = [
@@ -80,7 +81,7 @@ const Index = () => {
               <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
                 Explore our complete collection of free basketball performance calculators and training tools.
               </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-8">
                 <Card className="text-center hover:shadow-lg transition-shadow">
                   <CardContent className="p-6">
                     <Calculator className="h-12 w-12 text-orange-600 mx-auto mb-4" />
@@ -111,6 +112,36 @@ const Index = () => {
                     </Link>
                   </CardContent>
                 </Card>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <Clock className="h-12 w-12 text-purple-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">Hangtime Calculator</h3>
+                    <p className="text-gray-600 mb-4">Calculate how long you stay in the air during your jump.</p>
+                    <Link to="/calculators#hangtime-calculator" className="text-purple-600 hover:underline font-medium">
+                      Calculate Hangtime →
+                    </Link>
+                  </CardContent>
+                </Card>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <Ruler className="h-12 w-12 text-teal-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">Reach Calculator</h3>
+                    <p className="text-gray-600 mb-4">Calculate your standing reach and wingspan advantage.</p>
+                    <Link to="/calculators#reach-calculator" className="text-teal-600 hover:underline font-medium">
+                      Calculate Reach →
+                    </Link>
+                  </CardContent>
+                </Card>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <Users className="h-12 w-12 text-red-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">Position Calculator</h3>
+                    <p className="text-gray-600 mb-4">Find your ideal basketball position based on physical attributes.</p>
+                    <Link to="/calculators#position-calculator" className="text-red-600 hover:underline font-medium">
+                      Find Position →
+                    </Link>
+                  </CardContent>
+                </Card>
               </div>
               <div className="text-center">
                 <Link to="/calculators" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
@@ -120,8 +151,35 @@ const Index = () => {
             </div>
           </section>
 
-          {/* How It Works */}
+          {/* Featured Images Section */}
           <section className="py-16 px-4 bg-gray-50">
+            <div className="container mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">Basketball Training Visual Guide</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <FeaturedImageCard
+                  src="https://images.unsplash.com/photo-1546519638-68e109498ffc?w=500&h=300&fit=crop"
+                  alt="Basketball player dunking on outdoor court"
+                  title="Perfect Dunking Form"
+                  description="Learn proper technique and approach for successful dunks"
+                />
+                <FeaturedImageCard
+                  src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=500&h=300&fit=crop"
+                  alt="Basketball player performing vertical jump training"
+                  title="Vertical Jump Training"
+                  description="Exercises to increase your jumping power and height"
+                />
+                <FeaturedImageCard
+                  src="https://images.unsplash.com/photo-1577223625816-7546f13df25d?w=500&h=300&fit=crop"
+                  alt="Basketball court with regulation hoop at 10 feet"
+                  title="NBA Regulation Rim"
+                  description="Standard 10-foot basketball rim height for professional play"
+                />
+              </div>
+            </div>
+          </section>
+
+          {/* How It Works */}
+          <section className="py-16 px-4 bg-white">
             <div className="container mx-auto">
               <h2 className="text-3xl font-bold text-center mb-4">How Our Dunk Calculator Works</h2>
               <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -154,7 +212,7 @@ const Index = () => {
           </section>
 
           {/* Quick Tips */}
-          <section className="py-16 px-4 bg-white">
+          <section className="py-16 px-4 bg-gray-50">
             <div className="container mx-auto">
               <h2 className="text-3xl font-bold text-center mb-4">Improve Your Dunking Ability</h2>
               <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -206,7 +264,7 @@ const Index = () => {
           </section>
 
           {/* Call to Action */}
-          <section className="py-16 px-4 bg-gray-50">
+          <section className="py-16 px-4 bg-white">
             <div className="container mx-auto">
               <CallToAction
                 title="Test Your Dunk Potential Now!"
@@ -218,7 +276,7 @@ const Index = () => {
           </section>
 
           {/* FAQ Preview */}
-          <section className="py-16 px-4 bg-white">
+          <section className="py-16 px-4 bg-gray-50">
             <div className="container mx-auto">
               <h2 className="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
               <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -243,7 +301,7 @@ const Index = () => {
           </section>
 
           {/* Related Tools */}
-          <section className="py-16 px-4 bg-gray-50">
+          <section className="py-16 px-4 bg-white">
             <div className="container mx-auto">
               <h2 className="text-3xl font-bold text-center mb-12">Explore More Basketball Tools & Guides</h2>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
