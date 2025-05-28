@@ -30,13 +30,20 @@ import FamousDunkers from './pages/FamousDunkers';
 import About from './pages/About';
 import Contact from './pages/Contact';
 import Blog from './pages/Blog';
+import FAQ from './pages/FAQ';
+import Glossary from './pages/Glossary';
+import PrivacyPolicy from './pages/PrivacyPolicy';
+import TermsOfService from './pages/TermsOfService';
 
 function App() {
   return (
     <Router>
       <div className="App">
         <Routes>
+          {/* Homepage */}
           <Route path="/" element={<Index />} />
+          
+          {/* Measurement Guide Routes */}
           <Route path="/measurements" element={<MeasurementGuides />} />
           <Route path="/measurements/standing-reach" element={<StandingReachGuide />} />
           <Route path="/measurements/vertical-jump" element={<VerticalJumpGuide />} />
@@ -62,6 +69,10 @@ function App() {
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
           <Route path="/blog" element={<Blog />} />
+          <Route path="/faq" element={<FAQ />} />
+          <Route path="/glossary" element={<Glossary />} />
+          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
+          <Route path="/terms-of-service" element={<TermsOfService />} />
         </Routes>
         <Toaster />
       </div>
