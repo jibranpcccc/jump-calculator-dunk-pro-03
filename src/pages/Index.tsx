@@ -87,7 +87,7 @@ const Index = () => {
                     <Calculator className="h-12 w-12 text-orange-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">Dunk Calculator</h3>
                     <p className="text-gray-600 mb-4">Find out if you can dunk based on your height, reach, and vertical jump.</p>
-                    <Link to="/#calculator" className="text-orange-600 hover:underline font-medium">
+                    <Link to="/dunk-calculator" className="text-orange-600 hover:underline font-medium">
                       Test Now →
                     </Link>
                   </CardContent>
@@ -97,7 +97,7 @@ const Index = () => {
                     <TrendingUp className="h-12 w-12 text-blue-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">Vertical Jump Test</h3>
                     <p className="text-gray-600 mb-4">Measure your exact vertical jump height and compare to standards.</p>
-                    <Link to="/calculators#vertical-jump-calculator" className="text-blue-600 hover:underline font-medium">
+                    <Link to="/vertical-jump-test" className="text-blue-600 hover:underline font-medium">
                       Measure Jump →
                     </Link>
                   </CardContent>
@@ -107,7 +107,7 @@ const Index = () => {
                     <Activity className="h-12 w-12 text-green-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">Basketball BMI</h3>
                     <p className="text-gray-600 mb-4">Calculate BMI with basketball-specific insights and position analysis.</p>
-                    <Link to="/calculators#bmi-calculator" className="text-green-600 hover:underline font-medium">
+                    <Link to="/basketball-bmi-calculator" className="text-green-600 hover:underline font-medium">
                       Calculate BMI →
                     </Link>
                   </CardContent>
@@ -117,7 +117,7 @@ const Index = () => {
                     <Clock className="h-12 w-12 text-purple-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">Hangtime Calculator</h3>
                     <p className="text-gray-600 mb-4">Calculate how long you stay in the air during your jump.</p>
-                    <Link to="/calculators#hangtime-calculator" className="text-purple-600 hover:underline font-medium">
+                    <Link to="/hangtime-calculator" className="text-purple-600 hover:underline font-medium">
                       Calculate Hangtime →
                     </Link>
                   </CardContent>
@@ -127,7 +127,7 @@ const Index = () => {
                     <Ruler className="h-12 w-12 text-teal-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">Reach Calculator</h3>
                     <p className="text-gray-600 mb-4">Calculate your standing reach and wingspan advantage.</p>
-                    <Link to="/calculators#reach-calculator" className="text-teal-600 hover:underline font-medium">
+                    <Link to="/reach-calculator" className="text-teal-600 hover:underline font-medium">
                       Calculate Reach →
                     </Link>
                   </CardContent>
@@ -137,7 +137,7 @@ const Index = () => {
                     <Users className="h-12 w-12 text-red-600 mx-auto mb-4" />
                     <h3 className="text-xl font-semibold mb-2">Position Calculator</h3>
                     <p className="text-gray-600 mb-4">Find your ideal basketball position based on physical attributes.</p>
-                    <Link to="/calculators#position-calculator" className="text-red-600 hover:underline font-medium">
+                    <Link to="/basketball-position-calculator" className="text-red-600 hover:underline font-medium">
                       Find Position →
                     </Link>
                   </CardContent>

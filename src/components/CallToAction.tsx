@@ -16,7 +16,7 @@ const CallToAction = ({
   title = "Ready to Test Your Dunk?",
   description = "Use our free calculator to find out if you can dunk a basketball right now!",
   buttonText = "Try Dunk Calculator",
-  buttonLink = "/#calculator",
+  buttonLink = "#calculator",
   variant = "orange"
 }: CallToActionProps) => {
   const variantStyles = {
@@ -29,6 +29,20 @@ const CallToAction = ({
     default: "bg-gray-600 hover:bg-gray-700",
     orange: "bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800",
     blue: "bg-gradient-to-r from-blue-600 to-blue-700 hover:from-blue-700 hover:to-blue-800"
+  };
+
+  const handleClick = (e: React.MouseEvent) => {
+    if (buttonLink.startsWith('#')) {
+      e.preventDefault();
+      const targetId = buttonLink.substring(1);
+      const element = document.getElementById(targetId);
+      if (element) {
+        element.scrollIntoView({ 
+          behavior: 'smooth',
+          block: 'start'
+        });
+      }
+    }
   };
 
   return (
@@ -49,15 +63,25 @@ const CallToAction = ({
             {description}
           </p>
           
-          <Link to={buttonLink}>
-            <Button 
-              size="lg"
-              className={`${buttonStyles[variant]} text-white px-8 py-3 text-lg font-semibold transition-all transform hover:scale-105`}
+          {buttonLink.startsWith('#') ? (
+            <button
+              onClick={handleClick}
+              className={`${buttonStyles[variant]} text-white px-8 py-3 text-lg font-semibold transition-all transform hover:scale-105 rounded-lg inline-flex items-center`}
             >
               {buttonText}
               <ArrowRight className="ml-2 h-5 w-5" />
-            </Button>
-          </Link>
+            </button>
+          ) : (
+            <Link to={buttonLink}>
+              <Button 
+                size="lg"
+                className={`${buttonStyles[variant]} text-white px-8 py-3 text-lg font-semibold transition-all transform hover:scale-105`}
+              >
+                {buttonText}
+                <ArrowRight className="ml-2 h-5 w-5" />
+              </Button>
+            </Link>
+          )}
           
           <div className="mt-4 text-sm text-gray-500">
             <p>✓ 100% Free • ✓ No Signup Required • ✓ Instant Results</p>
