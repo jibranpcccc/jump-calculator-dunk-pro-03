@@ -1,44 +1,56 @@
 
-import SEOHead from "@/components/SEOHead";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DunkCalculator from "@/components/DunkCalculator";
 import CallToAction from "@/components/CallToAction";
 import TrustSignals from "@/components/TrustSignals";
 import QuickStats from "@/components/QuickStats";
+import SEOManager from "@/components/SEOManager";
+import FAQStructuredData from "@/components/FAQStructuredData";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, TrendingUp, BookOpen, Users } from "lucide-react";
 
 const Index = () => {
-  const schemaData = {
-    "@context": "https://schema.org",
-    "@type": "WebPage",
-    "name": "Free Dunk Calculator | Basketball Dunk Test",
-    "description": "Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required!",
-    "url": "https://dunkcalculator.com/",
-    "isPartOf": {
-      "@type": "WebSite",
-      "name": "Dunk Calculator",
-      "url": "https://dunkcalculator.com"
+  const faqData = [
+    {
+      question: "What height do you need to dunk a basketball?",
+      answer: "It depends on your arm span and vertical jump! Generally, players 6'0\" and above have a better chance, but shorter players with exceptional jumping ability can also dunk. The key factors are your standing reach and how high you can jump."
     },
-    "mainEntity": {
-      "@type": "WebApplication",
-      "name": "Basketball Dunk Calculator",
-      "description": "Calculate if you can dunk a basketball based on your measurements",
-      "applicationCategory": "SportsApplication"
+    {
+      question: "How accurate is this dunk calculator?",
+      answer: "Our calculator gives you a scientifically-based estimate using basic physics. However, real dunking also requires proper technique, timing, ball handling skills, and practice. Use this as a starting point to understand your potential."
+    },
+    {
+      question: "Can I improve my vertical jump to dunk?",
+      answer: "Absolutely! With proper training, most people can add 4-12 inches to their vertical jump through targeted exercises, plyometrics, strength training, and technique improvement. Check out our training guides for specific workout plans."
     }
-  };
+  ];
 
   return (
     <>
-      <SEOHead
+      <SEOManager
         title="Free Dunk Calculator | Can You Dunk a Basketball? Test Now"
         description="Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required!"
         keywords="dunk calculator, can you dunk, basketball dunk test, vertical jump calculator, dunk height calculator, free dunk test, basketball training"
         canonicalUrl="https://dunkcalculator.com/"
-        schemaData={schemaData}
+        pageType="product"
+        faqData={faqData}
+        productData={{
+          name: "Basketball Dunk Calculator",
+          brand: "Dunk Calculator",
+          category: "Sports Application",
+          price: "0",
+          availability: "InStock"
+        }}
+        enableAnalytics={true}
+        enableBreadcrumbs={true}
+        enablePerformance={true}
+        enableSocialMeta={true}
+        enableTechnicalSEO={true}
       />
+
+      <FAQStructuredData faqs={faqData} />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
         <Header />
@@ -171,24 +183,14 @@ const Index = () => {
                 Get answers to common questions about dunking, vertical jumps, and basketball training.
               </p>
               <div className="max-w-3xl mx-auto space-y-6">
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2 text-lg">What height do you need to dunk a basketball?</h3>
-                    <p className="text-gray-600">It depends on your arm span and vertical jump! Generally, players 6'0" and above have a better chance, but shorter players with exceptional jumping ability can also dunk. The key factors are your standing reach and how high you can jump.</p>
-                  </CardContent>
-                </Card>
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2 text-lg">How accurate is this dunk calculator?</h3>
-                    <p className="text-gray-600">Our calculator gives you a scientifically-based estimate using basic physics. However, real dunking also requires proper technique, timing, ball handling skills, and practice. Use this as a starting point to understand your potential.</p>
-                  </CardContent>
-                </Card>
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <h3 className="font-semibold mb-2 text-lg">Can I improve my vertical jump to dunk?</h3>
-                    <p className="text-gray-600">Absolutely! With proper training, most people can add 4-12 inches to their vertical jump through targeted exercises, plyometrics, strength training, and technique improvement. Check out our training guides for specific workout plans.</p>
-                  </CardContent>
-                </Card>
+                {faqData.map((faq, index) => (
+                  <Card key={index} className="hover:shadow-lg transition-shadow">
+                    <CardContent className="p-6">
+                      <h3 className="font-semibold mb-2 text-lg">{faq.question}</h3>
+                      <p className="text-gray-600">{faq.answer}</p>
+                    </CardContent>
+                  </Card>
+                ))}
               </div>
               <div className="text-center mt-8">
                 <Link to="/faq" className="text-orange-600 hover:underline font-medium text-lg">
