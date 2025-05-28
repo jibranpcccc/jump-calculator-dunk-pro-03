@@ -12,6 +12,12 @@ import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
 import Calculators from "./pages/Calculators";
+import DunkCalculatorPage from "./pages/DunkCalculator";
+import VerticalJumpTestPage from "./pages/VerticalJumpTest";
+import BasketballBMICalculatorPage from "./pages/BasketballBMICalculator";
+import HangtimeCalculatorPage from "./pages/HangtimeCalculator";
+import ReachCalculatorPage from "./pages/ReachCalculator";
+import BasketballPositionCalculatorPage from "./pages/BasketballPositionCalculator";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import IncreaseVerticalJumpExercises from "./pages/blog/IncreaseVerticalJumpExercises";
@@ -37,6 +43,15 @@ const App = () => (
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/calculators" element={<Calculators />} />
+          
+          {/* Individual Calculator Pages */}
+          <Route path="/dunk-calculator" element={<DunkCalculatorPage />} />
+          <Route path="/vertical-jump-test" element={<VerticalJumpTestPage />} />
+          <Route path="/basketball-bmi-calculator" element={<BasketballBMICalculatorPage />} />
+          <Route path="/hangtime-calculator" element={<HangtimeCalculatorPage />} />
+          <Route path="/reach-calculator" element={<ReachCalculatorPage />} />
+          <Route path="/basketball-position-calculator" element={<BasketballPositionCalculatorPage />} />
+          
           <Route path="/faq" element={<FAQ />} />
           <Route path="/vertical-jump-training" element={<VerticalJumpTraining />} />
           <Route path="/basketball-dunk-tips" element={<BasketballDunkTips />} />
