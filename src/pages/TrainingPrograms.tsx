@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Download, Calendar, Target, TrendingUp, AlertTriangle, Star, Clock } from "lucide-react";
@@ -58,7 +57,7 @@ const TrainingPrograms = () => {
                 </div>
                 <h3 className="text-xl font-semibold text-green-800 mb-3">Choose if you have:</h3>
                 <ul className="space-y-2 text-green-700 text-sm">
-                  <li>• <strong>Training experience:</strong> New to structured jump training or <6 months</li>
+                  <li>• <strong>Training experience:</strong> New to structured jump training or &lt;6 months</li>
                   <li>• <strong>Vertical jump:</strong> Below 20 inches (estimated)</li>
                   <li>• <strong>Strength level:</strong> Cannot squat bodyweight with good form</li>
                   <li>• <strong>Plyometric experience:</strong> Limited or no experience with explosive exercises</li>

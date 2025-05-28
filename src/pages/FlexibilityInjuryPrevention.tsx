@@ -1,7 +1,6 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Shield, AlertTriangle, Clock, TrendingUp, Calendar, Calculator } from "lucide-react";
+import { ArrowLeft, Heart, Shield, Zap, AlertTriangle, Clock, Target } from "lucide-react";
 
 const FlexibilityInjuryPrevention = () => {
   return (
@@ -9,7 +8,7 @@ const FlexibilityInjuryPrevention = () => {
       <Helmet>
         <title>Jump Higher & Stay Healthy: Flexibility, Mobility & Injury Prevention 2025</title>
         <meta name="description" content="Learn essential stretches, mobility drills, & injury prevention strategies for jumpers. Protect your knees, ankles, & back while increasing your vertical." />
-        <meta name="keywords" content="flexibility for jumpers, mobility exercises, injury prevention basketball, stretches for vertical jump, ankle mobility" />
+        <meta name="keywords" content="flexibility for jumping, mobility exercises, injury prevention basketball, stretches for vertical jump, jumping injuries" />
         <link rel="canonical" href="https://dunkcalculator.com/vertical-jump-training/flexibility-injury-prevention/" />
       </Helmet>
 
@@ -30,175 +29,192 @@ const FlexibilityInjuryPrevention = () => {
               Stay Healthy, Jump Higher: The Essential Guide to Flexibility, Mobility & Injury Prevention for Aspiring Dunkers
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the mobility work, stretches, and injury prevention strategies that will keep you training consistently 
-              and performing at your peak throughout your vertical jump journey.
+              Learn how proper flexibility, mobility, and injury prevention strategies can enhance your jumping performance 
+              while keeping you healthy for years of training.
             </p>
           </div>
 
-          {/* Why Flexibility Matters */}
+          {/* Why Flexibility and Mobility are Non-Negotiable */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
-              <Shield className="w-8 h-8 text-green-600 mr-3" />
+              <Heart className="w-8 h-8 text-orange-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Why Flexibility and Mobility are Non-Negotiable for Serious Jumpers & Dunkers</h2>
             </div>
             
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Flexibility vs. Mobility: Understanding the Difference</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Understanding the Difference:</h3>
                 <div className="space-y-4">
                   <div className="p-4 bg-blue-50 rounded-lg">
-                    <h4 className="font-semibold text-blue-800 mb-2">Flexibility</h4>
+                    <h4 className="font-semibold text-blue-800 mb-2">Flexibility:</h4>
                     <p className="text-blue-700 text-sm">
-                      The passive range of motion available at a joint. Think of how far you can stretch your hamstring 
-                      when someone else moves your leg for you.
+                      The passive range of motion available at a joint. This is how far you can move or be moved 
+                      without actively using your muscles.
                     </p>
                   </div>
                   <div className="p-4 bg-green-50 rounded-lg">
-                    <h4 className="font-semibold text-green-800 mb-2">Mobility</h4>
+                    <h4 className="font-semibold text-green-800 mb-2">Mobility:</h4>
                     <p className="text-green-700 text-sm">
-                      The active, controlled range of motion through which you can apply force. This includes flexibility 
-                      plus strength and motor control through that range.
+                      The active, controlled range of motion through which you can apply force. This combines 
+                      flexibility with strength and motor control.
                     </p>
                   </div>
                 </div>
-                <p className="text-gray-600 mt-4 text-sm">
-                  <strong>For jumping:</strong> You need both! Flexibility to achieve optimal positions, 
-                  and mobility to generate force from those positions.
-                </p>
+                
+                <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+                  <p className="text-orange-700 text-sm">
+                    <strong>For jumpers:</strong> You need both! Flexibility allows you to get into optimal positions, 
+                    while mobility lets you generate power from those positions.
+                  </p>
+                </div>
               </div>
               
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Critical Benefits for Jumpers:</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Impact on Jumping Performance:</h3>
                 <ul className="space-y-3 text-gray-600">
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Optimal jump technique:</strong> Achieve deeper squat positions and better takeoff mechanics</span>
+                  <li>
+                    <strong>Optimal Joint Positions:</strong> Better ankle, hip, and spine mobility allows deeper squat positions 
+                    for greater force production
                   </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Power transfer efficiency:</strong> Better kinetic chain function from ankles to fingertips</span>
+                  <li>
+                    <strong>Power Transfer Efficiency:</strong> Improved mobility ensures energy flows smoothly through 
+                    the kinetic chain from legs to arms
                   </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Injury risk reduction:</strong> Up to 50% lower injury rates with proper mobility programs</span>
+                  <li>
+                    <strong>Technique Enhancement:</strong> Greater range of motion enables better jumping mechanics 
+                    and more explosive takeoffs
                   </li>
-                  <li className="flex items-start">
-                    <span className="inline-block w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
-                    <span><strong>Training longevity:</strong> Stay healthy and consistent over months and years</span>
+                  <li>
+                    <strong>Injury Risk Reduction:</strong> Adequate flexibility and mobility significantly reduce the risk 
+                    of strains, sprains, and overuse injuries
                   </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Key Areas */}
+          {/* Key Anatomical Areas */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Key Anatomical Areas to Focus On for Optimal Jumping Mechanics & Injury Prevention</h2>
+            <div className="flex items-center mb-6">
+              <Target className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">Key Anatomical Areas to Focus On for Optimal Jumping Mechanics & Injury Prevention</h2>
+            </div>
             
-            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <div className="p-4 bg-blue-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-blue-800 mb-3">Ankles</h3>
-                <p className="text-blue-700 text-sm mb-2">
-                  <strong>Dorsiflexion:</strong> Essential for deep knee bend and force absorption
-                </p>
-                <ul className="text-blue-600 text-xs space-y-1">
-                  <li>• Deeper squat positions</li>
-                  <li>• Better landing mechanics</li>
-                  <li>• Reduced knee stress</li>
-                  <li>• Improved balance</li>
-                </ul>
+            <div className="grid md:grid-cols-2 gap-8">
+              <div className="space-y-6">
+                <div className="p-4 bg-blue-50 rounded-lg">
+                  <h3 className="text-lg font-semibold text-blue-800 mb-2">Ankles</h3>
+                  <p className="text-blue-700 text-sm mb-2">
+                    <strong>Key Movement:</strong> Dorsiflexion (bringing toes toward shin)
+                  </p>
+                  <p className="text-blue-600 text-xs">
+                    Essential for deep knee bending, proper landing mechanics, and force absorption. 
+                    Limited ankle mobility forces compensation patterns that reduce jumping efficiency.
+                  </p>
+                </div>
+                
+                <div className="p-4 bg-green-50 rounded-lg">
+                  <h3 className="text-lg font-semibold text-green-800 mb-2">Hips</h3>
+                  <p className="text-green-700 text-sm mb-2">
+                    <strong>Key Movements:</strong> Flexion (knee to chest) and Extension (leg behind body)
+                  </p>
+                  <p className="text-green-600 text-xs">
+                    Hip mobility is crucial for achieving optimal squat depth and generating maximum power 
+                    through the powerful glute muscles during takeoff.
+                  </p>
+                </div>
               </div>
               
-              <div className="p-4 bg-green-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-green-800 mb-3">Hips</h3>
-                <p className="text-green-700 text-sm mb-2">
-                  <strong>Extension & Flexion:</strong> Power generation and optimal positioning
-                </p>
-                <ul className="text-green-600 text-xs space-y-1">
-                  <li>• Full hip extension for power</li>
-                  <li>• Deep hip flexion for loading</li>
-                  <li>• Reduced lower back stress</li>
-                  <li>• Better glute activation</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 bg-purple-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-purple-800 mb-3">Hamstrings & Hip Flexors</h3>
-                <p className="text-purple-700 text-sm mb-2">
-                  <strong>Often tight:</strong> Restrict movement and alter biomechanics
-                </p>
-                <ul className="text-purple-600 text-xs space-y-1">
-                  <li>• Proper hip hinge patterns</li>
-                  <li>• Reduced anterior pelvic tilt</li>
-                  <li>• Better squat depth</li>
-                  <li>• Decreased injury risk</li>
-                </ul>
-              </div>
-              
-              <div className="p-4 bg-orange-50 rounded-lg">
-                <h3 className="text-lg font-semibold text-orange-800 mb-3">Thoracic Spine</h3>
-                <p className="text-orange-700 text-sm mb-2">
-                  <strong>Rotation & Extension:</strong> Better arm swing and body alignment
-                </p>
-                <ul className="text-orange-600 text-xs space-y-1">
-                  <li>• Improved arm swing mechanics</li>
-                  <li>• Better overhead reach</li>
-                  <li>• Reduced neck tension</li>
-                  <li>• Enhanced breathing</li>
-                </ul>
+              <div className="space-y-6">
+                <div className="p-4 bg-purple-50 rounded-lg">
+                  <h3 className="text-lg font-semibold text-purple-800 mb-2">Hamstrings & Hip Flexors</h3>
+                  <p className="text-purple-700 text-sm mb-2">
+                    <strong>Common Issue:</strong> Tightness from sitting and sports activities
+                  </p>
+                  <p className="text-purple-600 text-xs">
+                    Tight hamstrings limit hip flexion and forward bending. Tight hip flexors restrict 
+                    hip extension and can cause lower back compensation patterns.
+                  </p>
+                </div>
+                
+                <div className="p-4 bg-orange-50 rounded-lg">
+                  <h3 className="text-lg font-semibold text-orange-800 mb-2">Thoracic Spine</h3>
+                  <p className="text-orange-700 text-sm mb-2">
+                    <strong>Key Movements:</strong> Extension and Rotation
+                  </p>
+                  <p className="text-orange-600 text-xs">
+                    Proper thoracic mobility enables effective arm swing during jumping and prevents 
+                    excessive stress on the lower back during explosive movements.
+                  </p>
+                </div>
               </div>
             </div>
           </div>
 
           {/* Essential Stretches */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Essential Stretches for Jumpers</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Essential Stretches for Jumpers</h2>
             
             <div className="space-y-8">
               {/* Dynamic Stretches */}
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Dynamic Stretches (Ideal for Warm-ups)</h3>
-                <p className="text-gray-600 mb-4">
-                  Dynamic stretching involves controlled movements that take your joints through their full range of motion. 
-                  These are perfect for warming up because they increase blood flow, core temperature, and neural activation.
+                <h3 className="text-2xl font-semibold text-blue-800 mb-4">Dynamic Stretches (Ideal for Warm-ups – Focus on Movement)</h3>
+                <p className="text-gray-600 mb-6">
+                  Dynamic stretches involve controlled movements that gradually increase range of motion and prepare 
+                  your muscles for explosive activity. They&apos;re perfect for warming up before training or games.
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Dynamic Warm-up Routine (8-10 minutes):</h4>
+                    <h4 className="font-semibold text-gray-900 mb-4">Lower Body Dynamic Stretches:</h4>
                     <div className="space-y-3">
-                      <div className="p-3 bg-yellow-50 rounded">
-                        <strong className="text-yellow-800">Leg Swings:</strong>
-                        <p className="text-yellow-700 text-sm">Forward/backward and side-to-side, 10-15 each direction</p>
-                      </div>
                       <div className="p-3 bg-blue-50 rounded">
-                        <strong className="text-blue-800">Arm Circles:</strong>
-                        <p className="text-blue-700 text-sm">Small to large circles, forward and backward, 10 each</p>
+                        <strong className="text-blue-800">Leg Swings:</strong>
+                        <p className="text-blue-700 text-sm">
+                          Forward/backward and side-to-side. 10-15 swings each direction, each leg. 
+                          Hold onto a wall for balance.
+                        </p>
                       </div>
                       <div className="p-3 bg-green-50 rounded">
-                        <strong className="text-green-800">Torso Twists:</strong>
-                        <p className="text-green-700 text-sm">Standing rotation, arms extended, 10-15 each direction</p>
+                        <strong className="text-green-800">Walking Lunges with Twist:</strong>
+                        <p className="text-green-700 text-sm">
+                          Step into lunge, rotate torso toward front leg. 8-10 lunges each side. 
+                          Combines hip mobility with spinal rotation.
+                        </p>
                       </div>
                       <div className="p-3 bg-purple-50 rounded">
-                        <strong className="text-purple-800">Walking Lunges with Twist:</strong>
-                        <p className="text-purple-700 text-sm">Lunge forward, rotate toward front leg, 8-10 each side</p>
+                        <strong className="text-purple-800">High Knees & Butt Kicks:</strong>
+                        <p className="text-purple-700 text-sm">
+                          20-30 steps each. Focus on controlled movement and full range of motion 
+                          at hip and knee joints.
+                        </p>
                       </div>
                     </div>
                   </div>
+                  
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Additional Dynamic Movements:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-4">Full Body Dynamic Movements:</h4>
                     <div className="space-y-3">
+                      <div className="p-3 bg-yellow-50 rounded">
+                        <strong className="text-yellow-800">Arm Circles:</strong>
+                        <p className="text-yellow-700 text-sm">
+                          Forward and backward, gradually increasing size. 10-15 circles each direction. 
+                          Prepares shoulders for arm swing during jumping.
+                        </p>
+                      </div>
+                      <div className="p-3 bg-orange-50 rounded">
+                        <strong className="text-orange-800">Torso Twists:</strong>
+                        <p className="text-orange-700 text-sm">
+                          Standing with arms across chest, rotate left and right. 10-15 each direction. 
+                          Mobilizes the spine for athletic movement.
+                        </p>
+                      </div>
                       <div className="p-3 bg-red-50 rounded">
-                        <strong className="text-red-800">High Knees:</strong>
-                        <p className="text-red-700 text-sm">Bring knees to chest height, 20-30 steps</p>
-                      </div>
-                      <div className="p-3 bg-indigo-50 rounded">
-                        <strong className="text-indigo-800">Butt Kicks:</strong>
-                        <p className="text-indigo-700 text-sm">Heel to glute, emphasize quick turnover, 20-30 steps</p>
-                      </div>
-                      <div className="p-3 bg-pink-50 rounded">
-                        <strong className="text-pink-800">Inchworms:</strong>
-                        <p className="text-pink-700 text-sm">Walk hands out to plank, walk feet to hands, 5-8 reps</p>
+                        <strong className="text-red-800">Inchworms:</strong>
+                        <p className="text-red-700 text-sm">
+                          Walk hands out to plank, walk feet toward hands. 5-8 repetitions. 
+                          Combines hamstring flexibility with core activation.
+                        </p>
                       </div>
                     </div>
                   </div>
@@ -207,50 +223,68 @@ const FlexibilityInjuryPrevention = () => {
 
               {/* Static Stretches */}
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Static Stretches (Best for Cool-downs)</h3>
-                <p className="text-gray-600 mb-4">
-                  Static stretching involves holding a stretch position for 20-30 seconds. These are most effective when your muscles 
-                  are already warm, making them ideal for post-workout or dedicated flexibility sessions.
+                <h3 className="text-2xl font-semibold text-green-800 mb-4">Static Stretches (Best for Cool-downs – Hold for 20-30 seconds)</h3>
+                <p className="text-gray-600 mb-6">
+                  Static stretches involve holding a position to lengthen muscles and improve flexibility. 
+                  They&apos;re most effective when muscles are warm, making them ideal for post-workout routines.
                 </p>
                 
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-4">
                     <div className="p-4 bg-green-50 rounded-lg">
                       <h4 className="font-semibold text-green-800 mb-2">Standing Hamstring Stretch</h4>
-                      <p className="text-green-700 text-sm mb-2">Place heel on elevated surface, keep leg straight, lean forward</p>
-                      <p className="text-green-600 text-xs">Hold: 20-30 seconds each leg</p>
+                      <p className="text-green-700 text-sm mb-2">
+                        Place heel on elevated surface, lean forward with straight back until you feel stretch 
+                        in the back of your leg.
+                      </p>
+                      <p className="text-green-600 text-xs">Target: Hamstrings, calf muscles</p>
                     </div>
                     
                     <div className="p-4 bg-blue-50 rounded-lg">
                       <h4 className="font-semibold text-blue-800 mb-2">Standing Quad Stretch</h4>
-                      <p className="text-blue-700 text-sm mb-2">Pull heel toward glute, keep knees close together</p>
-                      <p className="text-blue-600 text-xs">Hold: 20-30 seconds each leg</p>
+                      <p className="text-blue-700 text-sm mb-2">
+                        Pull heel toward glute, keep knees together and hips pushed forward. 
+                        Use wall for balance if needed.
+                      </p>
+                      <p className="text-blue-600 text-xs">Target: Quadriceps, hip flexors</p>
                     </div>
                     
                     <div className="p-4 bg-purple-50 rounded-lg">
                       <h4 className="font-semibold text-purple-800 mb-2">Kneeling Hip Flexor Stretch</h4>
-                      <p className="text-purple-700 text-sm mb-2">Lunge position, push hips forward, feel stretch in front of back leg</p>
-                      <p className="text-purple-600 text-xs">Hold: 30 seconds each side</p>
+                      <p className="text-purple-700 text-sm mb-2">
+                        Kneel with one foot forward, push hips forward while keeping torso upright. 
+                        Feel stretch in front of rear leg&apos;s hip.
+                      </p>
+                      <p className="text-purple-600 text-xs">Target: Hip flexors, quadriceps</p>
                     </div>
                   </div>
                   
                   <div className="space-y-4">
                     <div className="p-4 bg-orange-50 rounded-lg">
-                      <h4 className="font-semibold text-orange-800 mb-2">Calf Stretch (Wall)</h4>
-                      <p className="text-orange-700 text-sm mb-2">Hands on wall, step back leg straight, push heel down</p>
-                      <p className="text-orange-600 text-xs">Hold: 20-30 seconds each leg</p>
+                      <h4 className="font-semibold text-orange-800 mb-2">Calf Stretch (Wall Stretch)</h4>
+                      <p className="text-orange-700 text-sm mb-2">
+                        Place hands on wall, step back foot 2-3 feet, keep heel down and leg straight. 
+                        Lean into wall to feel stretch.
+                      </p>
+                      <p className="text-orange-600 text-xs">Target: Gastrocnemius, soleus muscles</p>
                     </div>
                     
                     <div className="p-4 bg-yellow-50 rounded-lg">
                       <h4 className="font-semibold text-yellow-800 mb-2">Figure-4 Glute Stretch</h4>
-                      <p className="text-yellow-700 text-sm mb-2">Lying on back, ankle on opposite knee, pull thigh toward chest</p>
-                      <p className="text-yellow-600 text-xs">Hold: 30 seconds each side</p>
+                      <p className="text-yellow-700 text-sm mb-2">
+                        Lying or sitting, place ankle on opposite knee, gently pull thigh toward chest. 
+                        Feel stretch in glute and hip.
+                      </p>
+                      <p className="text-yellow-600 text-xs">Target: Glutes, piriformis, hip external rotators</p>
                     </div>
                     
                     <div className="p-4 bg-red-50 rounded-lg">
-                      <h4 className="font-semibold text-red-800 mb-2">Chest Stretch (Doorway)</h4>
-                      <p className="text-red-700 text-sm mb-2">Arm on doorframe, step forward, feel stretch across chest</p>
-                      <p className="text-red-600 text-xs">Hold: 20-30 seconds each arm</p>
+                      <h4 className="font-semibold text-red-800 mb-2">Doorway Chest Stretch</h4>
+                      <p className="text-red-700 text-sm mb-2">
+                        Place forearm on doorframe, step forward until you feel stretch across chest and front shoulder. 
+                        Vary arm height for different angles.
+                      </p>
+                      <p className="text-red-600 text-xs">Target: Pectorals, anterior deltoids</p>
                     </div>
                   </div>
                 </div>

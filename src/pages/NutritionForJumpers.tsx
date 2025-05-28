@@ -1,15 +1,14 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Apple, Droplets, Clock, Calendar, AlertCircle, TrendingUp } from "lucide-react";
+import { ArrowLeft, Apple, Droplets, Clock, Calendar, AlertCircle, TrendingUp, AlertTriangle } from "lucide-react";
 
 const NutritionForJumpers = () => {
   return (
     <>
       <Helmet>
-        <title>Nutrition for Vertical Jump: What to Eat to Jump Higher & Recover Faster</title>
+        <title>Nutrition for Vertical Jump: What to Eat to Jump Higher &amp; Recover Faster</title>
         <meta name="description" content="Discover the best foods & nutrition strategies to fuel your vertical jump. Macronutrients, hydration, supplements & meal ideas for explosive athletes." />
-        <meta name="keywords" content="nutrition for vertical jump, athlete nutrition, sports nutrition, basketball nutrition, foods for jumping higher" />
+        <meta name="keywords" content="nutrition for vertical jump, basketball nutrition, sports nutrition, protein for athletes, carbohydrates for jumping" />
         <link rel="canonical" href="https://dunkcalculator.com/vertical-jump-training/nutrition/" />
       </Helmet>
 
@@ -27,98 +26,86 @@ const NutritionForJumpers = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              Nutrition for Jumpers: Eating Your Way to a Higher Vertical & Faster Recovery
+              Nutrition for Jumpers: Eating Your Way to a Higher Vertical &amp; Faster Recovery
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Discover the nutritional strategies that will fuel your training, enhance your recovery, 
-              and optimize your body composition for maximum jumping performance.
+              Discover how proper nutrition can fuel your training, enhance recovery, and maximize your vertical jump potential.
             </p>
           </div>
 
-          {/* Critical Role */}
+          {/* Critical Role Section */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
               <Apple className="w-8 h-8 text-orange-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">The Critical Role of Nutrition in Athletic Performance, Recovery, and Jumping Higher</h2>
             </div>
+            
+            <p className="text-gray-600 mb-6">
+              Nutrition is the foundation that supports every aspect of your vertical jump training. Proper nutrition impacts:
+            </p>
+            
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <p className="text-gray-600 mb-4">
-                  Many athletes focus intensely on their training but neglect the fuel that powers their efforts. 
-                  Nutrition isn't just about maintaining weight—it's about optimizing every aspect of athletic performance.
-                </p>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">How Nutrition Impacts Jumping Performance:</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Performance Benefits:</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Energy levels:</strong> Sustained power throughout training sessions</li>
-                  <li>• <strong>Muscle repair & growth:</strong> Building stronger, more powerful muscles</li>
-                  <li>• <strong>Reducing inflammation:</strong> Faster recovery between sessions</li>
-                  <li>• <strong>Injury prevention:</strong> Stronger bones, tendons, and ligaments</li>
+                  <li>• <strong>Energy levels:</strong> Sustained power for training sessions</li>
+                  <li>• <strong>Force production:</strong> Fuel for explosive movements</li>
+                  <li>• <strong>Focus &amp; coordination:</strong> Mental clarity for technique</li>
+                  <li>• <strong>Endurance:</strong> Ability to maintain intensity throughout workouts</li>
                 </ul>
               </div>
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Training Adaptation Benefits:</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Recovery &amp; Adaptation:</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Improved glycogen storage:</strong> More available energy for explosive movements</li>
-                  <li>• <strong>Enhanced protein synthesis:</strong> Better adaptation to strength training</li>
-                  <li>• <strong>Optimal hormone production:</strong> Testosterone, growth hormone, insulin</li>
-                  <li>• <strong>Better body composition:</strong> Ideal muscle-to-fat ratio for jumping</li>
+                  <li>• <strong>Muscle repair:</strong> Building stronger, more powerful muscles</li>
+                  <li>• <strong>Inflammation reduction:</strong> Faster recovery between sessions</li>
+                  <li>• <strong>Injury prevention:</strong> Supporting tissue health and resilience</li>
+                  <li>• <strong>Training adaptation:</strong> Maximizing gains from each workout</li>
                 </ul>
-                <div className="mt-4 p-4 bg-orange-50 rounded-lg">
-                  <p className="text-orange-700 font-medium text-sm">
-                    Research shows that proper nutrition can improve training adaptations by 15-25% 
-                    compared to athletes with poor dietary habits.
-                  </p>
-                </div>
               </div>
             </div>
           </div>
 
-          {/* Macronutrients */}
+          {/* Macronutrients Section */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">Macronutrients Decoded for Explosive Athletes: Power Your Jumps</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Macronutrients Decoded for Explosive Athletes: Power Your Jumps</h2>
             
             <div className="space-y-8">
               {/* Protein */}
-              <div className="border-b border-gray-200 pb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Protein: The Building Block for Muscle Repair, Growth, and Strength</h3>
+              <div>
+                <h3 className="text-2xl font-semibold text-blue-800 mb-4">Protein: The Building Block for Muscle Repair, Growth, and Strength</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <p className="text-gray-600 mb-4">
-                      Protein provides the amino acids necessary for muscle protein synthesis—the process by which your muscles 
-                      repair and grow stronger after training. For jumping athletes, adequate protein is non-negotiable.
+                      Protein provides the amino acids necessary for muscle protein synthesis, repair, and growth. 
+                      For explosive athletes, adequate protein intake is crucial for:
                     </p>
-                    <h4 className="font-semibold text-gray-900 mb-3">Daily Protein Requirements:</h4>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li>• <strong>Recreational athletes:</strong> 1.2-1.4g per kg bodyweight</li>
-                      <li>• <strong>Serious athletes:</strong> 1.6-2.2g per kg bodyweight</li>
-                      <li>• <strong>During intense training:</strong> Up to 2.5g per kg bodyweight</li>
-                      <li>• <strong>Example:</strong> 180lb athlete = 130-180g protein daily</li>
+                    <ul className="space-y-2 text-gray-600 mb-4">
+                      <li>• Repairing muscle damage from intense training</li>
+                      <li>• Building lean muscle mass for greater force production</li>
+                      <li>• Supporting immune function during heavy training periods</li>
+                      <li>• Maintaining muscle mass during caloric deficits</li>
                     </ul>
+                    <div className="p-4 bg-blue-50 rounded-lg">
+                      <h4 className="font-semibold text-blue-800 mb-2">Recommended Intake:</h4>
+                      <p className="text-blue-700 text-sm">1.6-2.2 grams per kilogram of bodyweight daily</p>
+                      <p className="text-blue-600 text-xs mt-1">For a 70kg (154lb) athlete: 112-154g protein per day</p>
+                    </div>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3">Best Protein Sources:</h4>
-                    <div className="grid grid-cols-2 gap-4">
-                      <div className="bg-blue-50 p-3 rounded">
-                        <h5 className="font-semibold text-blue-800 text-sm mb-1">Animal Sources</h5>
-                        <ul className="text-blue-700 text-xs space-y-1">
-                          <li>• Chicken breast</li>
-                          <li>• Lean beef</li>
-                          <li>• Fish (salmon, tuna)</li>
-                          <li>• Eggs</li>
-                          <li>• Greek yogurt</li>
-                          <li>• Cottage cheese</li>
-                        </ul>
+                    <div className="space-y-3">
+                      <div className="p-3 bg-green-50 rounded">
+                        <strong className="text-green-800">Complete Proteins:</strong>
+                        <p className="text-green-700 text-sm">Chicken, turkey, fish, eggs, dairy, Greek yogurt</p>
                       </div>
-                      <div className="bg-green-50 p-3 rounded">
-                        <h5 className="font-semibold text-green-800 text-sm mb-1">Plant Sources</h5>
-                        <ul className="text-green-700 text-xs space-y-1">
-                          <li>• Beans & lentils</li>
-                          <li>• Quinoa</li>
-                          <li>• Tofu & tempeh</li>
-                          <li>• Nuts & seeds</li>
-                          <li>• Plant protein powder</li>
-                          <li>• Hemp hearts</li>
-                        </ul>
+                      <div className="p-3 bg-yellow-50 rounded">
+                        <strong className="text-yellow-800">Plant-Based:</strong>
+                        <p className="text-yellow-700 text-sm">Beans, lentils, quinoa, tofu, hemp seeds</p>
+                      </div>
+                      <div className="p-3 bg-purple-50 rounded">
+                        <strong className="text-purple-800">Supplements:</strong>
+                        <p className="text-purple-700 text-sm">Whey, casein, plant-based protein powders</p>
                       </div>
                     </div>
                   </div>
@@ -126,86 +113,69 @@ const NutritionForJumpers = () => {
               </div>
 
               {/* Carbohydrates */}
-              <div className="border-b border-gray-200 pb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Carbohydrates: Your Primary Fuel for High-Intensity Training & Explosive Jumps</h3>
+              <div>
+                <h3 className="text-2xl font-semibold text-green-800 mb-4">Carbohydrates: Your Primary Fuel for High-Intensity Training &amp; Explosive Jumps</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <p className="text-gray-600 mb-4">
-                      Carbohydrates are stored as glycogen in your muscles and liver, providing immediate energy for explosive movements. 
-                      Without adequate carbs, your power output and training quality will suffer significantly.
+                      Carbohydrates are your body&apos;s preferred fuel source for explosive, high-intensity activities like jumping. 
+                      They&apos;re stored as glycogen in muscles and the liver, providing immediate energy for:
                     </p>
-                    <h4 className="font-semibold text-gray-900 mb-3">Types of Carbohydrates:</h4>
-                    <div className="space-y-3">
-                      <div className="p-3 bg-green-50 rounded">
-                        <h5 className="font-semibold text-green-800 mb-1">Complex Carbs (Sustained Energy)</h5>
-                        <p className="text-green-700 text-sm">Provide steady energy for training and daily activities</p>
-                      </div>
-                      <div className="p-3 bg-yellow-50 rounded">
-                        <h5 className="font-semibold text-yellow-800 mb-1">Simple Carbs (Quick Energy)</h5>
-                        <p className="text-yellow-700 text-sm">Rapid fuel for immediate energy needs</p>
-                      </div>
-                    </div>
+                    <ul className="space-y-2 text-gray-600 mb-4">
+                      <li>• Explosive muscle contractions</li>
+                      <li>• High-intensity plyometric training</li>
+                      <li>• Maintaining training intensity throughout sessions</li>
+                      <li>• Supporting nervous system function</li>
+                    </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Best Carbohydrate Sources:</h4>
+                    <h4 className="font-semibold text-gray-900 mb-3">Carbohydrate Timing Strategy:</h4>
                     <div className="space-y-3">
-                      <div className="bg-blue-50 p-3 rounded">
-                        <h5 className="font-semibold text-blue-800 text-sm mb-2">Complex Carbs</h5>
-                        <ul className="text-blue-700 text-xs space-y-1">
-                          <li>• Oats & whole grain cereals</li>
-                          <li>• Brown rice & quinoa</li>
-                          <li>• Sweet potatoes</li>
-                          <li>• Whole grain bread & pasta</li>
-                          <li>• Vegetables</li>
-                        </ul>
+                      <div className="p-3 bg-blue-50 rounded">
+                        <strong className="text-blue-800">Complex Carbs (Daily Fuel):</strong>
+                        <p className="text-blue-700 text-sm">Oats, brown rice, quinoa, sweet potatoes</p>
                       </div>
-                      <div className="bg-orange-50 p-3 rounded">
-                        <h5 className="font-semibold text-orange-800 text-sm mb-2">Simple Carbs (Around Workouts)</h5>
-                        <ul className="text-orange-700 text-xs space-y-1">
-                          <li>• Bananas</li>
-                          <li>• Berries</li>
-                          <li>• Honey</li>
-                          <li>• Sports drinks</li>
-                          <li>• White rice (post-workout)</li>
-                        </ul>
+                      <div className="p-3 bg-orange-50 rounded">
+                        <strong className="text-orange-800">Simple Carbs (Around Workouts):</strong>
+                        <p className="text-orange-700 text-sm">Bananas, berries, dates, honey</p>
                       </div>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* Healthy Fats */}
+              {/* Fats */}
               <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">Healthy Fats: Essential for Hormonal Balance, Recovery, and Overall Well-being</h3>
+                <h3 className="text-2xl font-semibold text-purple-800 mb-4">Healthy Fats: Essential for Hormonal Balance, Recovery, and Overall Well-being</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
                     <p className="text-gray-600 mb-4">
-                      Healthy fats support hormone production (including testosterone and growth hormone), reduce inflammation, 
-                      and aid in the absorption of fat-soluble vitamins crucial for bone health and recovery.
+                      Healthy fats play crucial roles in hormone production (including testosterone and growth hormone), 
+                      inflammation management, and vitamin absorption. For jumpers, fats support:
                     </p>
-                    <h4 className="font-semibold text-gray-900 mb-3">Benefits for Athletes:</h4>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li>• <strong>Hormone optimization:</strong> Support natural testosterone production</li>
-                      <li>• <strong>Anti-inflammatory:</strong> Reduce exercise-induced inflammation</li>
-                      <li>• <strong>Vitamin absorption:</strong> Aid uptake of vitamins A, D, E, K</li>
-                      <li>• <strong>Cell membrane health:</strong> Improve nutrient transport</li>
+                    <ul className="space-y-2 text-gray-600 mb-4">
+                      <li>• Hormone production for muscle building and recovery</li>
+                      <li>• Absorption of fat-soluble vitamins (A, D, E, K)</li>
+                      <li>• Reduced inflammation from intense training</li>
+                      <li>• Long-term energy for extended training sessions</li>
                     </ul>
                   </div>
                   <div>
                     <h4 className="font-semibold text-gray-900 mb-3">Best Healthy Fat Sources:</h4>
-                    <div className="bg-purple-50 p-4 rounded">
-                      <ul className="space-y-2 text-purple-700 text-sm">
-                        <li>• <strong>Avocados:</strong> Monounsaturated fats, potassium</li>
-                        <li>• <strong>Nuts & seeds:</strong> Almonds, walnuts, chia, flax</li>
-                        <li>• <strong>Olive oil:</strong> Extra virgin for cooking/dressing</li>
-                        <li>• <strong>Fatty fish:</strong> Salmon, mackerel, sardines</li>
-                        <li>• <strong>Coconut oil:</strong> Medium-chain triglycerides</li>
-                        <li>• <strong>Egg yolks:</strong> Complete nutrition profile</li>
-                      </ul>
+                    <div className="space-y-2">
+                      <div className="p-2 bg-green-50 rounded text-sm">
+                        <strong className="text-green-800">Avocados:</strong> Monounsaturated fats, potassium
+                      </div>
+                      <div className="p-2 bg-yellow-50 rounded text-sm">
+                        <strong className="text-yellow-800">Nuts &amp; Seeds:</strong> Almonds, walnuts, chia, flax
+                      </div>
+                      <div className="p-2 bg-blue-50 rounded text-sm">
+                        <strong className="text-blue-800">Fatty Fish:</strong> Salmon, mackerel, sardines (omega-3s)
+                      </div>
+                      <div className="p-2 bg-purple-50 rounded text-sm">
+                        <strong className="text-purple-800">Oils:</strong> Olive oil, avocado oil for cooking
+                      </div>
                     </div>
-                    <p className="text-gray-500 text-xs mt-3">
-                      Aim for 20-30% of total calories from healthy fats
-                    </p>
                   </div>
                 </div>
               </div>
