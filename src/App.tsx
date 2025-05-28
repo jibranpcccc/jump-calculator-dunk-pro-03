@@ -41,6 +41,18 @@ const App = () => (
         <meta property="og:title" content="Dunk Calculator | Can You Dunk? Try Our Free Tool" />
         <meta property="og:description" content="Use our dunk calculator to find out if your vertical jump is high enough to dunk. No login, fast, mobile-friendly." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dunkcalculator.com" />
+        <meta property="og:site_name" content="Dunk Calculator" />
+        
+        {/* Twitter Card */}
+        <meta name="twitter:card" content="summary_large_image" />
+        <meta name="twitter:title" content="Dunk Calculator | Can You Dunk? Try Our Free Tool" />
+        <meta name="twitter:description" content="Use our dunk calculator to find out if your vertical jump is high enough to dunk. No login, fast, mobile-friendly." />
+        
+        {/* Additional SEO Meta Tags */}
+        <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+        <meta name="googlebot" content="index, follow" />
+        <link rel="canonical" href="https://dunkcalculator.com" />
         
         {/* Schema.org structured data */}
         <script type="application/ld+json">
@@ -54,6 +66,22 @@ const App = () => (
               "@type": "SearchAction",
               "target": "https://dunkcalculator.com/search?q={search_term_string}",
               "query-input": "required name=search_term_string"
+            },
+            "sameAs": [
+              "https://dunkcalculator.com/blog",
+              "https://dunkcalculator.com/vertical-jump-training",
+              "https://dunkcalculator.com/basketball-dunk-tips"
+            ],
+            "mainEntity": {
+              "@type": "WebApplication",
+              "name": "Basketball Dunk Calculator",
+              "applicationCategory": "Sports",
+              "operatingSystem": "All",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              }
             }
           })}
         </script>

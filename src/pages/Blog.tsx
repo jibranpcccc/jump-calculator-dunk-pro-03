@@ -1,8 +1,8 @@
-
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, Calendar, User, ArrowRight } from "lucide-react";
+import { Calculator, Calendar, ArrowRight } from "lucide-react";
 import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
+import Breadcrumb from "@/components/Breadcrumb";
 
 const Blog = () => {
   const blogPosts = [
@@ -91,8 +91,6 @@ const Blog = () => {
     }
   ];
 
-  const categories = ["All", "Vertical Training", "Dunk Tips", "Training", "Gear", "Testing"];
-
   return (
     <>
       <Helmet>
@@ -104,6 +102,7 @@ const Blog = () => {
         <meta property="og:title" content="Basketball Dunk Training Blog – Jump Higher & Dunk Better" />
         <meta property="og:description" content="Expert basketball training blog with tips on increasing vertical jump, dunk techniques, and slam dunk training." />
         <meta property="og:type" content="website" />
+        <meta property="og:url" content="https://dunkcalculator.com/blog" />
         
         {/* Blog Schema */}
         <script type="application/ld+json">
@@ -112,7 +111,7 @@ const Blog = () => {
             "@type": "Blog",
             "name": "Dunk Calculator Blog",
             "description": "Basketball training blog focused on vertical jump improvement and dunking techniques",
-            "url": "https://lovable.dev/blog",
+            "url": "https://dunkcalculator.com/blog",
             "publisher": {
               "@type": "Organization",
               "name": "Dunk Calculator"
@@ -121,7 +120,7 @@ const Blog = () => {
               "@type": "BlogPosting",
               "headline": post.title,
               "description": post.description,
-              "url": `https://lovable.dev/blog/${post.slug}`,
+              "url": `https://dunkcalculator.com/blog/${post.slug}`,
               "datePublished": post.date,
               "author": {
                 "@type": "Organization",
@@ -153,14 +152,7 @@ const Blog = () => {
 
         <main className="container mx-auto px-4 py-12">
           <div className="max-w-6xl mx-auto">
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="mb-8">
-              <ol className="flex items-center space-x-2 text-sm text-gray-600">
-                <li><Link to="/" className="hover:text-orange-600">Home</Link></li>
-                <li className="text-gray-400">/</li>
-                <li className="text-gray-900 font-medium">Blog</li>
-              </ol>
-            </nav>
+            <Breadcrumb items={[{ label: "Blog" }]} />
 
             <div className="text-center mb-12">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
