@@ -46,7 +46,7 @@ import Glossary from './pages/Glossary';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 
-function App() {
+const App: React.FC = () => {
   return (
     <Router>
       <div className="App">
@@ -100,6 +100,6 @@ function App() {
       </div>
     </Router>
   );
-}
+};
 
 export default App;

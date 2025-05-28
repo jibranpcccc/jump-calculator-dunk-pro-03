@@ -24,7 +24,7 @@ const DunkCalculator = () => {
 
   const calculateDunk = () => {
     // Convert inputs to inches for calculation
-    const heightInInches = (parseInt(height.feet) * 12) + parseInt(height.inches);
+    const heightInInches = (parseInt(height.feet.toString()) * 12) + parseInt(height.inches.toString());
     const reachInInches = standingReach ? parseInt(standingReach) : estimateStandingReach(heightInInches);
     const jumpInInches = parseInt(verticalJump);
     
@@ -215,7 +215,7 @@ const DunkCalculator = () => {
               <div className="flex space-x-2">
                 <select 
                   value={height.feet}
-                  onChange={(e) => setHeight({...height, feet: e.target.value})}
+                  onChange={(e) => setHeight({...height, feet: parseInt(e.target.value)})}
                   className="w-20 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 >
                   {[4,5,6,7,8].map(ft => (
@@ -224,7 +224,7 @@ const DunkCalculator = () => {
                 </select>
                 <select 
                   value={height.inches}
-                  onChange={(e) => setHeight({...height, inches: e.target.value})}
+                  onChange={(e) => setHeight({...height, inches: parseInt(e.target.value)})}
                   className="w-20 px-3 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-orange-500"
                 >
                   {[0,1,2,3,4,5,6,7,8,9,10,11].map(inch => (
