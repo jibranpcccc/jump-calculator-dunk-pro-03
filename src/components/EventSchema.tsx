@@ -6,15 +6,12 @@ interface EventSchemaProps {
   description: string;
   startDate: string;
   endDate?: string;
-  location?: {
-    name: string;
-    address?: string;
-  };
+  location?: string;
   organizer?: string;
   url?: string;
   image?: string;
-  eventStatus?: "scheduled" | "cancelled" | "postponed";
-  eventAttendanceMode?: "online" | "offline" | "mixed";
+  eventType?: string;
+  isVirtual?: boolean;
 }
 
 const EventSchema = ({
@@ -22,42 +19,39 @@ const EventSchema = ({
   description,
   startDate,
   endDate,
-  location,
+  location = "Online",
   organizer = "Dunk Calculator",
   url,
-  image = "https://dunkcalculator.com/event-image.jpg",
-  eventStatus = "scheduled",
-  eventAttendanceMode = "online"
+  image = "https://dunkcalculator.com/og-image.jpg",
+  eventType = "SportsEvent",
+  isVirtual = true
 }: EventSchemaProps) => {
   const eventData = {
+    "@type": eventType,
     name,
     description,
     startDate,
-    endDate,
-    eventStatus: `https://schema.org/Event${eventStatus.charAt(0).toUpperCase() + eventStatus.slice(1)}`,
-    eventAttendanceMode: `https://schema.org/${eventAttendanceMode.charAt(0).toUpperCase() + eventAttendanceMode.slice(1)}EventAttendanceMode`,
-    location: location ? {
-      "@type": "Place",
-      name: location.name,
-      address: location.address
-    } : {
+    ...(endDate && { endDate }),
+    location: isVirtual ? {
       "@type": "VirtualLocation",
-      url: url || "https://dunkcalculator.com"
+      url: url || "https://dunkcalculator.com/"
+    } : {
+      "@type": "Place",
+      name: location
     },
     organizer: {
       "@type": "Organization",
       name: organizer,
-      url: "https://dunkcalculator.com"
+      url: "https://dunkcalculator.com/"
     },
-    image,
-    url: url || "https://dunkcalculator.com",
-    offers: {
-      "@type": "Offer",
-      price: "0",
-      priceCurrency: "USD",
-      availability: "https://schema.org/InStock",
-      url: url || "https://dunkcalculator.com"
-    }
+    image: [image],
+    url: url || "https://dunkcalculator.com/",
+    eventStatus: "https://schema.org/EventScheduled",
+    eventAttendanceMode: isVirtual ? 
+      "https://schema.org/OnlineEventAttendanceMode" : 
+      "https://schema.org/OfflineEventAttendanceMode",
+    isAccessibleForFree: true,
+    inLanguage: "en"
   };
 
   return <StructuredData type="Event" data={eventData} />;

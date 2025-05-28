@@ -4,55 +4,67 @@ import StructuredData from "./StructuredData";
 interface HowToStep {
   name: string;
   text: string;
+  image?: string;
   url?: string;
 }
 
 interface HowToSchemaProps {
   name: string;
   description: string;
-  steps: HowToStep[];
+  image?: string;
   totalTime?: string;
   estimatedCost?: string;
-  supply?: string[];
-  tool?: string[];
+  steps: HowToStep[];
+  tools?: string[];
+  materials?: string[];
 }
 
-const HowToSchema = ({ 
-  name, 
-  description, 
-  steps, 
+const HowToSchema = ({
+  name,
+  description,
+  image = "https://dunkcalculator.com/og-image.jpg",
   totalTime,
   estimatedCost,
-  supply = [],
-  tool = []
+  steps,
+  tools = [],
+  materials = []
 }: HowToSchemaProps) => {
   const howToData = {
     name,
     description,
-    totalTime,
-    estimatedCost: estimatedCost ? {
-      "@type": "MonetaryAmount",
-      currency: "USD",
-      value: estimatedCost
-    } : undefined,
-    supply: supply.map(item => ({
-      "@type": "HowToSupply",
-      name: item
-    })),
-    tool: tool.map(item => ({
-      "@type": "HowToTool",
-      name: item
-    })),
+    image: [image],
+    ...(totalTime && { totalTime }),
+    ...(estimatedCost && { estimatedCost: { "@type": "MonetaryAmount", currency: "USD", value: estimatedCost } }),
     step: steps.map((step, index) => ({
       "@type": "HowToStep",
       position: index + 1,
       name: step.name,
       text: step.text,
-      url: step.url
-    }))
+      ...(step.image && { image: step.image }),
+      ...(step.url && { url: step.url })
+    })),
+    ...(tools.length > 0 && {
+      tool: tools.map(tool => ({
+        "@type": "HowToTool",
+        name: tool
+      }))
+    }),
+    ...(materials.length > 0 && {
+      supply: materials.map(material => ({
+        "@type": "HowToSupply",
+        name: material
+      }))
+    }),
+    about: [
+      {
+        "@type": "Thing",
+        name: "Basketball Training",
+        sameAs: "https://en.wikipedia.org/wiki/Basketball"
+      }
+    ]
   };
 
-  return <StructuredData type="WebPage" data={{ mainEntity: { "@type": "HowTo", ...howToData } }} />;
+  return <StructuredData type="HowTo" data={howToData} />;
 };
 
 export default HowToSchema;

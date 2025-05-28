@@ -1,52 +1,76 @@
 
-import { useLocation, Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { ChevronRight, Home } from "lucide-react";
+import StructuredData from "./StructuredData";
 
 const BreadcrumbNavigation = () => {
   const location = useLocation();
   const pathnames = location.pathname.split('/').filter((x) => x);
 
-  if (pathnames.length === 0) {
-    return null; // Don't show breadcrumbs on homepage
-  }
-
   const breadcrumbItems = [
-    { name: "Home", url: "/" },
-    ...pathnames.map((path, index) => {
-      const url = `/${pathnames.slice(0, index + 1).join('/')}`;
-      const name = path
-        .split('-')
-        .map(word => word.charAt(0).toUpperCase() + word.slice(1))
-        .join(' ');
-      return { name, url };
-    })
+    { name: "Home", url: "https://dunkcalculator.com/" }
   ];
 
+  pathnames.forEach((name, index) => {
+    const url = `https://dunkcalculator.com/${pathnames.slice(0, index + 1).join('/')}`;
+    const displayName = name
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+    
+    breadcrumbItems.push({
+      name: displayName,
+      url: url
+    });
+  });
+
+  const breadcrumbSchema = {
+    "@type": "BreadcrumbList",
+    itemListElement: breadcrumbItems.map((item, index) => ({
+      "@type": "ListItem",
+      position: index + 1,
+      name: item.name,
+      item: item.url
+    }))
+  };
+
+  if (location.pathname === '/') {
+    return null;
+  }
+
   return (
-    <nav className="bg-gray-50 py-3 px-4" aria-label="Breadcrumb">
-      <div className="container mx-auto">
-        <ol className="flex items-center space-x-2 text-sm">
-          {breadcrumbItems.map((item, index) => (
-            <li key={item.url} className="flex items-center">
-              {index > 0 && <ChevronRight className="h-4 w-4 text-gray-400 mx-2" />}
-              {index === 0 && <Home className="h-4 w-4 text-gray-500 mr-2" />}
-              {index === breadcrumbItems.length - 1 ? (
-                <span className="text-gray-900 font-medium" aria-current="page">
-                  {item.name}
-                </span>
+    <>
+      <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
+      <nav className="flex items-center space-x-2 text-sm text-gray-600 mb-6">
+        <Link to="/" className="flex items-center hover:text-orange-600 transition-colors">
+          <Home className="h-4 w-4" />
+        </Link>
+        {pathnames.map((name, index) => {
+          const routeTo = `/${pathnames.slice(0, index + 1).join('/')}`;
+          const isLast = index === pathnames.length - 1;
+          const displayName = name
+            .split('-')
+            .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+            .join(' ');
+
+          return (
+            <div key={name} className="flex items-center space-x-2">
+              <ChevronRight className="h-4 w-4 text-gray-400" />
+              {isLast ? (
+                <span className="text-gray-800 font-medium">{displayName}</span>
               ) : (
                 <Link
-                  to={item.url}
-                  className="text-gray-600 hover:text-orange-600 transition-colors"
+                  to={routeTo}
+                  className="hover:text-orange-600 transition-colors"
                 >
-                  {item.name}
+                  {displayName}
                 </Link>
               )}
-            </li>
-          ))}
-        </ol>
-      </div>
-    </nav>
+            </div>
+          );
+        })}
+      </nav>
+    </>
   );
 };
 

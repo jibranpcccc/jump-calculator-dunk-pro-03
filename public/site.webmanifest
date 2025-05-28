@@ -1,0 +1,127 @@
+
+{
+  "name": "Dunk Calculator - Basketball Performance Tool",
+  "short_name": "Dunk Calculator",
+  "description": "Free online basketball dunk calculator and comprehensive vertical jump training resources. Test if you can dunk a basketball with accurate calculations and get personalized training recommendations.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ea580c",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "en-US",
+  "dir": "ltr",
+  "categories": ["sports", "fitness", "health", "education", "lifestyle"],
+  "screenshots": [
+    {
+      "src": "/calculator-screenshot-mobile.jpg",
+      "sizes": "390x844",
+      "type": "image/jpeg",
+      "platform": "narrow",
+      "label": "Dunk Calculator Mobile View"
+    },
+    {
+      "src": "/calculator-screenshot-desktop.jpg", 
+      "sizes": "1200x800",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Dunk Calculator Desktop View"
+    }
+  ],
+  "icons": [
+    {
+      "src": "/android-chrome-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/android-chrome-512x512.png",
+      "sizes": "512x512", 
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/apple-touch-icon.png",
+      "sizes": "180x180",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-32x32.png",
+      "sizes": "32x32",
+      "type": "image/png",
+      "purpose": "any"
+    },
+    {
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png",
+      "purpose": "any"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Dunk Calculator",
+      "short_name": "Calculator",
+      "description": "Test your dunking ability instantly",
+      "url": "/#calculator",
+      "icons": [
+        {
+          "src": "/calculator-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "Training Guides",
+      "short_name": "Training",
+      "description": "Improve your vertical jump",
+      "url": "/vertical-jump-training",
+      "icons": [
+        {
+          "src": "/training-icon.png",
+          "sizes": "96x96", 
+          "type": "image/png"
+        }
+      ]
+    },
+    {
+      "name": "All Calculators",
+      "short_name": "Tools",
+      "description": "Access all basketball calculators",
+      "url": "/calculators",
+      "icons": [
+        {
+          "src": "/tools-icon.png",
+          "sizes": "96x96",
+          "type": "image/png"
+        }
+      ]
+    }
+  ],
+  "share_target": {
+    "action": "/share",
+    "method": "GET",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  },
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  "prefer_related_applications": false,
+  "related_applications": [
+    {
+      "platform": "play",
+      "url": "https://play.google.com/store/apps/details?id=com.dunkcalculator.app",
+      "id": "com.dunkcalculator.app"
+    },
+    {
+      "platform": "itunes",
+      "url": "https://apps.apple.com/app/dunk-calculator/id123456789",
+      "id": "123456789"
+    }
+  ]
+}

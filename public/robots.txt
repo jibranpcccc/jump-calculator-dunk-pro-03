@@ -1,704 +1,113 @@
 
-# Enhanced Robots.txt for Dunk Calculator
-# Last updated: 2024-05-28
+# Robots.txt for Dunk Calculator
+# Website: https://dunkcalculator.com
+# Updated: 2024-05-28
 
-# Default crawling permissions
 User-agent: *
 Allow: /
 
-# Important pages for crawling priority
-Allow: /
+# Allow all search engines to crawl important pages
 Allow: /calculators
-Allow: /basketball-bmi-calculator
-Allow: /hangtime-calculator
-Allow: /reach-calculator
-Allow: /basketball-position-calculator
-Allow: /vertical-jump-test
 Allow: /vertical-jump-training
 Allow: /basketball-dunk-tips
 Allow: /blog
-Allow: /blog/*
 Allow: /faq
-Allow: /about
-Allow: /contact
 
-# Block admin, development, and sensitive areas
-Disallow: /admin/
-Disallow: /dev/
-Disallow: /test/
-Disallow: /staging/
-Disallow: /preview/
-Disallow: /.git/
-Disallow: /node_modules/
-Disallow: /src/
-Disallow: /dist/
-Disallow: /build/
-Disallow: /*.json$
-Disallow: /*.xml$ 
-Disallow: /api/
-Disallow: /private/
-Disallow: /internal/
-Disallow: /temp/
-Disallow: /tmp/
-Disallow: /backup/
-Disallow: /logs/
-Disallow: /cache/
-Disallow: /config/
-Disallow: /.env
-Disallow: /.htaccess
-Disallow: /wp-admin/
-Disallow: /wp-content/
-Disallow: /cgi-bin/
-Disallow: /search?
-Disallow: /*?utm_*
-Disallow: /*?ref=*
-Disallow: /*?source=*
-Disallow: /*?campaign=*
-Disallow: /print/
-Disallow: /mobile/
-Disallow: /amp/
-
-# Google-specific directives
+# Specific instructions for major search engines
 User-agent: Googlebot
 Allow: /
 Crawl-delay: 1
-Request-rate: 1/1s
-Visit-time: 0400-0800
 
-# Google Images
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Slurp
+Allow: /
+Crawl-delay: 2
+
+User-agent: DuckDuckBot
+Allow: /
+Crawl-delay: 1
+
+User-agent: Baiduspider
+Allow: /
+Crawl-delay: 2
+
+User-agent: YandexBot
+Allow: /
+Crawl-delay: 2
+
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+User-agent: PinterestBot
+Allow: /
+
+User-agent: WhatsApp
+Allow: /
+
+User-agent: TelegramBot
+Allow: /
+
+# Mobile-specific crawlers
+User-agent: Googlebot-Mobile
+Allow: /
+Crawl-delay: 1
+
 User-agent: Googlebot-Image
 Allow: /
-Allow: /images/
+Crawl-delay: 1
+
+User-agent: Googlebot-Video
+Allow: /
+Crawl-delay: 1
+
+User-agent: Googlebot-News
+Allow: /
+Crawl-delay: 1
+
+# Block problematic or resource-intensive bots
+User-agent: AhrefsBot
+Disallow: /
+
+User-agent: MJ12bot
+Disallow: /
+
+User-agent: SemrushBot
+Disallow: /
+
+User-agent: DotBot
+Disallow: /
+
+# Block access to admin and private areas (if any exist in future)
+Disallow: /admin/
+Disallow: /private/
+Disallow: /*.pdf$
+Disallow: /api/
+
+# Allow access to CSS, JS, and images for proper rendering
+Allow: /assets/
+Allow: /*.css
+Allow: /*.js
 Allow: /*.jpg
 Allow: /*.jpeg
 Allow: /*.png
 Allow: /*.gif
 Allow: /*.svg
 Allow: /*.webp
-
-# Google Video
-User-agent: Googlebot-Video
-Allow: /
-Allow: /videos/
-Allow: /*.mp4
-Allow: /*.webm
-Allow: /*.avi
-
-# Google News
-User-agent: Googlebot-News
-Allow: /blog/
-Allow: /news/
-Crawl-delay: 1
-
-# Bing specific directives
-User-agent: Bingbot
-Allow: /
-Crawl-delay: 1
-Request-rate: 1/1s
-
-# Yahoo specific directives
-User-agent: Slurp
-Allow: /
-Crawl-delay: 2
-Request-rate: 1/2s
-
-# DuckDuckGo specific directives
-User-agent: DuckDuckBot
-Allow: /
-Crawl-delay: 1
-Request-rate: 1/1s
-
-# Baidu specific directives
-User-agent: Baiduspider
-Allow: /
-Crawl-delay: 3
-Request-rate: 1/3s
-
-# Yandex specific directives
-User-agent: YandexBot
-Allow: /
-Crawl-delay: 2
-Request-rate: 1/2s
-
-# Social media crawlers
-User-agent: facebookexternalhit
-Allow: /
-Crawl-delay: 1
-
-User-agent: Twitterbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: LinkedInBot
-Allow: /
-Crawl-delay: 1
-
-User-agent: WhatsApp
-Allow: /
-Crawl-delay: 1
-
-User-agent: Slackbot
-Allow: /
-Crawl-delay: 1
-
-User-agent: Applebot
-Allow: /
-Crawl-delay: 1
-
-User-agent: TelegramBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: SkypeBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: DiscordBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: RedditBot
-Allow: /
-Crawl-delay: 2
-
-User-agent: PinterestBot
-Allow: /
-Crawl-delay: 2
-
-# SEO and Analytics crawlers
-User-agent: AhrefsBot
-Allow: /
-Crawl-delay: 5
-
-User-agent: MJ12bot
-Allow: /
-Crawl-delay: 5
-
-User-agent: SemrushBot
-Allow: /
-Crawl-delay: 5
-
-User-agent: DotBot
-Allow: /
-Crawl-delay: 5
-
-User-agent: MegaIndex
-Allow: /
-Crawl-delay: 5
-
-# Bad bots and scrapers to block
-User-agent: SemrushBot-SA
-Disallow: /
-
-User-agent: AhrefsSiteAudit
-Disallow: /
-
-User-agent: MJ12bot
-Disallow: /
-
-User-agent: DotBot
-Disallow: /
-
-User-agent: 008
-Disallow: /
-
-User-agent: 360Spider
-Disallow: /
-
-User-agent: Aboundex
-Disallow: /
-
-User-agent: Abonti
-Disallow: /
-
-User-agent: AcoonBot
-Disallow: /
-
-User-agent: AddThis
-Disallow: /
-
-User-agent: AiHitBot
-Disallow: /
-
-User-agent: Alexibot
-Disallow: /
-
-User-agent: Archive.org_bot
-Disallow: /
-
-User-agent: B2B Bot
-Disallow: /
-
-User-agent: BackDoorBot
-Disallow: /
-
-User-agent: BackStreet
-Disallow: /
-
-User-agent: BackWeb
-Disallow: /
-
-User-agent: Bandit
-Disallow: /
-
-User-agent: BatchFTP
-Disallow: /
-
-User-agent: BlackWidow
-Disallow: /
-
-User-agent: BlowFish
-Disallow: /
-
-User-agent: BotALot
-Disallow: /
-
-User-agent: Buddy
-Disallow: /
-
-User-agent: BuiltBotTough
-Disallow: /
-
-User-agent: Bullseye
-Disallow: /
-
-User-agent: BunnySlippers
-Disallow: /
-
-User-agent: Cegbfeieh
-Disallow: /
-
-User-agent: CheeseBot
-Disallow: /
-
-User-agent: CherryPicker
-Disallow: /
-
-User-agent: ChinaClaw
-Disallow: /
-
-User-agent: Collector
-Disallow: /
-
-User-agent: Copier
-Disallow: /
-
-User-agent: CopyRightCheck
-Disallow: /
-
-User-agent: cosmos
-Disallow: /
-
-User-agent: Crescent
-Disallow: /
-
-User-agent: Custo
-Disallow: /
-
-User-agent: DISCo
-Disallow: /
-
-User-agent: DittoSpyder
-Disallow: /
-
-User-agent: Download Demon
-Disallow: /
-
-User-agent: eCatch
-Disallow: /
-
-User-agent: EirGrabber
-Disallow: /
-
-User-agent: EmailCollector
-Disallow: /
-
-User-agent: EmailSiphon
-Disallow: /
-
-User-agent: EmailWolf
-Disallow: /
-
-User-agent: EroCrawler
-Disallow: /
-
-User-agent: Exabot
-Disallow: /
-
-User-agent: ExtractorPro
-Disallow: /
-
-User-agent: FairAd
-Disallow: /
-
-User-agent: Flaming AttackBot
-Disallow: /
-
-User-agent: Foobot
-Disallow: /
-
-User-agent: Gaisbot
-Disallow: /
-
-User-agent: GetRight
-Disallow: /
-
-User-agent: GetWeb!
-Disallow: /
-
-User-agent: Go!Zilla
-Disallow: /
-
-User-agent: Go-Ahead-Got-It
-Disallow: /
-
-User-agent: GrabNet
-Disallow: /
-
-User-agent: Grafula
-Disallow: /
-
-User-agent: HankBot
-Disallow: /
-
-User-agent: HMView
-Disallow: /
-
-User-agent: HTTrack
-Disallow: /
-
-User-agent: ia_archiver
-Disallow: /
-
-User-agent: Image Stripper
-Disallow: /
-
-User-agent: Image Sucker
-Disallow: /
-
-User-agent: Indy Library
-Disallow: /
-
-User-agent: InfoNaviRobot
-Disallow: /
-
-User-agent: InterGET
-Disallow: /
-
-User-agent: Internet Ninja
-Disallow: /
-
-User-agent: JetCar
-Disallow: /
-
-User-agent: JOC Web Spider
-Disallow: /
-
-User-agent: larbin
-Disallow: /
-
-User-agent: LeechFTP
-Disallow: /
-
-User-agent: LinkScan/8.1a Unix
-Disallow: /
-
-User-agent: LinkWalker
-Disallow: /
-
-User-agent: LNSpiderguy
-Disallow: /
-
-User-agent: lwp-trivial
-Disallow: /
-
-User-agent: Mass Downloader
-Disallow: /
-
-User-agent: Mata Hari
-Disallow: /
-
-User-agent: MaxPointCrawler
-Disallow: /
-
-User-agent: Microsoft URL Control
-Disallow: /
-
-User-agent: MIIxpc
-Disallow: /
-
-User-agent: Mister PiX
-Disallow: /
-
-User-agent: moget
-Disallow: /
-
-User-agent: Mozilla/3.Mozilla/2.01
-Disallow: /
-
-User-agent: Mozilla/4.0 (compatible; BullsEye; Windows 95)
-Disallow: /
-
-User-agent: MS FrontPage
-Disallow: /
-
-User-agent: MSFrontPage
-Disallow: /
-
-User-agent: Navroad
-Disallow: /
-
-User-agent: NearSite
-Disallow: /
-
-User-agent: NetAnts
-Disallow: /
-
-User-agent: NetSpider
-Disallow: /
-
-User-agent: Net Vampire
-Disallow: /
-
-User-agent: NetZIP
-Disallow: /
-
-User-agent: NextGenSearchBot
-Disallow: /
-
-User-agent: NG
-Disallow: /
-
-User-agent: NICErsPRO
-Disallow: /
-
-User-agent: NimbleCrawler
-Disallow: /
-
-User-agent: Ninja
-Disallow: /
-
-User-agent: NPBot
-Disallow: /
-
-User-agent: Octopus
-Disallow: /
-
-User-agent: Offline Explorer
-Disallow: /
-
-User-agent: Offline Navigator
-Disallow: /
-
-User-agent: Openfind
-Disallow: /
-
-User-agent: OutfoxBot
-Disallow: /
-
-User-agent: PageGrabber
-Disallow: /
-
-User-agent: Papa Foto
-Disallow: /
-
-User-agent: pavuk
-Disallow: /
-
-User-agent: pcBrowser
-Disallow: /
-
-User-agent: PeoplePal
-Disallow: /
-
-User-agent: planetwork
-Disallow: /
-
-User-agent: psbot
-Disallow: /
-
-User-agent: purebot
-Disallow: /
-
-User-agent: pycurl
-Disallow: /
-
-User-agent: QueryN Metasearch
-Disallow: /
-
-User-agent: Realdownload
-Disallow: /
-
-User-agent: ReGet
-Disallow: /
-
-User-agent: RepoMonkey
-Disallow: /
-
-User-agent: RMA
-Disallow: /
-
-User-agent: SiteSnagger
-Disallow: /
-
-User-agent: SpankBot
-Disallow: /
-
-User-agent: spanner
-Disallow: /
-
-User-agent: Sqworm
-Disallow: /
-
-User-agent: Stripper
-Disallow: /
-
-User-agent: Sucker
-Disallow: /
-
-User-agent: SuperHTTP
-Disallow: /
-
-User-agent: Surfbot
-Disallow: /
-
-User-agent: suzuran
-Disallow: /
-
-User-agent: Szukacz/1.4
-Disallow: /
-
-User-agent: tAkeOut
-Disallow: /
-
-User-agent: Teleport
-Disallow: /
-
-User-agent: Telesoft
-Disallow: /
-
-User-agent: TurnitinBot
-Disallow: /
-
-User-agent: The Intraformant
-Disallow: /
-
-User-agent: TheNomad
-Disallow: /
-
-User-agent: TightTwatBot
-Disallow: /
-
-User-agent: Titan
-Disallow: /
-
-User-agent: True_Robot
-Disallow: /
-
-User-agent: turingos
-Disallow: /
-
-User-agent: TurnitinBot
-Disallow: /
-
-User-agent: URLy Warning
-Disallow: /
-
-User-agent: VCI
-Disallow: /
-
-User-agent: VoidEYE
-Disallow: /
-
-User-agent: Web Image Collector
-Disallow: /
-
-User-agent: Web Sucker
-Disallow: /
-
-User-agent: WebAuto
-Disallow: /
-
-User-agent: WebBandit
-Disallow: /
-
-User-agent: WebCopier
-Disallow: /
-
-User-agent: WebEnhancer
-Disallow: /
-
-User-agent: WebmasterWorldForumBot
-Disallow: /
-
-User-agent: WebSauger
-Disallow: /
-
-User-agent: Website Quester
-Disallow: /
-
-User-agent: Webster Pro
-Disallow: /
-
-User-agent: WebStripper
-Disallow: /
-
-User-agent: WebZip
-Disallow: /
-
-User-agent: Wget
-Disallow: /
-
-User-agent: Widow
-Disallow: /
-
-User-agent: WWWOFFLE
-Disallow: /
-
-User-agent: xaldon_webspider
-Disallow: /
-
-User-agent: xbot
-Disallow: /
-
-User-agent: XML Sitemaps Generator
-Disallow: /
-
-User-agent: Xenu
-Disallow: /
-
-User-agent: Zeus
-Disallow: /
-
-# Enhanced Sitemap locations
+Allow: /*.ico
+Allow: /*.woff
+Allow: *.woff2
+
+# Sitemap location
 Sitemap: https://dunkcalculator.com/sitemap.xml
-Sitemap: https://dunkcalculator.com/sitemap-posts.xml
-Sitemap: https://dunkcalculator.com/sitemap-pages.xml
-Sitemap: https://dunkcalculator.com/sitemap-images.xml
-Sitemap: https://dunkcalculator.com/sitemap-videos.xml
-Sitemap: https://dunkcalculator.com/sitemap-news.xml
 
-# General crawl delay for being respectful to servers
-Crawl-delay: 1
-
-# Host specification
+# Host directive (for some search engines)
 Host: https://dunkcalculator.com
-
-# Additional directives for performance
-Request-rate: 1/1s
-Visit-time: 0400-0800
-
-# Cache directive for better performance
-Cache-delay: 86400
-
-# Clean-param to ignore tracking parameters
-Clean-param: utm_source&utm_medium&utm_campaign&utm_term&utm_content&ref&source&campaign&fbclid&gclid&msclkid
-
-# Noindex directives for specific patterns
-Noindex: /search
-Noindex: /*?*
-Noindex: /print/*
-Noindex: /amp/*
-Noindex: /mobile/*
-
-# End of robots.txt

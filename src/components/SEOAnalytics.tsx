@@ -79,7 +79,7 @@ const SEOAnalytics = () => {
           new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
           j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
           'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-          })(window,document,'script','dataLayer','GTM-XXXXXXX');
+          })(window,document,'script','dataLayer','GTM-PLACEHOLDER');
         `}
       </script>
       
@@ -101,7 +101,7 @@ const SEOAnalytics = () => {
             "price": "0",
             "priceCurrency": "USD"
           }
-        })}
+        }, null, 2)}
       </script>
       
       {/* Microsoft Clarity */}
@@ -109,9 +109,9 @@ const SEOAnalytics = () => {
         {`
           (function(c,l,a,r,i,t,y){
               c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
-              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
+              t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/CLARITY_PLACEHOLDER";
               y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);
-          })(window, document, "clarity", "script", "CLARITY_PROJECT_ID");
+          })(window, document, "clarity", "script", "i");
         `}
       </script>
       
@@ -120,7 +120,7 @@ const SEOAnalytics = () => {
         {`
           (function(h,o,t,j,a,r){
               h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
-              h._hjSettings={hjid:HOTJAR_ID,hjsv:6};
+              h._hjSettings={hjid:123456,hjsv:6};
               a=o.getElementsByTagName('head')[0];
               r=o.createElement('script');r.async=1;
               r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
@@ -140,7 +140,7 @@ const SEOAnalytics = () => {
           t.src=v;s=b.getElementsByTagName(e)[0];
           s.parentNode.insertBefore(t,s)}(window, document,'script',
           'https://connect.facebook.net/en_US/fbevents.js');
-          fbq('init', 'FACEBOOK_PIXEL_ID');
+          fbq('init', 'FB_PIXEL_PLACEHOLDER');
           fbq('track', 'PageView');
           fbq('track', 'ViewContent', {
             content_type: 'product',
@@ -180,7 +180,7 @@ const SEOAnalytics = () => {
               "url": "https://dunkcalculator.com/vertical-jump-training"
             }
           ]
-        })}
+        }, null, 2)}
       </script>
     </Helmet>
   );

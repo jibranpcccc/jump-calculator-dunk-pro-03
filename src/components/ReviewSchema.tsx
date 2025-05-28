@@ -1,56 +1,49 @@
 
 import StructuredData from "./StructuredData";
 
-interface Review {
-  author: string;
-  rating: number;
-  reviewBody: string;
-  datePublished: string;
-}
-
 interface ReviewSchemaProps {
   itemName: string;
-  reviews: Review[];
-  aggregateRating?: {
-    ratingValue: number;
-    reviewCount: number;
-    bestRating?: number;
-    worstRating?: number;
-  };
+  reviewBody: string;
+  reviewRating: string;
+  authorName: string;
+  datePublished?: string;
+  worstRating?: string;
+  bestRating?: string;
 }
 
-const ReviewSchema = ({ 
-  itemName, 
-  reviews, 
-  aggregateRating 
+const ReviewSchema = ({
+  itemName,
+  reviewBody,
+  reviewRating,
+  authorName,
+  datePublished,
+  worstRating = "1",
+  bestRating = "5"
 }: ReviewSchemaProps) => {
   const reviewData = {
-    name: itemName,
-    review: reviews.map(review => ({
-      "@type": "Review",
-      author: {
-        "@type": "Person",
-        name: review.author
-      },
-      reviewRating: {
-        "@type": "Rating",
-        ratingValue: review.rating,
-        bestRating: 5,
-        worstRating: 1
-      },
-      reviewBody: review.reviewBody,
-      datePublished: review.datePublished
-    })),
-    aggregateRating: aggregateRating ? {
-      "@type": "AggregateRating",
-      ratingValue: aggregateRating.ratingValue,
-      reviewCount: aggregateRating.reviewCount,
-      bestRating: aggregateRating.bestRating || 5,
-      worstRating: aggregateRating.worstRating || 1
-    } : undefined
+    itemReviewed: {
+      "@type": "Thing",
+      name: itemName
+    },
+    reviewBody,
+    reviewRating: {
+      "@type": "Rating",
+      ratingValue: reviewRating,
+      worstRating,
+      bestRating
+    },
+    author: {
+      "@type": "Person",
+      name: authorName
+    },
+    datePublished: datePublished || new Date().toISOString(),
+    publisher: {
+      "@type": "Organization",
+      name: "Dunk Calculator"
+    }
   };
 
-  return <StructuredData type="Product" data={reviewData} />;
+  return <StructuredData type="Review" data={reviewData} />;
 };
 
 export default ReviewSchema;

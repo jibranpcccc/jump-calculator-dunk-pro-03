@@ -2,55 +2,83 @@
 import StructuredData from "./StructuredData";
 
 interface BlogPostSchemaProps {
-  title: string;
+  headline: string;
   description: string;
-  url: string;
-  publishDate: string;
-  modifiedDate?: string;
   author?: string;
-  imageUrl?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  image?: string;
+  url?: string;
+  category?: string;
+  tags?: string[];
+  wordCount?: number;
+  readingTime?: string;
 }
 
-const BlogPostSchema = ({ 
-  title, 
-  description, 
-  url, 
-  publishDate, 
-  modifiedDate, 
+const BlogPostSchema = ({
+  headline,
+  description,
   author = "Dunk Calculator Team",
-  imageUrl = "https://dunkcalculator.com/blog-image.jpg"
+  publishedTime,
+  modifiedTime,
+  image = "https://dunkcalculator.com/og-image.jpg",
+  url,
+  category = "Basketball Training",
+  tags = [],
+  wordCount,
+  readingTime
 }: BlogPostSchemaProps) => {
-  const articleData = {
-    headline: title,
+  const blogPostData = {
+    headline,
     description,
-    url,
-    datePublished: publishDate,
-    dateModified: modifiedDate || publishDate,
+    image: [image],
     author: {
-      "@type": "Organization",
-      name: author
+      "@type": "Person",
+      name: author,
+      url: "https://dunkcalculator.com/"
     },
     publisher: {
       "@type": "Organization",
       name: "Dunk Calculator",
       logo: {
         "@type": "ImageObject",
-        url: "https://dunkcalculator.com/logo.png"
+        url: "https://dunkcalculator.com/logo.png",
+        width: 300,
+        height: 300
       }
     },
-    image: {
-      "@type": "ImageObject",
-      url: imageUrl,
-      width: 1200,
-      height: 630
-    },
+    datePublished: publishedTime || new Date().toISOString(),
+    dateModified: modifiedTime || new Date().toISOString(),
     mainEntityOfPage: {
       "@type": "WebPage",
-      "@id": url
-    }
+      "@id": url || "https://dunkcalculator.com/"
+    },
+    articleSection: category,
+    keywords: tags.join(", "),
+    ...(wordCount && { wordCount }),
+    ...(readingTime && { timeRequired: readingTime }),
+    inLanguage: "en",
+    isAccessibleForFree: true,
+    copyrightYear: new Date().getFullYear(),
+    copyrightHolder: {
+      "@type": "Organization",
+      name: "Dunk Calculator"
+    },
+    about: [
+      {
+        "@type": "Thing",
+        name: "Basketball Training",
+        sameAs: "https://en.wikipedia.org/wiki/Basketball"
+      },
+      {
+        "@type": "Thing",
+        name: "Athletic Performance",
+        sameAs: "https://en.wikipedia.org/wiki/Athletic_training"
+      }
+    ]
   };
 
-  return <StructuredData type="Article" data={articleData} />;
+  return <StructuredData type="BlogPosting" data={blogPostData} />;
 };
 
 export default BlogPostSchema;
