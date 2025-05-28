@@ -20,63 +20,34 @@ interface SEOManagerProps {
   noindex?: boolean;
   
   // Content type
-  pageType?: 'website' | 'article' | 'product' | 'faq' | 'howto';
+  pageType?: 'website' | 'article' | 'product' | 'service';
   
-  // Article specific
-  articleData?: {
-    headline: string;
-    author: string;
-    publishDate: string;
-    modifiedDate?: string;
-    category?: string;
-    keywords?: string[];
-  };
-  
-  // Product specific
-  productData?: {
-    name: string;
-    brand?: string;
-    category?: string;
-    price?: string;
-    availability?: string;
-  };
-  
-  // FAQ specific
+  // Structured data
   faqData?: Array<{
     question: string;
     answer: string;
   }>;
   
-  // How-to specific
-  howToData?: {
+  productData?: {
     name: string;
-    steps: Array<{
-      name: string;
-      text: string;
-      url?: string;
-    }>;
-    totalTime?: string;
-    estimatedCost?: string;
+    brand: string;
+    category: string;
+    price: string;
+    availability: string;
   };
   
-  // Video specific
-  videoData?: {
-    name: string;
-    description: string;
-    thumbnailUrl: string;
-    uploadDate: string;
-    duration: string;
-    embedUrl?: string;
-  };
-  
-  // Features
+  // Features to enable
   enableAnalytics?: boolean;
   enableBreadcrumbs?: boolean;
   enablePerformance?: boolean;
   enableSocialMeta?: boolean;
   enableTechnicalSEO?: boolean;
   
-  children?: ReactNode;
+  // Breadcrumb data
+  breadcrumbs?: Array<{
+    name: string;
+    url: string;
+  }>;
 }
 
 const SEOManager = ({
@@ -87,131 +58,17 @@ const SEOManager = ({
   ogImage,
   noindex = false,
   pageType = 'website',
-  articleData,
-  productData,
   faqData,
-  howToData,
-  videoData,
-  enableAnalytics = true,
-  enableBreadcrumbs = true,
-  enablePerformance = true,
-  enableSocialMeta = true,
-  enableTechnicalSEO = true,
-  children
+  productData,
+  enableAnalytics = false,
+  enableBreadcrumbs = false,
+  enablePerformance = false,
+  enableSocialMeta = false,
+  enableTechnicalSEO = false,
+  breadcrumbs
 }: SEOManagerProps) => {
-  
-  // Generate structured data based on page type
-  const getStructuredData = () => {
-    const baseData = {
-      "@context": "https://schema.org",
-      "@type": "WebPage",
-      name: title,
-      description,
-      url: canonicalUrl,
-      isPartOf: {
-        "@type": "WebSite",
-        name: "Dunk Calculator",
-        url: "https://dunkcalculator.com"
-      }
-    };
-
-    switch (pageType) {
-      case 'article':
-        if (articleData) {
-          return {
-            ...baseData,
-            "@type": "Article",
-            headline: articleData.headline,
-            author: {
-              "@type": "Person", 
-              name: articleData.author
-            },
-            datePublished: articleData.publishDate,
-            dateModified: articleData.modifiedDate || articleData.publishDate,
-            publisher: {
-              "@type": "Organization",
-              name: "Dunk Calculator",
-              logo: {
-                "@type": "ImageObject",
-                url: "https://dunkcalculator.com/logo.png"
-              }
-            },
-            image: ogImage,
-            articleSection: articleData.category,
-            keywords: articleData.keywords?.join(", ")
-          };
-        }
-        break;
-        
-      case 'product':
-        if (productData) {
-          return {
-            ...baseData,
-            mainEntity: {
-              "@type": "SoftwareApplication",
-              name: productData.name,
-              applicationCategory: "SportsApplication",
-              operatingSystem: "All",
-              offers: {
-                "@type": "Offer",
-                price: productData.price || "0",
-                priceCurrency: "USD",
-                availability: "https://schema.org/InStock"
-              }
-            }
-          };
-        }
-        break;
-        
-      case 'faq':
-        if (faqData) {
-          return {
-            ...baseData,
-            "@type": "FAQPage",
-            mainEntity: faqData.map(faq => ({
-              "@type": "Question",
-              name: faq.question,
-              acceptedAnswer: {
-                "@type": "Answer",
-                text: faq.answer
-              }
-            }))
-          };
-        }
-        break;
-        
-      case 'howto':
-        if (howToData) {
-          return {
-            ...baseData,
-            mainEntity: {
-              "@type": "HowTo",
-              name: howToData.name,
-              totalTime: howToData.totalTime,
-              estimatedCost: howToData.estimatedCost ? {
-                "@type": "MonetaryAmount",
-                currency: "USD",
-                value: howToData.estimatedCost
-              } : undefined,
-              step: howToData.steps.map((step, index) => ({
-                "@type": "HowToStep",
-                position: index + 1,
-                name: step.name,
-                text: step.text,
-                url: step.url
-              }))
-            }
-          };
-        }
-        break;
-    }
-    
-    return baseData;
-  };
-
   return (
     <>
-      {/* Core SEO */}
       <SEOHead
         title={title}
         description={description}
@@ -219,66 +76,66 @@ const SEOManager = ({
         canonicalUrl={canonicalUrl}
         ogImage={ogImage}
         noindex={noindex}
-        schemaData={getStructuredData()}
       />
       
-      {/* Social Media Meta */}
       {enableSocialMeta && (
         <SocialMediaMeta
           title={title}
           description={description}
           image={ogImage}
           url={canonicalUrl}
-          type={pageType === 'article' ? 'article' : 'website'}
         />
       )}
       
-      {/* Technical SEO */}
-      {enableTechnicalSEO && <TechnicalSEO />}
-      
-      {/* Performance */}
       {enablePerformance && <Performance />}
-      
-      {/* Organization Schema */}
-      <OrganizationSchema />
-      
-      {/* Website Schema */}
-      <WebSiteSchema />
-      
-      {/* Analytics */}
+      {enableTechnicalSEO && <TechnicalSEO />}
       {enableAnalytics && <SEOAnalytics />}
       
-      {/* Video Schema */}
-      {videoData && (
-        <StructuredData 
-          type="WebPage" 
+      <OrganizationSchema />
+      <WebSiteSchema />
+      
+      {faqData && (
+        <StructuredData
+          type="FAQPage"
           data={{
-            mainEntity: {
-              "@type": "VideoObject",
-              name: videoData.name,
-              description: videoData.description,
-              thumbnailUrl: videoData.thumbnailUrl,
-              uploadDate: videoData.uploadDate,
-              duration: videoData.duration,
-              embedUrl: videoData.embedUrl,
-              publisher: {
-                "@type": "Organization",
-                name: "Dunk Calculator",
-                logo: {
-                  "@type": "ImageObject",
-                  url: "https://dunkcalculator.com/logo.png"
-                }
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            "mainEntity": faqData.map(faq => ({
+              "@type": "Question",
+              "name": faq.question,
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": faq.answer
               }
-            }
-          }} 
+            }))
+          }}
         />
       )}
       
-      {/* Breadcrumbs */}
-      {enableBreadcrumbs && <BreadcrumbNavigation />}
+      {productData && (
+        <StructuredData
+          type="Product"
+          data={{
+            "@context": "https://schema.org",
+            "@type": "Product",
+            "name": productData.name,
+            "brand": {
+              "@type": "Brand",
+              "name": productData.brand
+            },
+            "category": productData.category,
+            "offers": {
+              "@type": "Offer",
+              "price": productData.price,
+              "availability": `https://schema.org/${productData.availability}`
+            }
+          }}
+        />
+      )}
       
-      {/* Page Content */}
-      {children}
+      {enableBreadcrumbs && breadcrumbs && (
+        <BreadcrumbNavigation breadcrumbs={breadcrumbs} />
+      )}
     </>
   );
 };
