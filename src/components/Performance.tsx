@@ -4,61 +4,74 @@ import { Helmet } from "react-helmet";
 const Performance = () => {
   return (
     <Helmet>
-      {/* DNS Prefetch for faster resource loading */}
+      {/* Critical Resource Hints */}
       <link rel="dns-prefetch" href="//fonts.googleapis.com" />
-      <link rel="dns-prefetch" href="//www.google-analytics.com" />
+      <link rel="dns-prefetch" href="//fonts.gstatic.com" />
+      <link rel="dns-prefetch" href="//images.unsplash.com" />
       <link rel="dns-prefetch" href="//www.googletagmanager.com" />
+      <link rel="dns-prefetch" href="//www.google-analytics.com" />
       <link rel="dns-prefetch" href="//connect.facebook.net" />
-      <link rel="dns-prefetch" href="//static.hotjar.com" />
-      <link rel="dns-prefetch" href="//www.clarity.ms" />
       
-      {/* Preconnect to external domains */}
+      {/* Preconnect for critical third-party origins */}
       <link rel="preconnect" href="https://fonts.googleapis.com" />
       <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
-      <link rel="preconnect" href="https://www.google-analytics.com" />
       <link rel="preconnect" href="https://www.googletagmanager.com" />
       
-      {/* Resource Hints for better performance */}
-      <link rel="preload" href="/fonts/main-font.woff2" as="font" type="font/woff2" crossOrigin="anonymous" />
-      <link rel="preload" href="/css/critical.css" as="style" />
-      <link rel="preload" href="/js/main.js" as="script" />
+      {/* Preload critical assets */}
+      <link
+        rel="preload"
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+        as="style"
+        onLoad={(e) => {
+          const target = e.target as HTMLLinkElement;
+          target.onload = null;
+          target.rel = 'stylesheet';
+        }}
+      />
       
-      {/* Critical CSS inlined */}
-      <style type="text/css">
+      {/* Critical CSS for above-the-fold content */}
+      <style>
         {`
-          /* Critical CSS for above-the-fold content */
-          body { 
-            font-family: system-ui, -apple-system, sans-serif; 
-            margin: 0; 
-            padding: 0; 
+          /* Critical CSS for initial paint */
+          body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            margin: 0;
+            padding: 0;
             line-height: 1.6;
           }
-          .hero-section { 
-            min-height: 100vh; 
-            display: flex; 
-            align-items: center; 
-            justify-content: center;
+          
+          .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
           }
-          .calculator-section {
-            background: #f8fafc;
-            padding: 2rem;
-            border-radius: 8px;
-            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+          
+          /* Prevent layout shift */
+          img {
+            max-width: 100%;
+            height: auto;
           }
+          
           /* Loading states */
-          .skeleton {
-            background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
-            background-size: 200% 100%;
-            animation: loading 1.5s infinite;
+          .loading-skeleton {
+            background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+            background-size: 400% 100%;
+            animation: loading 1.4s ease infinite;
           }
+          
           @keyframes loading {
-            0% { background-position: 200% 0; }
-            100% { background-position: -200% 0; }
+            0% { background-position: 100% 50%; }
+            100% { background-position: -100% 50%; }
           }
-          /* Focus styles for accessibility */
-          .focus\\:ring:focus {
-            outline: 2px solid #ea580c;
-            outline-offset: 2px;
+          
+          /* Optimize for Core Web Vitals */
+          .hero-section {
+            contain: layout style paint;
+          }
+          
+          /* Reduce CLS with proper spacing */
+          .calculator-section {
+            min-height: 400px;
           }
         `}
       </style>
@@ -66,153 +79,171 @@ const Performance = () => {
       {/* Performance monitoring script */}
       <script>
         {`
-          // Critical performance monitoring
-          if ('performance' in window && 'PerformanceObserver' in window) {
-            // Monitor Core Web Vitals
-            const observer = new PerformanceObserver((list) => {
-              for (const entry of list.getEntries()) {
-                if (entry.entryType === 'largest-contentful-paint') {
-                  console.log('LCP:', entry.startTime);
-                  // Send to analytics if needed
-                  if (window.gtag) {
-                    gtag('event', 'core_web_vital', {
-                      event_category: 'performance',
-                      event_label: 'LCP',
-                      value: Math.round(entry.startTime)
-                    });
-                  }
-                }
-                if (entry.entryType === 'first-input') {
-                  console.log('FID:', entry.processingStart - entry.startTime);
-                  if (window.gtag) {
-                    gtag('event', 'core_web_vital', {
-                      event_category: 'performance',
-                      event_label: 'FID',
-                      value: Math.round(entry.processingStart - entry.startTime)
-                    });
-                  }
-                }
-                if (entry.entryType === 'layout-shift') {
-                  if (!entry.hadRecentInput) {
-                    console.log('CLS:', entry.value);
-                    if (window.gtag) {
-                      gtag('event', 'core_web_vital', {
-                        event_category: 'performance',
-                        event_label: 'CLS',
-                        value: Math.round(entry.value * 1000)
-                      });
-                    }
-                  }
-                }
-              }
-            });
-            
-            try {
-              observer.observe({ entryTypes: ['largest-contentful-paint', 'first-input', 'layout-shift'] });
-            } catch (error) {
-              console.log('Performance observer not supported');
-            }
-          }
-          
-          // Page load timing
-          window.addEventListener('load', function() {
-            setTimeout(function() {
-              const perfData = performance.getEntriesByType('navigation')[0];
-              if (perfData) {
-                console.log('Page Load Time:', perfData.loadEventEnd - perfData.fetchStart);
-                if (window.gtag) {
-                  gtag('event', 'timing_complete', {
-                    name: 'page_load',
-                    value: Math.round(perfData.loadEventEnd - perfData.fetchStart)
+          // Enhanced Core Web Vitals monitoring
+          (function() {
+            if ('performance' in window && 'PerformanceObserver' in window) {
+              // Monitor LCP (Largest Contentful Paint)
+              const lcpObserver = new PerformanceObserver((list) => {
+                const entries = list.getEntries();
+                const lastEntry = entries[entries.length - 1];
+                console.log('LCP:', lastEntry.startTime);
+                
+                // Send to analytics if available
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'web_vitals', {
+                    event_category: 'performance',
+                    event_label: 'LCP',
+                    value: Math.round(lastEntry.startTime),
+                    custom_parameter_lcp: lastEntry.startTime
                   });
                 }
+              });
+              
+              try {
+                lcpObserver.observe({ type: 'largest-contentful-paint', buffered: true });
+              } catch (e) {
+                console.log('LCP observation not supported');
               }
-            }, 0);
-          });
+              
+              // Monitor FID (First Input Delay)
+              const fidObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                  const fid = entry.processingStart - entry.startTime;
+                  console.log('FID:', fid);
+                  
+                  if (typeof gtag !== 'undefined') {
+                    gtag('event', 'web_vitals', {
+                      event_category: 'performance',
+                      event_label: 'FID',
+                      value: Math.round(fid),
+                      custom_parameter_fid: fid
+                    });
+                  }
+                }
+              });
+              
+              try {
+                fidObserver.observe({ type: 'first-input', buffered: true });
+              } catch (e) {
+                console.log('FID observation not supported');
+              }
+              
+              // Monitor CLS (Cumulative Layout Shift)
+              let clsValue = 0;
+              const clsObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                  if (!entry.hadRecentInput) {
+                    clsValue += entry.value;
+                    console.log('CLS delta:', entry.value, 'Total CLS:', clsValue);
+                  }
+                }
+                
+                if (typeof gtag !== 'undefined' && clsValue > 0) {
+                  gtag('event', 'web_vitals', {
+                    event_category: 'performance',
+                    event_label: 'CLS',
+                    value: Math.round(clsValue * 1000),
+                    custom_parameter_cls: clsValue
+                  });
+                }
+              });
+              
+              try {
+                clsObserver.observe({ type: 'layout-shift', buffered: true });
+              } catch (e) {
+                console.log('CLS observation not supported');
+              }
+              
+              // Monitor FCP (First Contentful Paint)
+              const fcpObserver = new PerformanceObserver((list) => {
+                for (const entry of list.getEntries()) {
+                  console.log('FCP:', entry.startTime);
+                  
+                  if (typeof gtag !== 'undefined') {
+                    gtag('event', 'web_vitals', {
+                      event_category: 'performance',
+                      event_label: 'FCP',
+                      value: Math.round(entry.startTime),
+                      custom_parameter_fcp: entry.startTime
+                    });
+                  }
+                }
+              });
+              
+              try {
+                fcpObserver.observe({ type: 'paint', buffered: true });
+              } catch (e) {
+                console.log('FCP observation not supported');
+              }
+              
+              // Monitor TTFB (Time to First Byte)
+              window.addEventListener('load', () => {
+                const navigationTiming = performance.getEntriesByType('navigation')[0];
+                if (navigationTiming) {
+                  const ttfb = navigationTiming.responseStart - navigationTiming.requestStart;
+                  console.log('TTFB:', ttfb);
+                  
+                  if (typeof gtag !== 'undefined') {
+                    gtag('event', 'web_vitals', {
+                      event_category: 'performance',
+                      event_label: 'TTFB',
+                      value: Math.round(ttfb),
+                      custom_parameter_ttfb: ttfb
+                    });
+                  }
+                }
+              });
+              
+              // Page Load Complete timing
+              window.addEventListener('load', () => {
+                const loadTime = performance.timing.loadEventEnd - performance.timing.navigationStart;
+                console.log('Page Load Time:', loadTime);
+                
+                if (typeof gtag !== 'undefined') {
+                  gtag('event', 'page_load_time', {
+                    event_category: 'performance',
+                    value: Math.round(loadTime),
+                    custom_parameter_load_time: loadTime
+                  });
+                }
+              });
+            }
+          })();
           
-          // Image loading optimization
-          if ('loading' in HTMLImageElement.prototype) {
-            // Native lazy loading supported
-            document.querySelectorAll('img[data-src]').forEach(img => {
-              img.src = img.dataset.src;
-              img.removeAttribute('data-src');
-            });
-          } else {
-            // Fallback for browsers without native lazy loading
+          // Optimize images with lazy loading
+          if ('IntersectionObserver' in window) {
             const imageObserver = new IntersectionObserver((entries, observer) => {
               entries.forEach(entry => {
                 if (entry.isIntersecting) {
                   const img = entry.target;
-                  img.src = img.dataset.src;
-                  img.removeAttribute('data-src');
-                  observer.unobserve(img);
+                  if (img.dataset.src) {
+                    img.src = img.dataset.src;
+                    img.classList.remove('loading-skeleton');
+                    observer.unobserve(img);
+                  }
                 }
               });
             });
             
-            document.querySelectorAll('img[data-src]').forEach(img => {
-              imageObserver.observe(img);
+            document.addEventListener('DOMContentLoaded', () => {
+              const lazyImages = document.querySelectorAll('img[data-src]');
+              lazyImages.forEach(img => imageObserver.observe(img));
             });
           }
           
           // Service Worker registration for caching
           if ('serviceWorker' in navigator) {
-            window.addEventListener('load', function() {
+            window.addEventListener('load', () => {
               navigator.serviceWorker.register('/sw.js')
-                .then(function(registration) {
+                .then(registration => {
                   console.log('SW registered: ', registration);
                 })
-                .catch(function(registrationError) {
+                .catch(registrationError => {
                   console.log('SW registration failed: ', registrationError);
                 });
             });
           }
-          
-          // Preload critical resources
-          const preloadCriticalResources = () => {
-            const criticalImages = [
-              '/og-image.jpg',
-              '/calculator-screenshot.jpg',
-              '/logo.png'
-            ];
-            
-            criticalImages.forEach(src => {
-              const link = document.createElement('link');
-              link.rel = 'preload';
-              link.as = 'image';
-              link.href = src;
-              document.head.appendChild(link);
-            });
-          };
-          
-          // Execute after DOM is ready
-          if (document.readyState === 'loading') {
-            document.addEventListener('DOMContentLoaded', preloadCriticalResources);
-          } else {
-            preloadCriticalResources();
-          }
         `}
-      </script>
-      
-      {/* Structured Data for performance metrics */}
-      <script type="application/ld+json">
-        {JSON.stringify({
-          "@context": "https://schema.org",
-          "@type": "WebPageElement",
-          "name": "Performance Optimizations",
-          "description": "Advanced performance optimizations for basketball dunk calculator",
-          "isPartOf": {
-            "@type": "WebPage",
-            "url": "https://dunkcalculator.com"
-          },
-          "potentialAction": {
-            "@type": "MonitorAction",
-            "object": {
-              "@type": "WebSite",
-              "name": "Dunk Calculator Performance"
-            }
-          }
-        }, null, 2)}
       </script>
     </Helmet>
   );

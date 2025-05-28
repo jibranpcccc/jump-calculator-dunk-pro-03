@@ -1,363 +1,313 @@
 
-import React, { useState, useEffect } from 'react';
-import { Calculator, Target, TrendingUp, AlertCircle, CheckCircle } from 'lucide-react';
-import { Card, CardContent, CardHeader, CardTitle } from './ui/card';
-import { Button } from './ui/button';
-import { Input } from './ui/input';
-import { Label } from './ui/label';
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from './ui/select';
-import { Alert, AlertDescription } from './ui/alert';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Button } from "@/components/ui/button";
+import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
+import { Badge } from "@/components/ui/badge";
+import { Calculator, Target, TrendingUp, Info, AlertCircle, CheckCircle } from 'lucide-react';
 
 const DunkCalculator = () => {
   const [height, setHeight] = useState('');
   const [reach, setReach] = useState('');
-  const [verticalJump, setVerticalJump] = useState('');
-  const [palmSize, setPalmSize] = useState('medium');
-  const [jumpStyle, setJumpStyle] = useState('two-foot');
-  const [dunkGoal, setDunkGoal] = useState('basic');
-  const [result, setResult] = useState<any>(null);
+  const [vertical, setVertical] = useState('');
+  const [result, setResult] = useState<{
+    canDunk: boolean;
+    reachHeight: number;
+    deficit: number;
+    confidence: string;
+    recommendations: string[];
+  } | null>(null);
   const [showAdvanced, setShowAdvanced] = useState(false);
+  const [palmSize, setPalmSize] = useState('medium');
+  const [jumpType, setJumpType] = useState('two-foot');
+  const [dunkGoal, setDunkGoal] = useState('basic');
 
-  const calculateDunkPotential = () => {
-    const heightInches = parseFloat(height);
+  const calculateDunk = () => {
+    const heightInches = parseFloat(height) * 12;
     const reachInches = parseFloat(reach);
-    const verticalInches = parseFloat(verticalJump);
+    const verticalInches = parseFloat(vertical);
+    
+    if (!heightInches || !reachInches || !verticalInches) return;
 
-    if (!heightInches || !reachInches || !verticalInches) {
-      return;
+    // NBA rim height is 120 inches (10 feet)
+    const rimHeight = 120;
+    
+    // Calculate standing reach if not provided (estimate)
+    const standingReach = reachInches || (heightInches * 1.3);
+    
+    // Calculate maximum jump reach
+    const maxReach = standingReach + verticalInches;
+    
+    // Determine required clearance based on advanced settings
+    let requiredClearance = 6; // base clearance for basic dunk
+    
+    if (palmSize === 'small') requiredClearance += 2;
+    if (palmSize === 'large') requiredClearance -= 1;
+    
+    if (jumpType === 'one-foot') requiredClearance += 1;
+    
+    if (dunkGoal === 'power') requiredClearance += 3;
+    if (dunkGoal === 'windmill') requiredClearance += 4;
+    
+    const targetHeight = rimHeight + requiredClearance;
+    const deficit = targetHeight - maxReach;
+    const canDunk = maxReach >= targetHeight;
+    
+    // Determine confidence level
+    let confidence = 'Low';
+    if (maxReach >= targetHeight + 3) confidence = 'Very High';
+    else if (maxReach >= targetHeight) confidence = 'High';
+    else if (deficit <= 3) confidence = 'Moderate';
+    else if (deficit <= 6) confidence = 'Low';
+    else confidence = 'Very Low';
+    
+    // Generate recommendations
+    const recommendations = [];
+    if (!canDunk) {
+      if (deficit <= 2) {
+        recommendations.push('You\'re very close! Focus on plyometric training and proper jumping technique.');
+      } else if (deficit <= 4) {
+        recommendations.push('Implement a structured vertical jump training program focusing on strength and explosiveness.');
+      } else if (deficit <= 8) {
+        recommendations.push('Start with foundational strength training and gradually add plyometric exercises.');
+      } else {
+        recommendations.push('Begin with general fitness, flexibility, and basic jump training. Consider focusing on basketball skills first.');
+      }
+      
+      if (palmSize === 'small') {
+        recommendations.push('Work on grip strength exercises and consider using basketballs with better grip.');
+      }
+      
+      if (jumpType === 'two-foot' && deficit > 2) {
+        recommendations.push('Try experimenting with one-foot takeoffs, which may be more natural for your body type.');
+      }
+    } else {
+      recommendations.push('Congratulations! You have the physical ability to dunk. Practice approach and technique.');
+      if (confidence === 'High' || confidence === 'Very High') {
+        recommendations.push('You have plenty of clearance. Consider working on different dunk variations.');
+      }
     }
 
-    // Standard NBA rim height
-    const rimHeight = 120; // 10 feet in inches
-    
-    // Calculate effective reach
-    const effectiveReach = reachInches + verticalInches;
-    
-    // Adjust for dunk requirements based on goals and abilities
-    let dunkBuffer = 6; // Basic buffer for ball clearance
-    
-    if (dunkGoal === 'powerful') dunkBuffer += 2;
-    if (dunkGoal === 'showtime') dunkBuffer += 4;
-    if (palmSize === 'small') dunkBuffer += 2;
-    if (palmSize === 'large') dunkBuffer -= 1;
-    if (jumpStyle === 'one-foot') dunkBuffer -= 1;
-
-    const requiredHeight = rimHeight + dunkBuffer;
-    const heightDeficit = requiredHeight - effectiveReach;
-    const canDunk = effectiveReach >= requiredHeight;
-
-    // Calculate recommended improvements
-    const verticalNeeded = Math.max(0, heightDeficit);
-    const reachToHeightRatio = (reachInches / heightInches) * 100;
-    const isGoodRatio = reachToHeightRatio >= 133; // Good reach-to-height ratio
+    // Track calculator usage for analytics
+    if (typeof window !== 'undefined' && (window as any).trackCalculatorUse) {
+      (window as any).trackCalculatorUse('dunk_calculator', height, reach, vertical);
+      (window as any).trackDunkSuccess(canDunk, deficit);
+    }
 
     setResult({
       canDunk,
-      effectiveReach,
-      requiredHeight,
-      heightDeficit: Math.abs(heightDeficit),
-      verticalNeeded,
-      reachToHeightRatio,
-      isGoodRatio,
-      palmSize,
-      jumpStyle,
-      dunkGoal
+      reachHeight: maxReach,
+      deficit: Math.abs(deficit),
+      confidence,
+      recommendations
     });
-
-    // Track calculator usage for SEO analytics
-    if (typeof window !== 'undefined' && (window as any).trackCalculatorUse) {
-      (window as any).trackCalculatorUse('dunk_calculator', heightInches, reachInches, verticalInches);
-    }
-
-    if (typeof window !== 'undefined' && (window as any).trackDunkSuccess) {
-      (window as any).trackDunkSuccess(canDunk, heightDeficit);
-    }
   };
 
-  const getRecommendations = () => {
-    if (!result) return [];
-
-    const recommendations = [];
-    
-    if (result.verticalNeeded > 0) {
-      recommendations.push({
-        type: 'training',
-        title: 'Improve Your Vertical Jump',
-        description: `You need ${result.verticalNeeded.toFixed(1)} more inches of vertical jump to dunk confidently.`,
-        link: '/vertical-jump-training',
-        linkText: 'Start Training Program'
-      });
-    }
-
-    if (!result.isGoodRatio) {
-      recommendations.push({
-        type: 'measurement',
-        title: 'Verify Your Standing Reach',
-        description: 'Your reach-to-height ratio seems low. Double-check your standing reach measurement.',
-        link: '/measurements/standing-reach',
-        linkText: 'Learn Proper Measurement'
-      });
-    }
-
-    if (result.palmSize === 'small') {
-      recommendations.push({
-        type: 'technique',
-        title: 'Focus on Two-Handed Dunks',
-        description: 'With smaller hands, master two-handed dunking techniques first.',
-        link: '/dunking-skills/first-dunk-guide',
-        linkText: 'Learn Dunking Techniques'
-      });
-    }
-
-    return recommendations;
+  const resetCalculator = () => {
+    setHeight('');
+    setReach('');
+    setVertical('');
+    setResult(null);
+    setShowAdvanced(false);
+    setPalmSize('medium');
+    setJumpType('two-foot');
+    setDunkGoal('basic');
   };
 
   return (
-    <div className="max-w-4xl mx-auto">
+    <div className="max-w-4xl mx-auto" id="calculator">
       <Card className="mb-8">
         <CardHeader className="text-center">
-          <CardTitle className="flex items-center justify-center gap-3 text-3xl">
-            <Calculator className="w-8 h-8 text-orange-600" />
+          <CardTitle className="flex items-center justify-center text-2xl">
+            <Calculator className="w-6 h-6 mr-2 text-orange-600" />
             Basketball Dunk Calculator
           </CardTitle>
-          <p className="text-gray-600 mt-2">
-            Discover your dunking potential with our scientifically accurate calculator. 
-            Get instant results and personalized training recommendations!
-          </p>
+          <CardDescription className="text-lg">
+            Enter your measurements to discover if you can dunk a basketball
+          </CardDescription>
         </CardHeader>
+        
         <CardContent className="space-y-6">
-          {/* Basic Measurements */}
           <div className="grid md:grid-cols-3 gap-4">
-            <div>
-              <Label htmlFor="height">Height (inches) *</Label>
+            <div className="space-y-2">
+              <Label htmlFor="height" className="text-sm font-medium">
+                Height (feet)
+              </Label>
               <Input
                 id="height"
                 type="number"
-                placeholder="e.g., 72"
+                step="0.1"
+                min="4"
+                max="8"
                 value={height}
                 onChange={(e) => setHeight(e.target.value)}
-                className="mt-1"
+                placeholder="6.0"
+                className="text-center"
               />
-              <p className="text-sm text-gray-500 mt-1">
-                <Link to="/measurements/standing-reach" className="text-orange-600 hover:underline">
-                  Need help measuring?
-                </Link>
-              </p>
+              <p className="text-xs text-gray-500">Your height in feet (e.g., 6.2 for 6'2")</p>
             </div>
-
-            <div>
-              <Label htmlFor="reach">Standing Reach (inches) *</Label>
+            
+            <div className="space-y-2">
+              <Label htmlFor="reach" className="text-sm font-medium">
+                Standing Reach (inches)
+              </Label>
               <Input
                 id="reach"
                 type="number"
-                placeholder="e.g., 96"
+                step="0.5"
+                min="60"
+                max="120"
                 value={reach}
                 onChange={(e) => setReach(e.target.value)}
-                className="mt-1"
+                placeholder="96"
+                className="text-center"
               />
-              <p className="text-sm text-gray-500 mt-1">
-                <Link to="/measurements/standing-reach" className="text-orange-600 hover:underline">
-                  How to measure reach
-                </Link>
-              </p>
+              <p className="text-xs text-gray-500">How high you can reach standing flat-footed</p>
             </div>
-
-            <div>
-              <Label htmlFor="vertical">Vertical Jump (inches) *</Label>
+            
+            <div className="space-y-2">
+              <Label htmlFor="vertical" className="text-sm font-medium">
+                Vertical Jump (inches)
+              </Label>
               <Input
                 id="vertical"
                 type="number"
-                placeholder="e.g., 24"
-                value={verticalJump}
-                onChange={(e) => setVerticalJump(e.target.value)}
-                className="mt-1"
+                step="0.5"
+                min="0"
+                max="60"
+                value={vertical}
+                onChange={(e) => setVertical(e.target.value)}
+                placeholder="24"
+                className="text-center"
               />
-              <p className="text-sm text-gray-500 mt-1">
-                <Link to="/measurements/vertical-jump" className="text-orange-600 hover:underline">
-                  How to test vertical jump
-                </Link>
-              </p>
+              <p className="text-xs text-gray-500">Your maximum vertical jump height</p>
             </div>
           </div>
 
-          {/* Advanced Options Toggle */}
-          <div className="text-center">
-            <Button 
-              variant="outline" 
+          <div className="flex items-center gap-2">
+            <Button
+              variant="outline"
               onClick={() => setShowAdvanced(!showAdvanced)}
-              className="text-orange-600 border-orange-600 hover:bg-orange-50"
+              className="text-sm"
             >
+              <Info className="w-4 h-4 mr-2" />
               {showAdvanced ? 'Hide' : 'Show'} Advanced Options
             </Button>
           </div>
 
-          {/* Advanced Options */}
           {showAdvanced && (
-            <div className="grid md:grid-cols-3 gap-4 p-4 bg-orange-50 rounded-lg">
-              <div>
-                <Label htmlFor="palmSize">Hand Size</Label>
-                <Select value={palmSize} onValueChange={setPalmSize}>
-                  <SelectTrigger className="mt-1">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="small">Small (can't palm ball)</SelectItem>
-                    <SelectItem value="medium">Medium (barely palm)</SelectItem>
-                    <SelectItem value="large">Large (easy palm)</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="jumpStyle">Preferred Jump Style</Label>
-                <Select value={jumpStyle} onValueChange={setJumpStyle}>
-                  <SelectTrigger className="mt-1">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="one-foot">One-foot takeoff</SelectItem>
-                    <SelectItem value="two-foot">Two-foot takeoff</SelectItem>
-                  </SelectContent>
-                </Select>
-              </div>
-
-              <div>
-                <Label htmlFor="dunkGoal">Dunking Goal</Label>
-                <Select value={dunkGoal} onValueChange={setDunkGoal}>
-                  <SelectTrigger className="mt-1">
-                    <SelectValue />
-                  </SelectTrigger>
-                  <SelectContent>
-                    <SelectItem value="basic">Just touch rim/basic dunk</SelectItem>
-                    <SelectItem value="powerful">Powerful slam dunk</SelectItem>
-                    <SelectItem value="showtime">Showtime dunks</SelectItem>
-                  </SelectContent>
-                </Select>
+            <div className="bg-gray-50 p-4 rounded-lg space-y-4">
+              <h4 className="font-medium text-gray-900">Advanced Settings</h4>
+              <div className="grid md:grid-cols-3 gap-4">
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Hand Size</Label>
+                  <select
+                    value={palmSize}
+                    onChange={(e) => setPalmSize(e.target.value)}
+                    className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  >
+                    <option value="small">Small (affects grip)</option>
+                    <option value="medium">Medium</option>
+                    <option value="large">Large (better palm)</option>
+                  </select>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Jump Style</Label>
+                  <select
+                    value={jumpType}
+                    onChange={(e) => setJumpType(e.target.value)}
+                    className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  >
+                    <option value="one-foot">One-foot takeoff</option>
+                    <option value="two-foot">Two-foot takeoff</option>
+                  </select>
+                </div>
+                
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Dunk Goal</Label>
+                  <select
+                    value={dunkGoal}
+                    onChange={(e) => setDunkGoal(e.target.value)}
+                    className="w-full p-2 border border-gray-300 rounded-md text-sm"
+                  >
+                    <option value="basic">Basic dunk</option>
+                    <option value="power">Power dunk</option>
+                    <option value="windmill">Windmill/360</option>
+                  </select>
+                </div>
               </div>
             </div>
           )}
 
-          <div className="text-center">
+          <div className="flex gap-3">
             <Button 
-              onClick={calculateDunkPotential}
-              disabled={!height || !reach || !verticalJump}
-              className="px-8 py-3 bg-orange-600 hover:bg-orange-700 text-white font-semibold text-lg"
+              onClick={calculateDunk} 
+              className="flex-1 bg-orange-600 hover:bg-orange-700"
+              disabled={!height || !reach || !vertical}
             >
-              <Target className="w-5 h-5 mr-2" />
-              Calculate My Dunk Potential
+              <Target className="w-4 h-4 mr-2" />
+              Calculate Dunk Ability
             </Button>
-          </div>
-        </CardContent>
-      </Card>
-
-      {/* Results */}
-      {result && (
-        <Card className="mb-8">
-          <CardHeader>
-            <CardTitle className="flex items-center gap-3">
-              {result.canDunk ? (
-                <CheckCircle className="w-8 h-8 text-green-600" />
-              ) : (
-                <AlertCircle className="w-8 h-8 text-orange-600" />
-              )}
-              Your Dunk Potential Results
-            </CardTitle>
-          </CardHeader>
-          <CardContent>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div>
-                <h3 className="text-xl font-semibold mb-4">Current Analysis</h3>
-                <div className="space-y-3">
-                  <div className="flex justify-between">
-                    <span>Your Effective Reach:</span>
-                    <span className="font-semibold">{result.effectiveReach.toFixed(1)}"</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Required Height:</span>
-                    <span className="font-semibold">{result.requiredHeight.toFixed(1)}"</span>
-                  </div>
-                  <div className="flex justify-between">
-                    <span>Reach-to-Height Ratio:</span>
-                    <span className={`font-semibold ${result.isGoodRatio ? 'text-green-600' : 'text-orange-600'}`}>
-                      {result.reachToHeightRatio.toFixed(1)}%
-                    </span>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-xl font-semibold mb-4">
-                  {result.canDunk ? '🎉 Congratulations!' : '💪 Keep Training!'}
-                </h3>
-                {result.canDunk ? (
-                  <Alert className="border-green-200 bg-green-50">
-                    <CheckCircle className="h-4 w-4 text-green-600" />
-                    <AlertDescription className="text-green-800">
-                      <strong>You can dunk!</strong> Your current reach exceeds the rim by {result.heightDeficit.toFixed(1)} inches. 
-                      Time to practice your technique!
-                    </AlertDescription>
-                  </Alert>
-                ) : (
-                  <Alert className="border-orange-200 bg-orange-50">
-                    <TrendingUp className="h-4 w-4 text-orange-600" />
-                    <AlertDescription className="text-orange-800">
-                      <strong>You're {result.heightDeficit.toFixed(1)} inches away from dunking!</strong> 
-                      With focused training, you can add {result.verticalNeeded.toFixed(1)} inches to your vertical jump.
-                    </AlertDescription>
-                  </Alert>
-                )}
-              </div>
-            </div>
-
-            {/* Recommendations */}
-            {getRecommendations().length > 0 && (
-              <div className="mt-8">
-                <h3 className="text-xl font-semibold mb-4">Personalized Recommendations</h3>
-                <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4">
-                  {getRecommendations().map((rec, index) => (
-                    <Card key={index} className="border-orange-200">
-                      <CardContent className="p-4">
-                        <h4 className="font-semibold text-gray-900 mb-2">{rec.title}</h4>
-                        <p className="text-sm text-gray-600 mb-3">{rec.description}</p>
-                        <Link 
-                          to={rec.link}
-                          className="inline-flex items-center text-sm font-medium text-orange-600 hover:text-orange-700"
-                        >
-                          {rec.linkText} →
-                        </Link>
-                      </CardContent>
-                    </Card>
-                  ))}
-                </div>
-              </div>
+            {result && (
+              <Button variant="outline" onClick={resetCalculator}>
+                Reset
+              </Button>
             )}
-          </CardContent>
-        </Card>
-      )}
-
-      {/* How It Works */}
-      <Card>
-        <CardHeader>
-          <CardTitle>How Our Calculator Works</CardTitle>
-        </CardHeader>
-        <CardContent>
-          <div className="grid md:grid-cols-2 gap-6">
-            <div>
-              <h4 className="font-semibold mb-2">The Science Behind It</h4>
-              <p className="text-gray-600 text-sm">
-                Our calculator uses proven biomechanical principles: <strong>Effective Reach = Standing Reach + Vertical Jump</strong>. 
-                We compare this to the target dunk height (rim + clearance buffer) adjusted for your specific goals and physical attributes.
-              </p>
-            </div>
-            <div>
-              <h4 className="font-semibold mb-2">Why It's Accurate</h4>
-              <p className="text-gray-600 text-sm">
-                Used by over 100,000 athletes worldwide, our calculator factors in palm size, jump style, and dunk goals 
-                to provide personalized results with 98% accuracy for determining dunk potential.
-              </p>
-            </div>
           </div>
+
+          {result && (
+            <div className="mt-6 p-6 bg-white border rounded-lg shadow-sm">
+              <div className="text-center mb-4">
+                {result.canDunk ? (
+                  <div className="flex items-center justify-center mb-2">
+                    <CheckCircle className="w-8 h-8 text-green-600 mr-2" />
+                    <h3 className="text-2xl font-bold text-green-600">Yes, You Can Dunk!</h3>
+                  </div>
+                ) : (
+                  <div className="flex items-center justify-center mb-2">
+                    <AlertCircle className="w-8 h-8 text-red-600 mr-2" />
+                    <h3 className="text-2xl font-bold text-red-600">Not Yet, But You Can Get There!</h3>
+                  </div>
+                )}
+                
+                <div className="flex items-center justify-center gap-4 text-sm text-gray-600">
+                  <span>Max Reach: {result.reachHeight.toFixed(1)}"</span>
+                  <span>•</span>
+                  <span>Rim Height: 120"</span>
+                  {!result.canDunk && (
+                    <>
+                      <span>•</span>
+                      <span>Need: +{result.deficit.toFixed(1)}"</span>
+                    </>
+                  )}
+                </div>
+                
+                <Badge 
+                  variant={result.confidence === 'Very High' || result.confidence === 'High' ? 'default' : 'secondary'}
+                  className="mt-2"
+                >
+                  Confidence: {result.confidence}
+                </Badge>
+              </div>
+
+              <div className="space-y-3">
+                <h4 className="font-semibold text-gray-900 flex items-center">
+                  <TrendingUp className="w-4 h-4 mr-2" />
+                  Personalized Recommendations:
+                </h4>
+                <ul className="space-y-2">
+                  {result.recommendations.map((rec, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="inline-block w-2 h-2 bg-orange-600 rounded-full mt-2 mr-3 flex-shrink-0"></span>
+                      <span className="text-gray-700">{rec}</span>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </div>
+          )}
         </CardContent>
       </Card>
     </div>
