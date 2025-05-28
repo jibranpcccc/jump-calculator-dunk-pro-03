@@ -7,6 +7,10 @@ import Contact from './pages/Contact';
 import MeasurementGuides from './pages/MeasurementGuides';
 import StandingReachGuide from './pages/StandingReachGuide';
 import VerticalJumpGuide from './pages/VerticalJumpGuide';
+import HoopHeightsGuide from './pages/HoopHeightsGuide';
+import OtherMeasurementsGuide from './pages/OtherMeasurementsGuide';
+import Blog from './pages/Blog';
+import FAQ from './pages/FAQ';
 import { ComprehensiveSEO } from './components/SEOComponents';
 
 function App() {
@@ -25,6 +29,10 @@ function App() {
         <Route path="/measurements" element={<MeasurementGuides />} />
         <Route path="/measurements/standing-reach" element={<StandingReachGuide />} />
         <Route path="/measurements/vertical-jump" element={<VerticalJumpGuide />} />
+        <Route path="/measurements/hoop-heights" element={<HoopHeightsGuide />} />
+        <Route path="/measurements/other-measurements" element={<OtherMeasurementsGuide />} />
+        <Route path="/blog" element={<Blog />} />
+        <Route path="/faq" element={<FAQ />} />
       </Routes>
       <Toaster />
     </Router>

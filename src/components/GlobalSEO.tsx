@@ -1,4 +1,3 @@
-
 import MetaTags from "./MetaTags";
 import Performance from "./Performance";
 import StructuredData from "./StructuredData";
@@ -44,7 +43,7 @@ const GlobalSEO = () => {
         availability: "https://schema.org/InStock",
         seller: {
           "@type": "Organization",
-          name: "Dunk Calculator"
+          "name": "Dunk Calculator"
         }
       },
       featureList: [
