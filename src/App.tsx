@@ -14,11 +14,14 @@ import OtherMeasurementsGuide from './pages/OtherMeasurementsGuide';
 import Calculators from './pages/Calculators';
 import HangtimeCalculator from './pages/HangtimeCalculator';
 import ReachCalculator from './pages/ReachCalculator';
+import StandingReachCalculatorPage from './pages/StandingReachCalculator';
+import ApproachJumpCalculatorPage from './pages/ApproachJumpCalculator';
 import VerticalJumpTest from './pages/VerticalJumpTest';
 import BasketballBMICalculator from './pages/BasketballBMICalculator';
 import BasketballPositionCalculator from './pages/BasketballPositionCalculator';
 import MaxHangtimeCalculatorPage from './pages/MaxHangtimeCalculator';
 import VerticalJumpImprovementCalculatorPage from './pages/VerticalJumpImprovementCalculator';
+import TrainingProgressTrackerPage from './pages/TrainingProgressTracker';
 
 // Vertical Jump Training Pages
 import VerticalJumpTraining from './pages/VerticalJumpTraining';
@@ -59,11 +62,14 @@ const App: React.FC = () => {
           <Route path="/calculators" element={<Calculators />} />
           <Route path="/calculators/hangtime" element={<HangtimeCalculator />} />
           <Route path="/calculators/reach" element={<ReachCalculator />} />
+          <Route path="/calculators/standing-reach" element={<StandingReachCalculatorPage />} />
+          <Route path="/calculators/approach-jump" element={<ApproachJumpCalculatorPage />} />
           <Route path="/calculators/vertical-jump-test" element={<VerticalJumpTest />} />
           <Route path="/calculators/bmi" element={<BasketballBMICalculator />} />
           <Route path="/calculators/position" element={<BasketballPositionCalculator />} />
           <Route path="/calculators/max-hangtime" element={<MaxHangtimeCalculatorPage />} />
           <Route path="/calculators/vertical-jump-improvement" element={<VerticalJumpImprovementCalculatorPage />} />
+          <Route path="/tools/progress-tracker" element={<TrainingProgressTrackerPage />} />
           
           {/* Blog Routes */}
           <Route path="/blog" element={<Blog />} />

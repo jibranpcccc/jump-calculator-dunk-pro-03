@@ -4,6 +4,7 @@ import { Calculator, Target, Clock, Activity, Users, TrendingUp, ArrowRight, Tim
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BreadcrumbNavigation from "../components/BreadcrumbNavigation";
+import CalculatorFAQ from "../components/CalculatorFAQ";
 
 const Calculators = () => {
   const calculators = [
@@ -61,6 +62,32 @@ const Calculators = () => {
     },
     {
       id: 5,
+      title: "Standing Reach Calculator",
+      description: "Calculate your standing reach using height and wingspan. Essential for determining how high you need to jump to dunk a basketball.",
+      url: "/calculators/standing-reach",
+      icon: Users,
+      difficulty: "Easy",
+      time: "1 min",
+      featured: true,
+      category: "Measurement Tools",
+      benefits: ["Accurate reach calculation", "Dunk requirement assessment", "Wingspan analysis"],
+      relatedPages: ["/measurements/standing-reach", "/measurements/other-measurements"]
+    },
+    {
+      id: 6,
+      title: "Approach Jump Calculator",
+      description: "Analyze the effectiveness of your approach jump vs standing jump. Optimize your approach technique for maximum performance.",
+      url: "/calculators/approach-jump",
+      icon: Activity,
+      difficulty: "Easy",
+      time: "2 min",
+      featured: true,
+      category: "Technique Analysis",
+      benefits: ["Approach optimization", "Technique analysis", "Performance improvement"],
+      relatedPages: ["/vertical-jump-training", "/dunking-skills/first-dunk-guide"]
+    },
+    {
+      id: 7,
       title: "Hangtime Calculator",
       description: "Calculate how long you stay in the air during your jump. Compare your hangtime to professional athletes and understand the physics behind it.",
       url: "/calculators/hangtime",
@@ -73,7 +100,7 @@ const Calculators = () => {
       relatedPages: ["/measurements/vertical-jump", "/dunking-skills/famous-dunkers"]
     },
     {
-      id: 6,
+      id: 8,
       title: "Standing Reach Calculator",
       description: "Accurately measure your standing reach - the foundation of all basketball calculations. Learn proper measurement techniques.",
       url: "/calculators/reach",
@@ -86,7 +113,7 @@ const Calculators = () => {
       relatedPages: ["/measurements/standing-reach", "/measurements/other-measurements"]
     },
     {
-      id: 7,
+      id: 9,
       title: "Basketball BMI Calculator",
       description: "Calculate your BMI and see how it relates to basketball performance and different playing positions. Get position-specific insights.",
       url: "/calculators/bmi",
@@ -99,7 +126,7 @@ const Calculators = () => {
       relatedPages: ["/measurements/other-measurements", "/dunking-skills/average-vertical-jumps"]
     },
     {
-      id: 8,
+      id: 10,
       title: "Basketball Position Calculator",
       description: "Find your ideal basketball position based on height, weight, and athletic ability. Get personalized position recommendations.",
       url: "/calculators/position",
@@ -144,13 +171,13 @@ const Calculators = () => {
           {/* Featured Calculators */}
           <div className="mb-12">
             <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Tools</h2>
-            <div className="grid md:grid-cols-2 gap-8">
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
               {calculators.filter(calc => calc.featured).map((calculator) => {
                 const IconComponent = calculator.icon;
                 return (
                   <div 
                     key={calculator.id}
-                    className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border-2 border-blue-200"
+                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow border-2 border-blue-200"
                   >
                     <div className="flex items-center mb-4">
                       <div className="bg-blue-100 p-3 rounded-lg mr-4">
@@ -304,6 +331,11 @@ const Calculators = () => {
                 <p className="text-gray-600">Use insights from all our tools to customize your training approach and focus on the most effective exercises for your goals.</p>
               </div>
             </div>
+          </div>
+
+          {/* FAQ Section */}
+          <div className="mb-12">
+            <CalculatorFAQ />
           </div>
 
           {/* CTA Section */}
