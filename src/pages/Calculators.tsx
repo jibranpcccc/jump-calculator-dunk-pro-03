@@ -1,7 +1,6 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Calculator, Target, Clock, Activity, Users, TrendingUp, ArrowRight } from "lucide-react";
+import { Calculator, Target, Clock, Activity, Users, TrendingUp, ArrowRight, Timer } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import BreadcrumbNavigation from "../components/BreadcrumbNavigation";
@@ -36,6 +35,32 @@ const Calculators = () => {
     },
     {
       id: 3,
+      title: "Max Hangtime Calculator",
+      description: "Calculate how long you stay in the air during your jump. Uses physics principles to determine your airtime based on vertical jump height.",
+      url: "/calculators/max-hangtime",
+      icon: Timer,
+      difficulty: "Easy",
+      time: "1 min",
+      featured: true,
+      category: "Physics & Analysis",
+      benefits: ["Air time calculation", "Physics insights", "Professional comparisons"],
+      relatedPages: ["/measurements/vertical-jump", "/dunking-skills/famous-dunkers"]
+    },
+    {
+      id: 4,
+      title: "Vertical Jump Improvement Calculator",
+      description: "Plan your vertical jump training goals. Get realistic improvement timelines and personalized training recommendations based on your targets.",
+      url: "/calculators/vertical-jump-improvement",
+      icon: TrendingUp,
+      difficulty: "Easy",
+      time: "2 min",
+      featured: true,
+      category: "Training Planning",
+      benefits: ["Goal setting", "Training recommendations", "Realistic timelines"],
+      relatedPages: ["/vertical-jump-training", "/vertical-jump-training/programs"]
+    },
+    {
+      id: 5,
       title: "Hangtime Calculator",
       description: "Calculate how long you stay in the air during your jump. Compare your hangtime to professional athletes and understand the physics behind it.",
       url: "/calculators/hangtime",
@@ -48,7 +73,7 @@ const Calculators = () => {
       relatedPages: ["/measurements/vertical-jump", "/dunking-skills/famous-dunkers"]
     },
     {
-      id: 4,
+      id: 6,
       title: "Standing Reach Calculator",
       description: "Accurately measure your standing reach - the foundation of all basketball calculations. Learn proper measurement techniques.",
       url: "/calculators/reach",
@@ -61,7 +86,7 @@ const Calculators = () => {
       relatedPages: ["/measurements/standing-reach", "/measurements/other-measurements"]
     },
     {
-      id: 5,
+      id: 7,
       title: "Basketball BMI Calculator",
       description: "Calculate your BMI and see how it relates to basketball performance and different playing positions. Get position-specific insights.",
       url: "/calculators/bmi",
@@ -74,7 +99,7 @@ const Calculators = () => {
       relatedPages: ["/measurements/other-measurements", "/dunking-skills/average-vertical-jumps"]
     },
     {
-      id: 6,
+      id: 8,
       title: "Basketball Position Calculator",
       description: "Find your ideal basketball position based on height, weight, and athletic ability. Get personalized position recommendations.",
       url: "/calculators/position",
@@ -88,7 +113,7 @@ const Calculators = () => {
     }
   ];
 
-  const categories = ["All Tools", "Core Tools", "Performance Testing", "Physics & Analysis", "Measurement Tools", "Health & Fitness", "Position Analysis"];
+  const categories = ["All Tools", "Core Tools", "Performance Testing", "Physics & Analysis", "Training Planning", "Measurement Tools", "Health & Fitness", "Position Analysis"];
 
   return (
     <>

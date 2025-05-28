@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -18,6 +17,8 @@ import ReachCalculator from './pages/ReachCalculator';
 import VerticalJumpTest from './pages/VerticalJumpTest';
 import BasketballBMICalculator from './pages/BasketballBMICalculator';
 import BasketballPositionCalculator from './pages/BasketballPositionCalculator';
+import MaxHangtimeCalculatorPage from './pages/MaxHangtimeCalculator';
+import VerticalJumpImprovementCalculatorPage from './pages/VerticalJumpImprovementCalculator';
 
 // Vertical Jump Training Pages
 import VerticalJumpTraining from './pages/VerticalJumpTraining';
@@ -61,6 +62,8 @@ const App: React.FC = () => {
           <Route path="/calculators/vertical-jump-test" element={<VerticalJumpTest />} />
           <Route path="/calculators/bmi" element={<BasketballBMICalculator />} />
           <Route path="/calculators/position" element={<BasketballPositionCalculator />} />
+          <Route path="/calculators/max-hangtime" element={<MaxHangtimeCalculatorPage />} />
+          <Route path="/calculators/vertical-jump-improvement" element={<VerticalJumpImprovementCalculatorPage />} />
           
           {/* Blog Routes */}
           <Route path="/blog" element={<Blog />} />
