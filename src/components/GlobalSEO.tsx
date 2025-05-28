@@ -26,7 +26,7 @@ const GlobalSEO = () => {
       "@type": "WebApplication",
       name: "Basketball Dunk Calculator",
       description: "Calculate if you can dunk a basketball based on your height, reach, and vertical jump measurements",
-      applicationCategory": "SportsApplication",
+      applicationCategory: "SportsApplication",
       operatingSystem: "All",
       offers: {
         "@type": "Offer",
