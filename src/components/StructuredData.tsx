@@ -2,7 +2,7 @@
 import { Helmet } from "react-helmet";
 
 interface StructuredDataProps {
-  type: "WebSite" | "WebPage" | "Article" | "FAQPage" | "BreadcrumbList" | "Organization" | "LocalBusiness" | "Product" | "SoftwareApplication" | "HowTo" | "VideoObject" | "ImageObject" | "Person" | "Thing";
+  type: "WebSite" | "WebPage" | "Article" | "FAQPage" | "BreadcrumbList" | "Organization" | "LocalBusiness" | "Product" | "SoftwareApplication" | "HowTo" | "VideoObject" | "ImageObject" | "Person" | "Thing" | "Course" | "Event";
   data: object;
 }
 
