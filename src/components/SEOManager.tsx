@@ -43,7 +43,7 @@ interface SEOManagerProps {
   enableSocialMeta?: boolean;
   enableTechnicalSEO?: boolean;
   
-  // Breadcrumb data
+  // Breadcrumb data (not used by BreadcrumbNavigation but kept for interface compatibility)
   breadcrumbs?: Array<{
     name: string;
     url: string;
@@ -133,9 +133,7 @@ const SEOManager = ({
         />
       )}
       
-      {enableBreadcrumbs && breadcrumbs && (
-        <BreadcrumbNavigation breadcrumbs={breadcrumbs} />
-      )}
+      {enableBreadcrumbs && <BreadcrumbNavigation />}
     </>
   );
 };
