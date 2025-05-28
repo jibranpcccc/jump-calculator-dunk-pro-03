@@ -1,0 +1,19 @@
+
+{
+  "name": "Dunk Calculator - Basketball Dunk Test",
+  "short_name": "Dunk Calculator",
+  "description": "Free basketball dunk calculator to test if you can dunk",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#ea580c",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "any",
+      "type": "image/x-icon"
+    }
+  ],
+  "categories": ["sports", "fitness", "tools"],
+  "lang": "en"
+}

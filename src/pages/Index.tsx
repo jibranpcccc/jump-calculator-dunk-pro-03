@@ -4,9 +4,11 @@ import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DunkCalculator from "@/components/DunkCalculator";
 import CallToAction from "@/components/CallToAction";
+import TrustSignals from "@/components/TrustSignals";
+import QuickStats from "@/components/QuickStats";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, TrendingUp, BookOpen, Users, Star, Clock, Shield } from "lucide-react";
+import { Target, TrendingUp, BookOpen, Users } from "lucide-react";
 
 const Index = () => {
   const schemaData = {
@@ -52,30 +54,13 @@ const Index = () => {
                 Find out instantly with our <strong>free dunk calculator</strong>. Enter your height, standing reach, and vertical jump to see if you can dunk a basketball! Used by thousands of basketball players worldwide.
               </p>
               
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap justify-center items-center gap-6 mb-8 text-sm text-gray-500">
-                <div className="flex items-center">
-                  <Shield className="h-4 w-4 mr-1 text-green-500" />
-                  100% Free
-                </div>
-                <div className="flex items-center">
-                  <Clock className="h-4 w-4 mr-1 text-blue-500" />
-                  Instant Results
-                </div>
-                <div className="flex items-center">
-                  <Star className="h-4 w-4 mr-1 text-yellow-500" />
-                  No Registration
-                </div>
-                <div className="flex items-center">
-                  <Users className="h-4 w-4 mr-1 text-purple-500" />
-                  10,000+ Users
-                </div>
-              </div>
+              <TrustSignals />
+              <QuickStats />
             </div>
           </section>
 
           {/* Calculator Section */}
-          <section className="py-8 px-4">
+          <section id="calculator" className="py-8 px-4">
             <div className="container mx-auto">
               <DunkCalculator />
             </div>
