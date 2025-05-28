@@ -1,327 +1,313 @@
 
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import DunkCalculator from "@/components/DunkCalculator";
-import VerticalJumpTestCalculator from "@/components/VerticalJumpTestCalculator";
-import BasketballBMICalculator from "@/components/BasketballBMICalculator";
-import HangtimeCalculator from "@/components/HangtimeCalculator";
-import ReachCalculator from "@/components/ReachCalculator";
-import BasketballPositionCalculator from "@/components/BasketballPositionCalculator";
-import CallToAction from "@/components/CallToAction";
-import SEOManager from "@/components/SEOManager";
-import { Card, CardContent } from "@/components/ui/card";
-import { Calculator, TrendingUp, Activity, Clock, Ruler, Users, Target, BookOpen } from "lucide-react";
+import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
+import { Calculator, Target, Clock, Activity, Users, TrendingUp, ArrowRight } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+import BreadcrumbNavigation from "../components/BreadcrumbNavigation";
 
 const Calculators = () => {
-  const faqData = [
+  const calculators = [
     {
-      question: "Which basketball calculator should I use first?",
-      answer: "Start with the Dunk Calculator to see if you can dunk, then use the Vertical Jump Test to measure your exact jumping ability. The other calculators help with specific training goals and position analysis."
+      id: 1,
+      title: "Dunk Calculator",
+      description: "Calculate whether you can dunk a basketball based on your height, standing reach, and vertical jump. Get personalized training recommendations.",
+      url: "/",
+      icon: Target,
+      difficulty: "Easy",
+      time: "1 min",
+      featured: true,
+      category: "Core Tools",
+      benefits: ["Instant dunk assessment", "Training recommendations", "Progress tracking"],
+      relatedPages: ["/measurements/standing-reach", "/measurements/vertical-jump"]
     },
     {
-      question: "How accurate are these basketball calculators?",
-      answer: "Our calculators use scientifically-based formulas and NBA/college basketball standards. They provide accurate estimates, but real-world performance also depends on technique, training, and experience."
+      id: 2,
+      title: "Vertical Jump Test Calculator",
+      description: "Measure and track your vertical jump performance with multiple testing methods. Compare your results to NBA and college standards.",
+      url: "/calculators/vertical-jump-test",
+      icon: TrendingUp,
+      difficulty: "Easy",
+      time: "2 min",
+      featured: true,
+      category: "Performance Testing",
+      benefits: ["Multiple test methods", "Performance benchmarking", "Progress tracking"],
+      relatedPages: ["/measurements/vertical-jump", "/vertical-jump-training"]
     },
     {
-      question: "Can I improve my results with training?",
-      answer: "Absolutely! Most athletes can improve their vertical jump by 4-12 inches with proper training. Check our training guides and exercise recommendations to enhance your performance."
+      id: 3,
+      title: "Hangtime Calculator",
+      description: "Calculate how long you stay in the air during your jump. Compare your hangtime to professional athletes and understand the physics behind it.",
+      url: "/calculators/hangtime",
+      icon: Clock,
+      difficulty: "Easy",
+      time: "1 min",
+      featured: false,
+      category: "Physics & Analysis",
+      benefits: ["Air time calculation", "Physics insights", "Professional comparisons"],
+      relatedPages: ["/measurements/vertical-jump", "/dunking-skills/famous-dunkers"]
+    },
+    {
+      id: 4,
+      title: "Standing Reach Calculator",
+      description: "Accurately measure your standing reach - the foundation of all basketball calculations. Learn proper measurement techniques.",
+      url: "/calculators/reach",
+      icon: Users,
+      difficulty: "Easy",
+      time: "3 min",
+      featured: false,
+      category: "Measurement Tools",
+      benefits: ["Accurate measurements", "Proper technique", "Calculation foundation"],
+      relatedPages: ["/measurements/standing-reach", "/measurements/other-measurements"]
+    },
+    {
+      id: 5,
+      title: "Basketball BMI Calculator",
+      description: "Calculate your BMI and see how it relates to basketball performance and different playing positions. Get position-specific insights.",
+      url: "/calculators/bmi",
+      icon: Activity,
+      difficulty: "Easy",
+      time: "2 min",
+      featured: false,
+      category: "Health & Fitness",
+      benefits: ["Health assessment", "Position analysis", "Performance insights"],
+      relatedPages: ["/measurements/other-measurements", "/dunking-skills/average-vertical-jumps"]
+    },
+    {
+      id: 6,
+      title: "Basketball Position Calculator",
+      description: "Find your ideal basketball position based on height, weight, and athletic ability. Get personalized position recommendations.",
+      url: "/calculators/position",
+      icon: Users,
+      difficulty: "Easy",
+      time: "3 min",
+      featured: false,
+      category: "Position Analysis",
+      benefits: ["Position recommendations", "Skill development", "Career guidance"],
+      relatedPages: ["/measurements/other-measurements", "/dunking-skills/average-vertical-jumps"]
     }
   ];
 
+  const categories = ["All Tools", "Core Tools", "Performance Testing", "Physics & Analysis", "Measurement Tools", "Health & Fitness", "Position Analysis"];
+
   return (
     <>
-      <SEOManager
-        title="Free Basketball Calculators | Dunk, Vertical Jump, BMI & More Tools"
-        description="Complete collection of free basketball calculators: dunk test, vertical jump measurement, BMI analysis, hangtime calculator, reach calculator, and position finder. Try all tools now!"
-        keywords="basketball calculators, dunk calculator, vertical jump test, basketball BMI calculator, hangtime calculator, basketball tools, free basketball tests"
-        canonicalUrl="https://dunkcalculator.com/calculators"
-        pageType="product"
-        faqData={faqData}
-        enableAnalytics={true}
-        enableBreadcrumbs={true}
-        enablePerformance={true}
-        enableSocialMeta={true}
-        enableTechnicalSEO={true}
-      />
+      <Helmet>
+        <title>Free Basketball Calculators | Dunk Calculator & More Tools</title>
+        <meta name="description" content="Free basketball calculators including dunk calculator, vertical jump test, hangtime calculator, BMI calculator, and position analyzer. Get instant results and training insights." />
+        <meta name="keywords" content="basketball calculator, dunk calculator, vertical jump calculator, basketball tools, free basketball calculators" />
+        <link rel="canonical" href="https://dunkcalculator.com/calculators/" />
+      </Helmet>
 
-      <div className="min-h-screen bg-white">
-        <Header />
-        
-        <main>
+      <Header />
+
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="container mx-auto px-4 py-8">
+          <BreadcrumbNavigation />
+
           {/* Hero Section */}
-          <section className="py-16 px-4 bg-gradient-to-br from-orange-50 via-white to-blue-50">
-            <div className="container mx-auto text-center">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Free Basketball Calculators
-              </h1>
-              <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                Complete collection of basketball performance calculators and testing tools. Measure your abilities, track progress, and optimize your training with our scientifically-accurate calculators.
-              </p>
-              <div className="flex flex-wrap justify-center gap-4 mb-8">
-                <span className="bg-orange-100 text-orange-800 px-4 py-2 rounded-full text-sm font-medium">✓ 100% Free</span>
-                <span className="bg-blue-100 text-blue-800 px-4 py-2 rounded-full text-sm font-medium">✓ No Signup Required</span>
-                <span className="bg-green-100 text-green-800 px-4 py-2 rounded-full text-sm font-medium">✓ Scientifically Accurate</span>
-                <span className="bg-purple-100 text-purple-800 px-4 py-2 rounded-full text-sm font-medium">✓ Mobile Friendly</span>
+          <div className="text-center mb-12">
+            <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
+              Free Basketball Calculators & Tools
+            </h1>
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Comprehensive collection of basketball calculators to analyze your performance, 
+              track progress, and optimize your training. All tools are free and provide instant results.
+            </p>
+          </div>
+
+          {/* Featured Calculators */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">Featured Tools</h2>
+            <div className="grid md:grid-cols-2 gap-8">
+              {calculators.filter(calc => calc.featured).map((calculator) => {
+                const IconComponent = calculator.icon;
+                return (
+                  <div 
+                    key={calculator.id}
+                    className="bg-white rounded-xl shadow-lg p-8 hover:shadow-xl transition-shadow border-2 border-blue-200"
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="bg-blue-100 p-3 rounded-lg mr-4">
+                        <IconComponent className="w-8 h-8 text-blue-600" />
+                      </div>
+                      <div>
+                        <h3 className="text-2xl font-bold text-gray-900">{calculator.title}</h3>
+                        <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">
+                          {calculator.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-600 mb-6 leading-relaxed">
+                      {calculator.description}
+                    </p>
+                    
+                    <div className="mb-6">
+                      <h4 className="font-semibold text-gray-900 mb-2">Key Benefits:</h4>
+                      <ul className="space-y-1">
+                        {calculator.benefits.map((benefit, index) => (
+                          <li key={index} className="text-sm text-gray-600 flex items-center">
+                            <div className="w-1.5 h-1.5 bg-blue-600 rounded-full mr-2"></div>
+                            {benefit}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                    
+                    <div className="flex items-center justify-between mb-6">
+                      <div className="flex space-x-4 text-sm text-gray-500">
+                        <span>Difficulty: <strong className="text-gray-700">{calculator.difficulty}</strong></span>
+                        <span>Time: <strong className="text-gray-700">{calculator.time}</strong></span>
+                      </div>
+                    </div>
+                    
+                    <Link 
+                      to={calculator.url}
+                      className="inline-flex items-center w-full justify-center bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg transition-colors"
+                    >
+                      <IconComponent className="w-5 h-5 mr-2" />
+                      Use This Calculator
+                    </Link>
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* All Calculators */}
+          <div className="mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-8 text-center">All Basketball Tools</h2>
+            
+            {/* Category Filter */}
+            <div className="flex flex-wrap justify-center gap-2 mb-8">
+              {categories.map((category) => (
+                <button
+                  key={category}
+                  className="px-4 py-2 bg-white border border-gray-300 rounded-lg text-sm font-medium text-gray-700 hover:bg-blue-50 hover:border-blue-300 hover:text-blue-700 transition-colors"
+                >
+                  {category}
+                </button>
+              ))}
+            </div>
+
+            <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+              {calculators.map((calculator) => {
+                const IconComponent = calculator.icon;
+                return (
+                  <div 
+                    key={calculator.id}
+                    className="bg-white rounded-xl shadow-lg p-6 hover:shadow-xl transition-shadow"
+                  >
+                    <div className="flex items-center mb-4">
+                      <div className="bg-gray-100 p-2 rounded-lg mr-3">
+                        <IconComponent className="w-6 h-6 text-gray-700" />
+                      </div>
+                      <div>
+                        <h3 className="text-lg font-bold text-gray-900">{calculator.title}</h3>
+                        <span className="px-2 py-1 bg-gray-100 text-gray-700 rounded text-xs font-medium">
+                          {calculator.category}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    <p className="text-gray-600 mb-4 text-sm leading-relaxed">
+                      {calculator.description}
+                    </p>
+                    
+                    <div className="flex items-center justify-between mb-4 text-xs text-gray-500">
+                      <span>{calculator.difficulty}</span>
+                      <span>{calculator.time}</span>
+                    </div>
+                    
+                    <Link 
+                      to={calculator.url}
+                      className="inline-flex items-center w-full justify-center bg-gray-800 hover:bg-gray-900 text-white font-semibold py-2 px-4 rounded-lg transition-colors text-sm"
+                    >
+                      Try Now
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Link>
+                    
+                    {/* Related Pages */}
+                    {calculator.relatedPages && (
+                      <div className="mt-3 pt-3 border-t border-gray-100">
+                        <p className="text-xs text-gray-500 mb-1">Related:</p>
+                        <div className="flex flex-wrap gap-1">
+                          {calculator.relatedPages.slice(0, 2).map((page, index) => (
+                            <Link 
+                              key={index}
+                              to={page}
+                              className="text-xs text-blue-600 hover:text-blue-700 underline"
+                            >
+                              {page.includes('measurements') ? 'Measurement Guide' : 'Training Guide'}
+                            </Link>
+                          ))}
+                        </div>
+                      </div>
+                    )}
+                  </div>
+                );
+              })}
+            </div>
+          </div>
+
+          {/* Integration with Training */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6 text-center">How Our Calculators Work Together</h2>
+            <div className="grid md:grid-cols-3 gap-8">
+              <div className="text-center">
+                <div className="bg-orange-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Target className="w-8 h-8 text-orange-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">1. Assess Your Current Ability</h3>
+                <p className="text-gray-600">Use our dunk calculator and vertical jump test to establish your baseline performance and identify areas for improvement.</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-blue-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <TrendingUp className="w-8 h-8 text-blue-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">2. Track Your Progress</h3>
+                <p className="text-gray-600">Regular testing with our calculators helps you monitor improvements and adjust your training program for optimal results.</p>
+              </div>
+              
+              <div className="text-center">
+                <div className="bg-green-100 p-4 rounded-full w-16 h-16 mx-auto mb-4 flex items-center justify-center">
+                  <Users className="w-8 h-8 text-green-600" />
+                </div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">3. Optimize Your Training</h3>
+                <p className="text-gray-600">Use insights from all our tools to customize your training approach and focus on the most effective exercises for your goals.</p>
               </div>
             </div>
-          </section>
+          </div>
 
-          {/* Calculator Grid */}
-          <section className="py-16 px-4 bg-white">
-            <div className="container mx-auto">
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-12">
-                
-                {/* Dunk Calculator */}
-                <div id="dunk-calculator" className="space-y-6">
-                  <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-3">Dunk Calculator</h2>
-                    <p className="text-gray-600 mb-6">Find out if you can dunk a basketball on a regulation 10-foot rim</p>
-                  </div>
-                  <DunkCalculator />
-                  <div className="text-center">
-                    <Link to="/basketball-dunk-tips" className="text-orange-600 hover:underline font-medium">
-                      Learn dunking techniques →
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Vertical Jump Test Calculator */}
-                <div id="vertical-jump-calculator" className="space-y-6">
-                  <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-3">Vertical Jump Test</h2>
-                    <p className="text-gray-600 mb-6">Measure your exact vertical jump height and compare to standards</p>
-                  </div>
-                  <VerticalJumpTestCalculator />
-                  <div className="text-center">
-                    <Link to="/vertical-jump-training" className="text-blue-600 hover:underline font-medium">
-                      Improve your vertical jump →
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Basketball BMI Calculator */}
-                <div id="bmi-calculator" className="space-y-6">
-                  <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-3">Basketball BMI Calculator</h2>
-                    <p className="text-gray-600 mb-6">Calculate BMI with basketball-specific insights and position analysis</p>
-                  </div>
-                  <BasketballBMICalculator />
-                  <div className="text-center">
-                    <Link to="/blog/nutrition-vertical-jump" className="text-green-600 hover:underline font-medium">
-                      Basketball nutrition guide →
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Hangtime Calculator */}
-                <div id="hangtime-calculator" className="space-y-6">
-                  <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-3">Basketball Hangtime Calculator</h2>
-                    <p className="text-gray-600 mb-6">Calculate how long you stay in the air during your jump</p>
-                  </div>
-                  <HangtimeCalculator />
-                  <div className="text-center">
-                    <Link to="/blog/basketball-jump-technique" className="text-purple-600 hover:underline font-medium">
-                      Perfect your jump technique →
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Reach Calculator */}
-                <div id="reach-calculator" className="space-y-6">
-                  <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-3">Basketball Reach Calculator</h2>
-                    <p className="text-gray-600 mb-6">Calculate your standing reach and wingspan advantage</p>
-                  </div>
-                  <ReachCalculator />
-                  <div className="text-center">
-                    <Link to="/blog/how-to-measure-vertical-jump" className="text-green-600 hover:underline font-medium">
-                      Learn proper measurement techniques →
-                    </Link>
-                  </div>
-                </div>
-
-                {/* Position Calculator */}
-                <div id="position-calculator" className="space-y-6">
-                  <div className="text-center">
-                    <h2 className="text-3xl font-bold text-gray-900 mb-3">Basketball Position Calculator</h2>
-                    <p className="text-gray-600 mb-6">Find your ideal position based on physical attributes</p>
-                  </div>
-                  <BasketballPositionCalculator />
-                  <div className="text-center">
-                    <Link to="/blog/increase-vertical-jump-exercises" className="text-orange-600 hover:underline font-medium">
-                      Position-specific training →
-                    </Link>
-                  </div>
-                </div>
-              </div>
+          {/* CTA Section */}
+          <div className="text-center bg-gradient-to-r from-blue-600 to-purple-600 rounded-xl p-8 text-white">
+            <h2 className="text-3xl font-bold mb-4">Ready to Analyze Your Basketball Performance?</h2>
+            <p className="text-xl mb-8">
+              Start with our most popular tool and discover your dunking potential in under 60 seconds.
+            </p>
+            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+              <Link 
+                to="/"
+                className="inline-flex items-center px-8 py-4 bg-white text-blue-600 font-bold rounded-lg hover:bg-gray-100 transition-colors"
+              >
+                <Target className="w-5 h-5 mr-2" />
+                Try Dunk Calculator
+              </Link>
+              <Link 
+                to="/blog"
+                className="inline-flex items-center px-8 py-4 border-2 border-white text-white font-bold rounded-lg hover:bg-white hover:text-blue-600 transition-colors"
+              >
+                <Calculator className="w-5 h-5 mr-2" />
+                Read Training Guides
+              </Link>
             </div>
-          </section>
-
-          {/* How to Use Section */}
-          <section className="py-16 px-4 bg-gray-50">
-            <div className="container mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-4">How to Use Our Basketball Calculators</h2>
-              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                Get the most accurate results by following these simple steps for each calculator.
-              </p>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <Target className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">1. Measure Accurately</h3>
-                    <p className="text-gray-600">Use proper measurement techniques. Height without shoes, vertical jump from two-foot takeoff, and accurate weight measurements give best results.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <Calculator className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">2. Input Your Data</h3>
-                    <p className="text-gray-600">Enter your measurements in the calculator fields. All calculators use inches and pounds for consistency and accuracy.</p>
-                  </CardContent>
-                </Card>
-                <Card className="text-center hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <TrendingUp className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">3. Analyze & Improve</h3>
-                    <p className="text-gray-600">Review your results and use our training guides to improve. Track progress by retesting monthly.</p>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-
-          {/* Calculator Features */}
-          <section className="py-16 px-4 bg-white">
-            <div className="container mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Why Use Our Basketball Calculators?</h2>
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                <div className="text-center">
-                  <Calculator className="h-12 w-12 text-blue-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Scientifically Accurate</h3>
-                  <p className="text-gray-600">Based on physics formulas and NBA/college basketball standards for reliable results.</p>
-                </div>
-                <div className="text-center">
-                  <TrendingUp className="h-12 w-12 text-green-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Track Progress</h3>
-                  <p className="text-gray-600">Monitor improvements in your vertical jump, reach, and overall basketball performance.</p>
-                </div>
-                <div className="text-center">
-                  <Target className="h-12 w-12 text-purple-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Training Guidance</h3>
-                  <p className="text-gray-600">Get personalized recommendations and training tips based on your results.</p>
-                </div>
-                <div className="text-center">
-                  <Activity className="h-12 w-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Multiple Metrics</h3>
-                  <p className="text-gray-600">Comprehensive testing including dunk ability, vertical jump, BMI, and position analysis.</p>
-                </div>
-                <div className="text-center">
-                  <Clock className="h-12 w-12 text-red-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Instant Results</h3>
-                  <p className="text-gray-600">Get immediate feedback with detailed explanations and improvement suggestions.</p>
-                </div>
-                <div className="text-center">
-                  <Users className="h-12 w-12 text-indigo-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-semibold mb-2">Compare Standards</h3>
-                  <p className="text-gray-600">See how you rank against high school, college, and professional basketball players.</p>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          {/* FAQ Section */}
-          <section className="py-16 px-4 bg-gray-50">
-            <div className="container mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-4">Frequently Asked Questions</h2>
-              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
-                Common questions about our basketball calculators and how to use them effectively.
-              </p>
-              <div className="max-w-3xl mx-auto space-y-6">
-                {faqData.map((faq, index) => (
-                  <Card key={index} className="hover:shadow-lg transition-shadow">
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold mb-2 text-lg">{faq.question}</h3>
-                      <p className="text-gray-600">{faq.answer}</p>
-                    </CardContent>
-                  </Card>
-                ))}
-              </div>
-              <div className="text-center mt-8">
-                <Link to="/faq" className="text-orange-600 hover:underline font-medium text-lg">
-                  View All FAQ →
-                </Link>
-              </div>
-            </div>
-          </section>
-
-          {/* Training Resources */}
-          <section className="py-16 px-4 bg-white">
-            <div className="container mx-auto">
-              <h2 className="text-3xl font-bold text-center mb-12">Improve Your Results</h2>
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <BookOpen className="h-10 w-10 text-orange-600 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">
-                      <Link to="/vertical-jump-training" className="hover:text-orange-600">
-                        Vertical Jump Training
-                      </Link>
-                    </h3>
-                    <p className="text-gray-600 mb-4">Complete training programs to increase your vertical jump and dunking ability.</p>
-                    <Link to="/vertical-jump-training" className="text-orange-600 hover:underline text-sm font-medium">
-                      Start Training →
-                    </Link>
-                  </CardContent>
-                </Card>
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <Target className="h-10 w-10 text-blue-600 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">
-                      <Link to="/basketball-dunk-tips" className="hover:text-blue-600">
-                        Dunking Techniques
-                      </Link>
-                    </h3>
-                    <p className="text-gray-600 mb-4">Master proper dunking form, approach techniques, and avoid common mistakes.</p>
-                    <Link to="/basketball-dunk-tips" className="text-blue-600 hover:underline text-sm font-medium">
-                      Learn Techniques →
-                    </Link>
-                  </CardContent>
-                </Card>
-                <Card className="hover:shadow-lg transition-shadow">
-                  <CardContent className="p-6">
-                    <Activity className="h-10 w-10 text-green-600 mb-4" />
-                    <h3 className="text-xl font-semibold mb-2">
-                      <Link to="/blog" className="hover:text-green-600">
-                        Training Blog
-                      </Link>
-                    </h3>
-                    <p className="text-gray-600 mb-4">Read detailed guides on exercises, nutrition, and basketball performance optimization.</p>
-                    <Link to="/blog" className="text-green-600 hover:underline text-sm font-medium">
-                      Read Articles →
-                    </Link>
-                  </CardContent>
-                </Card>
-              </div>
-            </div>
-          </section>
-
-          {/* Call to Action */}
-          <section className="py-16 px-4 bg-gray-50">
-            <div className="container mx-auto">
-              <CallToAction
-                title="Ready to Test Your Basketball Skills?"
-                description="Use our free calculators to measure your current abilities and get personalized training recommendations to reach your goals."
-                buttonText="Try All Calculators"
-                buttonLink="#dunk-calculator"
-              />
-            </div>
-          </section>
-        </main>
-
-        <Footer />
+          </div>
+        </div>
       </div>
+
+      <Footer />
     </>
   );
 };

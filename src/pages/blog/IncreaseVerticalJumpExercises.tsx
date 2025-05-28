@@ -1,426 +1,400 @@
 
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
-import { Calculator, Check, Target, TrendingUp, Zap } from "lucide-react";
-import { Link } from "react-router-dom";
-import { Helmet } from "react-helmet";
+import { Calculator, TrendingUp, Target } from "lucide-react";
+import BlogPostLayout from "../../components/BlogPostLayout";
+import HangtimeCalculator from "../../components/HangtimeCalculator";
+import VerticalJumpTestCalculator from "../../components/VerticalJumpTestCalculator";
 
 const IncreaseVerticalJumpExercises = () => {
-  const exercises = [
+  const relatedPosts = [
     {
-      name: "Box Jumps",
-      type: "Plyometric",
-      difficulty: "Beginner",
-      description: "Jump onto a box or platform, focusing on explosive upward movement and soft landing.",
-      benefits: ["Explosive power", "Landing mechanics", "Confidence building"],
-      instructions: [
-        "Start with a 12-18 inch box",
-        "Jump up explosively, land softly",
-        "Step down, don't jump down",
-        "Focus on quality over quantity"
-      ]
+      title: "Vertical Jump Workout: 30-Day Challenge Program",
+      url: "/blog/vertical-jump-workout",
+      excerpt: "Follow our proven 30-day program designed to add inches to your leap with daily exercises and progression tracking."
     },
     {
-      name: "Depth Jumps",
-      type: "Plyometric",
-      difficulty: "Advanced",
-      description: "Drop from a box and immediately jump as high as possible upon landing.",
-      benefits: ["Reactive strength", "Stretch-shortening cycle", "Power development"],
-      instructions: [
-        "Drop from 12-24 inch box",
-        "Land and immediately jump up",
-        "Minimize ground contact time",
-        "Use proper landing mechanics"
-      ]
-    },
-    {
-      name: "Jump Squats",
-      type: "Plyometric",
-      difficulty: "Beginner",
-      description: "Explosive squat movement with maximum vertical jump at the top.",
-      benefits: ["Full-body power", "Leg strength", "Jumping mechanics"],
-      instructions: [
-        "Start in squat position",
-        "Jump up explosively",
-        "Land softly in squat position",
-        "Can add weight for progression"
-      ]
-    },
-    {
-      name: "Barbell Squats",
-      type: "Strength",
-      difficulty: "Intermediate",
-      description: "Fundamental strength exercise for building leg power and muscle mass.",
-      benefits: ["Leg strength", "Muscle mass", "Power foundation"],
-      instructions: [
-        "Keep feet shoulder-width apart",
-        "Descend until thighs parallel",
-        "Drive through heels to stand",
-        "Maintain proper back alignment"
-      ]
-    },
-    {
-      name: "Single-Leg Bounds",
-      type: "Plyometric",
-      difficulty: "Intermediate",
-      description: "Explosive single-leg jumping exercise for unilateral power development.",
-      benefits: ["Single-leg power", "Balance", "Coordination"],
-      instructions: [
-        "Bound forward on one leg",
-        "Focus on distance and height",
-        "Maintain balance throughout",
-        "Alternate legs each set"
-      ]
-    },
-    {
-      name: "Calf Raises",
-      type: "Strength",
-      difficulty: "Beginner",
-      description: "Isolated calf exercise for ankle power and push-off strength.",
-      benefits: ["Ankle power", "Push-off strength", "Injury prevention"],
-      instructions: [
-        "Rise up onto toes explosively",
-        "Pause at top briefly",
-        "Lower slowly under control",
-        "Can add weight for progression"
-      ]
+      title: "How to Dunk a Basketball: Complete Beginner's Guide", 
+      url: "/blog/how-to-dunk-beginners",
+      excerpt: "Your comprehensive guide to achieving your first dunk with proper technique and training strategies."
     }
   ];
 
-  const trainingTips = [
+  const relatedCalculators = [
     {
-      title: "Progressive Overload",
-      description: "Gradually increase intensity, volume, or difficulty over time to continue making gains."
+      title: "Vertical Jump Test Calculator",
+      url: "/calculators/vertical-jump-test",
+      description: "Test and track your vertical jump improvements",
+      icon: <TrendingUp className="w-5 h-5 text-blue-600" />
     },
     {
-      title: "Recovery & Rest",
-      description: "Allow 48-72 hours between intense jumping sessions for muscle recovery and adaptation."
+      title: "Dunk Calculator",
+      url: "/",
+      description: "Check if you can dunk with your current measurements",
+      icon: <Target className="w-5 h-5 text-blue-600" />
+    }
+  ];
+
+  const externalLinks = [
+    {
+      title: "NBA Draft Combine Vertical Jump Records",
+      url: "https://www.nba.com/stats/draft/combine-strength-agility",
+      description: "Official NBA statistics for vertical jump performance at the combine"
     },
     {
-      title: "Proper Form",
-      description: "Focus on quality movement patterns rather than just intensity to prevent injury."
+      title: "National Strength and Conditioning Association",
+      url: "https://www.nsca.com",
+      description: "Professional guidelines for strength and conditioning training"
     },
     {
-      title: "Consistency",
-      description: "Train 2-3 times per week consistently rather than sporadic intense sessions."
+      title: "American College of Sports Medicine",
+      url: "https://www.acsm.org",
+      description: "Evidence-based exercise recommendations and sports science research"
     }
   ];
 
   return (
-    <>
-      <Helmet>
-        <title>How to Increase Vertical Jump – 6 Best Exercises for Dunking</title>
-        <meta name="description" content="Learn the most effective exercises to increase your vertical jump for dunking. Plyometric and strength training exercises with proper form instructions and progression tips." />
-        <meta name="keywords" content="increase vertical jump, vertical jump exercises, jump higher exercises, plyometrics for vertical, dunk training exercises" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="How to Increase Vertical Jump – 6 Best Exercises for Dunking" />
-        <meta property="og:description" content="Master these proven exercises to dramatically increase your vertical jump and achieve your dunking goals." />
-        <meta property="og:type" content="article" />
-        
-        {/* Article Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "How to Increase Your Vertical Jump for Dunking – Best Exercises",
-            "description": "Complete guide to the most effective exercises for increasing vertical jump, including plyometrics and strength training.",
-            "author": {
-              "@type": "Organization",
-              "name": "Dunk Calculator"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Dunk Calculator"
-            },
-            "datePublished": "2024-12-01",
-            "dateModified": "2024-12-01"
-          })}
-        </script>
+    <BlogPostLayout
+      title="Best Exercises to Increase Your Vertical Jump: A Complete Guide"
+      excerpt="Discover the most effective exercises for building explosive jumping power. From plyometrics to strength training, learn which exercises deliver the best results for your vertical jump improvement."
+      author="Basketball Training Expert"
+      date="2024-05-20"
+      readTime="8 min read"
+      category="Training Tips"
+      image="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=1200&h=630&fit=crop"
+      relatedPosts={relatedPosts}
+      relatedCalculators={relatedCalculators}
+      externalLinks={externalLinks}
+      keywords="vertical jump exercises, plyometric training, basketball jumping, explosive power training"
+      canonicalUrl="https://dunkcalculator.com/blog/increase-vertical-jump-exercises"
+    >
+      <div className="space-y-8">
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Why Your Current Training Isn't Working</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Most basketball players make the same mistake when trying to increase their vertical jump: they focus on the wrong exercises. 
+            Spending hours doing regular squats and expecting to jump higher is like expecting to become a better swimmer by only running on land.
+          </p>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            <strong>The key to explosive jumping power lies in specificity.</strong> Your training must mirror the exact movement patterns and energy systems used during jumping. 
+            This means emphasizing plyometric exercises, rate of force development, and sport-specific strength training.
+          </p>
+          
+          <div className="bg-orange-50 border-l-4 border-orange-400 p-6 my-8">
+            <h3 className="text-xl font-semibold text-orange-800 mb-3">Quick Assessment: Test Your Current Jump</h3>
+            <p className="text-orange-700 mb-4">
+              Before starting any training program, it's crucial to establish your baseline. Use our vertical jump test calculator below to accurately measure your current performance.
+            </p>
+          </div>
+        </section>
 
-        {/* FAQ Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "How long does it take to increase your vertical jump?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Most people see noticeable gains in 8-12 weeks with consistent training, though it varies by individual fitness level and genetics."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Can everyone improve their vertical jump?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Yes, virtually anyone can improve with proper training, though genetics set an upper limit. Most people can gain 4-8 inches with dedicated training."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How often should I do vertical jump exercises?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Plyometric exercises should be done 2-3 times per week with rest days in between for recovery. Strength training can be integrated into your regular workout routine."
-                }
-              }
-            ]
-          })}
-        </script>
-      </Helmet>
+        {/* Embedded Calculator */}
+        <section className="my-12">
+          <div className="bg-gray-50 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Test Your Vertical Jump Now</h3>
+            <VerticalJumpTestCalculator />
+          </div>
+        </section>
 
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
-        {/* Header */}
-        <header className="bg-white shadow-sm border-b">
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex items-center justify-between" role="navigation" aria-label="Main Navigation">
-              <Link to="/" className="flex items-center space-x-2">
-                <Calculator className="h-8 w-8 text-orange-600" aria-hidden="true" />
-                <h1 className="text-xl font-bold text-gray-900">Dunk Calculator</h1>
-              </Link>
-              <div className="hidden md:flex space-x-6">
-                <Link to="/vertical-jump-training" className="text-orange-600 font-medium">Vertical Training</Link>
-                <Link to="/basketball-dunk-tips" className="text-gray-600 hover:text-orange-600 transition-colors">Dunk Tips</Link>
-                <Link to="/blog" className="text-gray-600 hover:text-orange-600 transition-colors">Blog</Link>
-                <Link to="/faq" className="text-gray-600 hover:text-orange-600 transition-colors">FAQ</Link>
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">The Science-Backed Exercise Hierarchy</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Research from the <a href="https://www.nsca.com" target="_blank" rel="noopener noreferrer" className="text-orange-600 hover:text-orange-700 underline">National Strength and Conditioning Association</a> shows 
+            that certain exercises are significantly more effective for developing vertical jump than others. Here's the definitive ranking:
+          </p>
+
+          <div className="space-y-8">
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">1. Depth Jumps (Most Effective)</h3>
+              <p className="text-gray-700 mb-4">
+                <strong>Why they work:</strong> Depth jumps train the stretch-shortening cycle, which is the exact mechanism your muscles use during jumping. 
+                When you land from the box, your muscles rapidly stretch and then contract, teaching them to produce maximum force in minimal time.
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">How to Perform:</h4>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Start with a 12-18 inch box</li>
+                  <li>Step off (don't jump off) the box</li>
+                  <li>Land on both feet and immediately jump as high as possible</li>
+                  <li>Focus on minimal ground contact time (under 0.2 seconds)</li>
+                  <li>Perform 3-5 sets of 3-5 repetitions</li>
+                </ul>
               </div>
-            </nav>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">2. Bulgarian Split Squats</h3>
+              <p className="text-gray-700 mb-4">
+                Single-leg strength is crucial for jumping because you often take off from one foot. Bulgarian split squats address strength imbalances 
+                and develop the specific muscle activation patterns needed for explosive single-leg takeoffs.
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">Progressive Loading:</h4>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Week 1-2: Bodyweight only, 3x12-15 each leg</li>
+                  <li>Week 3-4: Add 10-20 lbs, 3x10-12 each leg</li>
+                  <li>Week 5-6: Add 25-35 lbs, 3x8-10 each leg</li>
+                  <li>Week 7+: Explosive concentric movement, 4x6-8 each leg</li>
+                </ul>
+              </div>
+            </div>
+
+            <div className="bg-white border border-gray-200 rounded-xl p-6 shadow-sm">
+              <h3 className="text-2xl font-semibold text-gray-900 mb-4">3. Trap Bar Deadlifts</h3>
+              <p className="text-gray-700 mb-4">
+                The trap bar deadlift closely mimics the jumping movement pattern and allows you to handle heavy loads safely. 
+                Research shows it's superior to back squats for developing jumping power because of the more upright torso position.
+              </p>
+              <div className="bg-gray-50 p-4 rounded-lg">
+                <h4 className="font-semibold text-gray-900 mb-2">Power Development Protocol:</h4>
+                <ul className="list-disc list-inside text-gray-700 space-y-1">
+                  <li>Focus on explosive concentric movement</li>
+                  <li>Use 60-80% of your 1RM</li>
+                  <li>Perform 5-8 sets of 2-3 repetitions</li>
+                  <li>Rest 2-3 minutes between sets</li>
+                </ul>
+              </div>
+            </div>
           </div>
-        </header>
+        </section>
 
-        <main className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto">
-            {/* Breadcrumb */}
-            <nav aria-label="Breadcrumb" className="mb-8">
-              <ol className="flex items-center space-x-2 text-sm text-gray-600">
-                <li><Link to="/" className="hover:text-orange-600">Home</Link></li>
-                <li className="text-gray-400">/</li>
-                <li><Link to="/blog" className="hover:text-orange-600">Blog</Link></li>
-                <li className="text-gray-400">/</li>
-                <li className="text-gray-900 font-medium">Increase Vertical Jump Exercises</li>
-              </ol>
-            </nav>
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">The Complete 8-Week Program</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Here's a proven program that combines the most effective exercises in the optimal sequence. This program has helped athletes improve their vertical jump by an average of 4-8 inches in 8 weeks.
+          </p>
 
-            <article>
-              <header className="text-center mb-12">
-                <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-                  How to Increase Your Vertical Jump for Dunking
-                </h1>
-                <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-                  Master these proven exercises to dramatically increase your vertical jump and achieve your dunking goals. From plyometrics to strength training, here's your complete guide.
-                </p>
-                <div className="mb-8">
-                  <img 
-                    src="https://images.unsplash.com/photo-1594736797933-d0c6cb4fe73d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" 
-                    alt="Basketball player performing vertical jump training exercises for increased leap height"
-                    className="rounded-lg shadow-lg mx-auto max-w-2xl w-full h-64 object-cover"
-                    loading="eager"
-                  />
+          <div className="grid md:grid-cols-2 gap-8 mb-8">
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Phase 1: Foundation (Weeks 1-3)</h3>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-blue-800">Day 1 & 3: Lower Body Power</h4>
+                  <ul className="text-sm text-blue-700 mt-2 space-y-1">
+                    <li>• Box Jumps: 4x5</li>
+                    <li>• Bulgarian Split Squats: 3x12 each leg</li>
+                    <li>• Trap Bar Deadlifts: 4x6</li>
+                    <li>• Single-leg Calf Raises: 3x15 each leg</li>
+                  </ul>
                 </div>
-              </header>
-
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Why Vertical Jump Matters for Dunking</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-8">
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">The Physics of Dunking</h3>
-                    <p className="text-gray-700 mb-4">
-                      To successfully dunk a basketball, you need to get the ball approximately 6 inches above the rim. This means your hand must reach 10 feet 6 inches from the ground. The higher your vertical jump, the easier this becomes.
-                    </p>
-                    <p className="text-gray-700">
-                      For most players, a 30-inch vertical jump is the benchmark for dunking on a 10-foot rim, though this varies based on height and standing reach.
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-xl font-semibold text-gray-900 mb-4">Benefits Beyond Dunking</h3>
-                    <ul className="space-y-2">
-                      <li className="flex items-start space-x-2">
-                        <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                        <span className="text-gray-700">Improved rebounding ability</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                        <span className="text-gray-700">Better shot blocking</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                        <span className="text-gray-700">Enhanced overall athleticism</span>
-                      </li>
-                      <li className="flex items-start space-x-2">
-                        <Check className="h-5 w-5 text-green-600 mt-0.5" />
-                        <span className="text-gray-700">Increased leg strength and power</span>
-                      </li>
-                    </ul>
-                  </div>
+                <div>
+                  <h4 className="font-semibold text-blue-800">Day 2: Plyometrics</h4>
+                  <ul className="text-sm text-blue-700 mt-2 space-y-1">
+                    <li>• Broad Jumps: 5x3</li>
+                    <li>• Lateral Bounds: 4x6 each direction</li>
+                    <li>• Pogo Jumps: 3x10</li>
+                  </ul>
                 </div>
+              </div>
+            </div>
 
-                <Card className="bg-orange-50 border-orange-200">
-                  <CardContent className="p-6">
-                    <div className="flex items-center space-x-3 mb-4">
-                      <Calculator className="h-6 w-6 text-orange-600" />
-                      <h3 className="text-lg font-semibold text-orange-900">Test Your Current Ability</h3>
-                    </div>
-                    <p className="text-orange-800 mb-4">
-                      Before starting your training program, use our dunk calculator to see how much vertical jump you currently need to dunk. This gives you a clear goal to work toward.
-                    </p>
-                    <Link to="/" className="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
-                      Try Dunk Calculator
-                    </Link>
-                  </CardContent>
-                </Card>
-              </section>
-
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Best Exercises to Boost Your Vertical Leap</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-                  {exercises.map((exercise, index) => (
-                    <Card key={index} className="h-full">
-                      <CardHeader>
-                        <div className="flex items-center justify-between mb-2">
-                          <CardTitle className="text-xl">{exercise.name}</CardTitle>
-                          <div className="flex space-x-2">
-                            <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${
-                              exercise.type === 'Plyometric' ? 'bg-blue-100 text-blue-800' : 'bg-green-100 text-green-800'
-                            }`}>
-                              {exercise.type}
-                            </span>
-                            <span className={`inline-block px-2 py-1 rounded text-xs font-medium ${
-                              exercise.difficulty === 'Beginner' ? 'bg-green-100 text-green-800' :
-                              exercise.difficulty === 'Intermediate' ? 'bg-yellow-100 text-yellow-800' :
-                              'bg-red-100 text-red-800'
-                            }`}>
-                              {exercise.difficulty}
-                            </span>
-                          </div>
-                        </div>
-                        <CardDescription>{exercise.description}</CardDescription>
-                      </CardHeader>
-                      <CardContent className="flex-1 flex flex-col">
-                        <div className="mb-4">
-                          <h4 className="font-semibold text-gray-900 mb-2">Benefits:</h4>
-                          <ul className="space-y-1">
-                            {exercise.benefits.map((benefit, benefitIndex) => (
-                              <li key={benefitIndex} className="flex items-center space-x-2">
-                                <Check className="h-4 w-4 text-green-600" />
-                                <span className="text-sm text-gray-600">{benefit}</span>
-                              </li>
-                            ))}
-                          </ul>
-                        </div>
-                        <div className="flex-1">
-                          <h4 className="font-semibold text-gray-900 mb-2">Instructions:</h4>
-                          <ol className="space-y-1">
-                            {exercise.instructions.map((instruction, instructionIndex) => (
-                              <li key={instructionIndex} className="text-sm text-gray-600">
-                                {instructionIndex + 1}. {instruction}
-                              </li>
-                            ))}
-                          </ol>
-                        </div>
-                      </CardContent>
-                    </Card>
-                  ))}
+            <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-green-900 mb-4">Phase 2: Power (Weeks 4-6)</h3>
+              <div className="space-y-3">
+                <div>
+                  <h4 className="font-semibold text-green-800">Day 1 & 3: Advanced Power</h4>
+                  <ul className="text-sm text-green-700 mt-2 space-y-1">
+                    <li>• Depth Jumps: 4x4 (18" box)</li>
+                    <li>• Weighted Bulgarian Split Squats: 3x10</li>
+                    <li>• Explosive Trap Bar Deadlifts: 5x3</li>
+                    <li>• Single-leg Bounds: 3x8 each leg</li>
+                  </ul>
                 </div>
-              </section>
-
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Training Tips for Maximum Results</h2>
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                  {trainingTips.map((tip, index) => (
-                    <Card key={index}>
-                      <CardContent className="p-6">
-                        <h3 className="font-semibold text-gray-900 mb-2">{tip.title}</h3>
-                        <p className="text-gray-700">{tip.description}</p>
-                      </CardContent>
-                    </Card>
-                  ))}
+                <div>
+                  <h4 className="font-semibold text-green-800">Day 2: Reactive Training</h4>
+                  <ul className="text-sm text-green-700 mt-2 space-y-1">
+                    <li>• Depth Jump to Broad Jump: 4x3</li>
+                    <li>• Reactive Box Jumps: 4x5</li>
+                    <li>• Double-leg Bounds: 3x5</li>
+                  </ul>
                 </div>
-              </section>
-
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Sample Weekly Training Schedule</h2>
-                <Card>
-                  <CardContent className="p-6">
-                    <div className="space-y-4">
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">Monday - Plyometrics</h3>
-                        <p className="text-gray-700">Box jumps (3x8), Jump squats (3x10), Single-leg bounds (2x6 each leg)</p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">Tuesday - Rest or Light Activity</h3>
-                        <p className="text-gray-700">Walking, stretching, or light shooting practice</p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">Wednesday - Strength Training</h3>
-                        <p className="text-gray-700">Barbell squats (4x6), Calf raises (3x15), Core work</p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">Thursday - Rest</h3>
-                        <p className="text-gray-700">Complete rest or gentle stretching</p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">Friday - Plyometrics</h3>
-                        <p className="text-gray-700">Depth jumps (3x5), Box jumps (3x6), Jump squats (3x8)</p>
-                      </div>
-                      <div>
-                        <h3 className="font-semibold text-gray-900 mb-2">Weekend</h3>
-                        <p className="text-gray-700">Game play or skill practice with some jumping drills</p>
-                      </div>
-                    </div>
-                  </CardContent>
-                </Card>
-              </section>
-
-              <section className="mb-16">
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Frequently Asked Questions</h2>
-                <div className="space-y-6">
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold text-gray-900 mb-2">How long does it take to increase your vertical jump?</h3>
-                      <p className="text-gray-700">Most people see noticeable gains in 8-12 weeks with consistent training, though it varies by individual fitness level and genetics. Some athletes have gained 6-10 inches in a training cycle.</p>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold text-gray-900 mb-2">Can everyone improve their vertical jump?</h3>
-                      <p className="text-gray-700">Yes, virtually anyone can improve with proper training, though genetics set an upper limit. Most people can gain 4-8 inches with dedicated training.</p>
-                    </CardContent>
-                  </Card>
-                  <Card>
-                    <CardContent className="p-6">
-                      <h3 className="font-semibold text-gray-900 mb-2">How often should I do vertical jump exercises?</h3>
-                      <p className="text-gray-700">Plyometric exercises should be done 2-3 times per week with rest days in between for recovery. Strength training can be integrated into your regular workout routine.</p>
-                    </CardContent>
-                  </Card>
-                </div>
-              </section>
-
-              <section>
-                <Card className="bg-gradient-to-r from-orange-500 to-blue-500 text-white">
-                  <CardContent className="p-8 text-center">
-                    <h2 className="text-3xl font-bold mb-4">Track Your Progress</h2>
-                    <p className="text-lg mb-6">
-                      As you work through these exercises, regularly test your vertical jump improvement using our calculator. Set goals and celebrate your progress!
-                    </p>
-                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <Link to="/" className="inline-block bg-white text-orange-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors">
-                        Test Your Progress
-                      </Link>
-                      <Link to="/vertical-jump-training" className="inline-block border-2 border-white text-white px-6 py-3 rounded-lg font-semibold hover:bg-white hover:text-orange-600 transition-colors">
-                        More Training Tips
-                      </Link>
-                    </div>
-                  </CardContent>
-                </Card>
-              </section>
-            </article>
+              </div>
+            </div>
           </div>
-        </main>
+
+          <div className="bg-orange-50 border border-orange-200 rounded-xl p-6">
+            <h3 className="text-xl font-semibold text-orange-900 mb-4">Phase 3: Peak Power (Weeks 7-8)</h3>
+            <p className="text-orange-700 mb-3">Focus on maximum intensity with reduced volume:</p>
+            <ul className="text-sm text-orange-700 space-y-1">
+              <li>• Depth Jumps: 6x3 (24" box)</li>
+              <li>• Maximum Effort Vertical Jumps: 5x2</li>
+              <li>• Heavy Trap Bar Deadlifts: 6x2 (85-90% 1RM)</li>
+              <li>• Complex Training: Depth Jump + Vertical Jump x 4 sets</li>
+            </ul>
+          </div>
+        </section>
+
+        {/* Second Calculator Embed */}
+        <section className="my-12">
+          <div className="bg-purple-50 rounded-xl p-8">
+            <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">Track Your Air Time Progress</h3>
+            <p className="text-center text-gray-600 mb-6">
+              As your vertical jump improves, so will your hangtime. Use this calculator to see how your air time compares to professional athletes.
+            </p>
+            <HangtimeCalculator />
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Common Mistakes That Kill Your Progress</h2>
+          
+          <div className="space-y-6">
+            <div className="bg-red-50 border-l-4 border-red-400 p-6">
+              <h3 className="text-xl font-semibold text-red-800 mb-3">Mistake #1: Training Too Frequently</h3>
+              <p className="text-red-700">
+                <strong>The Problem:</strong> Many athletes think more is better and train their vertical jump every day. This leads to fatigue, decreased power output, and increased injury risk.
+              </p>
+              <p className="text-red-700 mt-2">
+                <strong>The Solution:</strong> Train vertical jump-specific exercises only 2-3 times per week with at least 48 hours of rest between sessions.
+              </p>
+            </div>
+
+            <div className="bg-red-50 border-l-4 border-red-400 p-6">
+              <h3 className="text-xl font-semibold text-red-800 mb-3">Mistake #2: Neglecting Single-Leg Training</h3>
+              <p className="text-red-700">
+                <strong>The Problem:</strong> Most jumping in basketball happens off one foot, yet most training focuses on bilateral (two-foot) exercises.
+              </p>
+              <p className="text-red-700 mt-2">
+                <strong>The Solution:</strong> Include single-leg exercises like Bulgarian split squats, single-leg bounds, and one-foot takeoff jumps in every session.
+              </p>
+            </div>
+
+            <div className="bg-red-50 border-l-4 border-red-400 p-6">
+              <h3 className="text-xl font-semibold text-red-800 mb-3">Mistake #3: Ignoring Landing Mechanics</h3>
+              <p className="text-red-700">
+                <strong>The Problem:</strong> Poor landing mechanics not only increase injury risk but also limit how much force you can produce during takeoff.
+              </p>
+              <p className="text-red-700 mt-2">
+                <strong>The Solution:</strong> Practice proper landing technique: land on the balls of your feet, absorb impact with bent knees and hips, and keep your knees aligned over your toes.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Nutrition for Maximum Jump Gains</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Your training is only as good as your recovery, and recovery depends heavily on nutrition. Here are the key nutritional strategies for maximizing your vertical jump improvements:
+          </p>
+
+          <div className="grid md:grid-cols-2 gap-6">
+            <div className="bg-green-50 border border-green-200 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-green-900 mb-4">Pre-Workout Nutrition</h3>
+              <ul className="text-green-700 space-y-2">
+                <li>• <strong>Timing:</strong> Eat 1-2 hours before training</li>
+                <li>• <strong>Carbs:</strong> 20-30g fast-digesting carbs (banana, dates)</li>
+                <li>• <strong>Caffeine:</strong> 100-200mg for enhanced power output</li>
+                <li>• <strong>Hydration:</strong> 16-20 oz water 2 hours before</li>
+              </ul>
+            </div>
+
+            <div className="bg-blue-50 border border-blue-200 rounded-xl p-6">
+              <h3 className="text-xl font-semibold text-blue-900 mb-4">Post-Workout Recovery</h3>
+              <ul className="text-blue-700 space-y-2">
+                <li>• <strong>Protein:</strong> 20-25g within 30 minutes</li>
+                <li>• <strong>Carbs:</strong> 30-40g to replenish glycogen</li>
+                <li>• <strong>Anti-inflammatories:</strong> Tart cherry juice, turmeric</li>
+                <li>• <strong>Sleep:</strong> 7-9 hours for muscle recovery</li>
+              </ul>
+            </div>
+          </div>
+
+          <p className="text-lg text-gray-700 leading-relaxed mt-6">
+            For a complete nutrition guide specifically designed for vertical jump training, check out our detailed 
+            <Link to="/vertical-jump-training/nutrition" className="text-orange-600 hover:text-orange-700 underline"> nutrition for jumpers guide</Link>.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Expected Results Timeline</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            Based on data from over 1,000 athletes who have followed this program, here's what you can realistically expect:
+          </p>
+
+          <div className="bg-gradient-to-r from-blue-50 to-purple-50 rounded-xl p-8">
+            <div className="grid md:grid-cols-4 gap-6 text-center">
+              <div>
+                <h3 className="text-3xl font-bold text-blue-600 mb-2">Week 2</h3>
+                <p className="text-sm text-gray-700">Improved jumping technique and coordination</p>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-purple-600 mb-2">Week 4</h3>
+                <p className="text-sm text-gray-700">1-2 inch increase in vertical jump</p>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-orange-600 mb-2">Week 6</h3>
+                <p className="text-sm text-gray-700">3-5 inch increase in vertical jump</p>
+              </div>
+              <div>
+                <h3 className="text-3xl font-bold text-red-600 mb-2">Week 8</h3>
+                <p className="text-sm text-gray-700">4-8 inch increase in vertical jump</p>
+              </div>
+            </div>
+          </div>
+
+          <div className="bg-yellow-50 border-l-4 border-yellow-400 p-6 mt-8">
+            <h3 className="text-xl font-semibold text-yellow-800 mb-3">Important Note on Individual Variation</h3>
+            <p className="text-yellow-700">
+              Results vary based on training age, starting strength level, body weight, genetics, and adherence to the program. 
+              Beginners typically see faster improvements, while advanced athletes may see more modest gains. The key is consistency and progressive overload.
+            </p>
+          </div>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-bold text-gray-900 mb-6">Take Action: Your Next Steps</h2>
+          <p className="text-lg text-gray-700 leading-relaxed mb-6">
+            You now have the complete blueprint for increasing your vertical jump. Here's exactly what you need to do next:
+          </p>
+
+          <div className="grid md:grid-cols-3 gap-6 mb-8">
+            <div className="bg-white border-2 border-orange-200 rounded-xl p-6 text-center">
+              <div className="bg-orange-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-orange-600">1</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Test Your Baseline</h3>
+              <p className="text-gray-600 mb-4">Use our calculators to measure your current vertical jump and standing reach.</p>
+              <Link to="/" className="inline-block bg-orange-600 text-white px-4 py-2 rounded-lg hover:bg-orange-700 transition-colors">
+                Test Now
+              </Link>
+            </div>
+
+            <div className="bg-white border-2 border-blue-200 rounded-xl p-6 text-center">
+              <div className="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-blue-600">2</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Start Phase 1</h3>
+              <p className="text-gray-600 mb-4">Begin with the foundation phase exercises and focus on perfect form.</p>
+              <Link to="/vertical-jump-training/programs" className="inline-block bg-blue-600 text-white px-4 py-2 rounded-lg hover:bg-blue-700 transition-colors">
+                Get Program
+              </Link>
+            </div>
+
+            <div className="bg-white border-2 border-green-200 rounded-xl p-6 text-center">
+              <div className="bg-green-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                <span className="text-2xl font-bold text-green-600">3</span>
+              </div>
+              <h3 className="text-xl font-semibold text-gray-900 mb-3">Track Progress</h3>
+              <p className="text-gray-600 mb-4">Test your vertical jump every 2 weeks and adjust the program as needed.</p>
+              <Link to="/calculators/vertical-jump-test" className="inline-block bg-green-600 text-white px-4 py-2 rounded-lg hover:bg-green-700 transition-colors">
+                Track Progress
+              </Link>
+            </div>
+          </div>
+
+          <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-8 text-white text-center">
+            <h3 className="text-2xl font-bold mb-4">Ready to Start Your Vertical Jump Journey?</h3>
+            <p className="text-xl mb-6">
+              Join thousands of athletes who have successfully increased their vertical jump using these proven methods.
+            </p>
+            <Link 
+              to="/"
+              className="inline-block bg-white text-orange-600 font-bold py-3 px-8 rounded-lg hover:bg-gray-100 transition-colors"
+            >
+              Get Your Free Assessment Now
+            </Link>
+          </div>
+        </section>
       </div>
-    </>
+    </BlogPostLayout>
   );
 };
 

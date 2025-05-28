@@ -11,6 +11,14 @@ import VerticalJumpGuide from './pages/VerticalJumpGuide';
 import HoopHeightsGuide from './pages/HoopHeightsGuide';
 import OtherMeasurementsGuide from './pages/OtherMeasurementsGuide';
 
+// Calculator Pages
+import Calculators from './pages/Calculators';
+import HangtimeCalculator from './pages/HangtimeCalculator';
+import ReachCalculator from './pages/ReachCalculator';
+import VerticalJumpTest from './pages/VerticalJumpTest';
+import BasketballBMICalculator from './pages/BasketballBMICalculator';
+import BasketballPositionCalculator from './pages/BasketballPositionCalculator';
+
 // Vertical Jump Training Pages
 import VerticalJumpTraining from './pages/VerticalJumpTraining';
 import PlyometricExercises from './pages/PlyometricExercises';
@@ -25,6 +33,9 @@ import HowToPalmBasketball from './pages/HowToPalmBasketball';
 import TypesOfDunks from './pages/TypesOfDunks';
 import AverageVerticalJumps from './pages/AverageVerticalJumps';
 import FamousDunkers from './pages/FamousDunkers';
+
+// Enhanced Blog Posts
+import IncreaseVerticalJumpExercises from './pages/blog/IncreaseVerticalJumpExercises';
 
 // Standard Website Pages
 import About from './pages/About';
@@ -42,6 +53,18 @@ function App() {
         <Routes>
           {/* Homepage */}
           <Route path="/" element={<Index />} />
+          
+          {/* Calculator Routes */}
+          <Route path="/calculators" element={<Calculators />} />
+          <Route path="/calculators/hangtime" element={<HangtimeCalculator />} />
+          <Route path="/calculators/reach" element={<ReachCalculator />} />
+          <Route path="/calculators/vertical-jump-test" element={<VerticalJumpTest />} />
+          <Route path="/calculators/bmi" element={<BasketballBMICalculator />} />
+          <Route path="/calculators/position" element={<BasketballPositionCalculator />} />
+          
+          {/* Blog Routes */}
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/increase-vertical-jump-exercises" element={<IncreaseVerticalJumpExercises />} />
           
           {/* Silo 1: Measurement Guide Routes */}
           <Route path="/measurements" element={<MeasurementGuides />} />
@@ -68,7 +91,6 @@ function App() {
           {/* Standard Website Pages */}
           <Route path="/about" element={<About />} />
           <Route path="/contact" element={<Contact />} />
-          <Route path="/blog" element={<Blog />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/glossary" element={<Glossary />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
