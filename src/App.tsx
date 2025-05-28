@@ -9,6 +9,11 @@ import Index from "./pages/Index";
 import FAQ from "./pages/FAQ";
 import VerticalJumpTraining from "./pages/VerticalJumpTraining";
 import BasketballDunkTips from "./pages/BasketballDunkTips";
+import Blog from "./pages/Blog";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
+import IncreaseVerticalJumpExercises from "./pages/blog/IncreaseVerticalJumpExercises";
+import HowToDunkBeginners from "./pages/blog/HowToDunkBeginners";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -51,6 +56,11 @@ const App = () => (
           <Route path="/faq" element={<FAQ />} />
           <Route path="/vertical-jump-training" element={<VerticalJumpTraining />} />
           <Route path="/basketball-dunk-tips" element={<BasketballDunkTips />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/blog/increase-vertical-jump-exercises" element={<IncreaseVerticalJumpExercises />} />
+          <Route path="/blog/how-to-dunk-beginners" element={<HowToDunkBeginners />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

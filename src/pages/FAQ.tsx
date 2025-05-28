@@ -106,7 +106,10 @@ const FAQ = () => {
               <div className="hidden md:flex space-x-6">
                 <Link to="/vertical-jump-training" className="text-gray-600 hover:text-orange-600 transition-colors">Vertical Training</Link>
                 <Link to="/basketball-dunk-tips" className="text-gray-600 hover:text-orange-600 transition-colors">Dunk Tips</Link>
+                <Link to="/blog" className="text-gray-600 hover:text-orange-600 transition-colors">Blog</Link>
                 <Link to="/faq" className="text-orange-600 font-medium">FAQ</Link>
+                <Link to="/about" className="text-gray-600 hover:text-orange-600 transition-colors">About</Link>
+                <Link to="/contact" className="text-gray-600 hover:text-orange-600 transition-colors">Contact</Link>
               </div>
             </nav>
           </div>
