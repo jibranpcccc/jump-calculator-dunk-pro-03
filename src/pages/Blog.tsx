@@ -1,135 +1,97 @@
 
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Calendar, User, Clock, TrendingUp, Target, Users } from "lucide-react";
+import { Calendar, User, ArrowRight, Search, Tag } from "lucide-react";
 
 const Blog = () => {
   const blogPosts = [
     {
       id: 1,
-      title: "8-Week Vertical Jump Workout Plan: Science-Backed Training for Explosive Hops",
-      excerpt: "Transform your vertical jump with our comprehensive 8-week program. Includes plyometrics, strength training, and recovery protocols used by professional athletes.",
-      author: "Coach Mike Johnson",
-      date: "2024-05-25",
-      readTime: "12 min read",
-      category: "Training Programs",
-      featured: true,
-      image: "/blog/vertical-jump-workout.jpg"
+      title: "Best Exercises to Increase Your Vertical Jump: A Complete Guide",
+      excerpt: "Discover the most effective exercises for building explosive jumping power. From plyometrics to strength training, learn which exercises deliver the best results for your vertical jump improvement.",
+      category: "Training Tips",
+      author: "Basketball Training Expert",
+      date: "2024-05-20",
+      readTime: "8 min read",
+      image: "/placeholder.svg",
+      slug: "increase-vertical-jump-exercises"
     },
     {
       id: 2,
-      title: "How to Measure Your Vertical Jump: 5 Accurate Methods Compared", 
-      excerpt: "Discover the most accurate ways to measure your vertical jump, from simple wall tests to advanced equipment. Learn which method works best for tracking progress.",
-      author: "Dr. Sarah Williams",
-      date: "2024-05-22",
-      readTime: "8 min read",
-      category: "Measurements",
-      featured: false,
-      image: "/blog/measure-vertical-jump.jpg"
+      title: "How to Dunk a Basketball: Complete Beginner's Guide",
+      excerpt: "Your comprehensive guide to achieving your first dunk. Learn proper technique, approach strategies, and the training required to go from dreaming to dunking.",
+      category: "Dunking Techniques",
+      author: "Former College Player",
+      date: "2024-05-18",
+      readTime: "12 min read",
+      image: "/placeholder.svg",
+      slug: "how-to-dunk-beginners"
     },
     {
       id: 3,
-      title: "Best Plyometric Exercises to Increase Your Vertical Jump",
-      excerpt: "Master the most effective plyometric exercises for basketball players. Detailed form instructions, progressions, and sample workouts included.",
-      author: "Coach Mike Johnson", 
-      date: "2024-05-20",
+      title: "Vertical Jump Workout: 30-Day Challenge Program",
+      excerpt: "Follow our proven 30-day vertical jump workout program designed to add inches to your leap. Includes daily exercises, progression tracking, and recovery protocols.",
+      category: "Workout Plans",
+      author: "Strength Coach",
+      date: "2024-05-15",
       readTime: "10 min read",
-      category: "Exercises",
-      featured: false,
-      image: "/blog/plyometric-exercises.jpg"
+      image: "/placeholder.svg",
+      slug: "vertical-jump-workout"
     },
     {
       id: 4,
-      title: "Basketball Height Requirements: Can You Dunk at Any Height?",
-      excerpt: "Explore how height affects dunking ability and learn about the shortest players who've achieved incredible dunks. Plus tips for shorter players.",
-      author: "Basketball Analytics Team",
-      date: "2024-05-18",
-      readTime: "6 min read", 
-      category: "Analysis",
-      featured: false,
-      image: "/blog/height-requirements.jpg"
+      title: "Basketball Jump Technique: Mastering the Perfect Takeoff",
+      excerpt: "Perfect your jumping technique with expert analysis of takeoff mechanics. Learn the differences between one-foot and two-foot jumps and which is best for you.",
+      category: "Technique Analysis",
+      author: "Biomechanics Specialist",
+      date: "2024-05-12",
+      readTime: "7 min read",
+      image: "/placeholder.svg",
+      slug: "basketball-jump-technique"
     },
     {
       id: 5,
-      title: "Nutrition for Vertical Jump: Foods That Fuel Explosive Power",
-      excerpt: "Optimize your diet for maximum jumping performance. Learn about pre-workout nutrition, recovery foods, and supplements that actually work.",
-      author: "Dr. Sarah Williams",
-      date: "2024-05-15",
-      readTime: "9 min read",
-      category: "Nutrition", 
-      featured: false,
-      image: "/blog/nutrition-vertical-jump.jpg"
+      title: "Can You Dunk if You're Short? Height vs. Vertical Jump",
+      excerpt: "Explore how shorter athletes can overcome height disadvantages through exceptional vertical jump training. Real examples and success stories included.",
+      category: "Motivation",
+      author: "Athletic Performance Coach",
+      date: "2024-05-10",
+      readTime: "6 min read",
+      image: "/placeholder.svg",
+      slug: "dunk-if-you-are-short"
     },
     {
       id: 6,
-      title: "Success Story: From 24-Inch to 36-Inch Vertical in 6 Months",
-      excerpt: "Meet Marcus, a high school player who transformed his game with dedicated training. Learn his exact workout plan and mindset strategies.",
-      author: "Success Stories Team",
-      date: "2024-05-12",
-      readTime: "7 min read",
-      category: "Success Stories",
-      featured: false,
-      image: "/blog/success-story-marcus.jpg"
+      title: "Best Vertical Jump Exercises: Top 10 Moves That Actually Work",
+      excerpt: "Cut through the noise with our list of the most effective vertical jump exercises. Each exercise includes proper form instructions and progression tips.",
+      category: "Exercise Guides",
+      author: "Plyometric Specialist",
+      date: "2024-05-08",
+      readTime: "9 min read",
+      image: "/placeholder.svg",
+      slug: "best-vertical-jump-exercises"
     }
   ];
 
   const categories = [
     "All Posts",
-    "Training Programs", 
-    "Exercises",
-    "Measurements",
-    "Nutrition",
-    "Analysis",
-    "Success Stories"
+    "Training Tips",
+    "Dunking Techniques", 
+    "Workout Plans",
+    "Technique Analysis",
+    "Nutrition Advice",
+    "Exercise Guides",
+    "Success Stories",
+    "Motivation"
   ];
 
   return (
     <>
       <Helmet>
-        <title>Dunk Calculator Blog | Vertical Jump Tips, Training & Basketball Insights</title>
-        <meta name="description" content="Get expert vertical jump training tips, dunking techniques, player analysis, and success stories. Your complete resource for basketball performance improvement." />
-        <meta name="keywords" content="vertical jump training blog, basketball training tips, dunking techniques, plyometric exercises, basketball performance, jump higher" />
+        <title>Dunk Calculator Blog | Vertical Jump Tips, Training Drills & Dunk News</title>
+        <meta name="description" content="The official blog for Dunk-Calculator.info. Get the latest vertical jump training tips, dunking news, player spotlights, exercise guides, nutrition advice, and more." />
+        <meta name="keywords" content="vertical jump blog, basketball training tips, dunk news, exercise guides, plyometric training, basketball performance" />
         <link rel="canonical" href="https://dunkcalculator.com/blog/" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="Dunk Calculator Blog | Vertical Jump Tips & Training" />
-        <meta property="og:description" content="Expert basketball training content, vertical jump tips, and success stories to help you improve your game." />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://dunkcalculator.com/blog/" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Blog",
-            "name": "Dunk Calculator Blog",
-            "description": "Expert basketball training content, vertical jump tips, dunking techniques, and success stories for players of all levels.",
-            "url": "https://dunkcalculator.com/blog/",
-            "publisher": {
-              "@type": "Organization",
-              "name": "Dunk Calculator",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://dunkcalculator.com/logo.png"
-              }
-            },
-            "mainEntity": {
-              "@type": "ItemList",
-              "itemListElement": blogPosts.map((post, index) => ({
-                "@type": "BlogPosting",
-                "position": index + 1,
-                "headline": post.title,
-                "description": post.excerpt,
-                "datePublished": post.date,
-                "author": {
-                  "@type": "Person",
-                  "name": post.author
-                },
-                "url": `https://dunkcalculator.com/blog/${post.id}`
-              }))
-            }
-          })}
-        </script>
       </Helmet>
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
@@ -137,139 +99,168 @@ const Blog = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              The Dunk Calculator Blog
+              The Dunk Calculator Blog: Your Ultimate Source for Jumping Higher & Dunking Better
             </h1>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
-              Your source for expert basketball training tips, vertical jump techniques, and inspiring success stories. 
-              Everything you need to take your game to the next level.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Expert training advice, technique breakdowns, success stories, and the latest insights 
+              to help you maximize your vertical jump and achieve your dunking goals.
             </p>
-            <Link 
-              to="/"
-              className="inline-flex items-center px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors"
-            >
-              <Target className="w-5 h-5 mr-2" />
-              Try Our Dunk Calculator
-            </Link>
           </div>
 
-          <div className="flex flex-col lg:flex-row gap-8">
+          <div className="grid lg:grid-cols-4 gap-8">
             {/* Main Content */}
-            <div className="lg:w-2/3">
+            <div className="lg:col-span-3">
               {/* Featured Post */}
-              {blogPosts.filter(post => post.featured).map(post => (
-                <div key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
-                  <div className="relative">
-                    <div className="h-64 bg-gradient-to-r from-orange-400 to-red-500 flex items-center justify-center">
-                      <TrendingUp className="w-16 h-16 text-white" />
-                    </div>
-                    <div className="absolute top-4 left-4">
-                      <span className="bg-orange-600 text-white px-3 py-1 rounded-full text-sm font-medium">
-                        Featured
-                      </span>
-                    </div>
-                  </div>
-                  <div className="p-8">
-                    <div className="flex items-center mb-4 text-sm text-gray-500">
-                      <Calendar className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{new Date(post.date).toLocaleDateString()}</span>
-                      <User className="w-4 h-4 mr-2" />
-                      <span className="mr-4">{post.author}</span>
-                      <Clock className="w-4 h-4 mr-2" />
-                      <span>{post.readTime}</span>
-                    </div>
-                    <h2 className="text-2xl font-bold text-gray-900 mb-3 hover:text-orange-600 transition-colors">
-                      <Link to={`/blog/${post.id}`}>{post.title}</Link>
-                    </h2>
-                    <p className="text-gray-600 mb-4 leading-relaxed">{post.excerpt}</p>
-                    <div className="flex items-center justify-between">
-                      <span className="bg-orange-100 text-orange-800 px-3 py-1 rounded-full text-sm font-medium">
-                        {post.category}
-                      </span>
-                      <Link 
-                        to={`/blog/${post.id}`}
-                        className="text-orange-600 font-semibold hover:text-orange-700 transition-colors"
-                      >
-                        Read More →
-                      </Link>
-                    </div>
+              <div className="bg-white rounded-xl shadow-lg overflow-hidden mb-8">
+                <div className="relative">
+                  <img 
+                    src="/placeholder.svg" 
+                    alt="Featured post"
+                    className="w-full h-64 object-cover"
+                  />
+                  <div className="absolute top-4 left-4">
+                    <span className="px-3 py-1 bg-orange-600 text-white rounded-full text-sm font-medium">
+                      Featured
+                    </span>
                   </div>
                 </div>
-              ))}
-
-              {/* Regular Posts */}
-              <div className="grid md:grid-cols-2 gap-6">
-                {blogPosts.filter(post => !post.featured).map(post => (
-                  <div key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden">
-                    <div className="h-48 bg-gradient-to-r from-blue-400 to-purple-500 flex items-center justify-center">
-                      <Target className="w-12 h-12 text-white" />
-                    </div>
-                    <div className="p-6">
-                      <div className="flex items-center mb-3 text-sm text-gray-500">
-                        <Calendar className="w-4 h-4 mr-2" />
-                        <span className="mr-3">{new Date(post.date).toLocaleDateString()}</span>
-                        <Clock className="w-4 h-4 mr-2" />
-                        <span>{post.readTime}</span>
-                      </div>
-                      <h3 className="text-lg font-bold text-gray-900 mb-2 hover:text-orange-600 transition-colors">
-                        <Link to={`/blog/${post.id}`}>{post.title}</Link>
-                      </h3>
-                      <p className="text-gray-600 mb-4 text-sm leading-relaxed">
-                        {post.excerpt.substring(0, 120)}...
-                      </p>
-                      <div className="flex items-center justify-between">
-                        <span className="bg-gray-100 text-gray-700 px-2 py-1 rounded text-xs font-medium">
-                          {post.category}
-                        </span>
-                        <Link 
-                          to={`/blog/${post.id}`}
-                          className="text-orange-600 font-semibold text-sm hover:text-orange-700 transition-colors"
-                        >
-                          Read More →
-                        </Link>
-                      </div>
-                    </div>
+                <div className="p-6">
+                  <div className="flex items-center space-x-4 text-sm text-gray-500 mb-4">
+                    <span className="flex items-center">
+                      <Calendar className="w-4 h-4 mr-1" />
+                      May 20, 2024
+                    </span>
+                    <span className="flex items-center">
+                      <User className="w-4 h-4 mr-1" />
+                      Basketball Training Expert
+                    </span>
+                    <span>8 min read</span>
                   </div>
+                  <h2 className="text-2xl font-bold text-gray-900 mb-3">
+                    Best Exercises to Increase Your Vertical Jump: A Complete Guide
+                  </h2>
+                  <p className="text-gray-600 mb-4">
+                    Discover the most effective exercises for building explosive jumping power. From plyometrics to strength training, 
+                    learn which exercises deliver the best results for your vertical jump improvement.
+                  </p>
+                  <Link 
+                    to="/blog/increase-vertical-jump-exercises"
+                    className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+                  >
+                    Read Full Article
+                    <ArrowRight className="w-4 h-4 ml-1" />
+                  </Link>
+                </div>
+              </div>
+
+              {/* Blog Posts Grid */}
+              <div className="space-y-6">
+                {blogPosts.slice(1).map((post) => (
+                  <article key={post.id} className="bg-white rounded-xl shadow-lg overflow-hidden">
+                    <div className="md:flex">
+                      <div className="md:w-1/3">
+                        <img 
+                          src={post.image} 
+                          alt={post.title}
+                          className="w-full h-48 md:h-full object-cover"
+                        />
+                      </div>
+                      <div className="md:w-2/3 p-6">
+                        <div className="flex items-center space-x-4 text-sm text-gray-500 mb-3">
+                          <span className="px-2 py-1 bg-blue-100 text-blue-800 rounded text-xs font-medium">
+                            {post.category}
+                          </span>
+                          <span className="flex items-center">
+                            <Calendar className="w-4 h-4 mr-1" />
+                            {new Date(post.date).toLocaleDateString('en-US', { 
+                              year: 'numeric', 
+                              month: 'long', 
+                              day: 'numeric' 
+                            })}
+                          </span>
+                          <span>{post.readTime}</span>
+                        </div>
+                        
+                        <h3 className="text-xl font-bold text-gray-900 mb-3 hover:text-orange-600 transition-colors">
+                          <Link to={`/blog/${post.slug}`}>
+                            {post.title}
+                          </Link>
+                        </h3>
+                        
+                        <p className="text-gray-600 mb-4 text-sm">
+                          {post.excerpt}
+                        </p>
+                        
+                        <div className="flex items-center justify-between">
+                          <span className="text-sm text-gray-500 flex items-center">
+                            <User className="w-4 h-4 mr-1" />
+                            {post.author}
+                          </span>
+                          <Link 
+                            to={`/blog/${post.slug}`}
+                            className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium text-sm"
+                          >
+                            Read More
+                            <ArrowRight className="w-4 h-4 ml-1" />
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  </article>
                 ))}
               </div>
 
               {/* Pagination */}
               <div className="flex justify-center mt-12">
-                <div className="flex space-x-2">
-                  <button className="px-4 py-2 bg-orange-600 text-white rounded-lg font-medium">1</button>
-                  <button className="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-orange-100">2</button>
-                  <button className="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-orange-100">3</button>
-                  <button className="px-4 py-2 bg-white text-gray-700 rounded-lg font-medium hover:bg-orange-100">Next →</button>
-                </div>
+                <nav className="flex items-center space-x-2">
+                  <button className="px-3 py-2 text-gray-500 hover:text-gray-700 transition-colors">
+                    Previous
+                  </button>
+                  <button className="px-3 py-2 bg-orange-600 text-white rounded font-medium">
+                    1
+                  </button>
+                  <button className="px-3 py-2 text-gray-700 hover:text-gray-900 transition-colors">
+                    2
+                  </button>
+                  <button className="px-3 py-2 text-gray-700 hover:text-gray-900 transition-colors">
+                    3
+                  </button>
+                  <button className="px-3 py-2 text-gray-500 hover:text-gray-700 transition-colors">
+                    Next
+                  </button>
+                </nav>
               </div>
             </div>
 
             {/* Sidebar */}
-            <div className="lg:w-1/3">
+            <div className="lg:col-span-1 space-y-6">
               {/* Search */}
-              <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Search Articles</h3>
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <Search className="w-5 h-5 mr-2" />
+                  Search Articles
+                </h3>
                 <div className="relative">
-                  <input 
-                    type="text" 
-                    placeholder="Search training tips, exercises..."
+                  <input
+                    type="text"
+                    placeholder="Search training tips..."
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-orange-500 focus:border-transparent"
                   />
-                  <button className="absolute right-3 top-3 text-gray-400 hover:text-orange-600">
-                    <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-                    </svg>
-                  </button>
+                  <Search className="absolute right-3 top-3 w-5 h-5 text-gray-400" />
                 </div>
               </div>
 
               {/* Categories */}
-              <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
-                <h3 className="text-xl font-bold text-gray-900 mb-4">Categories</h3>
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4 flex items-center">
+                  <Tag className="w-5 h-5 mr-2" />
+                  Categories
+                </h3>
                 <div className="space-y-2">
-                  {categories.map((category, index) => (
-                    <button 
-                      key={index}
-                      className="w-full text-left px-3 py-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded-lg transition-colors"
+                  {categories.map((category) => (
+                    <button
+                      key={category}
+                      className="block w-full text-left px-3 py-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded transition-colors text-sm"
                     >
                       {category}
                     </button>
@@ -278,55 +269,52 @@ const Blog = () => {
               </div>
 
               {/* Recent Posts */}
-              <div className="bg-white rounded-xl shadow-lg p-6 mb-6">
+              <div className="bg-white rounded-xl shadow-lg p-6">
                 <h3 className="text-xl font-bold text-gray-900 mb-4">Recent Posts</h3>
                 <div className="space-y-4">
-                  {blogPosts.slice(0, 4).map(post => (
-                    <div key={post.id} className="border-b border-gray-200 pb-4 last:border-0">
-                      <h4 className="text-sm font-semibold text-gray-900 mb-1 hover:text-orange-600 transition-colors">
-                        <Link to={`/blog/${post.id}`}>
-                          {post.title.substring(0, 60)}...
+                  {blogPosts.slice(0, 4).map((post) => (
+                    <div key={post.id} className="border-b border-gray-200 pb-4 last:border-b-0 last:pb-0">
+                      <h4 className="font-medium text-gray-900 text-sm mb-2 hover:text-orange-600 transition-colors">
+                        <Link to={`/blog/${post.slug}`}>
+                          {post.title}
                         </Link>
                       </h4>
-                      <p className="text-xs text-gray-500">{new Date(post.date).toLocaleDateString()}</p>
+                      <p className="text-gray-500 text-xs flex items-center">
+                        <Calendar className="w-3 h-3 mr-1" />
+                        {new Date(post.date).toLocaleDateString()}
+                      </p>
                     </div>
                   ))}
                 </div>
               </div>
 
-              {/* Newsletter Signup */}
-              <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-6 text-white">
-                <h3 className="text-xl font-bold mb-4">Get Training Tips Weekly</h3>
-                <p className="mb-4 text-sm">
-                  Join 50,000+ basketball players getting exclusive training tips, workout plans, and dunking secrets.
+              {/* CTA Box */}
+              <div className="bg-gradient-to-br from-orange-600 to-red-600 rounded-xl shadow-lg p-6 text-white">
+                <h3 className="text-xl font-bold mb-4">Ready to Start Training?</h3>
+                <p className="text-orange-100 text-sm mb-4">
+                  Use our free dunk calculator to assess your current potential and get personalized training recommendations.
                 </p>
-                <div className="space-y-3">
-                  <input 
-                    type="email" 
-                    placeholder="Your email address"
-                    className="w-full px-4 py-2 text-gray-900 rounded-lg focus:ring-2 focus:ring-white"
-                  />
-                  <button className="w-full px-4 py-2 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-                    Subscribe Free
-                  </button>
-                </div>
-                <p className="text-xs mt-2 opacity-90">No spam. Unsubscribe anytime.</p>
+                <Link 
+                  to="/"
+                  className="inline-block w-full bg-white text-orange-600 font-semibold py-2 px-4 rounded-lg hover:bg-gray-100 transition-colors text-center text-sm"
+                >
+                  Try Calculator Now
+                </Link>
               </div>
 
-              {/* Calculator CTA */}
-              <div className="bg-white rounded-xl shadow-lg p-6 mt-6">
-                <div className="text-center">
-                  <Users className="w-12 h-12 text-orange-600 mx-auto mb-4" />
-                  <h3 className="text-xl font-bold text-gray-900 mb-3">Ready to Test Your Potential?</h3>
-                  <p className="text-gray-600 mb-4 text-sm">
-                    See if you can dunk with our accurate calculator used by 100,000+ players.
-                  </p>
-                  <Link 
-                    to="/"
-                    className="inline-block w-full px-4 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors text-center"
-                  >
-                    Try Dunk Calculator
-                  </Link>
+              {/* Archives */}
+              <div className="bg-white rounded-xl shadow-lg p-6">
+                <h3 className="text-xl font-bold text-gray-900 mb-4">Archives</h3>
+                <div className="space-y-2">
+                  <button className="block w-full text-left px-3 py-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded transition-colors text-sm">
+                    May 2024 (6)
+                  </button>
+                  <button className="block w-full text-left px-3 py-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded transition-colors text-sm">
+                    April 2024 (4)
+                  </button>
+                  <button className="block w-full text-left px-3 py-2 text-gray-600 hover:text-orange-600 hover:bg-orange-50 rounded transition-colors text-sm">
+                    March 2024 (5)
+                  </button>
                 </div>
               </div>
             </div>

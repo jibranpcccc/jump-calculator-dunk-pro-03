@@ -18,14 +18,42 @@ const Header = () => {
   }, []);
 
   const navItems = [
-    { name: "Calculator", href: "/", active: location.pathname === "/" },
-    { name: "All Calculators", href: "/calculators", active: location.pathname === "/calculators" },
-    { name: "Vertical Training", href: "/vertical-jump-training", active: location.pathname === "/vertical-jump-training" },
-    { name: "Dunk Tips", href: "/basketball-dunk-tips", active: location.pathname === "/basketball-dunk-tips" },
-    { name: "Blog", href: "/blog", active: location.pathname.startsWith("/blog") },
-    { name: "FAQ", href: "/faq", active: location.pathname === "/faq" },
-    { name: "About", href: "/about", active: location.pathname === "/about" },
-    { name: "Contact", href: "/contact", active: location.pathname === "/contact" },
+    { 
+      name: "Calculator", 
+      href: "/", 
+      active: location.pathname === "/",
+      description: "Test your dunk potential"
+    },
+    { 
+      name: "Training Guides", 
+      href: "/vertical-jump-training", 
+      active: location.pathname === "/vertical-jump-training",
+      description: "Improve your vertical jump"
+    },
+    { 
+      name: "Dunking Skills", 
+      href: "/dunking-skills/first-dunk-guide", 
+      active: location.pathname.startsWith("/dunking-skills"),
+      description: "Learn dunking techniques"
+    },
+    { 
+      name: "Measurements", 
+      href: "/measurements", 
+      active: location.pathname === "/measurements",
+      description: "How to measure properly"
+    },
+    { 
+      name: "Blog", 
+      href: "/blog", 
+      active: location.pathname.startsWith("/blog"),
+      description: "Tips and success stories"
+    },
+    { 
+      name: "About", 
+      href: "/about", 
+      active: location.pathname === "/about",
+      description: "Our mission and team"
+    }
   ];
 
   return (
@@ -46,7 +74,7 @@ const Header = () => {
             </div>
           </Link>
           
-          {/* Enhanced Desktop Navigation */}
+          {/* Enhanced Desktop Navigation with better SEO structure */}
           <div className="hidden lg:flex items-center space-x-1">
             {navItems.map((item) => (
               <Link
@@ -57,21 +85,27 @@ const Header = () => {
                     ? "text-orange-600 bg-orange-50" 
                     : "text-gray-600 hover:text-orange-600 hover:bg-orange-50/50"
                 }`}
+                title={item.description}
               >
                 {item.name}
                 {/* Active indicator */}
                 {item.active && (
                   <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-orange-600 rounded-full"></div>
                 )}
+                
+                {/* Tooltip for better UX */}
+                <div className="absolute top-full left-1/2 transform -translate-x-1/2 mt-2 px-2 py-1 bg-gray-900 text-white text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none whitespace-nowrap">
+                  {item.description}
+                </div>
               </Link>
             ))}
             
             {/* CTA Button */}
             <Link
-              to="/calculators"
+              to="/contact"
               className="ml-4 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md"
             >
-              All Tools
+              Contact Us
             </Link>
           </div>
 
