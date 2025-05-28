@@ -36,7 +36,7 @@ const PrivacyPolicy = () => {
             <Card>
               <CardHeader>
                 <CardTitle className="text-3xl">Privacy Policy</CardTitle>
-                <p className="text-gray-600">Last updated: January 15, 2024</p>
+                <p className="text-gray-600">Last updated: May 28, 2025</p>
               </CardHeader>
               <CardContent className="prose max-w-none">
                 <section className="mb-8">
