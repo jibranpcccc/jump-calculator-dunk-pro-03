@@ -12,13 +12,11 @@ const OtherMeasurementsGuide = () => {
         <meta name="keywords" content="wingspan measurement, hand size basketball, palming basketball, ape index, basketball measurements, dunking analysis" />
         <link rel="canonical" href="https://dunkcalculator.com/measurements/other-measurements/" />
         
-        {/* Open Graph */}
         <meta property="og:title" content="Wingspan, Hand Size & More: Key Measurements for Dunking Analysis" />
         <meta property="og:description" content="Discover how wingspan, hand size, weight, and age impact your dunking potential beyond vertical jump alone." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://dunkcalculator.com/measurements/other-measurements/" />
         
-        {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
@@ -72,7 +70,7 @@ const OtherMeasurementsGuide = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              The Dunker's Blueprint: Unpacking Wingspan, Hand Size, Weight, and Age
+              The Dunker&apos;s Blueprint: Unpacking Wingspan, Hand Size, Weight, and Age
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
               Understanding how these often-overlooked measurements can impact your dunking potential beyond just vertical jump height.
@@ -91,7 +89,7 @@ const OtherMeasurementsGuide = () => {
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">What is Wingspan and How is it Measured?</h3>
                 <p className="text-gray-600 mb-4">
                   Wingspan is the distance from fingertip to fingertip when you stand with your arms outstretched horizontally, 
-                  forming a "T" shape with your body. This measurement often correlates closely with standing reach but provides 
+                  forming a &quot;T&quot; shape with your body. This measurement often correlates closely with standing reach but provides 
                   additional insight into your overall arm length and shoulder width.
                 </p>
                 <div className="bg-blue-50 p-4 rounded-lg">
@@ -106,11 +104,11 @@ const OtherMeasurementsGuide = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">The "Ape Index": Wingspan vs. Height</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">The &quot;Ape Index&quot;: Wingspan vs. Height</h3>
                 <div className="grid md:grid-cols-3 gap-6">
                   <div className="p-4 bg-green-50 rounded-lg text-center">
                     <h4 className="font-semibold text-green-800 mb-2">Positive Ape Index</h4>
-                    <p className="text-green-700 text-sm">Wingspan > Height</p>
+                    <p className="text-green-700 text-sm">Wingspan &gt; Height</p>
                     <p className="text-green-600 text-xs mt-2">Advantage for reaching higher</p>
                   </div>
                   <div className="p-4 bg-yellow-50 rounded-lg text-center">
@@ -120,7 +118,7 @@ const OtherMeasurementsGuide = () => {
                   </div>
                   <div className="p-4 bg-red-50 rounded-lg text-center">
                     <h4 className="font-semibold text-red-800 mb-2">Negative Ape Index</h4>
-                    <p className="text-red-700 text-sm">Wingspan < Height</p>
+                    <p className="text-red-700 text-sm">Wingspan &lt; Height</p>
                     <p className="text-red-600 text-xs mt-2">May need higher vertical</p>
                   </div>
                 </div>
@@ -140,12 +138,12 @@ const OtherMeasurementsGuide = () => {
                 <h4 className="font-semibold text-orange-800 mb-3">NBA Examples of Notable Wingspans:</h4>
                 <div className="grid md:grid-cols-2 gap-4 text-orange-700">
                   <div>
-                    <p><strong>Kevin Durant:</strong> 6'10" height, 7'5" wingspan (+7" ape index)</p>
-                    <p><strong>Kawhi Leonard:</strong> 6'7" height, 7'3" wingspan (+8" ape index)</p>
+                    <p><strong>Kevin Durant:</strong> 6&apos;10&quot; height, 7&apos;5&quot; wingspan (+7&quot; ape index)</p>
+                    <p><strong>Kawhi Leonard:</strong> 6&apos;7&quot; height, 7&apos;3&quot; wingspan (+8&quot; ape index)</p>
                   </div>
                   <div>
-                    <p><strong>Giannis Antetokounmpo:</strong> 6'11" height, 7'3" wingspan (+4" ape index)</p>
-                    <p><strong>Anthony Davis:</strong> 6'10" height, 7'5.5" wingspan (+7.5" ape index)</p>
+                    <p><strong>Giannis Antetokounmpo:</strong> 6&apos;11&quot; height, 7&apos;3&quot; wingspan (+4&quot; ape index)</p>
+                    <p><strong>Anthony Davis:</strong> 6&apos;10&quot; height, 7&apos;5.5&quot; wingspan (+7.5&quot; ape index)</p>
                   </div>
                 </div>
               </div>
@@ -185,7 +183,7 @@ const OtherMeasurementsGuide = () => {
               </div>
 
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Typical Hand Size Benchmarks for Palming a Standard Men's Basketball</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Typical Hand Size Benchmarks for Palming a Standard Men&apos;s Basketball</h3>
                 <div className="bg-gray-50 p-6 rounded-lg">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div>
@@ -199,9 +197,9 @@ const OtherMeasurementsGuide = () => {
                     <div>
                       <h4 className="font-semibold text-gray-900 mb-3">Basketball Specifications:</h4>
                       <ul className="space-y-2 text-gray-600">
-                        <li>• <strong>Men's basketball:</strong> 29.5-29.875" circumference</li>
-                        <li>• <strong>Women's basketball:</strong> 28.5-28.875" circumference</li>
-                        <li>• <strong>Youth basketball:</strong> 27.5-27.875" circumference</li>
+                        <li>• <strong>Men&apos;s basketball:</strong> 29.5-29.875&quot; circumference</li>
+                        <li>• <strong>Women&apos;s basketball:</strong> 28.5-28.875&quot; circumference</li>
+                        <li>• <strong>Youth basketball:</strong> 27.5-27.875&quot; circumference</li>
                       </ul>
                     </div>
                   </div>
@@ -221,16 +219,16 @@ const OtherMeasurementsGuide = () => {
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-4">What If You Have Smaller Hands?</h3>
                 <p className="text-gray-600 mb-4">
-                  Don't let smaller hands discourage you! Many successful dunkers have average-sized hands and use these strategies:
+                  Don&apos;t let smaller hands discourage you! Many successful dunkers have average-sized hands and use these strategies:
                 </p>
                 <div className="grid md:grid-cols-2 gap-4">
                   <ul className="space-y-2 text-gray-600">
                     <li>• <strong>Focus on two-handed dunks:</strong> More secure and reliable</li>
                     <li>• <strong>Develop exceptional grip strength:</strong> Targeted exercises for hand/forearm strength</li>
-                    <li>• <strong>Use "cradle" technique:</strong> Support ball with both hands/arms during approach</li>
+                    <li>• <strong>Use &quot;cradle&quot; technique:</strong> Support ball with both hands/arms during approach</li>
                   </ul>
                   <ul className="space-y-2 text-gray-600">
-                    <li>• <strong>Practice with smaller balls:</strong> Women's or youth basketballs for training</li>
+                    <li>• <strong>Practice with smaller balls:</strong> Women&apos;s or youth basketballs for training</li>
                     <li>• <strong>Focus on speed and technique:</strong> Quick, decisive movements reduce handling time</li>
                     <li>• <strong>Master the timing:</strong> Perfect coordination reduces reliance on palming</li>
                   </ul>
@@ -255,7 +253,7 @@ const OtherMeasurementsGuide = () => {
                 </p>
                 <div className="bg-blue-50 p-4 rounded-lg">
                   <p className="text-blue-700">
-                    <strong>Key Insight:</strong> It's not about being light—it's about having the optimal strength-to-weight ratio. 
+                    <strong>Key Insight:</strong> It&apos;s not about being light—it&apos;s about having the optimal strength-to-weight ratio. 
                     A 200lb athlete with powerful legs may jump higher than a 150lb athlete with weaker legs.
                   </p>
                 </div>
@@ -414,7 +412,7 @@ const OtherMeasurementsGuide = () => {
 
             <div className="mt-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
               <p className="text-gray-600">
-                <strong>Remember:</strong> These measurements provide insight and help optimize training, but they don't determine 
+                <strong>Remember:</strong> These measurements provide insight and help optimize training, but they don&apos;t determine 
                 your ceiling. Dedication, proper training, and technique development can help you maximize whatever physical gifts you have!
               </p>
             </div>
