@@ -50,7 +50,7 @@ const Blog = () => {
       date: "2024-11-20"
     },
     {
-      title: "Best Basketball Shoes for Dunking",
+      title: "Best Basketball Shoes for Vertical Jump & Dunking",
       slug: "best-shoes-for-vertical-leap",
       description: "Review of basketball shoes that can help improve your jumping performance and vertical leap.",
       category: "Gear",
@@ -72,6 +72,22 @@ const Blog = () => {
       category: "Training",
       readTime: "5 min read",
       date: "2024-11-12"
+    },
+    {
+      title: "Complete Vertical Jump Workout Plan",
+      slug: "vertical-jump-workout",
+      description: "8-week progressive workout plan designed to maximize your vertical jump and dunking ability.",
+      category: "Vertical Training",
+      readTime: "7 min read",
+      date: "2024-11-10"
+    },
+    {
+      title: "Basketball Jump Technique: Perfect Your Form",
+      slug: "basketball-jump-technique",
+      description: "Master the fundamentals of jumping technique for basketball with detailed form breakdowns.",
+      category: "Technique",
+      readTime: "6 min read",
+      date: "2024-11-08"
     }
   ];
 
