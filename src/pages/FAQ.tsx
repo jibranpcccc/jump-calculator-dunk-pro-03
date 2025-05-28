@@ -5,6 +5,8 @@ import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import FAQStructuredData from "@/components/FAQStructuredData";
+import BreadcrumbSchema from "@/components/BreadcrumbSchema";
 
 const FAQ = () => {
   const faqData = [
@@ -66,6 +68,11 @@ const FAQ = () => {
     }
   ];
 
+  const breadcrumbItems = [
+    { name: "Home", url: "https://dunkcalculator.com/" },
+    { name: "FAQ", url: "https://dunkcalculator.com/faq" }
+  ];
+
   return (
     <>
       <Helmet>
@@ -79,23 +86,10 @@ const FAQ = () => {
         <meta property="og:type" content="website" />
         
         <link rel="canonical" href="https://dunkcalculator.com/faq" />
-        
-        {/* FAQ Schema */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": faqData.map(faq => ({
-              "@type": "Question",
-              "name": faq.question,
-              "acceptedAnswer": {
-                "@type": "Answer",
-                "text": faq.answer
-              }
-            }))
-          })}
-        </script>
       </Helmet>
+
+      <FAQStructuredData faqs={faqData} />
+      <BreadcrumbSchema items={breadcrumbItems} />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
         <Header />

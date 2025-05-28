@@ -3,6 +3,8 @@ import SEOHead from "./SEOHead";
 import Performance from "./Performance";
 import StructuredData from "./StructuredData";
 import BreadcrumbNavigation from "./BreadcrumbNavigation";
+import OrganizationSchema from "./OrganizationSchema";
+import SEOAnalytics from "./SEOAnalytics";
 
 interface ComprehensiveSEOProps {
   title: string;
@@ -14,6 +16,10 @@ interface ComprehensiveSEOProps {
   noindex?: boolean;
   showBreadcrumbs?: boolean;
   additionalSchema?: object[];
+  enableAnalytics?: boolean;
+  articleSchema?: object;
+  productSchema?: object;
+  howToSchema?: object;
 }
 
 const ComprehensiveSEO = ({
@@ -25,7 +31,11 @@ const ComprehensiveSEO = ({
   schemaData,
   noindex = false,
   showBreadcrumbs = true,
-  additionalSchema = []
+  additionalSchema = [],
+  enableAnalytics = true,
+  articleSchema,
+  productSchema,
+  howToSchema
 }: ComprehensiveSEOProps) => {
   return (
     <>
@@ -39,6 +49,30 @@ const ComprehensiveSEO = ({
         noindex={noindex}
       />
       <Performance />
+      <OrganizationSchema />
+      
+      {enableAnalytics && <SEOAnalytics />}
+      
+      {articleSchema && (
+        <StructuredData 
+          type="Article" 
+          data={articleSchema} 
+        />
+      )}
+      
+      {productSchema && (
+        <StructuredData 
+          type="WebPage" 
+          data={productSchema} 
+        />
+      )}
+      
+      {howToSchema && (
+        <StructuredData 
+          type="WebPage" 
+          data={howToSchema} 
+        />
+      )}
       
       {additionalSchema.map((schema, index) => (
         <StructuredData 

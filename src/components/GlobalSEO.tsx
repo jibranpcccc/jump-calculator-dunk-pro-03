@@ -2,6 +2,8 @@
 import MetaTags from "./MetaTags";
 import Performance from "./Performance";
 import StructuredData from "./StructuredData";
+import OrganizationSchema from "./OrganizationSchema";
+import SEOAnalytics from "./SEOAnalytics";
 
 const GlobalSEO = () => {
   const websiteData = {
@@ -46,6 +48,8 @@ const GlobalSEO = () => {
         canonicalUrl="https://dunkcalculator.com/"
       />
       <Performance />
+      <OrganizationSchema />
+      <SEOAnalytics />
       <StructuredData type="WebSite" data={websiteData} />
     </>
   );
