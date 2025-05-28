@@ -11,6 +11,8 @@ const DunkCalculator = () => {
   const [height, setHeight] = useState('');
   const [reach, setReach] = useState('');
   const [vertical, setVertical] = useState('');
+  const [weight, setWeight] = useState('');
+  const [age, setAge] = useState('');
   const [result, setResult] = useState<{
     canDunk: boolean;
     reachHeight: number;
@@ -22,6 +24,7 @@ const DunkCalculator = () => {
   const [palmSize, setPalmSize] = useState('medium');
   const [jumpType, setJumpType] = useState('two-foot');
   const [dunkGoal, setDunkGoal] = useState('basic');
+  const [palmingAbility, setPalmingAbility] = useState('difficulty');
 
   const calculateDunk = () => {
     const heightInches = parseFloat(height) * 12;
@@ -47,8 +50,12 @@ const DunkCalculator = () => {
     
     if (jumpType === 'one-foot') requiredClearance += 1;
     
-    if (dunkGoal === 'power') requiredClearance += 3;
-    if (dunkGoal === 'windmill') requiredClearance += 4;
+    if (dunkGoal === 'touch-rim') requiredClearance = 0;
+    if (dunkGoal === 'grab-rim') requiredClearance = 2;
+    if (dunkGoal === 'one-hand') requiredClearance = 4;
+    if (dunkGoal === 'two-hand') requiredClearance = 6;
+    if (dunkGoal === 'windmill') requiredClearance = 8;
+    if (dunkGoal === 'advanced') requiredClearance = 10;
     
     const targetHeight = rimHeight + requiredClearance;
     const deficit = targetHeight - maxReach;
@@ -89,6 +96,16 @@ const DunkCalculator = () => {
       }
     }
 
+    // Age-based recommendations if age is provided
+    if (age) {
+      const ageNum = parseInt(age);
+      if (ageNum < 16) {
+        recommendations.push('Focus on fundamental movement patterns and gradual strength development appropriate for your age.');
+      } else if (ageNum > 30) {
+        recommendations.push('Prioritize proper warm-up, recovery, and injury prevention in your training routine.');
+      }
+    }
+
     // Track calculator usage for analytics
     if (typeof window !== 'undefined' && (window as any).trackCalculatorUse) {
       (window as any).trackCalculatorUse('dunk_calculator', height, reach, vertical);
@@ -108,11 +125,14 @@ const DunkCalculator = () => {
     setHeight('');
     setReach('');
     setVertical('');
+    setWeight('');
+    setAge('');
     setResult(null);
     setShowAdvanced(false);
     setPalmSize('medium');
     setJumpType('two-foot');
     setDunkGoal('basic');
+    setPalmingAbility('difficulty');
   };
 
   return (
@@ -199,17 +219,46 @@ const DunkCalculator = () => {
           {showAdvanced && (
             <div className="bg-gray-50 p-4 rounded-lg space-y-4">
               <h4 className="font-medium text-gray-900">Advanced Settings</h4>
+              
+              <div className="grid md:grid-cols-2 gap-4">
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Age (Years) - Optional</Label>
+                  <Input
+                    type="number"
+                    min="5"
+                    max="80"
+                    value={age}
+                    onChange={(e) => setAge(e.target.value)}
+                    placeholder="25"
+                    className="text-center"
+                  />
+                </div>
+                
+                <div className="space-y-2">
+                  <Label className="text-sm font-medium">Weight (lbs) - Optional</Label>
+                  <Input
+                    type="number"
+                    min="50"
+                    max="400"
+                    value={weight}
+                    onChange={(e) => setWeight(e.target.value)}
+                    placeholder="180"
+                    className="text-center"
+                  />
+                </div>
+              </div>
+              
               <div className="grid md:grid-cols-3 gap-4">
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Hand Size</Label>
+                  <Label className="text-sm font-medium">Palming Ability</Label>
                   <select
-                    value={palmSize}
-                    onChange={(e) => setPalmSize(e.target.value)}
+                    value={palmingAbility}
+                    onChange={(e) => setPalmingAbility(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-md text-sm"
                   >
-                    <option value="small">Small (affects grip)</option>
-                    <option value="medium">Medium</option>
-                    <option value="large">Large (better palm)</option>
+                    <option value="easily">Yes, easily</option>
+                    <option value="difficulty">Yes, with difficulty</option>
+                    <option value="no">No</option>
                   </select>
                 </div>
                 
@@ -220,21 +269,25 @@ const DunkCalculator = () => {
                     onChange={(e) => setJumpType(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-md text-sm"
                   >
-                    <option value="one-foot">One-foot takeoff</option>
-                    <option value="two-foot">Two-foot takeoff</option>
+                    <option value="standing">Standing</option>
+                    <option value="one-foot">Running One-Foot</option>
+                    <option value="two-foot">Running Two-Foot</option>
                   </select>
                 </div>
                 
                 <div className="space-y-2">
-                  <Label className="text-sm font-medium">Dunk Goal</Label>
+                  <Label className="text-sm font-medium">Your Dunking Goal</Label>
                   <select
                     value={dunkGoal}
                     onChange={(e) => setDunkGoal(e.target.value)}
                     className="w-full p-2 border border-gray-300 rounded-md text-sm"
                   >
-                    <option value="basic">Basic dunk</option>
-                    <option value="power">Power dunk</option>
-                    <option value="windmill">Windmill/360</option>
+                    <option value="touch-rim">Touch Rim</option>
+                    <option value="grab-rim">Grab Rim</option>
+                    <option value="one-hand">One-Hand Dunk</option>
+                    <option value="two-hand">Two-Hand Dunk</option>
+                    <option value="windmill">Windmill</option>
+                    <option value="advanced">Other Advanced</option>
                   </select>
                 </div>
               </div>

@@ -1,4 +1,3 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { Ruler, Target, Calculator, Users, TrendingUp, BookOpen } from "lucide-react";

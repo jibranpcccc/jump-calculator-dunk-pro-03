@@ -1,20 +1,20 @@
 
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { Users, Target, TrendingUp, Scale, ArrowLeft, Calculator } from "lucide-react";
+import { ArrowLeft, Ruler, Calculator, Target, Users, TrendingUp } from "lucide-react";
 
 const OtherMeasurementsGuide = () => {
   return (
     <>
       <Helmet>
-        <title>Basketball Measurements Beyond Height: Wingspan, Hand Size & More</title>
-        <meta name="description" content="Discover how wingspan, hand size, body weight, and age impact dunking ability beyond vertical jump. Complete measurement guide with techniques and benchmarks." />
-        <meta name="keywords" content="basketball wingspan, hand size measurement, palming basketball, basketball body measurements, ape index basketball, dunking measurements" />
+        <title>Wingspan, Hand Size & More: Key Measurements for Dunking Analysis</title>
+        <meta name="description" content="Explore how wingspan, hand size (for palming a basketball), body weight, and age can impact your ability to dunk, beyond just vertical jump." />
+        <meta name="keywords" content="wingspan measurement, hand size basketball, palming basketball, ape index, basketball measurements, dunking analysis" />
         <link rel="canonical" href="https://dunkcalculator.com/measurements/other-measurements/" />
         
         {/* Open Graph */}
-        <meta property="og:title" content="Basketball Measurements Beyond Height: Wingspan, Hand Size & More" />
-        <meta property="og:description" content="Complete guide to wingspan, hand size, and other key measurements that impact your dunking ability." />
+        <meta property="og:title" content="Wingspan, Hand Size & More: Key Measurements for Dunking Analysis" />
+        <meta property="og:description" content="Discover how wingspan, hand size, weight, and age impact your dunking potential beyond vertical jump alone." />
         <meta property="og:type" content="article" />
         <meta property="og:url" content="https://dunkcalculator.com/measurements/other-measurements/" />
         
@@ -22,41 +22,27 @@ const OtherMeasurementsGuide = () => {
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "HowTo",
-            "name": "How to Measure Wingspan, Hand Size and Other Key Basketball Measurements",
-            "description": "Learn to measure wingspan, hand size, body weight, and understand how age affects dunking ability beyond just vertical jump height.",
-            "totalTime": "PT30M",
-            "supply": [
-              {
-                "@type": "HowToSupply",
-                "name": "Measuring tape"
-              },
-              {
-                "@type": "HowToSupply", 
-                "name": "Basketball"
-              },
-              {
-                "@type": "HowToSupply",
-                "name": "Scale"
+            "@type": "Article",
+            "headline": "The Dunker's Blueprint: Unpacking Wingspan, Hand Size, Weight, and Age",
+            "description": "Explore how wingspan, hand size (for palming a basketball), body weight, and age can impact your ability to dunk, beyond just vertical jump.",
+            "author": {
+              "@type": "Organization",
+              "name": "Dunk Calculator"
+            },
+            "publisher": {
+              "@type": "Organization",
+              "name": "Dunk Calculator",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://dunkcalculator.com/logo.png"
               }
-            ],
-            "step": [
-              {
-                "@type": "HowToStep",
-                "name": "Measure Wingspan",
-                "text": "Stand with arms outstretched horizontally. Measure from fingertip to fingertip."
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Measure Hand Size",
-                "text": "Measure hand length from wrist to middle fingertip and hand span from thumb to pinky."
-              },
-              {
-                "@type": "HowToStep",
-                "name": "Test Palming Ability",
-                "text": "Attempt to grip a regulation basketball with one hand, focusing on finger placement and control."
-              }
-            ]
+            },
+            "datePublished": "2024-05-28",
+            "dateModified": "2024-05-28",
+            "mainEntityOfPage": {
+              "@type": "WebPage",
+              "@id": "https://dunkcalculator.com/measurements/other-measurements/"
+            }
           })}
         </script>
       </Helmet>
@@ -70,7 +56,7 @@ const OtherMeasurementsGuide = () => {
               <span>›</span>
               <Link to="/measurements" className="hover:text-orange-600">Measurements</Link>
               <span>›</span>
-              <span className="text-gray-900">Other Measurements</span>
+              <span className="text-gray-900">Other Key Measurements</span>
             </div>
           </nav>
 
@@ -86,76 +72,81 @@ const OtherMeasurementsGuide = () => {
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              The Dunker's Blueprint: Wingspan, Hand Size, Weight & Age
+              The Dunker's Blueprint: Unpacking Wingspan, Hand Size, Weight, and Age
             </h1>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Explore the hidden measurements that can make or break your dunking dreams - beyond just height and vertical jump.
+              Understanding how these often-overlooked measurements can impact your dunking potential beyond just vertical jump height.
             </p>
           </div>
 
           {/* Wingspan Section */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
-              <Users className="w-8 h-8 text-orange-600 mr-3" />
-              <h2 className="text-3xl font-bold text-gray-900">Wingspan: Your Secret Weapon for Reach</h2>
+              <Ruler className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">Wingspan: Your Secret Weapon for Added Reach</h2>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-6">
+            <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">What is Wingspan?</h3>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">What is Wingspan and How is it Measured?</h3>
                 <p className="text-gray-600 mb-4">
-                  Wingspan is the measurement from fingertip to fingertip when your arms are fully extended horizontally. 
-                  This measurement directly impacts your standing reach - often more than your actual height.
+                  Wingspan is the distance from fingertip to fingertip when you stand with your arms outstretched horizontally, 
+                  forming a "T" shape with your body. This measurement often correlates closely with standing reach but provides 
+                  additional insight into your overall arm length and shoulder width.
                 </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">The Ape Index Advantage</h3>
-                <p className="text-gray-600 mb-4">
-                  Your "Ape Index" is wingspan minus height. A positive ape index means longer arms relative to height:
-                </p>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h4 className="font-semibold text-blue-800 mb-2">How to Measure Your Wingspan:</h4>
+                  <ol className="text-blue-700 space-y-1">
+                    <li>1. Stand against a wall with arms fully extended horizontally</li>
+                    <li>2. Have a friend mark both fingertip positions on the wall</li>
+                    <li>3. Measure the distance between the two marks</li>
+                    <li>4. Record in both inches and centimeters for accuracy</li>
+                  </ol>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">The "Ape Index": Wingspan vs. Height</h3>
+                <div className="grid md:grid-cols-3 gap-6">
+                  <div className="p-4 bg-green-50 rounded-lg text-center">
+                    <h4 className="font-semibold text-green-800 mb-2">Positive Ape Index</h4>
+                    <p className="text-green-700 text-sm">Wingspan > Height</p>
+                    <p className="text-green-600 text-xs mt-2">Advantage for reaching higher</p>
+                  </div>
+                  <div className="p-4 bg-yellow-50 rounded-lg text-center">
+                    <h4 className="font-semibold text-yellow-800 mb-2">Neutral Ape Index</h4>
+                    <p className="text-yellow-700 text-sm">Wingspan = Height</p>
+                    <p className="text-yellow-600 text-xs mt-2">Average proportions</p>
+                  </div>
+                  <div className="p-4 bg-red-50 rounded-lg text-center">
+                    <h4 className="font-semibold text-red-800 mb-2">Negative Ape Index</h4>
+                    <p className="text-red-700 text-sm">Wingspan < Height</p>
+                    <p className="text-red-600 text-xs mt-2">May need higher vertical</p>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Impact on Dunking & Basketball Overall</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>+6 inches or more:</strong> Exceptional reach advantage</li>
-                  <li>• <strong>+2 to +6 inches:</strong> Good reach advantage</li>
-                  <li>• <strong>0 to +2 inches:</strong> Average proportions</li>
-                  <li>• <strong>Negative:</strong> Shorter arms relative to height</li>
+                  <li>• <strong>Easier rim access:</strong> Longer wingspan means closer natural proximity to the rim</li>
+                  <li>• <strong>Ball security:</strong> Better control during approach and dunk execution</li>
+                  <li>• <strong>Defensive advantage:</strong> Better shot contesting and steal opportunities</li>
+                  <li>• <strong>Rebounding:</strong> Greater reach for offensive and defensive rebounds</li>
                 </ul>
               </div>
-              
-              <div className="bg-orange-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">How to Measure Wingspan</h3>
-                <ol className="space-y-3 text-gray-600">
-                  <li><strong>1.</strong> Stand against a wall with arms fully extended horizontally</li>
-                  <li><strong>2.</strong> Keep shoulders level and arms parallel to the floor</li>
-                  <li><strong>3.</strong> Have someone mark fingertip positions on the wall</li>
-                  <li><strong>4.</strong> Measure the distance between the two marks</li>
-                  <li><strong>5.</strong> Record measurement to the nearest half-inch</li>
-                </ol>
-                
-                <div className="mt-4 p-3 bg-white rounded border-l-4 border-orange-400">
-                  <p className="text-sm text-gray-600">
-                    <strong>Pro Tip:</strong> Measure wingspan multiple times and take the average. 
-                    Ensure your shoulders aren't shrugged up during measurement.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="bg-gray-100 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">NBA Player Examples</h3>
-              <div className="grid md:grid-cols-3 gap-4 text-sm">
-                <div className="text-center">
-                  <p className="font-semibold">Kevin Durant</p>
-                  <p className="text-gray-600">Height: 6'10" | Wingspan: 7'4"</p>
-                  <p className="text-orange-600">Ape Index: +6"</p>
-                </div>
-                <div className="text-center">
-                  <p className="font-semibold">Giannis Antetokounmpo</p>
-                  <p className="text-gray-600">Height: 6'11" | Wingspan: 7'3"</p>
-                  <p className="text-orange-600">Ape Index: +4"</p>
-                </div>
-                <div className="text-center">
-                  <p className="font-semibold">Anthony Davis</p>
-                  <p className="text-gray-600">Height: 6'10" | Wingspan: 7'5"</p>
-                  <p className="text-orange-600">Ape Index: +7"</p>
+              <div className="bg-orange-50 p-6 rounded-lg">
+                <h4 className="font-semibold text-orange-800 mb-3">NBA Examples of Notable Wingspans:</h4>
+                <div className="grid md:grid-cols-2 gap-4 text-orange-700">
+                  <div>
+                    <p><strong>Kevin Durant:</strong> 6'10" height, 7'5" wingspan (+7" ape index)</p>
+                    <p><strong>Kawhi Leonard:</strong> 6'7" height, 7'3" wingspan (+8" ape index)</p>
+                  </div>
+                  <div>
+                    <p><strong>Giannis Antetokounmpo:</strong> 6'11" height, 7'3" wingspan (+4" ape index)</p>
+                    <p><strong>Anthony Davis:</strong> 6'10" height, 7'5.5" wingspan (+7.5" ape index)</p>
+                  </div>
                 </div>
               </div>
             </div>
@@ -165,81 +156,83 @@ const OtherMeasurementsGuide = () => {
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
               <Target className="w-8 h-8 text-orange-600 mr-3" />
-              <h2 className="text-3xl font-bold text-gray-900">Hand Size & Palming Ability</h2>
+              <h2 className="text-3xl font-bold text-gray-900">Hand Size & Palming Ability: Do They Make or Break a Dunker?</h2>
             </div>
             
-            <div className="grid md:grid-cols-2 gap-8 mb-6">
+            <div className="space-y-6">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Why Hand Size Matters for Dunking</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li>• <strong>Ball Security:</strong> Better grip during approach and flight</li>
-                  <li>• <strong>One-Handed Dunks:</strong> Essential for palming the basketball</li>
-                  <li>• <strong>Advanced Dunks:</strong> Windmills, between-legs require excellent ball control</li>
-                  <li>• <strong>Confidence:</strong> Secure grip reduces fear of dropping the ball</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Hand Size Benchmarks</h3>
-                <div className="space-y-2 text-gray-600">
-                  <p><strong>Hand Length (wrist to middle fingertip):</strong></p>
-                  <ul className="ml-4 space-y-1">
-                    <li>• 8.5+ inches: Excellent for palming</li>
-                    <li>• 7.5-8.5 inches: Good, may palm with practice</li>
-                    <li>• 6.5-7.5 inches: Average, focus on two-handed dunks</li>
-                    <li>• Under 6.5 inches: Use alternative techniques</li>
-                  </ul>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">How to Measure Hand Length and Hand Span</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h4 className="font-semibold text-blue-800 mb-2">Hand Length</h4>
+                    <p className="text-blue-700 text-sm mb-2">From wrist crease to tip of middle finger</p>
+                    <ul className="text-blue-600 text-xs space-y-1">
+                      <li>• Place ruler at base of palm</li>
+                      <li>• Measure to longest fingertip</li>
+                      <li>• Keep hand flat and fingers straight</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 bg-green-50 rounded-lg">
+                    <h4 className="font-semibold text-green-800 mb-2">Hand Span</h4>
+                    <p className="text-green-700 text-sm mb-2">From tip of thumb to tip of pinky (spread wide)</p>
+                    <ul className="text-green-600 text-xs space-y-1">
+                      <li>• Stretch fingers as wide as possible</li>
+                      <li>• Measure outer edge to outer edge</li>
+                      <li>• This determines grip capability</li>
+                    </ul>
+                  </div>
                 </div>
               </div>
-              
-              <div className="bg-blue-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">How to Measure Hand Size</h3>
-                
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">Hand Length:</h4>
-                  <ol className="space-y-2 text-gray-600 text-sm">
-                    <li>1. Place hand flat on table, palm down</li>
-                    <li>2. Measure from wrist crease to middle fingertip</li>
-                    <li>3. Keep fingers straight and together</li>
-                    <li>4. Record to nearest quarter-inch</li>
-                  </ol>
-                </div>
-                
-                <div className="mb-6">
-                  <h4 className="font-semibold text-gray-900 mb-2">Hand Span:</h4>
-                  <ol className="space-y-2 text-gray-600 text-sm">
-                    <li>1. Spread fingers as wide as possible</li>
-                    <li>2. Measure from thumb tip to pinky tip</li>
-                    <li>3. Keep hand flat against surface</li>
-                    <li>4. Take multiple measurements</li>
-                  </ol>
-                </div>
-                
-                <div className="p-3 bg-white rounded border-l-4 border-blue-400">
-                  <p className="text-sm text-gray-600">
-                    <strong>Basketball Test:</strong> Try to palm a regulation basketball. 
-                    If you can lift it off the ground and control it, you have functional palming ability.
-                  </p>
-                </div>
-              </div>
-            </div>
 
-            <div className="bg-green-50 p-6 rounded-lg">
-              <h3 className="text-xl font-semibold text-gray-900 mb-4">What If You Can't Palm a Basketball?</h3>
-              <div className="grid md:grid-cols-2 gap-6">
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Alternative Techniques:</h4>
-                  <ul className="space-y-2 text-gray-600">
-                    <li>• <strong>Cradling:</strong> Secure ball with both hands</li>
-                    <li>• <strong>Two-Handed Power:</strong> Focus on power dunks</li>
-                    <li>• <strong>Finger Strengthening:</strong> Improve grip gradually</li>
-                    <li>• <strong>Smaller Balls:</strong> Practice with youth basketballs</li>
-                  </ul>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Typical Hand Size Benchmarks for Palming a Standard Men's Basketball</h3>
+                <div className="bg-gray-50 p-6 rounded-lg">
+                  <div className="grid md:grid-cols-2 gap-6">
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-3">General Guidelines:</h4>
+                      <ul className="space-y-2 text-gray-600">
+                        <li>• <strong>Hand Length:</strong> 9.5+ inches often makes palming easier</li>
+                        <li>• <strong>Hand Span:</strong> 10+ inches typically needed for secure grip</li>
+                        <li>• <strong>Finger strength:</strong> Also crucial for maintaining control</li>
+                      </ul>
+                    </div>
+                    <div>
+                      <h4 className="font-semibold text-gray-900 mb-3">Basketball Specifications:</h4>
+                      <ul className="space-y-2 text-gray-600">
+                        <li>• <strong>Men's basketball:</strong> 29.5-29.875" circumference</li>
+                        <li>• <strong>Women's basketball:</strong> 28.5-28.875" circumference</li>
+                        <li>• <strong>Youth basketball:</strong> 27.5-27.875" circumference</li>
+                      </ul>
+                    </div>
+                  </div>
                 </div>
-                <div>
-                  <h4 className="font-semibold text-gray-900 mb-2">Famous Small-Handed Dunkers:</h4>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">The Advantage of Palming for One-Handed Dunks & Ball Security</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• <strong>Control during approach:</strong> Secure ball handling while running and jumping</li>
+                  <li>• <strong>One-handed finishing:</strong> Enables powerful one-handed dunks and style variations</li>
+                  <li>• <strong>Defender resistance:</strong> Harder for opponents to strip the ball during dunk attempts</li>
+                  <li>• <strong>Confidence boost:</strong> Mental advantage knowing you have complete ball control</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">What If You Have Smaller Hands?</h3>
+                <p className="text-gray-600 mb-4">
+                  Don't let smaller hands discourage you! Many successful dunkers have average-sized hands and use these strategies:
+                </p>
+                <div className="grid md:grid-cols-2 gap-4">
                   <ul className="space-y-2 text-gray-600">
-                    <li>• <strong>Isaiah Thomas:</strong> 5'9" with incredible power dunks</li>
-                    <li>• <strong>Nate Robinson:</strong> 5'9" Slam Dunk Contest winner</li>
-                    <li>• <strong>Spud Webb:</strong> 5'7" legendary dunker</li>
+                    <li>• <strong>Focus on two-handed dunks:</strong> More secure and reliable</li>
+                    <li>• <strong>Develop exceptional grip strength:</strong> Targeted exercises for hand/forearm strength</li>
+                    <li>• <strong>Use "cradle" technique:</strong> Support ball with both hands/arms during approach</li>
+                  </ul>
+                  <ul className="space-y-2 text-gray-600">
+                    <li>• <strong>Practice with smaller balls:</strong> Women's or youth basketballs for training</li>
+                    <li>• <strong>Focus on speed and technique:</strong> Quick, decisive movements reduce handling time</li>
+                    <li>• <strong>Master the timing:</strong> Perfect coordination reduces reliance on palming</li>
                   </ul>
                 </div>
               </div>
@@ -249,125 +242,142 @@ const OtherMeasurementsGuide = () => {
           {/* Body Weight Section */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
-              <Scale className="w-8 h-8 text-orange-600 mr-3" />
-              <h2 className="text-3xl font-bold text-gray-900">How Body Weight Influences Jump Height</h2>
-            </div>
-            
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">The Physics of Jumping</h3>
-                <p className="text-gray-600 mb-4">
-                  Force = Mass × Acceleration. To jump higher with more body weight, you need proportionally more force. 
-                  This is why body composition matters more than just total weight.
-                </p>
-                
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Principles:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Lean Muscle Mass:</strong> Generates explosive power</li>
-                  <li>• <strong>Excess Body Fat:</strong> Dead weight that doesn't contribute to jumping</li>
-                  <li>• <strong>Power-to-Weight Ratio:</strong> More important than absolute strength</li>
-                  <li>• <strong>Optimal Weight:</strong> Individual sweet spot for each athlete</li>
-                </ul>
-              </div>
-              
-              <div className="bg-yellow-50 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Body Composition Guidelines</h3>
-                
-                <div className="space-y-4">
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Male Athletes:</h4>
-                    <ul className="text-gray-600 text-sm space-y-1">
-                      <li>• Elite: 6-12% body fat</li>
-                      <li>• Very Good: 12-15% body fat</li>
-                      <li>• Good: 15-18% body fat</li>
-                      <li>• Average: 18-25% body fat</li>
-                    </ul>
-                  </div>
-                  
-                  <div>
-                    <h4 className="font-semibold text-gray-900">Female Athletes:</h4>
-                    <ul className="text-gray-600 text-sm space-y-1">
-                      <li>• Elite: 12-16% body fat</li>
-                      <li>• Very Good: 16-20% body fat</li>
-                      <li>• Good: 20-24% body fat</li>
-                      <li>• Average: 24-30% body fat</li>
-                    </ul>
-                  </div>
-                </div>
-                
-                <div className="mt-4 p-3 bg-white rounded border-l-4 border-yellow-400">
-                  <p className="text-sm text-gray-600">
-                    <strong>Remember:</strong> Focus on building lean muscle and reducing excess fat, 
-                    not just losing weight. Muscle is your jumping engine.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Age and Development Section */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <div className="flex items-center mb-6">
               <TrendingUp className="w-8 h-8 text-orange-600 mr-3" />
-              <h2 className="text-3xl font-bold text-gray-900">Age & Athletic Development</h2>
+              <h2 className="text-3xl font-bold text-gray-900">How Body Weight & Composition Influence Jump Height and Power</h2>
             </div>
             
             <div className="space-y-6">
-              <div className="grid md:grid-cols-3 gap-6">
-                <div className="bg-green-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-green-800 mb-3">Youth (13-18 years)</h3>
-                  <ul className="space-y-2 text-green-700 text-sm">
-                    <li>• Rapid strength and power gains possible</li>
-                    <li>• Natural growth spurts can boost reach</li>
-                    <li>• Ideal time to learn proper jumping technique</li>
-                    <li>• Recovery is fast, training adaptation quick</li>
-                    <li>• Focus on movement quality over intensity</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-blue-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-blue-800 mb-3">Peak Years (19-28)</h3>
-                  <ul className="space-y-2 text-blue-700 text-sm">
-                    <li>• Maximum strength and power potential</li>
-                    <li>• Optimal hormone levels for muscle building</li>
-                    <li>• Best balance of power and recovery</li>
-                    <li>• Can handle high-intensity training</li>
-                    <li>• Prime time for achieving dunking goals</li>
-                  </ul>
-                </div>
-                
-                <div className="bg-orange-50 p-6 rounded-lg">
-                  <h3 className="text-lg font-semibold text-orange-800 mb-3">Masters (29+ years)</h3>
-                  <ul className="space-y-2 text-orange-700 text-sm">
-                    <li>• Slower recovery, need more rest</li>
-                    <li>• Gradual decline in explosive power</li>
-                    <li>• Can still make significant improvements</li>
-                    <li>• Experience and technique become crucial</li>
-                    <li>• Focus on injury prevention</li>
-                  </ul>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">The Physics: Force = Mass × Acceleration</h3>
+                <p className="text-gray-600 mb-4">
+                  In jumping, your legs must generate enough force to accelerate your entire body mass upward against gravity. 
+                  This means that more body mass requires proportionally more force from your leg muscles to achieve the same upward velocity.
+                </p>
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <p className="text-blue-700">
+                    <strong>Key Insight:</strong> It's not about being light—it's about having the optimal strength-to-weight ratio. 
+                    A 200lb athlete with powerful legs may jump higher than a 150lb athlete with weaker legs.
+                  </p>
                 </div>
               </div>
 
-              <div className="bg-gray-100 p-6 rounded-lg">
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Realistic Vertical Jump Improvements by Age</h3>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Importance of Optimal Body Composition</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">6-Month Training Program:</h4>
-                    <ul className="space-y-1 text-gray-600">
-                      <li>• <strong>13-18 years:</strong> 6-12 inches possible</li>
-                      <li>• <strong>19-25 years:</strong> 4-8 inches typical</li>
-                      <li>• <strong>26-35 years:</strong> 2-6 inches realistic</li>
-                      <li>• <strong>36+ years:</strong> 1-4 inches achievable</li>
+                    <h4 className="font-semibold text-gray-900 mb-3">Lean Muscle Mass Benefits:</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Generates force for jumping</li>
+                      <li>• Improves power-to-weight ratio</li>
+                      <li>• Enhances athletic performance</li>
+                      <li>• Supports injury prevention</li>
                     </ul>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-gray-900 mb-2">Factors Affecting Improvement:</h4>
-                    <ul className="space-y-1 text-gray-600">
-                      <li>• Previous training experience</li>
-                      <li>• Current fitness level</li>
-                      <li>• Genetic predisposition</li>
-                      <li>• Training consistency</li>
-                      <li>• Recovery and nutrition quality</li>
+                    <h4 className="font-semibold text-gray-900 mb-3">Excess Body Fat Challenges:</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Adds weight without power</li>
+                      <li>• Reduces power-to-weight ratio</li>
+                      <li>• May limit mobility and flexibility</li>
+                      <li>• Can increase injury risk</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Impact on Jump Training and Injury Risk</h3>
+                <p className="text-gray-600 mb-4">
+                  Heavier individuals need to be more strategic about training progression:
+                </p>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• <strong>Gradual progression:</strong> Start with lower-impact exercises before high-intensity plyometrics</li>
+                  <li>• <strong>Strength foundation:</strong> Build leg strength before adding explosive movements</li>
+                  <li>• <strong>Recovery focus:</strong> Allow adequate rest between high-impact training sessions</li>
+                  <li>• <strong>Joint protection:</strong> Emphasize proper landing mechanics and mobility work</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          {/* Age Section */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div className="flex items-center mb-6">
+              <Users className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">Age and Athletic Development: Realistic Dunking Expectations Through the Years</h2>
+            </div>
+            
+            <div className="space-y-6">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">How Athletic Potential Develops Through Adolescence</h3>
+                <div className="grid md:grid-cols-3 gap-4">
+                  <div className="p-4 bg-green-50 rounded-lg">
+                    <h4 className="font-semibold text-green-800 mb-2">Ages 12-15</h4>
+                    <ul className="text-green-700 text-sm space-y-1">
+                      <li>• Rapid growth spurts</li>
+                      <li>• Coordination development</li>
+                      <li>• Hormonal changes begin</li>
+                      <li>• Focus on fundamentals</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h4 className="font-semibold text-blue-800 mb-2">Ages 16-18</h4>
+                    <ul className="text-blue-700 text-sm space-y-1">
+                      <li>• Peak growth velocity</li>
+                      <li>• Strength gains accelerate</li>
+                      <li>• Neuromuscular maturation</li>
+                      <li>• Serious training possible</li>
+                    </ul>
+                  </div>
+                  <div className="p-4 bg-purple-50 rounded-lg">
+                    <h4 className="font-semibold text-purple-800 mb-2">Ages 19-25</h4>
+                    <ul className="text-purple-700 text-sm space-y-1">
+                      <li>• Peak athletic years</li>
+                      <li>• Maximum power potential</li>
+                      <li>• Full recovery capacity</li>
+                      <li>• Optimal training response</li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Typical Peak Athletic Years for Explosiveness</h3>
+                <p className="text-gray-600 mb-4">
+                  Most athletes reach their peak explosive power between ages 20-28, though this varies significantly by individual. 
+                  Factors include training history, genetics, lifestyle, and sport-specific development.
+                </p>
+                <div className="bg-orange-50 p-4 rounded-lg">
+                  <p className="text-orange-700">
+                    <strong>Important Note:</strong> Peak years for dunking may come earlier (late teens to early 20s) due to the 
+                    combination of lower body weight, high energy levels, and peak neuromuscular function.
+                  </p>
+                </div>
+              </div>
+
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Can Older Adults Still Improve Their Vertical and Learn to Dunk?</h3>
+                <p className="text-gray-600 mb-4">
+                  Absolutely! While the rate of improvement may be slower than for younger athletes, adults can still make 
+                  significant gains with consistent, smart training:
+                </p>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">Ages 25-35: Prime Training Years</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Still excellent potential for gains</li>
+                      <li>• May need longer recovery periods</li>
+                      <li>• Focus on strength and power development</li>
+                      <li>• Consistent training yields results</li>
+                    </ul>
+                  </div>
+                  <div>
+                    <h4 className="font-semibold text-gray-900 mb-3">Ages 35+: Mature Athlete Approach</h4>
+                    <ul className="space-y-2 text-gray-600">
+                      <li>• Emphasize mobility and injury prevention</li>
+                      <li>• Longer warm-ups and cool-downs</li>
+                      <li>• Focus on technique and efficiency</li>
+                      <li>• Celebrate incremental progress</li>
                     </ul>
                   </div>
                 </div>
@@ -375,61 +385,87 @@ const OtherMeasurementsGuide = () => {
             </div>
           </div>
 
-          {/* Calculator Integration */}
-          <div className="bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-8 text-white mb-8">
-            <div className="flex items-center mb-4">
-              <Calculator className="w-8 h-8 mr-3" />
-              <h2 className="text-3xl font-bold">Get Your Most Comprehensive Dunk Analysis!</h2>
+          {/* Integration Section */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Putting It All Together: How These Factors Influence Your Dunk Potential</h2>
+            <p className="text-gray-600 mb-6">
+              While standing reach and vertical jump are the primary determinants of dunking ability, these additional factors 
+              provide a more complete picture of your athletic profile and dunking potential:
+            </p>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Primary Factors (High Impact)</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• <strong>Standing Reach:</strong> Direct measurement of natural rim proximity</li>
+                  <li>• <strong>Vertical Jump:</strong> Explosive power and athletic ability</li>
+                  <li>• <strong>Wingspan:</strong> Correlates with reach and overall limb length</li>
+                </ul>
+              </div>
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Secondary Factors (Moderate Impact)</h3>
+                <ul className="space-y-2 text-gray-600">
+                  <li>• <strong>Hand Size:</strong> Affects ball control and dunk style options</li>
+                  <li>• <strong>Body Composition:</strong> Influences power-to-weight ratio</li>
+                  <li>• <strong>Age:</strong> Affects training potential and recovery capacity</li>
+                </ul>
+              </div>
             </div>
+
+            <div className="mt-6 p-4 bg-yellow-50 rounded-lg border-l-4 border-yellow-400">
+              <p className="text-gray-600">
+                <strong>Remember:</strong> These measurements provide insight and help optimize training, but they don't determine 
+                your ceiling. Dedication, proper training, and technique development can help you maximize whatever physical gifts you have!
+              </p>
+            </div>
+          </div>
+
+          {/* CTA Section */}
+          <div className="text-center bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-8 text-white mb-8">
+            <h2 className="text-3xl font-bold mb-4">Get Your Most Comprehensive Dunk Analysis!</h2>
             <p className="text-xl mb-6">
-              Our dunk calculator considers all these measurements - wingspan for reach estimation, hand size for dunk type recommendations, 
-              age for realistic expectations, and weight for performance context.
+              Use all your measurements in our advanced calculator to get the most accurate assessment of your dunking potential.
             </p>
             <div className="space-x-4">
               <Link 
                 to="/"
-                className="inline-block px-6 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
+                className="inline-flex items-center px-8 py-4 bg-white text-orange-600 font-bold rounded-lg hover:bg-gray-100 transition-colors"
               >
-                Use All Advanced Measurements in Calculator
-              </Link>
-              <Link 
-                to="/measurements"
-                className="inline-block px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-600 transition-colors"
-              >
-                Complete All Measurement Guides
+                <Calculator className="w-5 h-5 mr-2" />
+                Try the Complete Calculator
               </Link>
             </div>
           </div>
 
           {/* Related Articles */}
           <div className="bg-white rounded-xl shadow-lg p-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">Master All Your Measurements</h2>
+            <h2 className="text-3xl font-bold text-gray-900 mb-6">Continue Your Measurement Journey</h2>
             <div className="grid md:grid-cols-3 gap-6">
               <Link 
                 to="/measurements/standing-reach"
                 className="p-6 border-2 border-gray-200 rounded-lg hover:border-orange-300 transition-colors"
               >
-                <Target className="w-8 h-8 text-orange-600 mb-3" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Standing Reach</h3>
-                <p className="text-gray-600 text-sm">Your most important dunking measurement</p>
+                <Ruler className="w-8 h-8 text-orange-600 mb-3" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Standing Reach Guide</h3>
+                <p className="text-gray-600">Learn to measure your most important dunking metric.</p>
               </Link>
               
               <Link 
                 to="/measurements/vertical-jump"
                 className="p-6 border-2 border-gray-200 rounded-lg hover:border-orange-300 transition-colors"
               >
-                <TrendingUp className="w-8 h-8 text-orange-600 mb-3" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Vertical Jump</h3>
-                <p className="text-gray-600 text-sm">Track your explosive power accurately</p>
+                <Target className="w-8 h-8 text-orange-600 mb-3" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Vertical Jump Testing</h3>
+                <p className="text-gray-600">Master different methods to track jumping progress.</p>
               </Link>
               
               <Link 
                 to="/measurements/hoop-heights"
                 className="p-6 border-2 border-gray-200 rounded-lg hover:border-orange-300 transition-colors"
               >
-                <Users className="w-8 h-8 text-orange-600 mb-3" />
-                <h3 className="text-lg font-semibold text-gray-900 mb-2">Hoop Heights</h3>
-                <p className="text-gray-600 text-sm">Understand official basketball standards</p>
+                <TrendingUp className="w-8 h-8 text-orange-600 mb-3" />
+                <h3 className="text-xl font-semibold text-gray-900 mb-2">Hoop Heights Guide</h3>
+                <p className="text-gray-600">Understand official standards and training progressions.</p>
               </Link>
             </div>
           </div>
