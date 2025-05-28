@@ -19,6 +19,7 @@ const Header = () => {
 
   const navItems = [
     { name: "Calculator", href: "/", active: location.pathname === "/" },
+    { name: "All Calculators", href: "/calculators", active: location.pathname === "/calculators" },
     { name: "Vertical Training", href: "/vertical-jump-training", active: location.pathname === "/vertical-jump-training" },
     { name: "Dunk Tips", href: "/basketball-dunk-tips", active: location.pathname === "/basketball-dunk-tips" },
     { name: "Blog", href: "/blog", active: location.pathname.startsWith("/blog") },
@@ -67,10 +68,10 @@ const Header = () => {
             
             {/* CTA Button */}
             <Link
-              to="/#calculator"
+              to="/calculators"
               className="ml-4 bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-4 py-2 rounded-lg text-sm font-medium transition-all duration-200 shadow-sm hover:shadow-md"
             >
-              Try Calculator
+              All Tools
             </Link>
           </div>
 

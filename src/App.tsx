@@ -11,6 +11,7 @@ import BasketballDunkTips from "./pages/BasketballDunkTips";
 import Blog from "./pages/Blog";
 import About from "./pages/About";
 import Contact from "./pages/Contact";
+import Calculators from "./pages/Calculators";
 import PrivacyPolicy from "./pages/PrivacyPolicy";
 import TermsOfUse from "./pages/TermsOfUse";
 import IncreaseVerticalJumpExercises from "./pages/blog/IncreaseVerticalJumpExercises";
@@ -35,6 +36,7 @@ const App = () => (
       <BrowserRouter>
         <Routes>
           <Route path="/" element={<Index />} />
+          <Route path="/calculators" element={<Calculators />} />
           <Route path="/faq" element={<FAQ />} />
           <Route path="/vertical-jump-training" element={<VerticalJumpTraining />} />
           <Route path="/basketball-dunk-tips" element={<BasketballDunkTips />} />

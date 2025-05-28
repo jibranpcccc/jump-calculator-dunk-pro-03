@@ -17,6 +17,7 @@ const MobileMenu = () => {
 
   const mainNavItems = [
     { name: "Calculator", href: "/", active: location.pathname === "/" },
+    { name: "All Calculators", href: "/calculators", active: location.pathname === "/calculators" },
     { name: "Vertical Training", href: "/vertical-jump-training", active: location.pathname === "/vertical-jump-training" },
     { name: "Dunk Tips", href: "/basketball-dunk-tips", active: location.pathname === "/basketball-dunk-tips" },
     { name: "FAQ", href: "/faq", active: location.pathname === "/faq" },
@@ -137,11 +138,11 @@ const MobileMenu = () => {
             <div className="text-center">
               <p className="text-xs text-gray-500 mb-2">Free Basketball Tools</p>
               <Link 
-                to="/" 
+                to="/calculators" 
                 onClick={closeMenu}
                 className="text-orange-600 text-sm font-medium hover:underline"
               >
-                Try Dunk Calculator →
+                All Calculators →
               </Link>
             </div>
           </div>

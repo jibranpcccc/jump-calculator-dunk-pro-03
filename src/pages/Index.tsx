@@ -1,3 +1,4 @@
+
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DunkCalculator from "@/components/DunkCalculator";
@@ -9,7 +10,7 @@ import FAQStructuredData from "@/components/FAQStructuredData";
 import EnhancedHero from "@/components/EnhancedHero";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
-import { Target, TrendingUp, BookOpen, Users } from "lucide-react";
+import { Target, TrendingUp, BookOpen, Users, Calculator, Activity } from "lucide-react";
 
 const Index = () => {
   const faqData = [
@@ -72,8 +73,55 @@ const Index = () => {
             </div>
           </section>
 
-          {/* How It Works */}
+          {/* All Calculators Preview */}
           <section className="py-16 px-4 bg-white">
+            <div className="container mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-4">More Basketball Calculators</h2>
+              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Explore our complete collection of free basketball performance calculators and training tools.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <Calculator className="h-12 w-12 text-orange-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">Dunk Calculator</h3>
+                    <p className="text-gray-600 mb-4">Find out if you can dunk based on your height, reach, and vertical jump.</p>
+                    <Link to="/#calculator" className="text-orange-600 hover:underline font-medium">
+                      Test Now →
+                    </Link>
+                  </CardContent>
+                </Card>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <TrendingUp className="h-12 w-12 text-blue-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">Vertical Jump Test</h3>
+                    <p className="text-gray-600 mb-4">Measure your exact vertical jump height and compare to standards.</p>
+                    <Link to="/calculators#vertical-jump-calculator" className="text-blue-600 hover:underline font-medium">
+                      Measure Jump →
+                    </Link>
+                  </CardContent>
+                </Card>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <Activity className="h-12 w-12 text-green-600 mx-auto mb-4" />
+                    <h3 className="text-xl font-semibold mb-2">Basketball BMI</h3>
+                    <p className="text-gray-600 mb-4">Calculate BMI with basketball-specific insights and position analysis.</p>
+                    <Link to="/calculators#bmi-calculator" className="text-green-600 hover:underline font-medium">
+                      Calculate BMI →
+                    </Link>
+                  </CardContent>
+                </Card>
+              </div>
+              <div className="text-center">
+                <Link to="/calculators" className="bg-gradient-to-r from-orange-600 to-orange-700 hover:from-orange-700 hover:to-orange-800 text-white px-8 py-3 rounded-lg font-semibold transition-all duration-200 shadow-sm hover:shadow-md">
+                  View All Calculators
+                </Link>
+              </div>
+            </div>
+          </section>
+
+          {/* How It Works */}
+          <section className="py-16 px-4 bg-gray-50">
             <div className="container mx-auto">
               <h2 className="text-3xl font-bold text-center mb-4">How Our Dunk Calculator Works</h2>
               <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -106,7 +154,7 @@ const Index = () => {
           </section>
 
           {/* Quick Tips */}
-          <section className="py-16 px-4 bg-gray-50">
+          <section className="py-16 px-4 bg-white">
             <div className="container mx-auto">
               <h2 className="text-3xl font-bold text-center mb-4">Improve Your Dunking Ability</h2>
               <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
@@ -158,7 +206,7 @@ const Index = () => {
           </section>
 
           {/* Call to Action */}
-          <section className="py-16 px-4">
+          <section className="py-16 px-4 bg-gray-50">
             <div className="container mx-auto">
               <CallToAction
                 title="Test Your Dunk Potential Now!"
