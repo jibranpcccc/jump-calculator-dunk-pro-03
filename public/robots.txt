@@ -2,17 +2,34 @@
 User-agent: *
 Allow: /
 
-# Important pages for crawling
+# Important pages for crawling priority
 Allow: /
 Allow: /faq
 Allow: /vertical-jump-training
 Allow: /basketball-dunk-tips
 Allow: /blog
-Allow: /blog/increase-vertical-jump-exercises
-Allow: /blog/how-to-dunk-beginners
+Allow: /blog/*
 
-# Sitemap location
+# Block admin or development areas (if any)
+Disallow: /admin/
+Disallow: /dev/
+Disallow: /.git/
+
+# Allow specific crawlers for social media
+User-agent: facebookexternalhit
+Allow: /
+
+User-agent: Twitterbot
+Allow: /
+
+User-agent: LinkedInBot
+Allow: /
+
+# Sitemap locations
 Sitemap: https://dunkcalculator.com/sitemap.xml
 
-# Crawl delay (optional, helps with server load)
+# Crawl delay for being respectful to servers
 Crawl-delay: 1
+
+# Host specification
+Host: https://dunkcalculator.com

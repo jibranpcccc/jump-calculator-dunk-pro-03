@@ -1,19 +1,74 @@
 
 {
-  "name": "Dunk Calculator - Basketball Dunk Test",
+  "name": "Dunk Calculator - Free Basketball Dunk Test & Training",
   "short_name": "Dunk Calculator",
-  "description": "Free basketball dunk calculator to test if you can dunk",
+  "description": "Free basketball dunk calculator to test if you can dunk. Includes vertical jump training and basketball tips.",
   "start_url": "/",
   "display": "standalone",
+  "orientation": "portrait-primary",
   "background_color": "#ffffff",
   "theme_color": "#ea580c",
+  "scope": "/",
   "icons": [
     {
       "src": "/favicon.ico",
       "sizes": "any",
-      "type": "image/x-icon"
+      "type": "image/x-icon",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
     }
   ],
-  "categories": ["sports", "fitness", "tools"],
-  "lang": "en"
+  "categories": ["sports", "fitness", "tools", "health", "education"],
+  "lang": "en-US",
+  "screenshots": [
+    {
+      "src": "/screenshot-mobile.png",
+      "sizes": "640x1136",
+      "type": "image/png",
+      "platform": "narrow"
+    },
+    {
+      "src": "/screenshot-desktop.png", 
+      "sizes": "1280x720",
+      "type": "image/png",
+      "platform": "wide"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Calculate Dunk",
+      "short_name": "Calculator",
+      "description": "Test if you can dunk",
+      "url": "/#calculator",
+      "icons": [
+        {
+          "src": "/calculator-icon.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "Training Tips",
+      "short_name": "Training",
+      "description": "Vertical jump training",
+      "url": "/vertical-jump-training",
+      "icons": [
+        {
+          "src": "/training-icon.png", 
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ]
 }

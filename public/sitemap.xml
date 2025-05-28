@@ -2,115 +2,162 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" 
         xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
-        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9">
+        xmlns:news="http://www.google.com/schemas/sitemap-news/0.9"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1">
+  
+  <!-- Main Pages -->
   <url>
     <loc>https://dunkcalculator.com/</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://dunkcalculator.com/og-image.jpg</image:loc>
+      <image:title>Dunk Calculator - Free Basketball Dunk Test</image:title>
+      <image:caption>Test if you can dunk a basketball with our free calculator</image:caption>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://dunkcalculator.com/faq</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
   </url>
+  
   <url>
     <loc>https://dunkcalculator.com/vertical-jump-training</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dunkcalculator.com/vertical-jump-training.jpg</image:loc>
+      <image:title>Vertical Jump Training Guide</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://dunkcalculator.com/basketball-dunk-tips</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://dunkcalculator.com/basketball-dunk-tips.jpg</image:loc>
+      <image:title>Basketball Dunk Tips and Techniques</image:title>
+    </image:image>
   </url>
+  
+  <!-- Blog Section -->
   <url>
     <loc>https://dunkcalculator.com/blog</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
   </url>
+  
+  <!-- High Priority Blog Posts -->
   <url>
     <loc>https://dunkcalculator.com/blog/increase-vertical-jump-exercises</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dunkcalculator.com/blog/vertical-jump-exercises.jpg</image:loc>
+      <image:title>Best Vertical Jump Exercises</image:title>
+    </image:image>
   </url>
+  
   <url>
     <loc>https://dunkcalculator.com/blog/how-to-dunk-beginners</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://dunkcalculator.com/blog/how-to-dunk-beginners.jpg</image:loc>
+      <image:title>How to Dunk for Beginners</image:title>
+    </image:image>
   </url>
+  
   <url>
-    <loc>https://dunkcalculator.com/blog/vertical-jump-workout</loc>
+    <loc>https://dunkcalculator.com/blog/best-vertical-jump-exercises</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  
+  <url>
+    <loc>https://dunkcalculator.com/blog/how-to-measure-vertical-jump</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
-  <url>
-    <loc>https://dunkcalculator.com/blog/basketball-jump-technique</loc>
-    <lastmod>2025-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
-  </url>
+  
   <url>
     <loc>https://dunkcalculator.com/blog/dunk-if-you-are-short</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <!-- Training and Technique Posts -->
   <url>
-    <loc>https://dunkcalculator.com/blog/best-vertical-jump-exercises</loc>
+    <loc>https://dunkcalculator.com/blog/vertical-jump-workout</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
   </url>
+  
+  <url>
+    <loc>https://dunkcalculator.com/blog/basketball-jump-technique</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+  
   <url>
     <loc>https://dunkcalculator.com/blog/common-dunking-mistakes</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
-  <url>
-    <loc>https://dunkcalculator.com/blog/best-shoes-for-vertical-leap</loc>
-    <lastmod>2025-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
-  <url>
-    <loc>https://dunkcalculator.com/blog/how-to-measure-vertical-jump</loc>
-    <lastmod>2025-05-28</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.6</priority>
-  </url>
+  
   <url>
     <loc>https://dunkcalculator.com/blog/nutrition-vertical-jump</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
   </url>
+  
+  <url>
+    <loc>https://dunkcalculator.com/blog/best-shoes-for-vertical-leap</loc>
+    <lastmod>2025-05-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  
+  <!-- Secondary Pages -->
   <url>
     <loc>https://dunkcalculator.com/about</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
+  
   <url>
     <loc>https://dunkcalculator.com/contact</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.4</priority>
   </url>
+  
+  <!-- Legal Pages -->
   <url>
     <loc>https://dunkcalculator.com/privacy-policy</loc>
     <lastmod>2025-05-28</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.2</priority>
   </url>
+  
   <url>
     <loc>https://dunkcalculator.com/terms-of-use</loc>
     <lastmod>2025-05-28</lastmod>
