@@ -47,13 +47,14 @@ const Footer = () => {
 
           {/* Calculator & Tools */}
           <div>
-            <h3 className="font-semibold mb-4 text-orange-400">Calculator & Tools</h3>
+            <h3 className="font-semibold mb-4 text-orange-400">Calculators & Tools</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li><Link to="/" className="hover:text-white transition-colors">🏀 Dunk Calculator</Link></li>
-              <li><Link to="/#calculator" className="hover:text-white transition-colors">Try Calculator Now</Link></li>
-              <li><Link to="/faq" className="hover:text-white transition-colors">How It Works</Link></li>
-              <li><Link to="/faq" className="hover:text-white transition-colors">FAQ & Help</Link></li>
-              <li><Link to="/glossary" className="hover:text-white transition-colors">Glossary of Terms</Link></li>
+              <li><Link to="/calculators" className="hover:text-white transition-colors">All Calculators</Link></li>
+              <li><Link to="/calculators/hangtime" className="hover:text-white transition-colors">Hangtime Calculator</Link></li>
+              <li><Link to="/calculators/standing-reach" className="hover:text-white transition-colors">Standing Reach Calculator</Link></li>
+              <li><Link to="/calculators/vertical-jump-improvement" className="hover:text-white transition-colors">Jump Improvement Tracker</Link></li>
+              <li><Link to="/tools/progress-tracker" className="hover:text-white transition-colors">Progress Tracker</Link></li>
             </ul>
           </div>
 
@@ -61,7 +62,8 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4 text-orange-400">Measurement Guides</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
-              <li><Link to="/measurements/standing-reach" className="hover:text-white transition-colors">📏 Standing Reach Guide</Link></li>
+              <li><Link to="/measurements" className="hover:text-white transition-colors">📏 All Measurement Guides</Link></li>
+              <li><Link to="/measurements/standing-reach" className="hover:text-white transition-colors">Standing Reach Guide</Link></li>
               <li><Link to="/measurements/vertical-jump" className="hover:text-white transition-colors">📊 Vertical Jump Test</Link></li>
               <li><Link to="/measurements/hoop-heights" className="hover:text-white transition-colors">🏀 Basketball Hoop Heights</Link></li>
               <li><Link to="/measurements/other-measurements" className="hover:text-white transition-colors">📐 Wingspan & Hand Size</Link></li>
@@ -77,7 +79,7 @@ const Footer = () => {
               <li><Link to="/vertical-jump-training/strength-training" className="hover:text-white transition-colors">🏋️ Strength Training</Link></li>
               <li><Link to="/vertical-jump-training/nutrition" className="hover:text-white transition-colors">🥗 Nutrition for Jumpers</Link></li>
               <li><Link to="/vertical-jump-training/programs" className="hover:text-white transition-colors">📋 Training Programs</Link></li>
-              <li><Link to="/dunking-skills/first-dunk-guide" className="hover:text-white transition-colors">🎯 First Dunk Guide</Link></li>
+              <li><Link to="/vertical-jump-training/flexibility-injury-prevention" className="hover:text-white transition-colors">🔧 Injury Prevention</Link></li>
             </ul>
           </div>
         </div>
@@ -96,15 +98,14 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Popular Blog Posts */}
+          {/* Blog & Articles */}
           <div>
-            <h3 className="font-semibold mb-4 text-orange-400">Popular Guides</h3>
+            <h3 className="font-semibold mb-4 text-orange-400">Blog & Articles</h3>
             <ul className="space-y-2 text-gray-400 text-sm">
               <li><Link to="/blog" className="hover:text-white transition-colors">📝 Training Blog</Link></li>
               <li><Link to="/blog/increase-vertical-jump-exercises" className="hover:text-white transition-colors">Best Jump Exercises</Link></li>
-              <li><Link to="/blog/how-to-dunk-beginners" className="hover:text-white transition-colors">Beginner's Dunk Guide</Link></li>
-              <li><Link to="/blog/vertical-jump-workout" className="hover:text-white transition-colors">30-Day Jump Program</Link></li>
-              <li><Link to="/blog/basketball-jump-technique" className="hover:text-white transition-colors">Jump Technique Tips</Link></li>
+              <li><Link to="/faq" className="hover:text-white transition-colors">❓ FAQ</Link></li>
+              <li><Link to="/glossary" className="hover:text-white transition-colors">📚 Basketball Glossary</Link></li>
             </ul>
           </div>
 
@@ -145,7 +146,7 @@ const Footer = () => {
               Use our free calculator to see if you can dunk right now!
             </p>
             <Link 
-              to="/#calculator"
+              to="/"
               className="inline-block w-full bg-white text-orange-600 font-semibold py-2 px-3 rounded hover:bg-gray-100 transition-colors text-center text-sm"
             >
               Try Calculator

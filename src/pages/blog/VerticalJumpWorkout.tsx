@@ -1,209 +1,231 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Clock, Target, TrendingUp, Users } from "lucide-react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import BreadcrumbNavigation from "../../components/BreadcrumbNavigation";
 
 const VerticalJumpWorkout = () => {
   return (
     <>
       <Helmet>
-        <title>Complete Vertical Jump Workout Plan | 8-Week Training Program</title>
-        <meta name="description" content="Follow our complete 8-week vertical jump workout plan. Includes plyometric exercises, strength training, and recovery tips to maximize your jumping ability." />
-        <meta name="keywords" content="vertical jump workout, plyometric training, jump higher workout, basketball training program, vertical leap exercises" />
-        <link rel="canonical" href="https://dunkcalculator.com/blog/vertical-jump-workout" />
-        
-        <meta property="og:title" content="Complete Vertical Jump Workout Plan | 8-Week Training Program" />
-        <meta property="og:description" content="Follow our complete 8-week vertical jump workout plan. Includes plyometric exercises, strength training, and recovery tips to maximize your jumping ability." />
-        <meta property="og:url" content="https://dunkcalculator.com/blog/vertical-jump-workout" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "Complete Vertical Jump Workout Plan | 8-Week Training Program",
-            "description": "Follow our complete 8-week vertical jump workout plan. Includes plyometric exercises, strength training, and recovery tips to maximize your jumping ability.",
-            "author": {
-              "@type": "Organization",
-              "name": "Dunk Calculator"
-            },
-            "datePublished": "2025-05-28",
-            "dateModified": "2025-05-28"
-          })}
-        </script>
+        <title>30-Day Vertical Jump Workout Challenge | Increase Your Jump | Dunk Calculator</title>
+        <meta name="description" content="Follow our proven 30-day vertical jump workout program. Detailed daily exercises, progression tracking, and recovery protocols to maximize your jumping ability." />
+        <meta name="keywords" content="vertical jump workout, 30 day challenge, jump training program, plyometric workout, basketball training" />
+        <link rel="canonical" href="https://dunkcalculator.com/blog/vertical-jump-workout/" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
-        <Header />
-        
-        <main className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardHeader>
-                <div className="flex items-center space-x-2 text-orange-600 mb-2">
-                  <Target className="h-5 w-5" />
-                  <span className="text-sm font-medium">Training Guide</span>
-                </div>
-                <CardTitle className="text-3xl mb-4">Complete Vertical Jump Workout Plan</CardTitle>
-                <div className="flex items-center space-x-4 text-gray-600 text-sm">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="h-4 w-4" />
-                    <span>8-week program</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Users className="h-4 w-4" />
-                    <span>All skill levels</span>
-                  </div>
-                </div>
-              </CardHeader>
-              <CardContent className="prose max-w-none">
-                <p className="text-lg text-gray-700 mb-6">
-                  This comprehensive 8-week vertical jump workout plan is designed to help basketball players increase their jumping ability through proven training methods. Test your current ability with our <Link to="/" className="text-orange-600 hover:underline">dunk calculator</Link> before starting.
+      <Header />
+
+      <div className="min-h-screen bg-gradient-to-br from-blue-50 to-purple-50">
+        <div className="container mx-auto px-4 py-8">
+          <BreadcrumbNavigation />
+          
+          <article className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                30-Day Vertical Jump Workout Challenge
+              </h1>
+              <div className="flex items-center text-gray-600 text-sm mb-6">
+                <span>By Strength & Conditioning Coach</span>
+                <span className="mx-2">•</span>
+                <span>December 18, 2024</span>
+                <span className="mx-2">•</span>
+                <span>12 min read</span>
+              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1574623452334-1e0ac2b3ccb4?w=800&h=400&fit=crop" 
+                alt="Athlete doing box jumps" 
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+            </div>
+
+            <div className="prose prose-lg max-w-none">
+              <p className="lead text-xl text-gray-700 mb-6">
+                Ready to add serious inches to your vertical jump in just 30 days? This scientifically-designed 
+                workout program combines plyometrics, strength training, and recovery protocols to maximize 
+                your jumping potential safely and effectively.
+              </p>
+
+              <div className="bg-orange-50 border-l-4 border-orange-400 p-4 mb-6">
+                <p className="text-orange-800">
+                  <strong>Important:</strong> This is an intensive program. Ensure you have no injuries and 
+                  consider consulting a fitness professional before starting.
                 </p>
+              </div>
 
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Week 1-2: Foundation Building</h2>
-                  <div className="bg-gray-50 p-6 rounded-lg mb-4">
-                    <h3 className="text-xl font-semibold mb-3">Monday & Thursday - Plyometrics</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li>Box jumps: 3 sets of 8 reps</li>
-                      <li>Jump squats: 3 sets of 12 reps</li>
-                      <li>Broad jumps: 3 sets of 6 reps</li>
-                      <li>Single-leg hops: 3 sets of 10 each leg</li>
-                    </ul>
-                  </div>
-                  <div className="bg-gray-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-3">Tuesday & Friday - Strength Training</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li>Squats: 4 sets of 8-10 reps</li>
-                      <li>Deadlifts: 3 sets of 6-8 reps</li>
-                      <li>Calf raises: 4 sets of 15 reps</li>
-                      <li>Lunges: 3 sets of 10 each leg</li>
-                    </ul>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Week 3-4: Intensity Increase</h2>
-                  <p className="mb-4">
-                    Build on the foundation by increasing intensity and adding more complex movements. Focus on explosive power development.
-                  </p>
-                  <div className="bg-blue-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-3">New Exercises Added:</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li>Depth jumps: 3 sets of 5 reps</li>
-                      <li>Tuck jumps: 3 sets of 8 reps</li>
-                      <li>Bulgarian split squats: 3 sets of 8 each leg</li>
-                      <li>Single-leg box jumps: 3 sets of 5 each leg</li>
-                    </ul>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Week 5-6: Power Development</h2>
-                  <p className="mb-4">
-                    Focus on maximum power output and sport-specific movements. This phase prepares you for peak performance.
-                  </p>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-                    <div className="bg-orange-50 p-4 rounded-lg">
-                      <h4 className="font-semibold mb-2">Advanced Plyometrics</h4>
-                      <ul className="text-sm space-y-1">
-                        <li>• Reactive box jumps</li>
-                        <li>• Lateral bounds</li>
-                        <li>• Medicine ball slams</li>
-                      </ul>
-                    </div>
-                    <div className="bg-green-50 p-4 rounded-lg">
-                      <h4 className="font-semibold mb-2">Power Lifting</h4>
-                      <ul className="text-sm space-y-1">
-                        <li>• Power cleans</li>
-                        <li>• Jump squats with weight</li>
-                        <li>• Explosive deadlifts</li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Week 7-8: Peak Performance</h2>
-                  <p className="mb-4">
-                    Maximum intensity training to reach your peak jumping ability. Test your progress regularly.
-                  </p>
-                  <div className="bg-red-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-3">Peak Week Protocol</h3>
-                    <p className="mb-3">Focus on maximum effort jumps with full recovery between sets.</p>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li>Maximum height box jumps: 5 sets of 3 reps</li>
-                      <li>Weighted jump squats: 4 sets of 5 reps</li>
-                      <li>Depth jumps to max height: 4 sets of 3 reps</li>
-                      <li>Basketball-specific jumping drills</li>
-                    </ul>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Recovery and Nutrition</h2>
-                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3">Recovery Tips</h3>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>Get 7-9 hours of sleep daily</li>
-                        <li>Take rest days seriously</li>
-                        <li>Use foam rolling and stretching</li>
-                        <li>Ice baths for recovery</li>
-                      </ul>
-                    </div>
-                    <div>
-                      <h3 className="text-xl font-semibold mb-3">Nutrition Guidelines</h3>
-                      <ul className="list-disc pl-6 space-y-2">
-                        <li>Eat protein within 30 minutes post-workout</li>
-                        <li>Stay hydrated throughout the day</li>
-                        <li>Include complex carbohydrates</li>
-                        <li>Take appropriate supplements</li>
-                      </ul>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Tracking Your Progress</h2>
-                  <p className="mb-4">
-                    Use our <Link to="/" className="text-orange-600 hover:underline">dunk calculator</Link> to track your vertical jump improvements throughout the program. Test every 2 weeks and adjust training intensity accordingly.
-                  </p>
-                  <div className="bg-yellow-50 p-6 rounded-lg">
-                    <h3 className="text-xl font-semibold mb-3">Progress Milestones</h3>
-                    <ul className="list-disc pl-6 space-y-2">
-                      <li>Week 2: 2-4 inch improvement expected</li>
-                      <li>Week 4: 4-6 inch improvement expected</li>
-                      <li>Week 6: 6-8 inch improvement expected</li>
-                      <li>Week 8: 8-12 inch improvement possible</li>
-                    </ul>
-                  </div>
-                </section>
-
-                <div className="bg-orange-100 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3">Ready to Get Started?</h3>
-                  <p className="mb-4">
-                    Before beginning this workout plan, test your current jumping ability and see if you can already dunk.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <Link to="/" className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors">
-                      Test Your Dunk Ability
-                    </Link>
-                    <Link to="/vertical-jump-training" className="bg-white text-orange-600 px-6 py-2 rounded-lg border border-orange-600 hover:bg-orange-50 transition-colors">
-                      More Training Tips
-                    </Link>
-                  </div>
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Program Overview</h2>
+              <div className="grid md:grid-cols-3 gap-6 mb-8">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-blue-900 mb-2">Week 1: Foundation</h3>
+                  <p className="text-blue-800 text-sm">Build base strength and introduce plyometric movements</p>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        </main>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-green-900 mb-2">Week 2-3: Intensity</h3>
+                  <p className="text-green-800 text-sm">Increase explosive power and training volume</p>
+                </div>
+                <div className="bg-purple-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-purple-900 mb-2">Week 4: Peak & Test</h3>
+                  <p className="text-purple-800 text-sm">Peak performance and final testing</p>
+                </div>
+              </div>
 
-        <Footer />
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Week 1: Foundation Building (Days 1-7)</h2>
+              
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Day 1 & 4: Lower Body Strength</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <ul className="space-y-2">
+                  <li>• Bodyweight Squats: 3 sets x 15 reps</li>
+                  <li>• Lunges: 3 sets x 10 each leg</li>
+                  <li>• Calf Raises: 3 sets x 20 reps</li>
+                  <li>• Wall Sits: 3 sets x 30 seconds</li>
+                  <li>• Single-leg Glute Bridges: 3 sets x 8 each leg</li>
+                </ul>
+              </div>
+
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Day 2 & 5: Plyometric Introduction</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <ul className="space-y-2">
+                  <li>• Jump Squats: 3 sets x 8 reps</li>
+                  <li>• Standing Broad Jumps: 3 sets x 5 reps</li>
+                  <li>• Box Steps (12-16"): 3 sets x 10 each leg</li>
+                  <li>• Lateral Hops: 3 sets x 8 each direction</li>
+                  <li>• Ankle Bounces: 3 sets x 15 reps</li>
+                </ul>
+              </div>
+
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Day 3 & 6: Active Recovery</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <ul className="space-y-2">
+                  <li>• Light stretching routine (20 minutes)</li>
+                  <li>• Foam rolling</li>
+                  <li>• Walking or light jogging</li>
+                  <li>• Hip mobility exercises</li>
+                </ul>
+              </div>
+
+              <p><strong>Day 7:</strong> Complete rest</p>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Week 2-3: Intensity Phase</h2>
+              
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Strength Days (Mon, Wed, Fri)</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <ul className="space-y-2">
+                  <li>• Jump Squats: 4 sets x 6 reps (explosive)</li>
+                  <li>• Single-leg Squats: 3 sets x 5 each leg</li>
+                  <li>• Bulgarian Split Squats: 3 sets x 8 each leg</li>
+                  <li>• Single-leg Calf Raises: 3 sets x 12 each leg</li>
+                  <li>• Pistol Squat Progressions: 3 sets x 3-5 each leg</li>
+                </ul>
+              </div>
+
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Plyometric Days (Tue, Thu, Sat)</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <ul className="space-y-2">
+                  <li>• Depth Jumps (16-20" box): 4 sets x 4 reps</li>
+                  <li>• Box Jumps (progressive height): 4 sets x 5 reps</li>
+                  <li>• Broad Jumps: 4 sets x 3 reps (max distance)</li>
+                  <li>• Single-leg Bounds: 3 sets x 6 each leg</li>
+                  <li>• Reactive Jumps: 3 sets x 8 reps</li>
+                </ul>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Week 4: Peak Performance</h2>
+              
+              <div className="bg-red-50 p-4 rounded-lg mb-6">
+                <p className="text-red-800">
+                  <strong>Focus:</strong> Reduce volume, increase intensity, and prepare for testing.
+                </p>
+              </div>
+
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Days 1, 3, 5: Max Power</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <ul className="space-y-2">
+                  <li>• Depth Jumps: 3 sets x 3 reps (max effort)</li>
+                  <li>• Box Jumps: 3 sets x 3 reps (highest box possible)</li>
+                  <li>• Approach Jumps: 3 sets x 3 attempts</li>
+                  <li>• Single-leg Max Jumps: 2 sets x 3 each leg</li>
+                </ul>
+              </div>
+
+              <h3 className="text-xl font-semibold text-gray-800 mt-6 mb-3">Days 2, 4, 6: Recovery & Mobility</h3>
+              <div className="bg-gray-50 p-4 rounded-lg mb-4">
+                <ul className="space-y-2">
+                  <li>• Dynamic stretching</li>
+                  <li>• Light movement patterns</li>
+                  <li>• Massage or foam rolling</li>
+                  <li>• Visualization and mental preparation</li>
+                </ul>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Nutrition Guidelines</h2>
+              <ul className="list-disc pl-6 mb-6">
+                <li>Eat adequate protein (0.8-1g per lb bodyweight)</li>
+                <li>Stay hydrated (half your bodyweight in ounces of water)</li>
+                <li>Time carbohydrates around workouts</li>
+                <li>Get quality sleep (7-9 hours nightly)</li>
+                <li>Consider anti-inflammatory foods</li>
+              </ul>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Recovery Protocols</h2>
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-blue-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-blue-900 mb-2">Daily Recovery</h3>
+                  <ul className="text-blue-800 text-sm space-y-1">
+                    <li>• 10-minute post-workout stretch</li>
+                    <li>• Ice baths (optional)</li>
+                    <li>• Proper sleep schedule</li>
+                    <li>• Stress management</li>
+                  </ul>
+                </div>
+                <div className="bg-green-50 p-4 rounded-lg">
+                  <h3 className="font-semibold text-green-900 mb-2">Weekly Recovery</h3>
+                  <ul className="text-green-800 text-sm space-y-1">
+                    <li>• One complete rest day</li>
+                    <li>• Massage or self-massage</li>
+                    <li>• Flexibility assessment</li>
+                    <li>• Progress evaluation</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Testing & Measurement</h2>
+              <div className="bg-yellow-50 p-6 rounded-lg mb-6">
+                <h3 className="text-lg font-semibold text-yellow-900 mb-3">Testing Schedule:</h3>
+                <ul className="text-yellow-800 space-y-2">
+                  <li><strong>Day 0:</strong> Baseline vertical jump measurement</li>
+                  <li><strong>Day 15:</strong> Mid-program assessment</li>
+                  <li><strong>Day 30:</strong> Final test and celebration!</li>
+                </ul>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Expected Results</h2>
+              <p>Realistic expectations for a 30-day program:</p>
+              <ul className="list-disc pl-6 mb-6">
+                <li><strong>Beginners:</strong> 2-4 inch improvement</li>
+                <li><strong>Intermediate:</strong> 1-3 inch improvement</li>
+                <li><strong>Advanced:</strong> 0.5-2 inch improvement</li>
+              </ul>
+
+              <div className="bg-gradient-to-r from-orange-500 to-red-500 text-white p-6 rounded-lg mt-8">
+                <h3 className="text-lg font-semibold mb-3">Ready to Start Your 30-Day Challenge?</h3>
+                <p className="mb-4">
+                  Track your progress with our tools and get personalized recommendations based on your results.
+                </p>
+                <div className="flex flex-wrap gap-4">
+                  <a href="/calculators/vertical-jump-improvement" className="bg-white text-orange-600 px-4 py-2 rounded hover:bg-gray-100 transition-colors">
+                    Progress Tracker
+                  </a>
+                  <a href="/tools/progress-tracker" className="bg-orange-700 text-white px-4 py-2 rounded hover:bg-orange-800 transition-colors">
+                    Training Log
+                  </a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
+
+      <Footer />
     </>
   );
 };

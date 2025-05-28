@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Toaster } from '@/components/ui/toaster';
@@ -40,6 +41,9 @@ import FamousDunkers from './pages/FamousDunkers';
 
 // Enhanced Blog Posts
 import IncreaseVerticalJumpExercises from './pages/blog/IncreaseVerticalJumpExercises';
+import HowToDunkBeginners from './pages/blog/HowToDunkBeginners';
+import VerticalJumpWorkout from './pages/blog/VerticalJumpWorkout';
+import BasketballJumpTechnique from './pages/blog/BasketballJumpTechnique';
 
 // Standard Website Pages
 import About from './pages/About';
@@ -74,6 +78,9 @@ const App: React.FC = () => {
           {/* Blog Routes */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/increase-vertical-jump-exercises" element={<IncreaseVerticalJumpExercises />} />
+          <Route path="/blog/how-to-dunk-beginners" element={<HowToDunkBeginners />} />
+          <Route path="/blog/vertical-jump-workout" element={<VerticalJumpWorkout />} />
+          <Route path="/blog/basketball-jump-technique" element={<BasketballJumpTechnique />} />
           
           {/* Silo 1: Measurement Guide Routes */}
           <Route path="/measurements" element={<MeasurementGuides />} />
