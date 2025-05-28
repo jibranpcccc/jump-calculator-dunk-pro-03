@@ -1,4 +1,3 @@
-
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import DunkCalculator from "@/components/DunkCalculator";
@@ -7,6 +6,7 @@ import TrustSignals from "@/components/TrustSignals";
 import QuickStats from "@/components/QuickStats";
 import SEOManager from "@/components/SEOManager";
 import FAQStructuredData from "@/components/FAQStructuredData";
+import EnhancedHero from "@/components/EnhancedHero";
 import { Link } from "react-router-dom";
 import { Card, CardContent } from "@/components/ui/card";
 import { Target, TrendingUp, BookOpen, Users } from "lucide-react";
@@ -52,28 +52,22 @@ const Index = () => {
 
       <FAQStructuredData faqs={faqData} />
 
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
+      <div className="min-h-screen bg-white">
         <Header />
         
         <main>
-          {/* Hero Section */}
-          <section className="py-12 px-4">
-            <div className="container mx-auto text-center">
-              <h1 className="text-4xl md:text-6xl font-bold text-gray-900 mb-6">
-                Can You Dunk a Basketball?
-              </h1>
-              <p className="text-xl text-gray-600 mb-8 max-w-3xl mx-auto">
-                Find out instantly with our <strong>free dunk calculator</strong>. Enter your height, standing reach, and vertical jump to see if you can dunk a basketball! Used by thousands of basketball players worldwide.
-              </p>
-              
-              <TrustSignals />
-              <QuickStats />
-            </div>
-          </section>
+          {/* Enhanced Hero Section */}
+          <EnhancedHero />
 
           {/* Calculator Section */}
-          <section id="calculator" className="py-8 px-4">
+          <section id="calculator" className="py-16 px-4 bg-gray-50">
             <div className="container mx-auto">
+              <div className="text-center mb-12">
+                <h2 className="text-4xl font-bold text-gray-900 mb-4">Free Dunk Calculator</h2>
+                <p className="text-xl text-gray-600 max-w-2xl mx-auto">
+                  Enter your measurements below to instantly discover if you can dunk a basketball on a regulation 10-foot rim.
+                </p>
+              </div>
               <DunkCalculator />
             </div>
           </section>
