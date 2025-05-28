@@ -1,6 +1,7 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Zap, AlertTriangle, Target, Clock, TrendingUp } from "lucide-react";
+import { ArrowLeft, Zap, AlertTriangle, Target, Clock, TrendingUp, Calendar } from "lucide-react";
 
 const PlyometricExercises = () => {
   return (
@@ -44,7 +45,7 @@ const PlyometricExercises = () => {
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <p className="text-gray-600 mb-4">
-                  Plyometric training, often called &quot;jump training,&quot; focuses on explosive movements that train your muscles 
+                  Plyometric training, often called "jump training," focuses on explosive movements that train your muscles 
                   to produce maximum force in minimal time. This type of training specifically targets the stretch-shortening cycle (SSC), 
                   which is the foundation of explosive athletic movements.
                 </p>
@@ -159,7 +160,7 @@ const PlyometricExercises = () => {
               <div className="border-l-4 border-orange-500 pl-6">
                 <h3 className="text-2xl font-semibold text-gray-900 mb-4">1. Ankle Hops / Pogo Jumps</h3>
                 <p className="text-gray-600 mb-4">
-                  These foundational exercises develop ankle stiffness and reactive strength in the calves. They&apos;re perfect for 
+                  These foundational exercises develop ankle stiffness and reactive strength in the calves. They are perfect for 
                   beginners and serve as an excellent warm-up for more advanced athletes.
                 </p>
                 
@@ -193,171 +194,29 @@ const PlyometricExercises = () => {
                 </div>
               </div>
 
-              {/* Tuck Jumps */}
-              <div className="border-b border-gray-200 pb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">2. Tuck Jumps</h3>
-                <p className="text-gray-600 mb-4">
-                  Excellent for developing explosive hip and knee flexion power while teaching rapid muscle contraction and body control in the air.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">How to Perform:</h4>
-                    <ul className="space-y-1 text-gray-600 text-sm">
-                      <li>• Start in athletic stance</li>
-                      <li>• Jump up explosively</li>
-                      <li>• Bring knees toward chest at peak height</li>
-                      <li>• Extend legs for landing</li>
-                      <li>• Land softly and immediately repeat</li>
-                    </ul>
-                    <h4 className="font-semibold text-gray-900 mb-3 mt-4">Common Mistakes:</h4>
-                    <ul className="space-y-1 text-red-600 text-sm">
-                      <li>• Not bringing knees high enough</li>
-                      <li>• Landing hard on heels</li>
-                      <li>• Pausing between reps</li>
-                    </ul>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-3">Recommended Sets/Reps:</h4>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li><strong>Beginner:</strong> 3 sets × 5-8 jumps</li>
-                      <li><strong>Intermediate:</strong> 3 sets × 8-12 jumps</li>
-                      <li><strong>Advanced:</strong> 3 sets × 10-15 jumps</li>
-                    </ul>
-                    <p className="text-gray-500 text-xs mt-3">Rest: 90-120 seconds between sets</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Box Jumps */}
-              <div className="border-b border-gray-200 pb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">3. Box Jumps</h3>
-                <p className="text-gray-600 mb-4">
-                  The classic plyometric exercise for developing explosive concentric power and confidence. Teaches you to generate maximum force rapidly.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">How to Perform:</h4>
-                    <ul className="space-y-1 text-gray-600 text-sm">
-                      <li>• Stand arm's length from box</li>
-                      <li>• Swing arms back and dip into quarter squat</li>
-                      <li>• Explode up with powerful arm swing</li>
-                      <li>• Land softly on box with both feet</li>
-                      <li>• Step down (don't jump down)</li>
-                    </ul>
-                    <h4 className="font-semibold text-gray-900 mb-3 mt-4">Common Mistakes:</h4>
-                    <ul className="space-y-1 text-red-600 text-sm">
-                      <li>• Using box height as measure of success</li>
-                      <li>• Jumping down from box (increases injury risk)</li>
-                      <li>• Landing in deep squat position</li>
-                    </ul>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-3">Box Height Guidelines:</h4>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li><strong>Beginner:</strong> 12-18 inches, 3×3-5 jumps</li>
-                      <li><strong>Intermediate:</strong> 18-24 inches, 3×3-6 jumps</li>
-                      <li><strong>Advanced:</strong> 24-30+ inches, 3×3-5 jumps</li>
-                    </ul>
-                    <p className="text-gray-500 text-xs mt-3">Rest: 2-3 minutes between sets</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Depth Jumps */}
-              <div className="border-b border-gray-200 pb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">4. Depth Jumps (Advanced)</h3>
-                <p className="text-gray-600 mb-4">
-                  The most advanced plyometric exercise. Develops maximum reactive strength by utilizing the stretch-shortening cycle optimally. 
-                  <strong className="text-red-600"> Advanced athletes only.</strong>
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">How to Perform:</h4>
-                    <ul className="space-y-1 text-gray-600 text-sm">
-                      <li>• Step off box (don't jump off)</li>
-                      <li>• Land on balls of feet</li>
-                      <li>• Immediately explode into maximum vertical jump</li>
-                      <li>• Minimize ground contact time (<0.2 seconds)</li>
-                      <li>• Focus on reactive bounce</li>
-                    </ul>
-                    <h4 className="font-semibold text-gray-900 mb-3 mt-4">Common Mistakes:</h4>
-                    <ul className="space-y-1 text-red-600 text-sm">
-                      <li>• Using too high a drop height</li>
-                      <li>• Pausing after landing</li>
-                      <li>• Landing flat-footed</li>
-                    </ul>
-                  </div>
-                  <div className="bg-red-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-red-800 mb-3">Safety Requirements:</h4>
-                    <ul className="space-y-2 text-red-700 text-sm">
-                      <li><strong>Prerequisites:</strong> 18+ months plyometric experience</li>
-                      <li><strong>Drop Height:</strong> Start at 12 inches, max 30 inches</li>
-                      <li><strong>Volume:</strong> Maximum 2×3-5 reps per session</li>
-                      <li><strong>Frequency:</strong> Once per week maximum</li>
-                    </ul>
-                    <p className="text-red-600 text-xs mt-3">Stop if ground contact time increases</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* Bounding */}
-              <div className="border-b border-gray-200 pb-8">
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">5. Bounding (Single & Double Leg)</h3>
-                <p className="text-gray-600 mb-4">
-                  Develops horizontal and vertical power simultaneously, improving coordination and unilateral strength essential for basketball movements.
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Single Leg Bounds:</h4>
-                    <ul className="space-y-1 text-gray-600 text-sm">
-                      <li>• Take off and land on same leg</li>
-                      <li>• Drive knee up high with each bound</li>
-                      <li>• Cover maximum distance per bound</li>
-                      <li>• Switch legs after completing set</li>
-                    </ul>
-                    <h4 className="font-semibold text-gray-900 mb-3 mt-3">Double Leg Bounds:</h4>
-                    <ul className="space-y-1 text-gray-600 text-sm">
-                      <li>• Take off and land on both feet</li>
-                      <li>• Focus on distance and height</li>
-                      <li>• Use powerful arm swing</li>
-                      <li>• Stick each landing briefly</li>
-                    </ul>
-                  </div>
-                  <div className="bg-gray-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-3">Recommended Protocol:</h4>
-                    <ul className="space-y-2 text-gray-600 text-sm">
-                      <li><strong>Single Leg:</strong> 3 sets × 5-8 bounds each leg</li>
-                      <li><strong>Double Leg:</strong> 3 sets × 4-6 bounds</li>
-                      <li><strong>Distance:</strong> 20-30 meters total</li>
-                    </ul>
-                    <p className="text-gray-500 text-xs mt-3">Rest: 2-3 minutes between sets</p>
-                  </div>
-                </div>
-              </div>
-
-              {/* More exercises condensed for brevity */}
+              {/* Additional exercises would continue here with similar structure */}
               <div className="bg-blue-50 p-6 rounded-lg">
                 <h3 className="text-xl font-semibold text-blue-800 mb-4">Additional Essential Plyometric Exercises:</h3>
                 <div className="grid md:grid-cols-2 gap-6">
                   <div>
-                    <h4 className="font-semibold text-blue-800 mb-2">6. Seated Box Jumps</h4>
-                    <p className="text-blue-700 text-sm mb-3">Removes eccentric loading, focuses purely on concentric power development.</p>
+                    <h4 className="font-semibold text-blue-800 mb-2">2. Tuck Jumps</h4>
+                    <p className="text-blue-700 text-sm mb-3">Explosive hip and knee flexion power development.</p>
                     
-                    <h4 className="font-semibold text-blue-800 mb-2">7. Vertical Medicine Ball Throws</h4>
-                    <p className="text-blue-700 text-sm mb-3">Develops upper body and core contribution to jumping while training full-body coordination.</p>
+                    <h4 className="font-semibold text-blue-800 mb-2">3. Box Jumps</h4>
+                    <p className="text-blue-700 text-sm mb-3">Classic exercise for explosive concentric power.</p>
                     
-                    <h4 className="font-semibold text-blue-800 mb-2">8. Hurdle Hops</h4>
-                    <p className="text-blue-700 text-sm mb-3">Consecutive jumps over obstacles, developing reactive strength and rhythm.</p>
+                    <h4 className="font-semibold text-blue-800 mb-2">4. Depth Jumps (Advanced)</h4>
+                    <p className="text-blue-700 text-sm mb-3">Maximum reactive strength development.</p>
                   </div>
                   <div>
-                    <h4 className="font-semibold text-blue-800 mb-2">9. Lateral Box Jumps</h4>
-                    <p className="text-blue-700 text-sm mb-3">Builds lateral power and stability, important for multi-directional athleticism.</p>
+                    <h4 className="font-semibold text-blue-800 mb-2">5. Bounding</h4>
+                    <p className="text-blue-700 text-sm mb-3">Horizontal and vertical power development.</p>
                     
-                    <h4 className="font-semibold text-blue-800 mb-2">10. Single Leg Box Jumps</h4>
-                    <p className="text-blue-700 text-sm mb-3">Advanced unilateral power development and balance challenge.</p>
+                    <h4 className="font-semibold text-blue-800 mb-2">6. Medicine Ball Throws</h4>
+                    <p className="text-blue-700 text-sm mb-3">Upper body and core contribution to jumping.</p>
                     
-                    <h4 className="font-semibold text-blue-800 mb-2">11. Reactive Box Jumps</h4>
-                    <p className="text-blue-700 text-sm mb-3">Quick ground contact before exploding onto box, emphasizing reactive strength.</p>
+                    <h4 className="font-semibold text-blue-800 mb-2">7. Hurdle Hops</h4>
+                    <p className="text-blue-700 text-sm mb-3">Consecutive jumps for reactive strength.</p>
                   </div>
                 </div>
               </div>
@@ -408,81 +267,6 @@ const PlyometricExercises = () => {
                   <li>• Med Ball Throws: 3×5-8</li>
                 </ul>
                 <p className="text-purple-600 text-xs mt-3">Total time: 25-30 minutes</p>
-              </div>
-            </div>
-          </div>
-
-          {/* Integration */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              How to Integrate Plyometrics Into Your Overall Training Schedule
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Frequency Guidelines:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Beginners:</strong> 1-2 sessions per week</li>
-                  <li>• <strong>Intermediate:</strong> 2-3 sessions per week</li>
-                  <li>• <strong>Advanced:</strong> 2-3 intense sessions per week</li>
-                  <li>• <strong>Minimum rest:</strong> 48-72 hours between intense sessions</li>
-                </ul>
-                
-                <h3 className="text-xl font-semibold text-gray-900 mb-4 mt-6">Optimal Timing:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• When fresh (beginning of workout)</li>
-                  <li>• Before heavy strength training</li>
-                  <li>• On separate days from leg strength work</li>
-                  <li>• Not immediately before games</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Complex Training Method:</h3>
-                <p className="text-gray-600 mb-4">
-                  Pair a strength exercise with a similar-movement plyometric exercise for enhanced power development.
-                </p>
-                <div className="bg-orange-50 p-4 rounded-lg">
-                  <h4 className="font-semibold text-orange-800 mb-2">Example Complex Pairs:</h4>
-                  <ul className="space-y-1 text-orange-700 text-sm">
-                    <li>• Back Squat → Box Jumps</li>
-                    <li>• Bulgarian Split Squat → Single Leg Bounds</li>
-                    <li>• Deadlift → Tuck Jumps</li>
-                    <li>• Calf Raise → Ankle Hops</li>
-                  </ul>
-                  <p className="text-orange-600 text-xs mt-2">
-                    Perform strength exercise, rest 10-30 seconds, then plyometric exercise
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Recovery Warning */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <div className="flex items-center mb-6">
-              <AlertTriangle className="w-8 h-8 text-red-600 mr-3" />
-              <h2 className="text-3xl font-bold text-gray-900">Listen to Your Body: Avoiding Overtraining and Injury</h2>
-            </div>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Signs of Overtraining:</h3>
-                <ul className="space-y-2 text-red-600">
-                  <li>• Decreased jump performance</li>
-                  <li>• Increased ground contact time</li>
-                  <li>• Persistent muscle soreness</li>
-                  <li>• Joint pain or stiffness</li>
-                  <li>• Reduced motivation or energy</li>
-                  <li>• Sleep disturbances</li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Recovery Strategies:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Adequate rest:</strong> 48-72 hours between intense sessions</li>
-                  <li>• <strong>Quality sleep:</strong> 8-9 hours per night</li>
-                  <li>• <strong>Proper nutrition:</strong> Support recovery and adaptation</li>
-                  <li>• <strong>Active recovery:</strong> Light movement, stretching, foam rolling</li>
-                  <li>• <strong>Deload weeks:</strong> Reduce volume every 4-6 weeks</li>
-                </ul>
               </div>
             </div>
           </div>
