@@ -92,7 +92,7 @@ const LocalSEO = ({
         "Sunday"
       ],
       opens: "00:00",
-      closes": "23:59"
+      closes: "23:59"
     },
     priceRange: priceRange,
     currenciesAccepted: "USD",
@@ -126,7 +126,7 @@ const LocalSEO = ({
     areaServed: [
       {
         "@type": "Country",
-        name": "United States"
+        name: "United States"
       },
       {
         "@type": "Country",

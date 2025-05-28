@@ -130,23 +130,23 @@ const WebSiteSchema = () => {
       {
         "@type": "Thing",
         name: "Basketball",
-        sameAs": "https://en.wikipedia.org/wiki/Basketball",
+        sameAs: "https://en.wikipedia.org/wiki/Basketball",
         description: "A team sport played on a rectangular court"
       },
       {
         "@type": "Thing",
         name: "Vertical Jump",
-        sameAs": "https://en.wikipedia.org/wiki/Vertical_jump", 
+        sameAs: "https://en.wikipedia.org/wiki/Vertical_jump", 
         description: "A measurement of athletic ability"
       },
       {
         "@type": "Thing",
         name: "Slam Dunk",
-        sameAs": "https://en.wikipedia.org/wiki/Slam_dunk",
+        sameAs: "https://en.wikipedia.org/wiki/Slam_dunk",
         description: "A basketball shot where a player jumps and manually throws the ball through the hoop"
       }
     ],
-    significantLink": [
+    significantLink: [
       "https://dunkcalculator.com/#calculator",
       "https://dunkcalculator.com/vertical-jump-training", 
       "https://dunkcalculator.com/basketball-dunk-tips",

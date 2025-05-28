@@ -122,7 +122,7 @@ const GlobalSEO = () => {
     ],
     audience: {
       "@type": "Audience",
-      audienceType": "Basketball Players, Athletes, Fitness Enthusiasts"
+      audienceType: "Basketball Players, Athletes, Fitness Enthusiasts"
     },
     about: [
       {

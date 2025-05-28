@@ -29,7 +29,7 @@ const OrganizationSchema = () => {
         areaServed: "Worldwide",
         hoursAvailable: {
           "@type": "OpeningHoursSpecification",
-          dayOfWeek": [
+          dayOfWeek: [
             "Monday",
             "Tuesday", 
             "Wednesday",
