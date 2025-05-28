@@ -1,25 +1,32 @@
 
 {
-  "name": "Dunk Calculator - Basketball Dunk Test",
+  "name": "Dunk Calculator - Basketball Training Tools",
   "short_name": "Dunk Calculator",
-  "description": "Free online tool to test if you can dunk a basketball based on your measurements",
+  "description": "Free basketball dunk calculator and vertical jump training tools. Test if you can dunk and get personalized training plans.",
+  "version": "2.0.1",
+  "manifest_version": 2,
   "start_url": "/",
+  "scope": "/",
   "display": "standalone",
-  "background_color": "#ffffff",
-  "theme_color": "#ea580c",
   "orientation": "portrait-primary",
-  "categories": ["sports", "fitness", "health"],
+  "theme_color": "#ea580c",
+  "background_color": "#ffffff",
   "lang": "en-US",
   "dir": "ltr",
-  "scope": "/",
+  
   "icons": [
     {
       "src": "/favicon.ico",
-      "sizes": "16x16",
+      "sizes": "16x16 32x32",
       "type": "image/x-icon"
     },
     {
-      "src": "/favicon-32x32.png",
+      "src": "/favicon-16x16.png",
+      "sizes": "16x16",
+      "type": "image/png"
+    },
+    {
+      "src": "/favicon-32x32.png", 
       "sizes": "32x32",
       "type": "image/png"
     },
@@ -29,24 +36,49 @@
       "type": "image/png"
     },
     {
-      "src": "/android-chrome-192x192.png",
-      "sizes": "192x192",
+      "src": "/logo.png",
+      "sizes": "300x300",
       "type": "image/png",
       "purpose": "any maskable"
     },
     {
-      "src": "/android-chrome-512x512.png",
-      "sizes": "512x512",
-      "type": "image/png",
-      "purpose": "any maskable"
+      "src": "/og-image.jpg",
+      "sizes": "1200x630",
+      "type": "image/jpeg"
     }
   ],
+  
+  "screenshots": [
+    {
+      "src": "/calculator-screenshot.jpg",
+      "sizes": "1280x720",
+      "type": "image/jpeg",
+      "platform": "wide",
+      "label": "Basketball Dunk Calculator Interface"
+    },
+    {
+      "src": "/mobile-calculator-screenshot.jpg",
+      "sizes": "390x844",
+      "type": "image/jpeg", 
+      "platform": "narrow",
+      "label": "Mobile Dunk Calculator"
+    }
+  ],
+  
+  "categories": [
+    "sports",
+    "fitness",
+    "health",
+    "education",
+    "lifestyle"
+  ],
+  
   "shortcuts": [
     {
       "name": "Dunk Calculator",
-      "short_name": "Calculator",
-      "description": "Test if you can dunk",
-      "url": "/",
+      "short_name": "Calculator", 
+      "description": "Test your dunking ability",
+      "url": "/#calculator",
       "icons": [
         {
           "src": "/favicon-32x32.png",
@@ -61,16 +93,28 @@
       "url": "/vertical-jump-training",
       "icons": [
         {
+          "src": "/favicon-32x32.png", 
+          "sizes": "32x32"
+        }
+      ]
+    },
+    {
+      "name": "All Calculators",
+      "short_name": "Calculators",
+      "description": "Basketball tools",
+      "url": "/calculators",
+      "icons": [
+        {
           "src": "/favicon-32x32.png",
           "sizes": "32x32"
         }
       ]
     },
     {
-      "name": "Blog",
-      "short_name": "Blog",
-      "description": "Basketball training tips",
-      "url": "/blog",
+      "name": "Dunk Tips",
+      "short_name": "Tips", 
+      "description": "Dunking techniques",
+      "url": "/basketball-dunk-tips",
       "icons": [
         {
           "src": "/favicon-32x32.png",
@@ -79,22 +123,32 @@
       ]
     }
   ],
+  
   "related_applications": [],
   "prefer_related_applications": false,
-  "screenshots": [
+  
+  "iarc_rating_id": "e84b072d-71b3-4d3e-86ae-31a8ce4e53b7",
+  
+  "permissions": [
+    "storage"
+  ],
+  
+  "protocol_handlers": [
     {
-      "src": "/screenshot-wide.jpg",
-      "sizes": "1280x720",
-      "type": "image/jpeg",
-      "form_factor": "wide",
-      "label": "Dunk Calculator main interface"
-    },
-    {
-      "src": "/screenshot-narrow.jpg",
-      "sizes": "640x1136",
-      "type": "image/jpeg",
-      "form_factor": "narrow",
-      "label": "Dunk Calculator mobile view"
+      "protocol": "web+dunkcalculator",
+      "url": "/?utm_source=pwa&calculator=%s"
     }
-  ]
+  ],
+  
+  "file_handlers": [],
+  
+  "launch_handler": {
+    "client_mode": "navigate-existing"
+  },
+  
+  "edge_side_panel": {},
+  
+  "handle_links": "preferred",
+  
+  "capture_links": "existing-client-navigate"
 }

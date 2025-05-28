@@ -1,80 +1,46 @@
-
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import FAQ from "./pages/FAQ";
+import DunkCalculatorPage from "./pages/DunkCalculator";
 import VerticalJumpTraining from "./pages/VerticalJumpTraining";
 import BasketballDunkTips from "./pages/BasketballDunkTips";
-import Blog from "./pages/Blog";
-import About from "./pages/About";
-import Contact from "./pages/Contact";
-import Calculators from "./pages/Calculators";
-import DunkCalculatorPage from "./pages/DunkCalculator";
-import VerticalJumpTestPage from "./pages/VerticalJumpTest";
-import BasketballBMICalculatorPage from "./pages/BasketballBMICalculator";
-import HangtimeCalculatorPage from "./pages/HangtimeCalculator";
-import ReachCalculatorPage from "./pages/ReachCalculator";
-import BasketballPositionCalculatorPage from "./pages/BasketballPositionCalculator";
-import PrivacyPolicy from "./pages/PrivacyPolicy";
-import TermsOfUse from "./pages/TermsOfUse";
-import IncreaseVerticalJumpExercises from "./pages/blog/IncreaseVerticalJumpExercises";
-import HowToDunkBeginners from "./pages/blog/HowToDunkBeginners";
-import VerticalJumpWorkout from "./pages/blog/VerticalJumpWorkout";
-import BasketballJumpTechnique from "./pages/blog/BasketballJumpTechnique";
-import DunkIfYouAreShort from "./pages/blog/DunkIfYouAreShort";
-import BestVerticalJumpExercises from "./pages/blog/BestVerticalJumpExercises";
-import CommonDunkingMistakes from "./pages/blog/CommonDunkingMistakes";
-import BestShoesForVerticalLeap from "./pages/blog/BestShoesForVerticalLeap";
-import HowToMeasureVerticalJump from "./pages/blog/HowToMeasureVerticalJump";
-import NutritionVerticalJump from "./pages/blog/NutritionVerticalJump";
-import NotFound from "./pages/NotFound";
+import BasketballBMICalculator from "./pages/BasketballBMICalculator";
 
 const queryClient = new QueryClient();
 
-const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/calculators" element={<Calculators />} />
-          
-          {/* Individual Calculator Pages */}
-          <Route path="/dunk-calculator" element={<DunkCalculatorPage />} />
-          <Route path="/vertical-jump-test" element={<VerticalJumpTestPage />} />
-          <Route path="/basketball-bmi-calculator" element={<BasketballBMICalculatorPage />} />
-          <Route path="/hangtime-calculator" element={<HangtimeCalculatorPage />} />
-          <Route path="/reach-calculator" element={<ReachCalculatorPage />} />
-          <Route path="/basketball-position-calculator" element={<BasketballPositionCalculatorPage />} />
-          
-          <Route path="/faq" element={<FAQ />} />
-          <Route path="/vertical-jump-training" element={<VerticalJumpTraining />} />
-          <Route path="/basketball-dunk-tips" element={<BasketballDunkTips />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/about" element={<About />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/privacy-policy" element={<PrivacyPolicy />} />
-          <Route path="/terms-of-use" element={<TermsOfUse />} />
-          <Route path="/blog/increase-vertical-jump-exercises" element={<IncreaseVerticalJumpExercises />} />
-          <Route path="/blog/how-to-dunk-beginners" element={<HowToDunkBeginners />} />
-          <Route path="/blog/vertical-jump-workout" element={<VerticalJumpWorkout />} />
-          <Route path="/blog/basketball-jump-technique" element={<BasketballJumpTechnique />} />
-          <Route path="/blog/dunk-if-you-are-short" element={<DunkIfYouAreShort />} />
-          <Route path="/blog/best-vertical-jump-exercises" element={<BestVerticalJumpExercises />} />
-          <Route path="/blog/common-dunking-mistakes" element={<CommonDunkingMistakes />} />
-          <Route path="/blog/best-shoes-for-vertical-leap" element={<BestShoesForVerticalLeap />} />
-          <Route path="/blog/how-to-measure-vertical-jump" element={<HowToMeasureVerticalJump />} />
-          <Route path="/blog/nutrition-vertical-jump" element={<NutritionVerticalJump />} />
-          <Route path="*" element={<NotFound />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
-);
+const App = () => {
+  return (
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Router>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/dunk-calculator" element={<DunkCalculatorPage />} />
+            <Route path="/vertical-jump-training" element={<VerticalJumpTraining />} />
+            <Route path="/basketball-dunk-tips" element={<BasketballDunkTips />} />
+            <Route path="/basketball-bmi-calculator" element={<BasketballBMICalculator />} />
+            {/* Additional routes that would be added */}
+            <Route path="/calculators" element={<Index />} />
+            <Route path="/blog" element={<Index />} />
+            <Route path="/faq" element={<Index />} />
+            <Route path="/about" element={<Index />} />
+            <Route path="/contact" element={<Index />} />
+            <Route path="/hangtime-calculator" element={<Index />} />
+            <Route path="/reach-calculator" element={<Index />} />
+            <Route path="/basketball-position-calculator" element={<Index />} />
+            <Route path="/vertical-jump-test" element={<Index />} />
+            {/* Catch all route */}
+            <Route path="*" element={<Index />} />
+          </Routes>
+          <Toaster />
+          <Sonner />
+        </Router>
+      </TooltipProvider>
+    </QueryClientProvider>
+  );
+};
 
 export default App;

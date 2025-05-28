@@ -1,12 +1,14 @@
 
 import SEOHead from "./SEOHead";
-import Performance from "./Performance";
 import StructuredData from "./StructuredData";
+import SocialMediaMeta from "./SocialMediaMeta";
+import Performance from "./Performance";
+import TechnicalSEO from "./TechnicalSEO";
 import OrganizationSchema from "./OrganizationSchema";
 import WebSiteSchema from "./WebSiteSchema";
-import SocialMediaMeta from "./SocialMediaMeta";
-import TechnicalSEO from "./TechnicalSEO";
 import SEOAnalytics from "./SEOAnalytics";
+import BreadcrumbNavigation from "./BreadcrumbNavigation";
+import BreadcrumbSchema from "./BreadcrumbSchema";
 
 interface AdvancedSEOProps {
   title: string;
@@ -14,15 +16,19 @@ interface AdvancedSEOProps {
   keywords?: string;
   canonicalUrl?: string;
   ogImage?: string;
-  schemaData?: object;
   noindex?: boolean;
+  pageType?: 'website' | 'article' | 'product' | 'service' | 'calculator';
+  author?: string;
+  publishedTime?: string;
+  modifiedTime?: string;
+  breadcrumbs?: Array<{
+    name: string;
+    url: string;
+  }>;
+  structuredData?: object;
+  enableBreadcrumbs?: boolean;
   enableAnalytics?: boolean;
-  articleSchema?: object;
-  productSchema?: object;
-  howToSchema?: object;
-  faqSchema?: object;
-  breadcrumbSchema?: object;
-  customSchema?: object[];
+  enableSocialMeta?: boolean;
 }
 
 const AdvancedSEO = ({
@@ -31,15 +37,16 @@ const AdvancedSEO = ({
   keywords,
   canonicalUrl,
   ogImage,
-  schemaData,
   noindex = false,
+  pageType = 'website',
+  author,
+  publishedTime,
+  modifiedTime,
+  breadcrumbs,
+  structuredData,
+  enableBreadcrumbs = true,
   enableAnalytics = true,
-  articleSchema,
-  productSchema,
-  howToSchema,
-  faqSchema,
-  breadcrumbSchema,
-  customSchema = []
+  enableSocialMeta = true
 }: AdvancedSEOProps) => {
   return (
     <>
@@ -49,51 +56,40 @@ const AdvancedSEO = ({
         keywords={keywords}
         canonicalUrl={canonicalUrl}
         ogImage={ogImage}
-        schemaData={schemaData}
         noindex={noindex}
+        author={author}
+        publishedTime={publishedTime}
+        modifiedTime={modifiedTime}
+        pageType={pageType}
       />
       
-      <SocialMediaMeta
-        title={title}
-        description={description}
-        image={ogImage}
-        url={canonicalUrl}
-      />
+      {enableSocialMeta && (
+        <SocialMediaMeta
+          title={title}
+          description={description}
+          image={ogImage}
+          url={canonicalUrl}
+          type={pageType}
+        />
+      )}
       
-      <TechnicalSEO />
       <Performance />
-      <OrganizationSchema />
-      <WebSiteSchema />
+      <TechnicalSEO />
       
       {enableAnalytics && <SEOAnalytics />}
       
-      {articleSchema && (
-        <StructuredData type="Article" data={articleSchema} />
+      <OrganizationSchema />
+      <WebSiteSchema />
+      
+      {enableBreadcrumbs && <BreadcrumbNavigation />}
+      
+      {breadcrumbs && breadcrumbs.length > 0 && (
+        <BreadcrumbSchema items={breadcrumbs} />
       )}
       
-      {productSchema && (
-        <StructuredData type="WebPage" data={productSchema} />
+      {structuredData && (
+        <StructuredData type="WebPage" data={structuredData} />
       )}
-      
-      {howToSchema && (
-        <StructuredData type="WebPage" data={howToSchema} />
-      )}
-      
-      {faqSchema && (
-        <StructuredData type="FAQPage" data={faqSchema} />
-      )}
-      
-      {breadcrumbSchema && (
-        <StructuredData type="BreadcrumbList" data={breadcrumbSchema} />
-      )}
-      
-      {customSchema.map((schema, index) => (
-        <StructuredData 
-          key={index} 
-          type="WebPage" 
-          data={schema} 
-        />
-      ))}
     </>
   );
 };

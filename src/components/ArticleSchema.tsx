@@ -4,38 +4,40 @@ import StructuredData from "./StructuredData";
 interface ArticleSchemaProps {
   headline: string;
   description: string;
-  author?: string;
-  publishedTime?: string;
-  modifiedTime?: string;
+  author: string;
+  datePublished: string;
+  dateModified?: string;
   image?: string;
   url?: string;
-  category?: string;
-  keywords?: string[];
+  articleSection?: string;
   wordCount?: number;
   readingTime?: string;
+  keywords?: string[];
 }
 
 const ArticleSchema = ({
   headline,
   description,
-  author = "Dunk Calculator Team",
-  publishedTime,
-  modifiedTime,
+  author,
+  datePublished,
+  dateModified,
   image = "https://dunkcalculator.com/og-image.jpg",
   url,
-  category = "Sports Training",
-  keywords = [],
+  articleSection = "Sports Training",
   wordCount,
-  readingTime
+  readingTime,
+  keywords = []
 }: ArticleSchemaProps) => {
   const articleData = {
     headline,
     description,
     image: [image],
+    datePublished,
+    dateModified: dateModified || datePublished,
     author: {
-      "@type": "Organization",
+      "@type": "Person",
       name: author,
-      url: "https://dunkcalculator.com"
+      url: "https://dunkcalculator.com/about"
     },
     publisher: {
       "@type": "Organization",
@@ -47,19 +49,19 @@ const ArticleSchema = ({
         height: 300
       }
     },
-    datePublished: publishedTime || new Date().toISOString(),
-    dateModified: modifiedTime || new Date().toISOString(),
     mainEntityOfPage: {
       "@type": "WebPage",
       "@id": url || "https://dunkcalculator.com/"
     },
-    articleSection: category,
-    keywords: keywords.join(", "),
+    url: url || "https://dunkcalculator.com/",
+    articleSection,
     ...(wordCount && { wordCount }),
     ...(readingTime && { 
       timeRequired: readingTime,
-      estimatedReadingTime: readingTime 
+      readingTime: readingTime 
     }),
+    ...(keywords.length > 0 && { keywords: keywords.join(", ") }),
+    inLanguage: "en-US",
     about: [
       {
         "@type": "Thing",
@@ -68,22 +70,26 @@ const ArticleSchema = ({
       },
       {
         "@type": "Thing",
-        name: "Athletic Performance",
-        sameAs: "https://en.wikipedia.org/wiki/Athletic_training"
+        name: "Vertical Jump",
+        sameAs: "https://en.wikipedia.org/wiki/Vertical_jump"
       }
     ],
     mentions: [
       {
-        "@type": "Thing",
-        name: "Vertical Jump",
-        sameAs: "https://en.wikipedia.org/wiki/Vertical_jump"
-      },
-      {
-        "@type": "Thing",
-        name: "Slam Dunk",
-        sameAs: "https://en.wikipedia.org/wiki/Slam_dunk"
+        "@type": "SportsOrganization",
+        name: "NBA",
+        sameAs: "https://www.nba.com"
       }
-    ]
+    ],
+    isPartOf: {
+      "@type": "Blog",
+      name: "Dunk Calculator Blog",
+      url: "https://dunkcalculator.com/blog"
+    },
+    potentialAction: {
+      "@type": "ReadAction",
+      target: url || "https://dunkcalculator.com/"
+    }
   };
 
   return <StructuredData type="Article" data={articleData} />;
