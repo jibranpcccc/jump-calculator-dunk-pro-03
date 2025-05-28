@@ -34,7 +34,7 @@ const TechnicalSEO = () => {
       <meta httpEquiv="Pragma" content="public" />
       <meta httpEquiv="Expires" content="31536000" />
       <meta httpEquiv="Vary" content="Accept-Encoding, User-Agent" />
-      <meta httpEquiv="ETag" content="W/\"dunkcalculator-v2.0.1\"" />
+      <meta httpEquiv="ETag" content='W/"dunkcalculator-v2.0.1"' />
       <meta httpEquiv="Last-Modified" content="Tue, 28 May 2024 12:00:00 GMT" />
       <meta httpEquiv="Server" content="DunkCalculator/2.0.1" />
       
@@ -241,7 +241,7 @@ const TechnicalSEO = () => {
             "storageRequirements": "5MB storage",
             "permissions": "None required"
           }
-        })}
+        }, null, 2)}
       </script>
     </Helmet>
   );
