@@ -43,14 +43,14 @@ function App() {
           {/* Homepage */}
           <Route path="/" element={<Index />} />
           
-          {/* Measurement Guide Routes */}
+          {/* Silo 1: Measurement Guide Routes */}
           <Route path="/measurements" element={<MeasurementGuides />} />
           <Route path="/measurements/standing-reach" element={<StandingReachGuide />} />
           <Route path="/measurements/vertical-jump" element={<VerticalJumpGuide />} />
           <Route path="/measurements/hoop-heights" element={<HoopHeightsGuide />} />
           <Route path="/measurements/other-measurements" element={<OtherMeasurementsGuide />} />
           
-          {/* Vertical Jump Training Routes */}
+          {/* Silo 2: Vertical Jump Training Routes */}
           <Route path="/vertical-jump-training" element={<VerticalJumpTraining />} />
           <Route path="/vertical-jump-training/plyometrics" element={<PlyometricExercises />} />
           <Route path="/vertical-jump-training/strength-training" element={<StrengthTraining />} />
@@ -58,7 +58,7 @@ function App() {
           <Route path="/vertical-jump-training/flexibility-injury-prevention" element={<FlexibilityInjuryPrevention />} />
           <Route path="/vertical-jump-training/programs" element={<TrainingPrograms />} />
           
-          {/* Dunking Skills Routes */}
+          {/* Silo 3: Dunking Skills Routes */}
           <Route path="/dunking-skills/first-dunk-guide" element={<FirstDunkGuide />} />
           <Route path="/dunking-skills/how-to-palm-basketball" element={<HowToPalmBasketball />} />
           <Route path="/dunking-skills/types-of-dunks" element={<TypesOfDunks />} />

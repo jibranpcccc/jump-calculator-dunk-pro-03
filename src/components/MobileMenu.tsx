@@ -1,154 +1,165 @@
 
 import { useState } from "react";
-import { Menu, X, Calculator, ChevronDown } from "lucide-react";
+import { Menu, X, ChevronDown } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
-import { Button } from "@/components/ui/button";
-import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
 
 const MobileMenu = () => {
-  const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isBlogOpen, setIsBlogOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
+  const [openSubmenus, setOpenSubmenus] = useState<string[]>([]);
   const location = useLocation();
 
-  const closeMenu = () => {
-    setIsMenuOpen(false);
-    setIsBlogOpen(false);
+  const toggleSubmenu = (submenu: string) => {
+    setOpenSubmenus(prev => 
+      prev.includes(submenu) 
+        ? prev.filter(item => item !== submenu)
+        : [...prev, submenu]
+    );
   };
 
-  const mainNavItems = [
-    { name: "Calculator", href: "/", active: location.pathname === "/" },
-    { name: "All Calculators", href: "/calculators", active: location.pathname === "/calculators" },
-    { name: "Vertical Training", href: "/vertical-jump-training", active: location.pathname === "/vertical-jump-training" },
-    { name: "Dunk Tips", href: "/basketball-dunk-tips", active: location.pathname === "/basketball-dunk-tips" },
-    { name: "FAQ", href: "/faq", active: location.pathname === "/faq" },
-    { name: "About", href: "/about", active: location.pathname === "/about" },
-    { name: "Contact", href: "/contact", active: location.pathname === "/contact" },
-  ];
+  const closeMenu = () => {
+    setIsOpen(false);
+    setOpenSubmenus([]);
+  };
 
-  const blogNavItems = [
-    { name: "All Blog Posts", href: "/blog" },
-    { name: "Vertical Jump Exercises", href: "/blog/increase-vertical-jump-exercises" },
-    { name: "How to Dunk for Beginners", href: "/blog/how-to-dunk-beginners" },
-    { name: "Vertical Jump Workout", href: "/blog/vertical-jump-workout" },
-    { name: "Basketball Jump Technique", href: "/blog/basketball-jump-technique" },
-    { name: "Dunk if You're Short", href: "/blog/dunk-if-you-are-short" },
-    { name: "Best Vertical Jump Exercises", href: "/blog/best-vertical-jump-exercises" },
-    { name: "Common Dunking Mistakes", href: "/blog/common-dunking-mistakes" },
-    { name: "Best Shoes for Vertical Leap", href: "/blog/best-shoes-for-vertical-leap" },
-    { name: "How to Measure Vertical Jump", href: "/blog/how-to-measure-vertical-jump" },
-    { name: "Nutrition for Vertical Jump", href: "/blog/nutrition-vertical-jump" },
+  const mobileNavigation = [
+    {
+      title: "Dunk Calculator",
+      href: "/",
+      description: "Free basketball dunk calculator"
+    },
+    {
+      title: "Measurements",
+      submenu: [
+        { name: "How to Measure Standing Reach", href: "/measurements/standing-reach" },
+        { name: "How to Measure Vertical Jump", href: "/measurements/vertical-jump" },
+        { name: "Basketball Hoop Heights", href: "/measurements/hoop-heights" },
+        { name: "Other Key Measurements", href: "/measurements/other-measurements" }
+      ]
+    },
+    {
+      title: "Vertical Training",
+      submenu: [
+        { name: "Ultimate Vertical Jump Guide", href: "/vertical-jump-training" },
+        { name: "Plyometric Exercises", href: "/vertical-jump-training/plyometrics" },
+        { name: "Strength Training", href: "/vertical-jump-training/strength-training" },
+        { name: "Nutrition for Jumpers", href: "/vertical-jump-training/nutrition" },
+        { name: "Flexibility & Injury Prevention", href: "/vertical-jump-training/flexibility-injury-prevention" },
+        { name: "Training Programs", href: "/vertical-jump-training/programs" }
+      ]
+    },
+    {
+      title: "Dunking Skills",
+      submenu: [
+        { name: "First Dunk Guide", href: "/dunking-skills/first-dunk-guide" },
+        { name: "How to Palm Basketball", href: "/dunking-skills/how-to-palm-basketball" },
+        { name: "Types of Dunks", href: "/dunking-skills/types-of-dunks" },
+        { name: "Average Vertical Jumps", href: "/dunking-skills/average-vertical-jumps" },
+        { name: "Famous Dunkers", href: "/dunking-skills/famous-dunkers" }
+      ]
+    },
+    {
+      title: "Blog",
+      href: "/blog",
+      description: "Training articles & tips"
+    },
+    {
+      title: "About",
+      href: "/about",
+      description: "About Dunk Calculator"
+    },
+    {
+      title: "Contact",
+      href: "/contact",
+      description: "Get in touch"
+    }
   ];
 
   return (
-    <>
-      {/* Mobile Menu Button */}
-      <div className="lg:hidden">
-        <Button
-          variant="ghost"
-          size="sm"
-          onClick={() => setIsMenuOpen(!isMenuOpen)}
-          aria-label="Toggle mobile menu"
-          className="relative z-50"
-        >
-          {isMenuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-        </Button>
-      </div>
+    <div className="lg:hidden">
+      <button
+        onClick={() => setIsOpen(!isOpen)}
+        className="p-2 rounded-md text-gray-600 hover:text-orange-600 hover:bg-gray-100 transition-colors"
+        aria-label="Toggle mobile menu"
+      >
+        {isOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
+      </button>
 
       {/* Mobile Menu Overlay */}
-      {isMenuOpen && (
-        <div 
-          className="fixed inset-0 bg-black bg-opacity-50 z-40 lg:hidden"
-          onClick={closeMenu}
-        />
+      {isOpen && (
+        <div className="fixed inset-0 z-50 bg-black bg-opacity-50" onClick={closeMenu} />
       )}
 
-      {/* Mobile Menu */}
-      <div className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl z-50 transform transition-transform duration-300 ease-in-out lg:hidden ${
-        isMenuOpen ? 'translate-x-0' : 'translate-x-full'
+      {/* Mobile Menu Sidebar */}
+      <div className={`fixed top-0 right-0 h-full w-80 bg-white shadow-xl transform transition-transform duration-300 ease-in-out z-50 ${
+        isOpen ? 'translate-x-0' : 'translate-x-full'
       }`}>
-        <div className="flex flex-col h-full">
-          {/* Header */}
-          <div className="flex items-center justify-between p-4 border-b bg-orange-50">
-            <div className="flex items-center space-x-2">
-              <Calculator className="h-6 w-6 text-orange-600" />
-              <span className="font-bold text-lg">Menu</span>
-            </div>
-            <Button
-              variant="ghost"
-              size="sm"
-              onClick={closeMenu}
-              aria-label="Close menu"
-            >
-              <X className="h-5 w-5" />
-            </Button>
-          </div>
+        <div className="flex items-center justify-between p-4 border-b">
+          <span className="text-xl font-bold text-gray-900">Menu</span>
+          <button
+            onClick={closeMenu}
+            className="p-2 rounded-md text-gray-600 hover:text-orange-600 hover:bg-gray-100 transition-colors"
+          >
+            <X className="h-6 w-6" />
+          </button>
+        </div>
 
-          {/* Navigation */}
-          <div className="flex-1 overflow-y-auto p-4">
-            <nav className="space-y-2">
-              {mainNavItems.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  onClick={closeMenu}
-                  className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    item.active 
-                      ? "bg-orange-100 text-orange-700 border-l-4 border-orange-600" 
-                      : "text-gray-700 hover:bg-gray-100"
-                  }`}
-                >
-                  {item.name}
-                </Link>
-              ))}
-
-              {/* Blog Submenu */}
-              <Collapsible open={isBlogOpen} onOpenChange={setIsBlogOpen}>
-                <CollapsibleTrigger asChild>
-                  <button className={`w-full flex items-center justify-between px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
-                    location.pathname.startsWith('/blog')
-                      ? "bg-orange-100 text-orange-700 border-l-4 border-orange-600"
-                      : "text-gray-700 hover:bg-gray-100"
-                  }`}>
-                    <span>Blog</span>
-                    <ChevronDown className={`h-4 w-4 transition-transform ${isBlogOpen ? 'rotate-180' : ''}`} />
-                  </button>
-                </CollapsibleTrigger>
-                <CollapsibleContent className="mt-2 ml-4 space-y-1">
-                  {blogNavItems.map((item) => (
-                    <Link
-                      key={item.name}
-                      to={item.href}
-                      onClick={closeMenu}
-                      className={`block px-4 py-2 rounded-lg text-sm transition-colors ${
-                        location.pathname === item.href
-                          ? "bg-orange-50 text-orange-600"
-                          : "text-gray-600 hover:bg-gray-50"
-                      }`}
+        <div className="overflow-y-auto h-full pb-20">
+          <nav className="p-4">
+            {mobileNavigation.map((item, index) => (
+              <div key={index} className="mb-2">
+                {item.href ? (
+                  <Link
+                    to={item.href}
+                    onClick={closeMenu}
+                    className={`block px-4 py-3 rounded-lg text-sm font-medium transition-colors ${
+                      location.pathname === item.href
+                        ? 'text-orange-600 bg-orange-50'
+                        : 'text-gray-700 hover:text-orange-600 hover:bg-gray-50'
+                    }`}
+                  >
+                    {item.title}
+                    {item.description && (
+                      <div className="text-xs text-gray-500 mt-1">{item.description}</div>
+                    )}
+                  </Link>
+                ) : (
+                  <div>
+                    <button
+                      onClick={() => toggleSubmenu(item.title)}
+                      className="w-full flex items-center justify-between px-4 py-3 text-left text-sm font-medium text-gray-700 hover:text-orange-600 hover:bg-gray-50 rounded-lg transition-colors"
                     >
-                      {item.name}
-                    </Link>
-                  ))}
-                </CollapsibleContent>
-              </Collapsible>
-            </nav>
-          </div>
-
-          {/* Footer */}
-          <div className="p-4 border-t bg-gray-50">
-            <div className="text-center">
-              <p className="text-xs text-gray-500 mb-2">Free Basketball Tools</p>
-              <Link 
-                to="/calculators" 
-                onClick={closeMenu}
-                className="text-orange-600 text-sm font-medium hover:underline"
-              >
-                All Calculators →
-              </Link>
-            </div>
-          </div>
+                      {item.title}
+                      <ChevronDown className={`w-4 h-4 transition-transform ${
+                        openSubmenus.includes(item.title) ? 'rotate-180' : ''
+                      }`} />
+                    </button>
+                    
+                    {openSubmenus.includes(item.title) && item.submenu && (
+                      <div className="mt-2 ml-4 space-y-1">
+                        {item.submenu.map((subItem, subIndex) => (
+                          <Link
+                            key={subIndex}
+                            to={subItem.href}
+                            onClick={closeMenu}
+                            className={`block px-4 py-2 text-sm rounded-md transition-colors ${
+                              location.pathname === subItem.href
+                                ? 'text-orange-600 bg-orange-50'
+                                : 'text-gray-600 hover:text-orange-600 hover:bg-gray-50'
+                            }`}
+                          >
+                            {subItem.name}
+                          </Link>
+                        ))}
+                      </div>
+                    )}
+                  </div>
+                )}
+              </div>
+            ))}
+          </nav>
         </div>
       </div>
-    </>
+    </div>
   );
 };
 
