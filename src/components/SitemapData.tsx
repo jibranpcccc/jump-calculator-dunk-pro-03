@@ -1,4 +1,3 @@
-
 import StructuredData from "./StructuredData";
 
 const SitemapData = () => {
@@ -6,7 +5,7 @@ const SitemapData = () => {
     "@type": "ItemList",
     "name": "Dunk Calculator Sitemap",
     "description": "Complete sitemap of all pages and resources on Dunk Calculator",
-    "numberOfItems": 35,
+    "numberOfItems": 37,
     "itemListElement": [
       {
         "@type": "SiteNavigationElement",
@@ -228,34 +227,48 @@ const SitemapData = () => {
       {
         "@type": "SiteNavigationElement",
         "position": 31,
+        "name": "How to Dunk for Beginners",
+        "description": "Complete beginner's guide to dunking a basketball",
+        "url": "https://dunkcalculator.com/blog/how-to-dunk-beginners"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 32,
+        "name": "Can You Dunk if You're Short",
+        "description": "Height vs vertical jump analysis for shorter players",
+        "url": "https://dunkcalculator.com/blog/dunk-if-you-are-short"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 33,
+        "name": "Best Vertical Jump Exercises",
+        "description": "Top 10 most effective vertical jump exercises",
+        "url": "https://dunkcalculator.com/blog/best-vertical-jump-exercises"
+      },
+      {
+        "@type": "SiteNavigationElement",
+        "position": 34,
         "name": "FAQ",
         "description": "Frequently asked questions about dunking and training",
         "url": "https://dunkcalculator.com/faq"
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 32,
+        "position": 35,
         "name": "About Us",
         "description": "Learn about our team and mission",
         "url": "https://dunkcalculator.com/about"
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 33,
+        "position": 36,
         "name": "Contact",
         "description": "Get in touch with our team",
         "url": "https://dunkcalculator.com/contact"
       },
       {
         "@type": "SiteNavigationElement",
-        "position": 34,
-        "name": "Glossary",
-        "description": "Basketball and training terminology glossary",
-        "url": "https://dunkcalculator.com/glossary"
-      },
-      {
-        "@type": "SiteNavigationElement",
-        "position": 35,
+        "position": 37,
         "name": "Privacy Policy",
         "description": "Privacy policy and data protection information",
         "url": "https://dunkcalculator.com/privacy-policy"

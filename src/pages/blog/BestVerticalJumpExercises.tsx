@@ -1,281 +1,190 @@
 
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Header from "@/components/Header";
-import Footer from "@/components/Footer";
-import { Link } from "react-router-dom";
 import { Helmet } from "react-helmet";
-import { Clock, Target, TrendingUp, Zap } from "lucide-react";
+import Header from "../../components/Header";
+import Footer from "../../components/Footer";
+import BreadcrumbNavigation from "../../components/BreadcrumbNavigation";
 
 const BestVerticalJumpExercises = () => {
   return (
     <>
       <Helmet>
-        <title>7 Best Exercises to Increase Vertical Jump | Proven Training Methods</title>
-        <meta name="description" content="Discover the 7 most effective exercises to increase your vertical jump. Proven plyometric and strength training methods used by professional athletes." />
-        <meta name="keywords" content="best vertical jump exercises, plyometric training, jump higher exercises, vertical leap training, basketball jump exercises" />
-        <link rel="canonical" href="https://dunkcalculator.com/blog/best-vertical-jump-exercises" />
-        
-        <meta property="og:title" content="7 Best Exercises to Increase Vertical Jump | Proven Training Methods" />
-        <meta property="og:description" content="Discover the 7 most effective exercises to increase your vertical jump. Proven plyometric and strength training methods used by professional athletes." />
-        <meta property="og:url" content="https://dunkcalculator.com/blog/best-vertical-jump-exercises" />
-        
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "7 Best Exercises to Increase Vertical Jump | Proven Training Methods",
-            "description": "Discover the 7 most effective exercises to increase your vertical jump. Proven plyometric and strength training methods used by professional athletes.",
-            "author": {
-              "@type": "Organization",
-              "name": "Dunk Calculator"
-            },
-            "datePublished": "2025-05-28",
-            "dateModified": "2025-05-28"
-          })}
-        </script>
+        <title>Best Vertical Jump Exercises: Top 10 Moves That Actually Work | Dunk Calculator</title>
+        <meta name="description" content="Discover the most effective vertical jump exercises that deliver real results. Expert-tested moves with proper form instructions and progression tips." />
+        <meta name="keywords" content="best vertical jump exercises, plyometric training, jump training, basketball exercises, explosive power exercises" />
+        <link rel="canonical" href="https://dunkcalculator.com/blog/best-vertical-jump-exercises/" />
       </Helmet>
 
-      <div className="min-h-screen bg-gradient-to-br from-orange-50 to-blue-50">
-        <Header />
-        
-        <main className="container mx-auto px-4 py-12">
-          <div className="max-w-4xl mx-auto">
-            <Card>
-              <CardHeader>
-                <div className="flex items-center space-x-2 text-orange-600 mb-2">
-                  <Zap className="h-5 w-5" />
-                  <span className="text-sm font-medium">Vertical Training</span>
+      <Header />
+
+      <div className="min-h-screen bg-gradient-to-br from-green-50 to-blue-50">
+        <div className="container mx-auto px-4 py-8">
+          <BreadcrumbNavigation />
+          
+          <article className="max-w-4xl mx-auto bg-white rounded-xl shadow-lg p-8">
+            <div className="mb-8">
+              <h1 className="text-4xl font-bold text-gray-900 mb-4">
+                Best Vertical Jump Exercises: Top 10 Moves That Actually Work
+              </h1>
+              <div className="flex items-center text-gray-600 text-sm mb-6">
+                <span>By Plyometric Specialist</span>
+                <span className="mx-2">•</span>
+                <span>May 8, 2024</span>
+                <span className="mx-2">•</span>
+                <span>9 min read</span>
+              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1594736797933-d0601ba2fe65?w=800&h=400&fit=crop" 
+                alt="Athlete performing vertical jump exercises" 
+                className="w-full h-64 object-cover rounded-lg mb-6"
+              />
+            </div>
+
+            <div className="prose prose-lg max-w-none">
+              <p className="lead text-xl text-gray-700 mb-6">
+                Cut through the noise with our scientifically-backed list of the most effective vertical jump exercises. 
+                Each exercise has been tested by professional athletes and delivers measurable results when performed correctly.
+              </p>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">The Top 10 Vertical Jump Exercises</h2>
+
+              <div className="space-y-8">
+                <div className="border-l-4 border-orange-500 pl-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">1. Depth Jumps</h3>
+                  <p className="mb-3"><strong>Why it works:</strong> Develops reactive strength and teaches your muscles to produce force quickly.</p>
+                  <p className="mb-3"><strong>How to do it:</strong></p>
+                  <ul className="list-disc pl-6 mb-3">
+                    <li>Step off a 12-18 inch box</li>
+                    <li>Land softly and immediately jump as high as possible</li>
+                    <li>Focus on minimal ground contact time</li>
+                    <li>Perform 3-5 sets of 3-5 reps</li>
+                  </ul>
                 </div>
-                <CardTitle className="text-3xl mb-4">7 Best Exercises to Increase Vertical Jump</CardTitle>
-                <div className="flex items-center space-x-4 text-gray-600 text-sm">
-                  <div className="flex items-center space-x-1">
-                    <Clock className="h-4 w-4" />
-                    <span>5 min read</span>
-                  </div>
-                  <div className="flex items-center space-x-1">
-                    <Target className="h-4 w-4" />
-                    <span>Proven methods</span>
-                  </div>
+
+                <div className="border-l-4 border-blue-500 pl-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">2. Jump Squats</h3>
+                  <p className="mb-3"><strong>Why it works:</strong> Combines strength and power development in one movement.</p>
+                  <p className="mb-3"><strong>How to do it:</strong></p>
+                  <ul className="list-disc pl-6 mb-3">
+                    <li>Squat down to parallel</li>
+                    <li>Explode up as high as possible</li>
+                    <li>Land softly and immediately descend into next rep</li>
+                    <li>Perform 4 sets of 6-8 reps</li>
+                  </ul>
                 </div>
-              </CardHeader>
-              <CardContent className="prose max-w-none">
-                <p className="text-lg text-gray-700 mb-6">
-                  These 7 exercises are scientifically proven to increase vertical jump height. Used by professional athletes and trainers worldwide. Test your progress with our <Link to="/" className="text-orange-600 hover:underline">dunk calculator</Link> after implementing these exercises.
+
+                <div className="border-l-4 border-green-500 pl-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">3. Single-Leg Bounds</h3>
+                  <p className="mb-3"><strong>Why it works:</strong> Develops unilateral power and mimics the jumping motion.</p>
+                  <p className="mb-3"><strong>How to do it:</strong></p>
+                  <ul className="list-disc pl-6 mb-3">
+                    <li>Bound forward on one leg for distance</li>
+                    <li>Focus on driving your knee up</li>
+                    <li>Land and immediately bound again</li>
+                    <li>Perform 3 sets of 5 bounds each leg</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-purple-500 pl-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">4. Bulgarian Split Squat Jumps</h3>
+                  <p className="mb-3"><strong>Why it works:</strong> Builds single-leg strength and power.</p>
+                  <p className="mb-3"><strong>How to do it:</strong></p>
+                  <ul className="list-disc pl-6 mb-3">
+                    <li>Rear foot elevated on bench</li>
+                    <li>Lower into lunge position</li>
+                    <li>Explode up switching legs in air</li>
+                    <li>Perform 3 sets of 8-10 reps each leg</li>
+                  </ul>
+                </div>
+
+                <div className="border-l-4 border-red-500 pl-6">
+                  <h3 className="text-xl font-semibold text-gray-800 mb-3">5. Tuck Jumps</h3>
+                  <p className="mb-3"><strong>Why it works:</strong> Improves reactive ability and hip flexor strength.</p>
+                  <p className="mb-3"><strong>How to do it:</strong></p>
+                  <ul className="list-disc pl-6 mb-3">
+                    <li>Jump straight up bringing knees to chest</li>
+                    <li>Land softly and immediately repeat</li>
+                    <li>Keep contact time minimal</li>
+                    <li>Perform 4 sets of 8-12 reps</li>
+                  </ul>
+                </div>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Exercises 6-10: Power Development</h2>
+
+              <div className="grid md:grid-cols-2 gap-6 mb-8">
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">6. Broad Jumps</h3>
+                  <p className="text-sm text-gray-600 mb-2">Horizontal power development</p>
+                  <p className="text-sm">3 sets of 3-5 jumps</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">7. Single-Leg Box Jumps</h3>
+                  <p className="text-sm text-gray-600 mb-2">Unilateral explosive power</p>
+                  <p className="text-sm">3 sets of 5 reps each leg</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">8. Pogo Jumps</h3>
+                  <p className="text-sm text-gray-600 mb-2">Ankle stiffness and reactivity</p>
+                  <p className="text-sm">4 sets of 15-20 reps</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">9. Lateral Bounds</h3>
+                  <p className="text-sm text-gray-600 mb-2">Lateral power and stability</p>
+                  <p className="text-sm">3 sets of 8 bounds each direction</p>
+                </div>
+
+                <div className="bg-gray-50 p-4 rounded-lg">
+                  <h3 className="text-lg font-semibold text-gray-800 mb-2">10. Weighted Jump Squats</h3>
+                  <p className="text-sm text-gray-600 mb-2">Strength-speed development</p>
+                  <p className="text-sm">3 sets of 5-6 reps (20-30% body weight)</p>
+                </div>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Programming Guidelines</h2>
+              
+              <div className="bg-blue-50 p-6 rounded-lg mb-6">
+                <h3 className="text-lg font-semibold text-blue-900 mb-3">Weekly Training Schedule:</h3>
+                <ul className="list-disc pl-6 text-blue-800">
+                  <li><strong>Day 1:</strong> Exercises 1, 3, 5, 7, 9 (reactive focus)</li>
+                  <li><strong>Day 2:</strong> Rest or light activity</li>
+                  <li><strong>Day 3:</strong> Exercises 2, 4, 6, 8, 10 (strength-power focus)</li>
+                  <li><strong>Day 4:</strong> Rest</li>
+                  <li><strong>Repeat cycle 2-3 times per week</strong></li>
+                </ul>
+              </div>
+
+              <h2 className="text-2xl font-bold text-gray-900 mt-8 mb-4">Common Mistakes to Avoid</h2>
+              <ul className="list-disc pl-6 mb-6">
+                <li>Training to failure - stop before form breaks down</li>
+                <li>Not allowing adequate recovery between sessions</li>
+                <li>Focusing only on quantity over quality</li>
+                <li>Neglecting proper warm-up and cool-down</li>
+                <li>Not progressing exercises over time</li>
+              </ul>
+
+              <div className="bg-green-50 p-6 rounded-lg mt-8">
+                <h3 className="text-lg font-semibold text-green-900 mb-3">Track Your Progress</h3>
+                <p className="text-green-800 mb-4">
+                  Use our tools to monitor your improvement and adjust your training program for optimal results.
                 </p>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">1. Box Jumps</h2>
-                  <div className="bg-blue-50 p-6 rounded-lg mb-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">How to Perform</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Start with 12-18 inch box</li>
-                          <li>Jump explosively onto box</li>
-                          <li>Land softly with bent knees</li>
-                          <li>Step down (don't jump down)</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">Training Protocol</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>3-4 sets of 5-8 reps</li>
-                          <li>2-3 minutes rest between sets</li>
-                          <li>Focus on height, not speed</li>
-                          <li>Progress box height gradually</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">2. Depth Jumps</h2>
-                  <div className="bg-green-50 p-6 rounded-lg mb-4">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">How to Perform</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Drop from 12-24 inch box</li>
-                          <li>Land and immediately jump up</li>
-                          <li>Minimize ground contact time</li>
-                          <li>Jump as high as possible</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">Benefits</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Develops reactive strength</li>
-                          <li>Improves stretch-shortening cycle</li>
-                          <li>Enhances explosive power</li>
-                          <li>Sport-specific movement pattern</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">3. Jump Squats</h2>
-                  <div className="bg-orange-50 p-6 rounded-lg mb-4">
-                    <p className="mb-4">The foundation exercise for vertical jump development. Builds explosive leg strength and power.</p>
-                    <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
-                      <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Bodyweight</h4>
-                        <p className="text-sm">3 sets of 10-15 reps<br/>Perfect for beginners</p>
-                      </div>
-                      <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Weighted</h4>
-                        <p className="text-sm">3 sets of 6-8 reps<br/>10-20% bodyweight</p>
-                      </div>
-                      <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Single-Leg</h4>
-                        <p className="text-sm">3 sets of 5-8 each leg<br/>Advanced variation</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">4. Broad Jumps</h2>
-                  <div className="bg-purple-50 p-6 rounded-lg mb-4">
-                    <p className="mb-4">Develops horizontal power that translates to vertical jumping ability.</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">Technique</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Start in athletic position</li>
-                          <li>Swing arms back, then forward</li>
-                          <li>Drive with legs explosively</li>
-                          <li>Land softly on both feet</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">Progressions</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Single broad jump</li>
-                          <li>Double broad jump</li>
-                          <li>Triple broad jump</li>
-                          <li>Standing to running start</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">5. Bulgarian Split Squats</h2>
-                  <div className="bg-red-50 p-6 rounded-lg mb-4">
-                    <p className="mb-4">Unilateral strength exercise that addresses muscle imbalances and builds single-leg power.</p>
-                    <div className="space-y-3">
-                      <div className="bg-white p-3 rounded">
-                        <strong>Setup:</strong> Rear foot elevated on bench, front foot planted firmly
-                      </div>
-                      <div className="bg-white p-3 rounded">
-                        <strong>Execution:</strong> Lower until front thigh is parallel, drive up explosively
-                      </div>
-                      <div className="bg-white p-3 rounded">
-                        <strong>Programming:</strong> 3 sets of 8-12 reps each leg
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">6. Tuck Jumps</h2>
-                  <div className="bg-yellow-50 p-6 rounded-lg mb-4">
-                    <p className="mb-4">High-intensity plyometric exercise that develops explosive hip flexor strength and coordination.</p>
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">Form Cues</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Jump straight up</li>
-                          <li>Bring knees to chest</li>
-                          <li>Land on balls of feet</li>
-                          <li>Immediate next jump</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-lg font-semibold mb-3">Common Mistakes</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Landing too hard</li>
-                          <li>Leaning forward</li>
-                          <li>Not bringing knees high enough</li>
-                          <li>Pausing between jumps</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">7. Single-Leg Bounds</h2>
-                  <div className="bg-indigo-50 p-6 rounded-lg mb-4">
-                    <p className="mb-4">Advanced exercise that mimics the single-leg takeoff used in basketball dunking.</p>
-                    <div className="space-y-4">
-                      <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Lateral Bounds</h4>
-                        <p className="text-sm">Side-to-side jumping for lateral power and stability</p>
-                      </div>
-                      <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Forward Bounds</h4>
-                        <p className="text-sm">Sequential single-leg jumps for distance and height</p>
-                      </div>
-                      <div className="bg-white p-4 rounded-lg">
-                        <h4 className="font-semibold mb-2">Alternating Bounds</h4>
-                        <p className="text-sm">Left-right-left pattern for coordination and power</p>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <section className="mb-8">
-                  <h2 className="text-2xl font-semibold mb-4">Training Schedule</h2>
-                  <div className="bg-gray-100 p-6 rounded-lg">
-                    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Beginner (Weeks 1-4)</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Box jumps: 3x6</li>
-                          <li>Jump squats: 3x10</li>
-                          <li>Broad jumps: 3x5</li>
-                          <li>2-3 times per week</li>
-                        </ul>
-                      </div>
-                      <div>
-                        <h3 className="text-xl font-semibold mb-3">Advanced (Weeks 5-8)</h3>
-                        <ul className="list-disc pl-6 space-y-1">
-                          <li>Add depth jumps: 3x5</li>
-                          <li>Include tuck jumps: 3x8</li>
-                          <li>Add single-leg bounds: 3x6</li>
-                          <li>3-4 times per week</li>
-                        </ul>
-                      </div>
-                    </div>
-                  </div>
-                </section>
-
-                <div className="bg-orange-100 p-6 rounded-lg">
-                  <h3 className="text-xl font-semibold mb-3">Track Your Progress</h3>
-                  <p className="mb-4">
-                    Use these exercises consistently for 4-6 weeks and test your vertical jump improvement.
-                  </p>
-                  <div className="flex flex-wrap gap-3">
-                    <Link to="/" className="bg-orange-600 text-white px-6 py-2 rounded-lg hover:bg-orange-700 transition-colors">
-                      Test Your Jump Height
-                    </Link>
-                    <Link to="/blog/vertical-jump-workout" className="bg-white text-orange-600 px-6 py-2 rounded-lg border border-orange-600 hover:bg-orange-50 transition-colors">
-                      Full Workout Plan
-                    </Link>
-                  </div>
+                <div className="flex flex-wrap gap-4">
+                  <a href="/calculators/vertical-jump-test" className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700 transition-colors">
+                    Test Your Jump
+                  </a>
+                  <a href="/tools/progress-tracker" className="bg-blue-600 text-white px-4 py-2 rounded hover:bg-blue-700 transition-colors">
+                    Track Progress
+                  </a>
                 </div>
-              </CardContent>
-            </Card>
-          </div>
-        </main>
-
-        <Footer />
+              </div>
+            </div>
+          </article>
+        </div>
       </div>
+
+      <Footer />
     </>
   );
 };

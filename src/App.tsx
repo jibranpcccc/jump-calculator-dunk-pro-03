@@ -44,6 +44,8 @@ import IncreaseVerticalJumpExercises from './pages/blog/IncreaseVerticalJumpExer
 import HowToDunkBeginners from './pages/blog/HowToDunkBeginners';
 import VerticalJumpWorkout from './pages/blog/VerticalJumpWorkout';
 import BasketballJumpTechnique from './pages/blog/BasketballJumpTechnique';
+import DunkIfYouAreShort from './pages/blog/DunkIfYouAreShort';
+import BestVerticalJumpExercises from './pages/blog/BestVerticalJumpExercises';
 
 // Standard Website Pages
 import About from './pages/About';
@@ -81,6 +83,8 @@ const App: React.FC = () => {
           <Route path="/blog/how-to-dunk-beginners" element={<HowToDunkBeginners />} />
           <Route path="/blog/vertical-jump-workout" element={<VerticalJumpWorkout />} />
           <Route path="/blog/basketball-jump-technique" element={<BasketballJumpTechnique />} />
+          <Route path="/blog/dunk-if-you-are-short" element={<DunkIfYouAreShort />} />
+          <Route path="/blog/best-vertical-jump-exercises" element={<BestVerticalJumpExercises />} />
           
           {/* Silo 1: Measurement Guide Routes */}
           <Route path="/measurements" element={<MeasurementGuides />} />
