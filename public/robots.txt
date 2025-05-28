@@ -9,9 +9,11 @@ Allow: /
 # Allow all search engines to crawl important pages
 Allow: /calculators
 Allow: /vertical-jump-training
-Allow: /basketball-dunk-tips
+Allow: /measurements
 Allow: /blog
 Allow: /faq
+Allow: /about
+Allow: /contact
 
 # Specific instructions for major search engines
 User-agent: Googlebot
@@ -86,11 +88,19 @@ Disallow: /
 User-agent: DotBot
 Disallow: /
 
-# Block access to admin and private areas (if any exist in future)
+User-agent: SiteAuditBot
+Disallow: /
+
+User-agent: MegaIndex
+Disallow: /
+
+# Block access to admin and private areas
 Disallow: /admin/
 Disallow: /private/
 Disallow: /*.pdf$
 Disallow: /api/
+Disallow: /temp/
+Disallow: /cache/
 
 # Allow access to CSS, JS, and images for proper rendering
 Allow: /assets/
@@ -104,7 +114,8 @@ Allow: /*.svg
 Allow: /*.webp
 Allow: /*.ico
 Allow: /*.woff
-Allow: *.woff2
+Allow: /*.woff2
+Allow: /fonts/
 
 # Sitemap location
 Sitemap: https://dunkcalculator.com/sitemap.xml
