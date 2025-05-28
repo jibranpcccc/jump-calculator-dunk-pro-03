@@ -18,6 +18,9 @@ import IncreaseVerticalJumpExercises from "./pages/blog/IncreaseVerticalJumpExer
 import HowToDunkBeginners from "./pages/blog/HowToDunkBeginners";
 import VerticalJumpWorkout from "./pages/blog/VerticalJumpWorkout";
 import BasketballJumpTechnique from "./pages/blog/BasketballJumpTechnique";
+import DunkIfYouAreShort from "./pages/blog/DunkIfYouAreShort";
+import BestVerticalJumpExercises from "./pages/blog/BestVerticalJumpExercises";
+import CommonDunkingMistakes from "./pages/blog/CommonDunkingMistakes";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -69,6 +72,9 @@ const App = () => (
           <Route path="/blog/how-to-dunk-beginners" element={<HowToDunkBeginners />} />
           <Route path="/blog/vertical-jump-workout" element={<VerticalJumpWorkout />} />
           <Route path="/blog/basketball-jump-technique" element={<BasketballJumpTechnique />} />
+          <Route path="/blog/dunk-if-you-are-short" element={<DunkIfYouAreShort />} />
+          <Route path="/blog/best-vertical-jump-exercises" element={<BestVerticalJumpExercises />} />
+          <Route path="/blog/common-dunking-mistakes" element={<CommonDunkingMistakes />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>
