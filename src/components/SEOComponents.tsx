@@ -25,6 +25,8 @@ export { default as BlogPostSchema } from './BlogPostSchema';
 export { default as BreadcrumbSchema } from './BreadcrumbSchema';
 export { default as FAQStructuredData } from './FAQStructuredData';
 export { default as LocalBusinessSchema } from './LocalBusinessSchema';
+export { default as EnhancedFAQSchema } from './EnhancedFAQSchema';
+export { default as SitemapData } from './SitemapData';
 
 // Technical Components
 export { default as Performance } from './Performance';

@@ -91,13 +91,13 @@ const MetaTags = ({
       <meta name="geo.position" content="40.7128;-74.0060" />
       <meta name="ICBM" content="40.7128, -74.0060" />
       
-      {/* Dublin Core Metadata */}
+      {/* Enhanced Dublin Core Metadata */}
       <meta name="DC.Title" content={fullTitle} />
       <meta name="DC.Creator" content={author} />
-      <meta name="DC.Subject" content="Basketball Training, Vertical Jump, Dunking" />
+      <meta name="DC.Subject" content="Basketball Training, Vertical Jump, Dunking, Sports Performance" />
       <meta name="DC.Description" content={longDescription} />
       <meta name="DC.Publisher" content="Dunk Calculator" />
-      <meta name="DC.Contributor" content="Basketball Training Experts" />
+      <meta name="DC.Contributor" content="Basketball Training Experts, Sports Scientists, Athletic Performance Coaches" />
       <meta name="DC.Date" content={articlePublishedTime || "2024-05-28"} />
       <meta name="DC.Type" content="InteractiveResource" />
       <meta name="DC.Format" content="text/html" />
@@ -105,8 +105,8 @@ const MetaTags = ({
       <meta name="DC.Source" content="https://dunkcalculator.com" />
       <meta name="DC.Language" content="en" />
       <meta name="DC.Relation" content="https://dunkcalculator.com" />
-      <meta name="DC.Coverage" content="Global" />
-      <meta name="DC.Rights" content="© 2024 Dunk Calculator" />
+      <meta name="DC.Coverage" content="Global Basketball Community" />
+      <meta name="DC.Rights" content="© 2024 Dunk Calculator. All rights reserved." />
       
       {/* Canonical URL and Alternate Languages */}
       {canonicalUrl && <link rel="canonical" href={canonicalUrl} />}
@@ -142,7 +142,7 @@ const MetaTags = ({
       
       {/* Enhanced Open Graph */}
       <meta property="og:type" content={pageType === "article" ? "article" : "website"} />
-      <meta property="og:site_name" content="Dunk Calculator" />
+      <meta property="og:site_name" content="Dunk Calculator - Basketball Training Tools" />
       <meta property="og:title" content={fullTitle} />
       <meta property="og:description" content={shortDescription} />
       <meta property="og:image" content={ogImage} />
@@ -163,12 +163,15 @@ const MetaTags = ({
         <>
           <meta property="article:published_time" content={articlePublishedTime} />
           <meta property="article:author" content={articleAuthor || author} />
-          <meta property="article:section" content="Sports" />
+          <meta property="article:section" content="Sports Training" />
           <meta property="article:tag" content="Basketball" />
           <meta property="article:tag" content="Vertical Jump" />
           <meta property="article:tag" content="Dunking" />
           <meta property="article:tag" content="Sports Training" />
           <meta property="article:tag" content="Athletic Performance" />
+          <meta property="article:tag" content="Fitness" />
+          <meta property="article:tag" content="Exercise" />
+          <meta property="article:tag" content="Sports Science" />
         </>
       )}
       {articleModifiedTime && <meta property="article:modified_time" content={articleModifiedTime} />}
@@ -183,11 +186,13 @@ const MetaTags = ({
       <meta name="twitter:image:alt" content={title} />
       <meta name="twitter:domain" content="dunkcalculator.com" />
       <meta name="twitter:url" content={canonicalUrl || "https://dunkcalculator.com"} />
+      <meta name="twitter:label1" content="Category" />
+      <meta name="twitter:data1" content="Sports Training" />
+      <meta name="twitter:label2" content="Reading time" />
+      <meta name="twitter:data2" content="5 minutes" />
       
-      {/* LinkedIn */}
+      {/* Enhanced Social Media Meta */}
       <meta property="linkedin:owner" content="dunk-calculator" />
-      
-      {/* Pinterest */}
       <meta name="pinterest-rich-pin" content="true" />
       <meta property="pinterest:title" content={fullTitle} />
       <meta property="pinterest:description" content={shortDescription} />
@@ -228,7 +233,7 @@ const MetaTags = ({
       )}
       
       {/* Additional SEO Enhancement */}
-      <meta name="news_keywords" content="basketball, dunk, vertical jump, sports training, athletic performance" />
+      <meta name="news_keywords" content="basketball, dunk, vertical jump, sports training, athletic performance, fitness, exercise" />
       <meta name="standout" content={canonicalUrl || "https://dunkcalculator.com"} />
       <meta name="syndication-source" content={canonicalUrl || "https://dunkcalculator.com"} />
       <meta name="original-source" content={canonicalUrl || "https://dunkcalculator.com"} />
@@ -238,6 +243,12 @@ const MetaTags = ({
       <meta name="msapplication-TileColor" content="#ea580c" />
       <meta name="msapplication-navbutton-color" content="#ea580c" />
       <meta name="apple-mobile-web-app-status-bar-style" content="#ea580c" />
+      
+      {/* Additional Technical SEO */}
+      <meta name="format-detection" content="telephone=no" />
+      <meta name="format-detection" content="address=no" />
+      <meta name="format-detection" content="email=no" />
+      <meta name="msapplication-tap-highlight" content="no" />
       
       {/* Breadcrumb structured data */}
       {breadcrumbs && breadcrumbs.length > 0 && (

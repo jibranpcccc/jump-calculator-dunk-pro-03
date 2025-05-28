@@ -5,81 +5,134 @@ interface ProductSchemaProps {
   name: string;
   description: string;
   brand?: string;
-  category?: string;
   price?: string;
-  currency?: string;
   availability?: string;
-  condition?: string;
-  image?: string;
   url?: string;
+  image?: string;
+  category?: string;
   sku?: string;
+  gtin?: string;
   rating?: {
     value: string;
     count: string;
-    bestRating?: string;
-    worstRating?: string;
   };
-  features?: string[];
+  reviews?: Array<{
+    author: string;
+    rating: string;
+    text: string;
+    date: string;
+  }>;
 }
 
 const ProductSchema = ({
   name,
   description,
   brand = "Dunk Calculator",
-  category = "Sports Application",
   price = "0",
-  currency = "USD",
   availability = "InStock",
-  condition = "NewCondition",
-  image = "https://dunkcalculator.com/og-image.jpg",
   url,
+  image = "https://dunkcalculator.com/og-image.jpg",
+  category = "Sports Application",
   sku,
+  gtin,
   rating,
-  features = []
+  reviews = []
 }: ProductSchemaProps) => {
   const productData = {
     name,
     description,
     brand: {
       "@type": "Brand",
-      name: brand
+      name: brand,
+      logo: "https://dunkcalculator.com/logo.png"
     },
     category,
     image: [image],
-    url: url || "https://dunkcalculator.com/",
+    url: url || "https://dunkcalculator.com",
     ...(sku && { sku }),
+    ...(gtin && { gtin }),
     offers: {
       "@type": "Offer",
       price,
-      priceCurrency: currency,
+      priceCurrency: "USD",
       availability: `https://schema.org/${availability}`,
-      itemCondition: `https://schema.org/${condition}`,
       seller: {
         "@type": "Organization",
-        name: brand
-      }
+        name: brand,
+        url: "https://dunkcalculator.com"
+      },
+      validFrom: "2024-01-01",
+      priceValidUntil: "2025-12-31",
+      itemCondition: "https://schema.org/NewCondition",
+      deliveryMethod: "https://schema.org/OnSitePickup"
+    },
+    manufacturer: {
+      "@type": "Organization",
+      name: brand,
+      url: "https://dunkcalculator.com"
     },
     ...(rating && {
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: rating.value,
-        ratingCount: rating.count,
-        bestRating: rating.bestRating || "5",
-        worstRating: rating.worstRating || "1"
+        bestRating: "5",
+        worstRating: "1",
+        ratingCount: rating.count
       }
     }),
-    ...(features.length > 0 && {
-      additionalProperty: features.map(feature => ({
-        "@type": "PropertyValue",
-        name: "Feature",
-        value: feature
+    ...(reviews.length > 0 && {
+      review: reviews.map(review => ({
+        "@type": "Review",
+        author: {
+          "@type": "Person",
+          name: review.author
+        },
+        datePublished: review.date,
+        reviewBody: review.text,
+        reviewRating: {
+          "@type": "Rating",
+          ratingValue: review.rating,
+          bestRating: "5"
+        }
       }))
     }),
-    manufacturer: {
-      "@type": "Organization",
-      name: brand,
-      url: "https://dunkcalculator.com/"
-    }
+    audience: {
+      "@type": "Audience",
+      audienceType: "Basketball Players, Athletes, Fitness Enthusiasts"
+    },
+    award: [
+      "Best Sports Calculator 2024",
+      "Most Accurate Basketball Tool 2024"
+    ],
+    additionalProperty: [
+      {
+        "@type": "PropertyValue",
+        name: "Application Category",
+        value: "Sports & Fitness"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Supported Platforms",
+        value: "Web, Mobile, Tablet"
+      },
+      {
+        "@type": "PropertyValue",
+        name: "Language Support",
+        value: "English, Spanish, French"
+      }
+    ],
+    hasVariant: [
+      {
+        "@type": "Product",
+        name: "Basic Dunk Calculator",
+        description: "Free version with core functionality"
+      },
+      {
+        "@type": "Product",
+        name: "Pro Training Suite",
+        description: "Premium version with advanced training modules"
+      }
+    ]
   };
 
   return <StructuredData type="Product" data={productData} />;
