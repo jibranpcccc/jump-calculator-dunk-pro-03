@@ -1,6 +1,8 @@
 
 import React from 'react';
 import DunkCalculator from '../components/DunkCalculator';
+import Header from '../components/Header';
+import Footer from '../components/Footer';
 import { GlobalSEO } from '../components/SEOComponents';
 import BreadcrumbNavigation from '../components/BreadcrumbNavigation';
 import { Calculator, Target, TrendingUp, Users, ArrowRight, Ruler, Dumbbell, Zap } from 'lucide-react';
@@ -10,36 +12,9 @@ const Index = () => {
   return (
     <>
       <GlobalSEO />
+      <Header />
       
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
-        {/* Header/Navigation */}
-        <header className="bg-white shadow-sm">
-          <div className="container mx-auto px-4 py-4">
-            <nav className="flex items-center justify-between">
-              <Link to="/" className="text-2xl font-bold text-orange-600">
-                Dunk Calculator
-              </Link>
-              <div className="hidden md:flex space-x-6">
-                <Link to="/measurements" className="text-gray-700 hover:text-orange-600 font-medium">
-                  Measurements
-                </Link>
-                <Link to="/blog" className="text-gray-700 hover:text-orange-600 font-medium">
-                  Blog
-                </Link>
-                <Link to="/faq" className="text-gray-700 hover:text-orange-600 font-medium">
-                  FAQ
-                </Link>
-                <Link to="/about" className="text-gray-700 hover:text-orange-600 font-medium">
-                  About
-                </Link>
-                <Link to="/contact" className="text-gray-700 hover:text-orange-600 font-medium">
-                  Contact
-                </Link>
-              </div>
-            </nav>
-          </div>
-        </header>
-
         <div className="container mx-auto px-4 py-8">
           <BreadcrumbNavigation />
           
@@ -236,47 +211,9 @@ const Index = () => {
             </div>
           </div>
         </div>
-
-        {/* Footer */}
-        <footer className="bg-gray-900 text-white py-12 mt-16">
-          <div className="container mx-auto px-4">
-            <div className="grid md:grid-cols-4 gap-8">
-              <div>
-                <h3 className="text-xl font-bold mb-4">Dunk Calculator</h3>
-                <p className="text-gray-400">
-                  Helping basketball players reach their dunking potential through accurate calculations and expert guidance.
-                </p>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-4">Measurements</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><Link to="/measurements/standing-reach" className="hover:text-white">Standing Reach</Link></li>
-                  <li><Link to="/measurements/vertical-jump" className="hover:text-white">Vertical Jump</Link></li>
-                  <li><Link to="/measurements/hoop-heights" className="hover:text-white">Hoop Heights</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-4">Resources</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><Link to="/blog" className="hover:text-white">Training Blog</Link></li>
-                  <li><Link to="/faq" className="hover:text-white">FAQ</Link></li>
-                  <li><Link to="/measurements" className="hover:text-white">All Measurements</Link></li>
-                </ul>
-              </div>
-              <div>
-                <h4 className="font-semibold mb-4">Company</h4>
-                <ul className="space-y-2 text-gray-400">
-                  <li><Link to="/about" className="hover:text-white">About Us</Link></li>
-                  <li><Link to="/contact" className="hover:text-white">Contact</Link></li>
-                </ul>
-              </div>
-            </div>
-            <div className="border-t border-gray-800 pt-8 mt-8 text-center text-gray-400">
-              <p>&copy; 2024 Dunk Calculator. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
       </div>
+
+      <Footer />
     </>
   );
 };
