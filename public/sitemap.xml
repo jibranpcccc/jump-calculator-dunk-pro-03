@@ -9,12 +9,12 @@
         
   <!-- Homepage -->
   <url>
-    <loc>https://dunkcalculator.com/</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://dunkcalculator.com/og-image.jpg</image:loc>
+      <image:loc>http://dunk-calculator.info/og-image.jpg</image:loc>
       <image:title>Dunk Calculator - Basketball Dunk Test Tool</image:title>
       <image:caption>Free online basketball dunk calculator to test your dunking ability</image:caption>
     </image:image>
@@ -23,88 +23,88 @@
   
   <!-- Calculator Pages -->
   <url>
-    <loc>https://dunkcalculator.com/calculators</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/hangtime</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/hangtime</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/reach</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/reach</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/standing-reach</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/standing-reach</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/approach-jump</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/approach-jump</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/vertical-jump-test</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/vertical-jump-test</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/bmi</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/bmi</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/position</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/position</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/max-hangtime</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/max-hangtime</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/calculators/vertical-jump-improvement</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/calculators/vertical-jump-improvement</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/tools/progress-tracker</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/tools/progress-tracker</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
@@ -112,40 +112,40 @@
   
   <!-- Measurement Guide Pages -->
   <url>
-    <loc>https://dunkcalculator.com/measurements</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/measurements</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/measurements/standing-reach</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/measurements/standing-reach</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/measurements/vertical-jump</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/measurements/vertical-jump</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/measurements/hoop-heights</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/measurements/hoop-heights</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/measurements/other-measurements</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/measurements/other-measurements</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
@@ -153,48 +153,48 @@
   
   <!-- Training Pages -->
   <url>
-    <loc>https://dunkcalculator.com/vertical-jump-training</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/vertical-jump-training</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/vertical-jump-training/plyometrics</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/vertical-jump-training/plyometrics</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/vertical-jump-training/strength-training</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/vertical-jump-training/strength-training</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/vertical-jump-training/nutrition</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/vertical-jump-training/nutrition</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/vertical-jump-training/flexibility-injury-prevention</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/vertical-jump-training/flexibility-injury-prevention</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/vertical-jump-training/programs</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/vertical-jump-training/programs</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
@@ -202,40 +202,40 @@
   
   <!-- Dunking Skills Pages -->
   <url>
-    <loc>https://dunkcalculator.com/dunking-skills/first-dunk-guide</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/dunking-skills/first-dunk-guide</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/dunking-skills/how-to-palm-basketball</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/dunking-skills/how-to-palm-basketball</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/dunking-skills/types-of-dunks</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/dunking-skills/types-of-dunks</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/dunking-skills/average-vertical-jumps</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/dunking-skills/average-vertical-jumps</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/dunking-skills/famous-dunkers</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/dunking-skills/famous-dunkers</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
@@ -243,88 +243,88 @@
   
   <!-- Blog Pages -->
   <url>
-    <loc>https://dunkcalculator.com/blog</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.8</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/increase-vertical-jump-exercises</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/increase-vertical-jump-exercises</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/how-to-dunk-beginners</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/how-to-dunk-beginners</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/vertical-jump-workout</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/vertical-jump-workout</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/basketball-jump-technique</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/basketball-jump-technique</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/dunk-if-you-are-short</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/dunk-if-you-are-short</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/best-vertical-jump-exercises</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/best-vertical-jump-exercises</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/how-to-measure-vertical-jump</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/how-to-measure-vertical-jump</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.7</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/nutrition-vertical-jump</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/nutrition-vertical-jump</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/common-dunking-mistakes</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/common-dunking-mistakes</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/blog/best-shoes-for-vertical-leap</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/blog/best-shoes-for-vertical-leap</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
@@ -332,56 +332,56 @@
   
   <!-- Standard Pages -->
   <url>
-    <loc>https://dunkcalculator.com/about</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/about</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/contact</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/contact</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/faq</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/faq</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.6</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/glossary</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/glossary</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.4</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/privacy-policy</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/privacy-policy</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/terms-of-service</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/terms-of-service</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <mobile:mobile/>
   </url>
   
   <url>
-    <loc>https://dunkcalculator.com/terms-of-use</loc>
-    <lastmod>2024-05-29T12:00:00+00:00</lastmod>
+    <loc>http://dunk-calculator.info/terms-of-use</loc>
+    <lastmod>2025-05-29T12:00:00+00:00</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.3</priority>
     <mobile:mobile/>

@@ -1,4 +1,3 @@
-
 import MetaTags from "./MetaTags";
 import Performance from "./Performance";
 import StructuredData from "./StructuredData";
@@ -10,7 +9,7 @@ const GlobalSEO = () => {
   const websiteData = {
     name: "Dunk Calculator",
     description: "Free online basketball dunk calculator and comprehensive vertical jump training resources for players of all levels. Test if you can dunk a basketball with our accurate calculator used by over 100,000 athletes worldwide.",
-    url: "https://dunkcalculator.com",
+    url: "http://dunk-calculator.info",
     mainEntity: {
       "@type": "WebApplication",
       name: "Basketball Dunk Calculator",
@@ -44,7 +43,7 @@ const GlobalSEO = () => {
         "Performance comparison with professional players",
         "Workout plan generator for all skill levels"
       ],
-      screenshot: "https://dunkcalculator.com/calculator-screenshot.jpg",
+      screenshot: "http://dunk-calculator.info/calculator-screenshot.jpg",
       aggregateRating: {
         "@type": "AggregateRating",
         ratingValue: "4.9",
@@ -86,10 +85,10 @@ const GlobalSEO = () => {
     publisher: {
       "@type": "Organization",
       name: "Dunk Calculator",
-      url: "https://dunkcalculator.com",
+      url: "http://dunk-calculator.info",
       logo: {
         "@type": "ImageObject",
-        url: "https://dunkcalculator.com/logo.png",
+        url: "http://dunk-calculator.info/logo.png",
         width: "300",
         height: "300"
       },
@@ -97,7 +96,7 @@ const GlobalSEO = () => {
         "@type": "ContactPoint",
         telephone: "+1-555-DUNK-CALC",
         contactType: "customer service",
-        email: "contact@dunkcalculator.com",
+        email: "contact@dunk-calculator.info",
         availableLanguage: ["English", "Spanish", "French"]
       },
       foundingDate: "2024",
@@ -165,25 +164,25 @@ const GlobalSEO = () => {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://dunkcalculator.com/"
+        "item": "http://dunk-calculator.info/"
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Measurements",
-        "item": "https://dunkcalculator.com/measurements"
+        "item": "http://dunk-calculator.info/measurements"
       },
       {
         "@type": "ListItem",
         "position": 3,
         "name": "Training Guides",
-        "item": "https://dunkcalculator.com/blog"
+        "item": "http://dunk-calculator.info/blog"
       },
       {
         "@type": "ListItem",
         "position": 4,
         "name": "FAQ",
-        "item": "https://dunkcalculator.com/faq"
+        "item": "http://dunk-calculator.info/faq"
       }
     ]
   };
@@ -248,7 +247,7 @@ const GlobalSEO = () => {
         title="Free Dunk Calculator | Can You Dunk a Basketball? Test Now"
         description="Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required! Get personalized training tips and track your progress with expert guidance from professional coaches."
         keywords="dunk calculator, can you dunk, basketball dunk test, vertical jump calculator, dunk height calculator, free dunk test, basketball training, how to dunk, vertical jump training, NBA rim height, basketball fitness, athletic performance, sports calculator, dunking ability, jump training"
-        canonicalUrl="https://dunkcalculator.com/"
+        canonicalUrl="http://dunk-calculator.info/"
         pageType="website"
       />
       <Performance />

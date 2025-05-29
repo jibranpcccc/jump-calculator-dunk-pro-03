@@ -1,7 +1,7 @@
 
 # Robots.txt for Dunk Calculator
-# Website: https://dunkcalculator.com
-# Updated: 2024-05-29
+# Website: http://dunk-calculator.info
+# Updated: 2025-05-29
 
 User-agent: *
 Allow: /
@@ -138,10 +138,10 @@ Allow: /robots.txt
 Allow: /manifest.json
 
 # Sitemap location
-Sitemap: https://dunkcalculator.com/sitemap.xml
+Sitemap: http://dunk-calculator.info/sitemap.xml
 
 # Host directive (for some search engines)
-Host: https://dunkcalculator.com
+Host: http://dunk-calculator.info
 
 # Additional directives for better SEO
 # Request cache time for robots.txt (1 day = 86400 seconds)

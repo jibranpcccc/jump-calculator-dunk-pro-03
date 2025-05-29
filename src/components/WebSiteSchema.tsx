@@ -1,4 +1,3 @@
-
 import StructuredData from "./StructuredData";
 
 const WebSiteSchema = () => {
@@ -6,16 +5,16 @@ const WebSiteSchema = () => {
     name: "Dunk Calculator",
     alternateName: "Basketball Dunk Calculator - Free Online Tool",
     description: "Free online basketball dunk calculator and comprehensive vertical jump training resources. Test if you can dunk a basketball with our accurate calculator used by over 75,000 players worldwide. Get instant results, personalized training tips, and expert guidance.",
-    url: "https://dunkcalculator.com",
+    url: "http://dunk-calculator.info",
     potentialAction: [
       {
         "@type": "SearchAction",
-        target: "https://dunkcalculator.com/search?q={search_term_string}",
+        target: "http://dunk-calculator.info/search?q={search_term_string}",
         "query-input": "required name=search_term_string"
       },
       {
         "@type": "ReadAction",
-        target: "https://dunkcalculator.com/blog",
+        target: "http://dunk-calculator.info/blog",
         object: {
           "@type": "Blog",
           name: "Basketball Training Blog"
@@ -23,7 +22,7 @@ const WebSiteSchema = () => {
       },
       {
         "@type": "UseAction",
-        target: "https://dunkcalculator.com/#calculator",
+        target: "http://dunk-calculator.info/#calculator",
         object: {
           "@type": "WebApplication",
           name: "Basketball Dunk Calculator",
@@ -32,7 +31,7 @@ const WebSiteSchema = () => {
       },
       {
         "@type": "WatchAction",
-        target: "https://dunkcalculator.com/vertical-jump-training",
+        target: "http://dunk-calculator.info/vertical-jump-training",
         object: {
           "@type": "VideoObject",
           name: "Vertical Jump Training Videos"
@@ -40,7 +39,7 @@ const WebSiteSchema = () => {
       },
       {
         "@type": "InteractAction",
-        target: "https://dunkcalculator.com/basketball-bmi-calculator",
+        target: "http://dunk-calculator.info/calculators/bmi",
         object: {
           "@type": "WebApplication",
           name: "Basketball BMI Calculator"
@@ -48,23 +47,22 @@ const WebSiteSchema = () => {
       }
     ],
     sameAs: [
-      "https://dunkcalculator.com/blog",
-      "https://dunkcalculator.com/vertical-jump-training",
-      "https://dunkcalculator.com/basketball-dunk-tips",
-      "https://dunkcalculator.com/calculators",
-      "https://dunkcalculator.com/faq",
-      "https://dunkcalculator.com/basketball-bmi-calculator",
-      "https://dunkcalculator.com/hangtime-calculator",
-      "https://dunkcalculator.com/reach-calculator",
-      "https://dunkcalculator.com/basketball-position-calculator",
-      "https://dunkcalculator.com/vertical-jump-test"
+      "http://dunk-calculator.info/blog",
+      "http://dunk-calculator.info/vertical-jump-training",
+      "http://dunk-calculator.info/calculators",
+      "http://dunk-calculator.info/faq",
+      "http://dunk-calculator.info/calculators/bmi",
+      "http://dunk-calculator.info/calculators/hangtime",
+      "http://dunk-calculator.info/calculators/reach",
+      "http://dunk-calculator.info/calculators/position",
+      "http://dunk-calculator.info/calculators/vertical-jump-test"
     ],
     publisher: {
       "@type": "Organization",
       name: "Dunk Calculator",
       logo: {
         "@type": "ImageObject",
-        url: "https://dunkcalculator.com/logo.png",
+        url: "http://dunk-calculator.info/logo.png",
         width: 300,
         height: 300,
         caption: "Dunk Calculator - Basketball Training Tools"
@@ -73,7 +71,7 @@ const WebSiteSchema = () => {
         "@type": "ContactPoint",
         telephone: "+1-555-DUNK-CALC",
         contactType: "customer service",
-        email: "contact@dunkcalculator.com",
+        email: "contact@dunk-calculator.info",
         availableLanguage: ["English", "Spanish", "French"],
         areaServed: "Worldwide"
       },
@@ -87,18 +85,18 @@ const WebSiteSchema = () => {
     copyrightHolder: {
       "@type": "Organization",
       name: "Dunk Calculator LLC",
-      url: "https://dunkcalculator.com"
+      url: "http://dunk-calculator.info"
     },
     copyrightYear: "2024",
-    license: "https://dunkcalculator.com/terms-of-use",
+    license: "http://dunk-calculator.info/terms-of-use",
     inLanguage: ["en-US", "en-GB", "en-CA", "en-AU"],
     isAccessibleForFree: true,
-    usageInfo: "https://dunkcalculator.com/terms-of-use",
+    usageInfo: "http://dunk-calculator.info/terms-of-use",
     hasPart: [
       {
         "@type": "WebPage",
         name: "Dunk Calculator Tool",
-        url: "https://dunkcalculator.com/#calculator",
+        url: "http://dunk-calculator.info/#calculator",
         description: "Free basketball dunk calculator to test your dunking ability with instant results",
         breadcrumb: "Home > Calculator",
         isPartOf: {
@@ -109,7 +107,7 @@ const WebSiteSchema = () => {
       {
         "@type": "WebPage", 
         name: "Vertical Jump Training",
-        url: "https://dunkcalculator.com/vertical-jump-training",
+        url: "http://dunk-calculator.info/vertical-jump-training",
         description: "Comprehensive guide to improving your vertical jump with expert tips and workout plans",
         breadcrumb: "Home > Training > Vertical Jump",
         isPartOf: {
@@ -119,19 +117,8 @@ const WebSiteSchema = () => {
       },
       {
         "@type": "WebPage",
-        name: "Basketball Dunk Tips", 
-        url: "https://dunkcalculator.com/basketball-dunk-tips",
-        description: "Expert tips and techniques for successful dunking from professional trainers",
-        breadcrumb: "Home > Tips > Dunking",
-        isPartOf: {
-          "@type": "WebSite",
-          name: "Dunk Calculator"
-        }
-      },
-      {
-        "@type": "WebPage",
         name: "Training Blog",
-        url: "https://dunkcalculator.com/blog", 
+        url: "http://dunk-calculator.info/blog", 
         description: "Latest basketball training articles and guides from expert coaches",
         breadcrumb: "Home > Blog",
         isPartOf: {
@@ -142,7 +129,7 @@ const WebSiteSchema = () => {
       {
         "@type": "WebPage",
         name: "FAQ",
-        url: "https://dunkcalculator.com/faq",
+        url: "http://dunk-calculator.info/faq",
         description: "Frequently asked questions about dunking and vertical jump training",
         breadcrumb: "Home > FAQ",
         isPartOf: {
@@ -153,7 +140,7 @@ const WebSiteSchema = () => {
       {
         "@type": "WebPage",
         name: "Basketball BMI Calculator",
-        url: "https://dunkcalculator.com/basketball-bmi-calculator",
+        url: "http://dunk-calculator.info/calculators/bmi",
         description: "Calculate your basketball-specific BMI for optimal athletic performance",
         breadcrumb: "Home > Calculators > BMI",
         isPartOf: {
@@ -164,7 +151,7 @@ const WebSiteSchema = () => {
       {
         "@type": "WebPage",
         name: "Hangtime Calculator",
-        url: "https://dunkcalculator.com/hangtime-calculator",
+        url: "http://dunk-calculator.info/calculators/hangtime",
         description: "Calculate your basketball hangtime and improve your aerial performance",
         breadcrumb: "Home > Calculators > Hangtime",
         isPartOf: {
@@ -175,7 +162,7 @@ const WebSiteSchema = () => {
       {
         "@type": "WebPage",
         name: "Reach Calculator",
-        url: "https://dunkcalculator.com/reach-calculator",
+        url: "http://dunk-calculator.info/calculators/reach",
         description: "Measure and analyze your basketball reach for better court performance",
         breadcrumb: "Home > Calculators > Reach",
         isPartOf: {
@@ -193,7 +180,7 @@ const WebSiteSchema = () => {
       softwareVersion: "2.0.1",
       releaseNotes: "Enhanced calculator with improved accuracy and training recommendations",
       datePublished: "2024-01-01",
-      dateModified: "2024-05-28",
+      dateModified: "2025-05-29",
       offers: {
         "@type": "Offer",
         price: "0",
@@ -219,9 +206,9 @@ const WebSiteSchema = () => {
         "Performance analytics"
       ],
       screenshot: [
-        "https://dunkcalculator.com/calculator-screenshot.jpg",
-        "https://dunkcalculator.com/training-guide-screenshot.jpg",
-        "https://dunkcalculator.com/bmi-calculator-screenshot.jpg"
+        "http://dunk-calculator.info/calculator-screenshot.jpg",
+        "http://dunk-calculator.info/training-guide-screenshot.jpg",
+        "http://dunk-calculator.info/bmi-calculator-screenshot.jpg"
       ],
       aggregateRating: {
         "@type": "AggregateRating",
@@ -266,7 +253,7 @@ const WebSiteSchema = () => {
       creator: {
         "@type": "Organization",
         name: "Dunk Calculator",
-        url: "https://dunkcalculator.com"
+        url: "http://dunk-calculator.info"
       }
     },
     keywords: [
@@ -369,13 +356,12 @@ const WebSiteSchema = () => {
       }
     ],
     significantLink: [
-      "https://dunkcalculator.com/#calculator",
-      "https://dunkcalculator.com/vertical-jump-training", 
-      "https://dunkcalculator.com/basketball-dunk-tips",
-      "https://dunkcalculator.com/blog",
-      "https://dunkcalculator.com/basketball-bmi-calculator",
-      "https://dunkcalculator.com/hangtime-calculator",
-      "https://dunkcalculator.com/reach-calculator"
+      "http://dunk-calculator.info/#calculator",
+      "http://dunk-calculator.info/vertical-jump-training", 
+      "http://dunk-calculator.info/blog",
+      "http://dunk-calculator.info/calculators/bmi",
+      "http://dunk-calculator.info/calculators/hangtime",
+      "http://dunk-calculator.info/calculators/reach"
     ],
     accessibilityFeature: [
       "alternativeText",
