@@ -5,7 +5,7 @@ import HangtimeCalculator from "@/components/HangtimeCalculator";
 import CallToAction from "@/components/CallToAction";
 import SEOManager from "@/components/SEOManager";
 import { Card, CardContent } from "@/components/ui/card";
-import { Clock, Zap, Target, TrendingUp } from "lucide-react";
+import { Clock, Zap, Target, TrendingUp, Play, CheckCircle } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const HangtimeCalculatorPage = () => {
@@ -67,9 +67,103 @@ const HangtimeCalculatorPage = () => {
           </section>
 
           {/* Calculator Section */}
-          <section className="py-16 px-4 bg-white">
+          <section className="py-16 px-4 bg-white" id="calculator">
             <div className="container mx-auto">
               <HangtimeCalculator />
+            </div>
+          </section>
+
+          {/* Step-by-Step Guide */}
+          <section className="py-16 px-4 bg-gray-50">
+            <div className="container mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-4">How to Use the Hangtime Calculator</h2>
+              <p className="text-center text-gray-600 mb-12 max-w-2xl mx-auto">
+                Follow these simple steps to calculate your exact hangtime and compare to professional players.
+              </p>
+              <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-purple-600 font-bold text-xl">1</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">Measure Your Vertical Jump</h3>
+                    <p className="text-gray-600">First, you need to know your exact vertical jump height. Use a wall or measuring device to get accurate measurements in inches.</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-purple-600 font-bold text-xl">2</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">Enter Your Jump Height</h3>
+                    <p className="text-gray-600">Input your vertical jump height in inches into the calculator. Make sure to use your maximum jump height for accurate results.</p>
+                  </CardContent>
+                </Card>
+                <Card className="text-center hover:shadow-lg transition-shadow">
+                  <CardContent className="p-6">
+                    <div className="bg-purple-100 w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <span className="text-purple-600 font-bold text-xl">3</span>
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">Get Your Hangtime Result</h3>
+                    <p className="text-gray-600">Click calculate to see your hangtime in seconds, plus compare to professional standards and get improvement tips.</p>
+                  </CardContent>
+                </Card>
+              </div>
+            </div>
+          </section>
+
+          {/* What You Need to Know */}
+          <section className="py-16 px-4 bg-white">
+            <div className="container mx-auto">
+              <h2 className="text-3xl font-bold text-center mb-12">What You Need to Know Before Using This Calculator</h2>
+              <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Accurate Vertical Jump Measurement</h3>
+                      <p className="text-gray-600">Your hangtime calculation is only as good as your vertical jump measurement. Make sure to measure from a standing position to your highest reach point.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Use Your Maximum Jump</h3>
+                      <p className="text-gray-600">Input your best vertical jump height, not your average. This gives you your maximum possible hangtime for comparison purposes.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Understanding the Physics</h3>
+                      <p className="text-gray-600">Hangtime is calculated using gravity (9.81 m/s²). The formula considers only the upward motion and return to starting height.</p>
+                    </div>
+                  </div>
+                </div>
+                <div className="space-y-6">
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Realistic Expectations</h3>
+                      <p className="text-gray-600">Even elite NBA players rarely exceed 1.0 seconds of hangtime. Don't be discouraged if your time seems low - focus on improvement.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Training Applications</h3>
+                      <p className="text-gray-600">Use this calculator to track progress over time. As your vertical jump improves, your hangtime will automatically increase.</p>
+                    </div>
+                  </div>
+                  <div className="flex items-start">
+                    <CheckCircle className="h-6 w-6 text-green-600 mt-1 mr-3 flex-shrink-0" />
+                    <div>
+                      <h3 className="font-semibold mb-2">Two-Foot vs One-Foot Jumps</h3>
+                      <p className="text-gray-600">This calculator works for both two-foot and one-foot jumps. Use your highest vertical jump regardless of takeoff method.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
             </div>
           </section>
 
@@ -199,11 +293,11 @@ const HangtimeCalculatorPage = () => {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4 text-orange-600">Plyometric Training</h3>
                     <ul className="space-y-2 text-gray-600">
-                      <li>• Box jumps</li>
-                      <li>• Depth jumps</li>
-                      <li>• Jump squats</li>
-                      <li>• Bound exercises</li>
-                      <li>• Single-leg hops</li>
+                      <li>• Box jumps (3-4 sets of 8-12)</li>
+                      <li>• Depth jumps (3 sets of 5-8)</li>
+                      <li>• Jump squats (4 sets of 10-15)</li>
+                      <li>• Bounds (3 sets of 20-30 steps)</li>
+                      <li>• Single-leg hops (3 sets each leg)</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -211,11 +305,11 @@ const HangtimeCalculatorPage = () => {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4 text-blue-600">Strength Training</h3>
                     <ul className="space-y-2 text-gray-600">
-                      <li>• Squats & deadlifts</li>
-                      <li>• Calf raises</li>
-                      <li>• Bulgarian split squats</li>
-                      <li>• Hip thrusts</li>
-                      <li>• Olympic lifts</li>
+                      <li>• Squats (4 sets of 6-8 reps)</li>
+                      <li>• Deadlifts (3 sets of 5-6 reps)</li>
+                      <li>• Calf raises (4 sets of 15-20)</li>
+                      <li>• Bulgarian split squats (3 sets each)</li>
+                      <li>• Hip thrusts (3 sets of 12-15)</li>
                     </ul>
                   </CardContent>
                 </Card>
@@ -223,11 +317,11 @@ const HangtimeCalculatorPage = () => {
                   <CardContent className="p-6">
                     <h3 className="text-xl font-semibold mb-4 text-green-600">Technique Focus</h3>
                     <ul className="space-y-2 text-gray-600">
-                      <li>• Proper arm swing</li>
-                      <li>• Two-foot takeoff</li>
-                      <li>• Core engagement</li>
-                      <li>• Landing mechanics</li>
-                      <li>• Timing practice</li>
+                      <li>• Proper arm swing coordination</li>
+                      <li>• Two-foot takeoff technique</li>
+                      <li>• Core engagement during jump</li>
+                      <li>• Safe landing mechanics</li>
+                      <li>• Timing and rhythm practice</li>
                     </ul>
                   </CardContent>
                 </Card>
