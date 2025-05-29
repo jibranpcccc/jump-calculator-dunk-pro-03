@@ -7,12 +7,11 @@ import BreadcrumbNavigation from '../components/BreadcrumbNavigation';
 import EnhancedSEO from '../components/EnhancedSEO';
 import PerformanceOptimizer from '../components/PerformanceOptimizer';
 import CallToAction from '../components/CallToAction';
-import HeroSection from '../components/HeroSection';
-import SocialProofSection from '../components/SocialProofSection';
-import HowItWorksSection from '../components/HowItWorksSection';
-import WhyChooseUsSection from '../components/WhyChooseUsSection';
-import ResourcesSection from '../components/ResourcesSection';
-import FAQPreviewSection from '../components/FAQPreviewSection';
+import MobileOptimizedHero from '../components/MobileOptimizedHero';
+import TouchOptimizedSocial from '../components/TouchOptimizedSocial';
+import ResponsiveSections from '../components/ResponsiveSections';
+import MobileFAQ from '../components/MobileFAQ';
+import MobileFriendlyStats from '../components/MobileFriendlyStats';
 
 const Index = () => {
   return (
@@ -28,21 +27,24 @@ const Index = () => {
       <Header />
       
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
-        <div className="container mx-auto px-4 py-8">
+        <div className="container mx-auto px-2 sm:px-4 py-4 md:py-8">
           <BreadcrumbNavigation />
           
-          <HeroSection />
+          <MobileOptimizedHero />
           
-          <SocialProofSection />
+          <TouchOptimizedSocial />
+
+          {/* Mobile-optimized Stats Section */}
+          <div className="mb-8 md:mb-12">
+            <MobileFriendlyStats />
+          </div>
 
           {/* Main Calculator */}
-          <div className="calculator-container mb-12">
+          <div className="calculator-container mb-8 md:mb-12" id="calculator">
             <DunkCalculator />
           </div>
 
-          <HowItWorksSection />
-
-          <WhyChooseUsSection />
+          <ResponsiveSections />
 
           {/* Call to Action Section */}
           <CallToAction
@@ -55,9 +57,7 @@ const Index = () => {
             showTrustSignals={true}
           />
 
-          <ResourcesSection />
-
-          <FAQPreviewSection />
+          <MobileFAQ />
         </div>
       </div>
 
