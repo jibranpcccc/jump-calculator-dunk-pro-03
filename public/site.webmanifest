@@ -2,7 +2,7 @@
 {
   "name": "Dunk Calculator - Basketball Vertical Jump Test",
   "short_name": "Dunk Calculator",
-  "description": "Free basketball dunk calculator to test your vertical jump and dunking ability",
+  "description": "Free basketball dunk calculator to test your vertical jump and dunking ability. Used by 100,000+ athletes worldwide.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#ffffff",

@@ -17,8 +17,8 @@ const Index = () => {
   return (
     <>
       <EnhancedSEO 
-        title="Free Dunk Calculator | Can You Dunk a Basketball? Test Your Vertical Jump Now"
-        description="Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. No signup required! Get personalized training tips and track your progress with expert guidance from professional coaches."
+        title="Dunk Calculator | Free Basketball Dunk Test - Can You Dunk?"
+        description="Test if you can dunk a basketball with our free dunk calculator! Enter your height, reach, and vertical jump to get instant results. Used by 100,000+ athletes worldwide."
         keywords="dunk calculator, can you dunk, basketball dunk test, vertical jump calculator, dunk height calculator, free dunk test, basketball training, how to dunk, vertical jump training, NBA rim height, basketball fitness, athletic performance, sports calculator, dunking ability, jump training"
         canonicalUrl="https://dunkcalculator.com/"
         pageType="website"
@@ -30,7 +30,15 @@ const Index = () => {
         <div className="container mx-auto px-2 sm:px-4 py-4 md:py-8">
           <BreadcrumbNavigation />
           
-          <MobileOptimizedHero />
+          {/* Hero Section with Correct H1 */}
+          <section className="text-center py-8 md:py-12">
+            <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight mb-6">
+              Dunk Calculator
+            </h1>
+            <p className="text-lg sm:text-xl md:text-2xl text-gray-600 max-w-3xl mx-auto mb-8">
+              Find out if you can dunk a basketball! Test your dunking ability with our free, accurate calculator used by over 100,000 athletes worldwide.
+            </p>
+          </section>
           
           <TouchOptimizedSocial />
 

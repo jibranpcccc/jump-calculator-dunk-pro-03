@@ -22,7 +22,7 @@ const MobileOptimizedHero = () => {
   }, []);
 
   return (
-    <section className="relative py-8 md:py-16 px-4 bg-gradient-to-br from-orange-50 via-white to-blue-50 overflow-hidden">
+    <section className="relative py-8 md:py-12 px-4 bg-gradient-to-br from-orange-50 via-white to-blue-50 overflow-hidden">
       <div className="container mx-auto relative z-10">
         <div className={`text-center space-y-6 md:space-y-8 transition-all duration-1000 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-10'}`}>
           {/* Mobile-optimized badge */}
@@ -34,14 +34,6 @@ const MobileOptimizedHero = () => {
               98% Accurate
             </span>
           </div>
-          
-          {/* Mobile-optimized heading */}
-          <h1 className="text-3xl xs:text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 leading-tight px-2">
-            Can You 
-            <span className="text-transparent bg-clip-text bg-gradient-to-r from-orange-600 to-blue-600 block xs:inline">
-              {" "}Dunk?
-            </span>
-          </h1>
           
           {/* Mobile-optimized description */}
           <p className="text-base sm:text-lg md:text-xl text-gray-600 leading-relaxed max-w-2xl mx-auto px-2">
@@ -82,7 +74,7 @@ const MobileOptimizedHero = () => {
             <Card className="text-center bg-white/90 hover:shadow-md transition-shadow">
               <CardContent className="p-3">
                 <Target className="w-5 h-5 mx-auto mb-1 text-orange-600" />
-                <div className="text-lg font-bold text-gray-900">75,000+</div>
+                <div className="text-lg font-bold text-gray-900">100,000+</div>
                 <div className="text-xs text-gray-600">Tests Done</div>
               </CardContent>
             </Card>
@@ -102,7 +94,7 @@ const MobileOptimizedHero = () => {
               <div className="w-6 h-6 bg-blue-400 rounded-full border-2 border-white"></div>
               <div className="w-6 h-6 bg-green-400 rounded-full border-2 border-white"></div>
             </div>
-            <span className="text-center">Trusted by 75,000+ players worldwide</span>
+            <span className="text-center">Trusted by 100,000+ players worldwide</span>
           </div>
         </div>
       </div>

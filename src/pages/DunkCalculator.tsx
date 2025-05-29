@@ -31,7 +31,7 @@ const DunkCalculatorPage = () => {
   return (
     <>
       <SEOManager
-        title="Free Dunk Calculator | Can You Dunk a Basketball? Test Now"
+        title="Dunk Calculator | Free Basketball Dunk Test - Can You Dunk?"
         description="Use our free dunk calculator to instantly find out if you can dunk a basketball. Enter your height, reach, and vertical jump. Get accurate results based on NBA rim height!"
         keywords="dunk calculator, can you dunk, basketball dunk test, dunk height calculator, free dunk test, basketball rim height calculator"
         canonicalUrl="https://dunkcalculator.com/dunk-calculator"
@@ -51,8 +51,8 @@ const DunkCalculatorPage = () => {
           {/* Hero Section */}
           <section className="py-16 px-4 bg-gradient-to-br from-orange-50 via-white to-blue-50">
             <div className="container mx-auto text-center">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Free Basketball Dunk Calculator
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Dunk Calculator
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 Find out if you can dunk a basketball on a regulation 10-foot rim! Enter your measurements and get instant results based on NBA standards and physics calculations.

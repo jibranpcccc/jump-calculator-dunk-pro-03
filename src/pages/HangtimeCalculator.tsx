@@ -31,7 +31,7 @@ const HangtimeCalculatorPage = () => {
   return (
     <>
       <SEOManager
-        title="Basketball Hangtime Calculator | Calculate Your Airtime in Seconds"
+        title="Hangtime Calculator | Basketball Airtime Calculator - Calculate Your Flight Time"
         description="Calculate how long you stay in the air during basketball jumps! Free hangtime calculator using physics formulas. Compare to Michael Jordan and NBA standards!"
         keywords="hangtime calculator, basketball hangtime, airtime calculator, how long in air basketball, jordan hangtime, vertical jump airtime"
         canonicalUrl="https://dunkcalculator.com/hangtime-calculator"
@@ -51,8 +51,8 @@ const HangtimeCalculatorPage = () => {
           {/* Hero Section */}
           <section className="py-16 px-4 bg-gradient-to-br from-purple-50 via-white to-pink-50">
             <div className="container mx-auto text-center">
-              <h1 className="text-5xl font-bold text-gray-900 mb-6">
-                Basketball Hangtime Calculator
+              <h1 className="text-4xl sm:text-5xl md:text-6xl font-bold text-gray-900 mb-6">
+                Hangtime Calculator
               </h1>
               <p className="text-xl text-gray-600 max-w-3xl mx-auto mb-8">
                 Calculate how long you stay in the air during your basketball jumps! Use physics to determine your hangtime and compare to legendary players like Michael Jordan.
