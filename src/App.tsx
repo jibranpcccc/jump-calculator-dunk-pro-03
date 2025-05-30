@@ -10,6 +10,7 @@ import StandingReachGuide from './pages/StandingReachGuide';
 import VerticalJumpGuide from './pages/VerticalJumpGuide';
 import HoopHeightsGuide from './pages/HoopHeightsGuide';
 import OtherMeasurementsGuide from './pages/OtherMeasurementsGuide';
+import SitemapPage from './pages/SitemapPage';
 
 // Calculator Pages
 import Calculators from './pages/Calculators';
@@ -115,6 +116,9 @@ const App: React.FC = () => {
           <Route path="/glossary" element={<Glossary />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          
+          {/* Sitemap Page */}
+          <Route path="/sitemap.xml" element={<SitemapPage />} />
         </Routes>
         <Toaster />
       </div>
