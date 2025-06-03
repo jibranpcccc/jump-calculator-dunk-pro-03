@@ -2,6 +2,8 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Apple, Droplets, Zap, Clock, AlertTriangle, TrendingUp } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const NutritionForJumpers = () => {
   return (
@@ -12,6 +14,8 @@ const NutritionForJumpers = () => {
         <meta name="keywords" content="nutrition for vertical jump, basketball nutrition, athlete diet, sports nutrition, protein for athletes, carbohydrates for energy" />
         <link rel="canonical" href="https://dunkcalculator.com/vertical-jump-training/nutrition/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -288,6 +292,8 @@ const NutritionForJumpers = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
