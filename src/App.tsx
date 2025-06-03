@@ -47,6 +47,10 @@ import VerticalJumpWorkout from './pages/blog/VerticalJumpWorkout';
 import BasketballJumpTechnique from './pages/blog/BasketballJumpTechnique';
 import DunkIfYouAreShort from './pages/blog/DunkIfYouAreShort';
 import BestVerticalJumpExercises from './pages/blog/BestVerticalJumpExercises';
+import HowToMeasureVerticalJump from './pages/blog/HowToMeasureVerticalJump';
+import NutritionVerticalJump from './pages/blog/NutritionVerticalJump';
+import CommonDunkingMistakes from './pages/blog/CommonDunkingMistakes';
+import BestShoesForVerticalLeap from './pages/blog/BestShoesForVerticalLeap';
 
 // Standard Website Pages
 import About from './pages/About';
@@ -78,7 +82,7 @@ const App: React.FC = () => {
           <Route path="/calculators/vertical-jump-improvement" element={<VerticalJumpImprovementCalculatorPage />} />
           <Route path="/tools/progress-tracker" element={<TrainingProgressTrackerPage />} />
           
-          {/* Blog Routes */}
+          {/* Blog Routes - All blog posts */}
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/increase-vertical-jump-exercises" element={<IncreaseVerticalJumpExercises />} />
           <Route path="/blog/how-to-dunk-beginners" element={<HowToDunkBeginners />} />
@@ -86,6 +90,10 @@ const App: React.FC = () => {
           <Route path="/blog/basketball-jump-technique" element={<BasketballJumpTechnique />} />
           <Route path="/blog/dunk-if-you-are-short" element={<DunkIfYouAreShort />} />
           <Route path="/blog/best-vertical-jump-exercises" element={<BestVerticalJumpExercises />} />
+          <Route path="/blog/how-to-measure-vertical-jump" element={<HowToMeasureVerticalJump />} />
+          <Route path="/blog/nutrition-vertical-jump" element={<NutritionVerticalJump />} />
+          <Route path="/blog/common-dunking-mistakes" element={<CommonDunkingMistakes />} />
+          <Route path="/blog/best-shoes-for-vertical-leap" element={<BestShoesForVerticalLeap />} />
           
           {/* Silo 1: Measurement Guide Routes */}
           <Route path="/measurements" element={<MeasurementGuides />} />
@@ -116,6 +124,7 @@ const App: React.FC = () => {
           <Route path="/glossary" element={<Glossary />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms-of-service" element={<TermsOfService />} />
+          <Route path="/terms-of-use" element={<TermsOfService />} />
           
           {/* Sitemap Page */}
           <Route path="/sitemap.xml" element={<SitemapPage />} />
