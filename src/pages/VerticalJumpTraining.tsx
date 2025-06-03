@@ -1,6 +1,7 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Target, Zap, Users, TrendingUp, BookOpen, Dumbbell, Apple, Shield, Calendar } from "lucide-react";
+import { ArrowLeft, Target, Zap, Users, TrendingUp, BookOpen, Dumbbell, Apple, Shield, Calendar, ArrowRight } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 

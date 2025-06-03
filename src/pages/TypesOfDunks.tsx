@@ -1,6 +1,7 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Zap, Target, TrendingUp, Star, Users } from "lucide-react";
+import { ArrowLeft, Zap, Target, TrendingUp, Star, Users, Trophy } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
