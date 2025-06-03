@@ -1,3 +1,4 @@
+
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Star, Trophy, Target, TrendingUp, Users } from "lucide-react";
@@ -37,7 +38,7 @@ const FamousDunkers = () => {
               creativity, and dominance above the rim.
             </p>
             <div className="flex items-center justify-center space-x-2 text-gray-500">
-              <Crown className="w-5 h-5 text-yellow-500" />
+              <Trophy className="w-5 h-5 text-yellow-500" />
               <span>From pioneers to modern masters</span>
             </div>
           </div>
@@ -45,7 +46,7 @@ const FamousDunkers = () => {
           {/* Michael Jordan */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
-              <Crown className="w-8 h-8 text-red-600 mr-3" />
+              <Trophy className="w-8 h-8 text-red-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Michael Jordan - "His Airness"</h2>
               <span className="ml-4 px-3 py-1 bg-red-100 text-red-800 rounded-full text-sm font-medium">THE ICON</span>
             </div>
@@ -201,7 +202,7 @@ const FamousDunkers = () => {
           {/* Dr. J */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
-              <Crown className="w-8 h-8 text-blue-600 mr-3" />
+              <Trophy className="w-8 h-8 text-blue-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Julius Erving - "Dr. J"</h2>
               <span className="ml-4 px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-sm font-medium">THE PIONEER</span>
             </div>

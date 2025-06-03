@@ -1,6 +1,6 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Calendar, Target, TrendingUp, Clock, Users, CheckCircle } from "lucide-react";
+import { ArrowLeft, Calendar, Target, TrendingUp, Clock, Users, CheckCircle, Star } from "lucide-react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
@@ -226,7 +226,7 @@ const TrainingPrograms = () => {
             
             <div className="mt-6 text-center">
               <button className="inline-flex items-center px-6 py-3 bg-green-600 text-white font-semibold rounded-lg hover:bg-green-700 transition-colors">
-                <Download className="w-5 h-5 mr-2" />
+                <CheckCircle className="w-5 h-5 mr-2" />
                 Download Beginner Program PDF
               </button>
             </div>
@@ -323,7 +323,7 @@ const TrainingPrograms = () => {
             
             <div className="mt-6 text-center">
               <button className="inline-flex items-center px-6 py-3 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 transition-colors">
-                <Download className="w-5 h-5 mr-2" />
+                <CheckCircle className="w-5 h-5 mr-2" />
                 Download Intermediate Program PDF
               </button>
             </div>
@@ -338,7 +338,7 @@ const TrainingPrograms = () => {
             
             <div className="mb-6 p-4 bg-red-50 rounded-lg border border-red-200">
               <div className="flex items-center mb-2">
-                <AlertTriangle className="w-5 h-5 text-red-600 mr-2" />
+                <Target className="w-5 h-5 text-red-600 mr-2" />
                 <h4 className="font-semibold text-red-800">Advanced Athletes Only</h4>
               </div>
               <p className="text-red-700 text-sm">
@@ -430,7 +430,7 @@ const TrainingPrograms = () => {
             
             <div className="mt-6 text-center">
               <button className="inline-flex items-center px-6 py-3 bg-purple-600 text-white font-semibold rounded-lg hover:bg-purple-700 transition-colors">
-                <Download className="w-5 h-5 mr-2" />
+                <CheckCircle className="w-5 h-5 mr-2" />
                 Download Advanced Program PDF
               </button>
             </div>
@@ -439,7 +439,7 @@ const TrainingPrograms = () => {
           {/* Important Disclaimer */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
-              <AlertTriangle className="w-8 h-8 text-orange-600 mr-3" />
+              <Target className="w-8 h-8 text-orange-600 mr-3" />
               <h2 className="text-3xl font-bold text-gray-900">Important Disclaimer: Customizing These Programs & Listening to Your Body</h2>
             </div>
             
@@ -545,7 +545,7 @@ const TrainingPrograms = () => {
             <div className="space-y-4">
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <button className="inline-flex items-center px-6 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors">
-                  <Download className="w-5 h-5 mr-2" />
+                  <CheckCircle className="w-5 h-5 mr-2" />
                   Download Your Chosen Program and Start Training Today!
                 </button>
               </div>
