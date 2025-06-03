@@ -1,16 +1,20 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Download, Calendar, Target, TrendingUp, AlertTriangle, Star, Clock } from "lucide-react";
+import { ArrowLeft, Calendar, Target, TrendingUp, Clock, Users, CheckCircle } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const TrainingPrograms = () => {
   return (
     <>
       <Helmet>
-        <title>Vertical Jump Training Programs (PDFs): Beginner, Intermediate, Advanced</title>
-        <meta name="description" content="Get proven vertical jump training programs for all levels! Detailed weekly schedules, exercises, & tips to increase your vertical & achieve dunking goals. Downloadable PDFs." />
-        <meta name="keywords" content="vertical jump training program, basketball training program, jump training schedule, plyometric program, strength training program" />
+        <title>Vertical Jump Training Programs: Beginner to Advanced Plans | 2025 Guide</title>
+        <meta name="description" content="Complete vertical jump training programs for all levels. Structured 8-16 week plans with progressive overload to maximize your jumping potential." />
+        <meta name="keywords" content="vertical jump training program, jump training plan, basketball training program, plyometric program, strength training program" />
         <link rel="canonical" href="https://dunkcalculator.com/vertical-jump-training/programs/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -563,6 +567,8 @@ const TrainingPrograms = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

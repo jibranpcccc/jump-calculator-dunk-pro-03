@@ -1,17 +1,20 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Star, TrendingUp, Trophy, Target } from "lucide-react";
+import { ArrowLeft, Zap, Target, TrendingUp, Star, Users } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const TypesOfDunks = () => {
   return (
     <>
       <Helmet>
-        <title>20+ Types of Basketball Dunks: From Basic Slams to Windmills (Videos)</title>
-        <meta name="description" content="Explore the exciting world of basketball dunks! Learn about 20+ different types, from basic one-handers to advanced windmills, 360s, & between-the-legs, with video examples." />
-        <meta name="keywords" content="types of basketball dunks, windmill dunk, 360 dunk, between the legs dunk, basketball slam dunk variations" />
+        <title>Types of Basketball Dunks: Complete Guide from Basic to Advanced 2025</title>
+        <meta name="description" content="Master every type of basketball dunk from basic two-handed slams to advanced windmills. Learn techniques, difficulty levels, and progression tips." />
+        <meta name="keywords" content="types of basketball dunks, dunk variations, basketball dunk techniques, windmill dunk, tomahawk dunk, 360 dunk" />
         <link rel="canonical" href="https://dunkcalculator.com/dunking-skills/types-of-dunks/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -432,6 +435,8 @@ const TypesOfDunks = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

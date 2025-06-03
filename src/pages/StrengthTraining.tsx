@@ -1,17 +1,20 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Dumbbell, Target, TrendingUp, Calendar, AlertCircle } from "lucide-react";
+import { ArrowLeft, Dumbbell, Target, TrendingUp, AlertTriangle, Clock, Users } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const StrengthTraining = () => {
   return (
     <>
       <Helmet>
-        <title>Strength Training for Vertical Jump: 10+ Exercises to Jump Higher (2025)</title>
-        <meta name="description" content="Unlock powerful legs and a higher vertical with these essential strength training exercises. Squats, deadlifts, cleans & more for basketball players." />
-        <meta name="keywords" content="strength training for vertical jump, squats for jumping, deadlifts for athletes, leg strength exercises, basketball strength training" />
+        <title>Strength Training for Vertical Jump: Build Power & Explosiveness | 2025 Guide</title>
+        <meta name="description" content="Master strength training for jumping higher. Learn key exercises, periodization, and programming to build explosive power for maximum vertical jump gains." />
+        <meta name="keywords" content="strength training for vertical jump, power exercises, squat for jumping, explosive strength training, vertical jump strength" />
         <link rel="canonical" href="https://dunkcalculator.com/vertical-jump-training/strength-training/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -446,6 +449,8 @@ const StrengthTraining = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

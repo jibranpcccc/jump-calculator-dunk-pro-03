@@ -1,562 +1,378 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowRight, Target, Zap, Dumbbell, Apple, Shield, Calendar, TrendingUp, Calculator } from "lucide-react";
+import { ArrowLeft, Target, Zap, Users, TrendingUp, BookOpen, Dumbbell, Apple, Shield, Calendar } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const VerticalJumpTraining = () => {
   return (
     <>
       <Helmet>
-        <title>How to Increase Your Vertical Jump: The Ultimate Science-Backed Guide (2025)</title>
-        <meta name="description" content="Your complete roadmap to a higher vertical jump! Discover science-backed training, exercises, nutrition tips, & programs to jump higher, dunk, and dominate." />
-        <meta name="keywords" content="vertical jump training, how to increase vertical jump, jump higher, basketball training, plyometric exercises, strength training for jumping" />
+        <title>Complete Vertical Jump Training Guide: Science-Based Methods to Jump Higher 2025</title>
+        <meta name="description" content="Master vertical jump training with our comprehensive guide. Science-backed exercises, programs, nutrition & injury prevention to maximize your jump height." />
+        <meta name="keywords" content="vertical jump training, how to jump higher, basketball training, plyometrics, strength training for jumping" />
         <link rel="canonical" href="https://dunkcalculator.com/vertical-jump-training/" />
-        
-        {/* Open Graph */}
-        <meta property="og:title" content="How to Increase Your Vertical Jump: The Ultimate Science-Backed Guide (2025)" />
-        <meta property="og:description" content="Your complete roadmap to a higher vertical jump! Discover science-backed training, exercises, nutrition tips, & programs to jump higher, dunk, and dominate." />
-        <meta property="og:type" content="article" />
-        <meta property="og:url" content="https://dunkcalculator.com/vertical-jump-training/" />
-        
-        {/* Structured Data */}
-        <script type="application/ld+json">
-          {JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "Article",
-            "headline": "The Ultimate Guide to Increasing Your Vertical Jump: Unlock Your Explosive Potential",
-            "description": "Your complete roadmap to a higher vertical jump! Discover science-backed training, exercises, nutrition tips, & programs to jump higher, dunk, and dominate.",
-            "author": {
-              "@type": "Organization",
-              "name": "Dunk Calculator"
-            },
-            "publisher": {
-              "@type": "Organization",
-              "name": "Dunk Calculator",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://dunkcalculator.com/logo.png"
-              }
-            },
-            "datePublished": "2024-05-28",
-            "dateModified": "2024-05-28",
-            "mainEntityOfPage": {
-              "@type": "WebPage",
-              "@id": "https://dunkcalculator.com/vertical-jump-training/"
-            }
-          })}
-        </script>
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
+          {/* Back Button */}
+          <Link 
+            to="/"
+            className="inline-flex items-center text-orange-600 hover:text-orange-700 mb-6"
+          >
+            <ArrowLeft className="w-4 h-4 mr-2" />
+            Back to Calculator
+          </Link>
+
           {/* Hero Section */}
           <div className="text-center mb-12">
             <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-6">
-              The Ultimate Guide to Increasing Your Vertical Jump: Unlock Your Explosive Potential
+              The Ultimate Vertical Jump Training Guide: Science-Based Methods to Jump Higher
             </h1>
-            <p className="text-xl text-gray-600 max-w-4xl mx-auto mb-8">
-              Your complete roadmap to a higher vertical jump! Discover science-backed training methods, 
-              specific exercises, nutrition strategies, and structured programs designed to help you jump higher, 
-              dunk with authority, and dominate on the court.
+            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
+              Master the science of vertical jump training with our comprehensive guide. Learn proven exercises, 
+              effective programs, and essential strategies to maximize your jump height.
             </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link 
-                to="/vertical-jump-training/programs"
-                className="inline-flex items-center px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors"
-              >
-                <Calendar className="w-5 h-5 mr-2" />
-                Get Training Programs
-              </Link>
-              <Link 
-                to="/"
-                className="inline-flex items-center px-6 py-3 border-2 border-orange-600 text-orange-600 font-semibold rounded-lg hover:bg-orange-600 hover:text-white transition-colors"
-              >
-                <Calculator className="w-5 h-5 mr-2" />
-                Calculate Current Potential
-              </Link>
-            </div>
           </div>
 
-          {/* Introduction */}
+          {/* Why Vertical Jump Matters */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Introduction: Why Everyone Wants to Jump Higher (And How You Can Achieve It!)
-            </h2>
+            <div className="flex items-center mb-6">
+              <Target className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">Why Vertical Jump Training is Essential for Basketball (and Beyond)</h2>
+            </div>
+            
             <div className="grid md:grid-cols-2 gap-8">
               <div>
                 <p className="text-gray-600 mb-4">
-                  A higher vertical jump isn't just about dunking—though that's certainly a major motivation! 
-                  An improved vertical leap transforms your entire basketball game and athletic performance.
+                  The vertical jump is a key athletic indicator, especially in basketball. It measures explosive leg power, 
+                  coordination, and overall athleticism. Improving your vertical jump translates to better performance on the court, 
+                  increased confidence, and a competitive edge.
                 </p>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits in Basketball:</h3>
+                
+                <h3 className="text-xl font-semibold text-gray-900 mb-3">Benefits of a Higher Vertical:</h3>
                 <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Dunking ability:</strong> The ultimate expression of athletic dominance</li>
-                  <li>• <strong>Rebounding superiority:</strong> Out-jump opponents for boards</li>
-                  <li>• <strong>Shot blocking:</strong> Alter and reject shots at the rim</li>
-                  <li>• <strong>Layup finishing:</strong> Rise above defenders for easy scores</li>
+                  <li>• <strong>Increased Rebounding:</strong> Secure more rebounds and control possession.</li>
+                  <li>• <strong>Improved Shooting:</strong> Elevate over defenders for cleaner shots.</li>
+                  <li>• <strong>Enhanced Dunking Ability:</strong> Unleash impressive dunks and intimidate opponents.</li>
+                  <li>• <strong>Faster Court Movement:</strong> Explode quicker for drives, cuts, and defensive plays.</li>
+                  <li>• <strong>Reduced Injury Risk:</strong> Stronger muscles and better mechanics protect joints.</li>
                 </ul>
               </div>
+              
               <div>
                 <h3 className="text-xl font-semibold text-gray-900 mb-3">Beyond Basketball:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Overall athleticism:</strong> Improved power and explosiveness</li>
-                  <li>• <strong>Injury prevention:</strong> Stronger, more resilient muscles and joints</li>
-                  <li>• <strong>Confidence boost:</strong> Physical achievement translates to mental strength</li>
-                  <li>• <strong>Other sports:</strong> Benefits volleyball, football, track and field</li>
-                </ul>
-                <div className="mt-4 p-4 bg-orange-50 rounded-lg">
-                  <p className="text-orange-700 font-medium">
-                    The good news? With the right approach, virtually anyone can significantly improve their vertical jump!
+                <p className="text-gray-600 mb-4">
+                  Vertical jump training isn't just for basketball players. Athletes in volleyball, track and field, 
+                  football, and many other sports can benefit from increased explosive power and athleticism.
+                </p>
+                
+                <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+                  <p className="text-orange-700 text-sm">
+                    <strong>Key Insight:</strong> Vertical jump is a reflection of overall athleticism. Training to jump higher 
+                    improves your athletic capabilities across the board.
                   </p>
                 </div>
               </div>
             </div>
           </div>
 
-          {/* Science Section */}
+          {/* Key Components */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              The Science of a Higher Jump: Understanding the Biomechanics
-            </h2>
+            <div className="flex items-center mb-6">
+              <BookOpen className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">The 5 Key Components of Effective Vertical Jump Training</h2>
+            </div>
             
-            <div className="space-y-8">
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  The Stretch-Shortening Cycle (SSC): Your Body's Spring Mechanism Explained
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  Think of your muscles and tendons like a rubber band. When you quickly stretch a rubber band and 
-                  then release it, it snaps back with more force than if you had simply pushed it. Your body works 
-                  the same way during jumping through the stretch-shortening cycle.
-                </p>
-                <div className="grid md:grid-cols-3 gap-4">
-                  <div className="p-4 bg-blue-50 rounded-lg">
-                    <h4 className="font-semibold text-blue-800 mb-2">1. Eccentric Phase</h4>
-                    <p className="text-blue-700 text-sm">
-                      Muscles lengthen under tension as you descend into your jumping position, storing elastic energy.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-yellow-50 rounded-lg">
-                    <h4 className="font-semibold text-yellow-800 mb-2">2. Amortization Phase</h4>
-                    <p className="text-yellow-700 text-sm">
-                      Brief transition period between lengthening and shortening—the quicker, the more explosive.
-                    </p>
-                  </div>
-                  <div className="p-4 bg-green-50 rounded-lg">
-                    <h4 className="font-semibold text-green-800 mb-2">3. Concentric Phase</h4>
-                    <p className="text-green-700 text-sm">
-                      Muscles contract forcefully, releasing stored energy plus active muscle contraction for maximum power.
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Key Muscle Groups Involved in Jumping
-                </h3>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Primary Movers:</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• <strong>Quadriceps:</strong> Knee extension power</li>
-                      <li>• <strong>Glutes:</strong> Hip extension and overall power</li>
-                      <li>• <strong>Hamstrings:</strong> Hip extension and knee stability</li>
-                      <li>• <strong>Calves:</strong> Ankle plantarflexion and final push-off</li>
-                    </ul>
-                  </div>
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Supporting Players:</h4>
-                    <ul className="space-y-2 text-gray-600">
-                      <li>• <strong>Core:</strong> Energy transfer and stability</li>
-                      <li>• <strong>Upper body:</strong> Arm swing momentum</li>
-                      <li>• <strong>Hip flexors:</strong> Rapid knee drive</li>
-                      <li>• <strong>Ankles:</strong> Stiffness for energy return</li>
-                    </ul>
-                  </div>
-                </div>
-              </div>
-
-              <div>
-                <h3 className="text-2xl font-semibold text-gray-900 mb-4">
-                  Force, Velocity, and Power: The Physics of Achieving Maximum Flight
-                </h3>
-                <p className="text-gray-600 mb-4">
-                  The fundamental equation for jumping success is simple yet profound: <strong>Power = Force × Velocity</strong>
-                </p>
-                <div className="grid md:grid-cols-2 gap-6">
-                  <div className="p-4 bg-red-50 rounded-lg">
-                    <h4 className="font-semibold text-red-800 mb-2">Force Component</h4>
-                    <p className="text-red-700 text-sm mb-2">
-                      How much strength you can generate against the ground
-                    </p>
-                    <p className="text-red-600 text-xs">
-                      Developed through: Heavy strength training, building bigger, stronger muscles
-                    </p>
-                  </div>
-                  <div className="p-4 bg-purple-50 rounded-lg">
-                    <h4 className="font-semibold text-purple-800 mb-2">Velocity Component</h4>
-                    <p className="text-purple-700 text-sm mb-2">
-                      How quickly you can apply that force
-                    </p>
-                    <p className="text-purple-600 text-xs">
-                      Developed through: Plyometric training, explosive movements, speed work
-                    </p>
-                  </div>
-                </div>
-                <div className="mt-4 p-4 bg-gray-50 rounded-lg">
-                  <p className="text-gray-700 text-sm">
-                    <strong>The Key Insight:</strong> You need both components! A powerlifter might have tremendous force 
-                    but lack velocity. A sprinter might have great velocity but insufficient force. 
-                    Elite jumpers optimize both through targeted training.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          {/* Assessment Section */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Before You Start: Assessing Your Current Level & Setting SMART Goals
-            </h2>
             <div className="grid md:grid-cols-2 gap-8">
               <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">1. Plyometrics:</h3>
                 <p className="text-gray-600 mb-4">
-                  You can't improve what you don't measure. Before beginning any training program, 
-                  it's crucial to establish your baseline vertical jump measurement.
-                </p>
-                <Link 
-                  to="/measurements/vertical-jump"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
-                >
-                  First, How to Accurately Measure Your Vertical Jump
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">Setting SMART Vertical Jump Goals:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Specific:</strong> "Increase vertical by 4 inches" vs. "jump higher"</li>
-                  <li>• <strong>Measurable:</strong> Use precise measurements, not feelings</li>
-                  <li>• <strong>Achievable:</strong> 2-6 inches improvement is realistic for most</li>
-                  <li>• <strong>Relevant:</strong> Align with your basketball or athletic goals</li>
-                  <li>• <strong>Time-bound:</strong> Set a 12-16 week target timeline</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-
-          {/* Core Components */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-8">
-              Core Components of a World-Class Vertical Jump Program
-            </h2>
-            
-            <div className="grid gap-8">
-              <div className="p-6 border border-gray-200 rounded-lg hover:border-orange-300 transition-colors">
-                <div className="flex items-center mb-4">
-                  <Zap className="w-8 h-8 text-orange-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Component 1: Plyometric Training – For Explosive Power & Reactivity
-                  </h3>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Plyometric exercises train your muscles to produce maximum force in minimum time—the essence of explosive jumping. 
-                  These exercises improve your rate of force development (RFD) and teach your nervous system to activate 
-                  muscles more efficiently and powerfully.
+                  Explosive exercises that utilize the stretch-shortening cycle to develop power and reactive strength. 
+                  Examples include box jumps, depth jumps, and jump rope variations.
                 </p>
                 <Link 
                   to="/vertical-jump-training/plyometrics"
                   className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
                 >
-                  Deep Dive: Essential Plyometric Exercises for Vertical Jump
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  Learn More About Plyometrics <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
-              </div>
-
-              <div className="p-6 border border-gray-200 rounded-lg hover:border-orange-300 transition-colors">
-                <div className="flex items-center mb-4">
-                  <Dumbbell className="w-8 h-8 text-orange-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Component 2: Strength Training – Building the Force Foundation
-                  </h3>
-                </div>
+                
+                <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">2. Strength Training:</h3>
                 <p className="text-gray-600 mb-4">
-                  Absolute strength forms the foundation of all explosive movements. The stronger your muscles can contract, 
-                  the more force you can apply to the ground, and the higher you'll jump. Strength training also builds 
-                  resilient muscles and joints that can handle the demands of explosive training.
+                  Building a strong foundation with compound exercises like squats, deadlifts, and lunges. 
+                  Focus on both maximal strength and explosive power development.
                 </p>
                 <Link 
                   to="/vertical-jump-training/strength-training"
                   className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
                 >
-                  Deep Dive: Strength Training for a Monster Vertical
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  Explore Strength Training <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>
-
-              <div className="p-6 border border-gray-200 rounded-lg hover:border-orange-300 transition-colors">
-                <div className="flex items-center mb-4">
-                  <Target className="w-8 h-8 text-orange-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Component 3: Jumping Technique – Maximizing Efficiency & Height
-                  </h3>
-                </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">3. Technique Refinement:</h3>
                 <p className="text-gray-600 mb-4">
-                  Perfect technique can add inches to your jump without increasing your physical capabilities. 
-                  Proper approach angle, arm swing timing, takeoff mechanics, and body positioning during flight 
-                  all contribute to maximizing your vertical output.
+                  Optimizing your jumping mechanics for maximum efficiency and power output. 
+                  This includes approach run, takeoff angle, arm swing, and body positioning.
                 </p>
-                <Link 
-                  to="/vertical-jump-training/programs"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
-                >
-                  Master Your Jumping Technique in our Training Programs
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-
-              <div className="p-6 border border-gray-200 rounded-lg hover:border-orange-300 transition-colors">
-                <div className="flex items-center mb-4">
-                  <Shield className="w-8 h-8 text-orange-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Component 4: Flexibility & Mobility – For Optimal Range of Motion and Injury Prevention
-                  </h3>
-                </div>
+                
+                <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">4. Nutrition & Recovery:</h3>
                 <p className="text-gray-600 mb-4">
-                  Adequate mobility allows you to achieve optimal body positions for force production and ensures 
-                  efficient energy transfer through your kinetic chain. Poor mobility limits your jumping potential 
-                  and significantly increases injury risk during explosive training.
-                </p>
-                <Link 
-                  to="/vertical-jump-training/flexibility-injury-prevention"
-                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
-                >
-                  Deep Dive: Flexibility, Mobility & Injury Prevention for Jumpers
-                  <ArrowRight className="w-4 h-4 ml-2" />
-                </Link>
-              </div>
-
-              <div className="p-6 border border-gray-200 rounded-lg hover:border-orange-300 transition-colors">
-                <div className="flex items-center mb-4">
-                  <Apple className="w-8 h-8 text-orange-600 mr-3" />
-                  <h3 className="text-2xl font-semibold text-gray-900">
-                    Component 5: Nutrition – Fueling Your Flight for Peak Performance
-                  </h3>
-                </div>
-                <p className="text-gray-600 mb-4">
-                  Proper nutrition provides the energy for intense training sessions, supports muscle recovery and growth, 
-                  and maintains optimal body composition for jumping. What you eat directly impacts your training quality 
-                  and adaptation to your vertical jump program.
+                  Fueling your body with the right nutrients and prioritizing recovery to support muscle growth, 
+                  reduce inflammation, and prevent injuries.
                 </p>
                 <Link 
                   to="/vertical-jump-training/nutrition"
                   className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
                 >
-                  Deep Dive: Nutrition for Optimal Jumping Performance
-                  <ArrowRight className="w-4 h-4 ml-2" />
+                  Optimize Your Nutrition <ArrowRight className="w-4 h-4 ml-1" />
+                </Link>
+                
+                <h3 className="text-xl font-semibold text-gray-900 mt-6 mb-4">5. Flexibility & Injury Prevention:</h3>
+                <p className="text-gray-600 mb-4">
+                  Maintaining optimal flexibility and mobility to prevent injuries and improve overall movement quality. 
+                  This includes stretching, mobility drills, and prehab exercises.
+                </p>
+                <Link 
+                  to="/vertical-jump-training/flexibility-injury-prevention"
+                  className="inline-flex items-center text-orange-600 hover:text-orange-700 font-medium"
+                >
+                  Prevent Injuries & Improve Flexibility <ArrowRight className="w-4 h-4 ml-1" />
                 </Link>
               </div>
             </div>
           </div>
 
-          {/* Program Building */}
+          {/* Sample Program */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Building Your Personalized Jump Training Program: Key Principles to Follow
-            </h2>
-            <div className="grid md:grid-cols-2 gap-8">
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Training Principles:</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li>
-                    <strong>Periodization:</strong> Varying training focus over time (strength phase → power phase → peaking phase)
-                  </li>
-                  <li>
-                    <strong>Progressive Overload:</strong> Gradually increasing training demands to force adaptation
-                  </li>
-                  <li>
-                    <strong>Specificity:</strong> Training should mimic the demands and movement patterns of jumping
-                  </li>
-                  <li>
-                    <strong>Individual Differences:</strong> Everyone responds differently—adjust based on your response
-                  </li>
-                </ul>
-              </div>
-              <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Program Structure:</h3>
-                <ul className="space-y-3 text-gray-600">
-                  <li>
-                    <strong>Frequency:</strong> 2-3 jump-focused sessions per week for optimal adaptation
-                  </li>
-                  <li>
-                    <strong>Duration:</strong> 8-16 week programs for significant gains
-                  </li>
-                  <li>
-                    <strong>Integration:</strong> Balance jumping training with basketball skills and recovery
-                  </li>
-                  <li>
-                    <strong>Monitoring:</strong> Track progress and adjust based on performance and recovery
-                  </li>
-                </ul>
-              </div>
+            <div className="flex items-center mb-6">
+              <Calendar className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">Sample 8-Week Vertical Jump Training Program</h2>
             </div>
-          </div>
+            
+            <p className="text-gray-600 mb-8">
+              This is a general template. Adjust volume, intensity, and exercise selection based on your individual needs and experience level.
+            </p>
 
-          {/* Recovery Section */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              The Critical Role of Rest, Recovery, and Sleep in Maximizing Gains
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-4 bg-blue-50 rounded-lg">
-                <h3 className="text-xl font-semibold text-blue-800 mb-3">Sleep (8-9 hours)</h3>
-                <ul className="text-blue-700 text-sm space-y-1">
-                  <li>• Muscle repair and growth</li>
-                  <li>• Hormone optimization</li>
-                  <li>• Nervous system recovery</li>
-                  <li>• Memory consolidation</li>
-                </ul>
+            <div className="grid md:grid-cols-2 gap-6">
+              {/* Weekly Schedule */}
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Weekly Schedule:</h3>
+                <div className="space-y-3">
+                  <div className="p-3 bg-gray-50 rounded">
+                    <strong className="text-gray-800">Monday:</strong>
+                    <p className="text-gray-700 text-sm">Strength Training (Lower Body Focus)</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded">
+                    <strong className="text-gray-800">Tuesday:</strong>
+                    <p className="text-gray-700 text-sm">Plyometrics (Low Intensity)</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded">
+                    <strong className="text-gray-800">Wednesday:</strong>
+                    <p className="text-gray-700 text-sm">Active Recovery / Mobility Work</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded">
+                    <strong className="text-gray-800">Thursday:</strong>
+                    <p className="text-gray-700 text-sm">Strength Training (Upper Body & Core)</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded">
+                    <strong className="text-gray-800">Friday:</strong>
+                    <p className="text-gray-700 text-sm">Plyometrics (High Intensity)</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded">
+                    <strong className="text-gray-800">Saturday:</strong>
+                    <p className="text-gray-700 text-sm">Optional: Skill Work / Light Conditioning</p>
+                  </div>
+                  <div className="p-3 bg-gray-50 rounded">
+                    <strong className="text-gray-800">Sunday:</strong>
+                    <p className="text-gray-700 text-sm">Complete Rest</p>
+                  </div>
+                </div>
               </div>
-              <div className="p-4 bg-green-50 rounded-lg">
-                <h3 className="text-xl font-semibold text-green-800 mb-3">Active Recovery</h3>
-                <ul className="text-green-700 text-sm space-y-1">
-                  <li>• Light movement and stretching</li>
-                  <li>• Foam rolling and massage</li>
-                  <li>• Low-intensity cardio</li>
-                  <li>• Mobility work</li>
-                </ul>
-              </div>
-              <div className="p-4 bg-yellow-50 rounded-lg">
-                <h3 className="text-xl font-semibold text-yellow-800 mb-3">Rest Days</h3>
-                <ul className="text-yellow-700 text-sm space-y-1">
-                  <li>• Complete rest from training</li>
-                  <li>• Stress management</li>
-                  <li>• Hydration focus</li>
-                  <li>• Mental recovery</li>
-                </ul>
+
+              {/* Sample Exercises */}
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Sample Exercises:</h3>
+                <div className="space-y-3">
+                  <div className="p-3 bg-blue-50 rounded">
+                    <strong className="text-blue-800">Strength Training:</strong>
+                    <ul className="text-blue-700 text-sm list-disc pl-5">
+                      <li>Back Squats (3-5 sets of 3-5 reps)</li>
+                      <li>Romanian Deadlifts (3 sets of 8-12 reps)</li>
+                      <li>Walking Lunges (3 sets of 10-12 reps per leg)</li>
+                      <li>Calf Raises (3 sets of 15-20 reps)</li>
+                    </ul>
+                  </div>
+                  <div className="p-3 bg-green-50 rounded">
+                    <strong className="text-green-800">Plyometrics:</strong>
+                    <ul className="text-green-700 text-sm list-disc pl-5">
+                      <li>Box Jumps (3 sets of 3-5 reps)</li>
+                      <li>Depth Jumps (2-3 sets of 3-5 reps)</li>
+                      <li>Jump Rope (3 sets of 60 seconds)</li>
+                      <li>Ankle Hops (3 sets of 15-20 reps)</li>
+                    </ul>
+                  </div>
+                </div>
               </div>
             </div>
-            <div className="mt-6 p-4 bg-red-50 rounded-lg">
-              <p className="text-red-700">
-                <strong>Warning:</strong> Overtraining is counterproductive and can actually decrease your vertical jump. 
-                More is not always better—quality and recovery matter more than quantity.
+            
+            <div className="mt-6 p-4 bg-green-50 rounded-lg">
+              <p className="text-green-700 text-sm">
+                <strong>Important:</strong> Always prioritize proper form and technique over weight or intensity. 
+                Progress gradually and listen to your body to avoid injuries.
               </p>
             </div>
           </div>
 
-          {/* Sample Programs */}
-          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
-            <h2 className="text-3xl font-bold text-gray-900 mb-6">
-              Sample Vertical Jump Training Program Outlines
-            </h2>
-            <div className="grid md:grid-cols-3 gap-6">
-              <div className="p-6 border border-green-200 rounded-lg">
-                <h3 className="text-xl font-semibold text-green-800 mb-4">Beginner Program Focus</h3>
-                <ul className="space-y-2 text-green-700 text-sm mb-4">
-                  <li>• Foundational strength building</li>
-                  <li>• Learning basic movement patterns</li>
-                  <li>• Low-impact plyometrics</li>
-                  <li>• Proper landing mechanics</li>
-                  <li>• Mobility and flexibility</li>
-                </ul>
-                <p className="text-green-600 text-xs">Expected gains: 2-4 inches in 8-12 weeks</p>
-              </div>
-              
-              <div className="p-6 border border-blue-200 rounded-lg">
-                <h3 className="text-xl font-semibold text-blue-800 mb-4">Intermediate Program Focus</h3>
-                <ul className="space-y-2 text-blue-700 text-sm mb-4">
-                  <li>• Increasing strength and power</li>
-                  <li>• More complex plyometrics</li>
-                  <li>• Refining jumping technique</li>
-                  <li>• Sport-specific movements</li>
-                  <li>• Progressive overload</li>
-                </ul>
-                <p className="text-blue-600 text-xs">Expected gains: 3-6 inches in 12-16 weeks</p>
-              </div>
-              
-              <div className="p-6 border border-purple-200 rounded-lg">
-                <h3 className="text-xl font-semibold text-purple-800 mb-4">Advanced Program Focus</h3>
-                <ul className="space-y-2 text-purple-700 text-sm mb-4">
-                  <li>• Maximizing explosive power</li>
-                  <li>• Advanced plyometric methods</li>
-                  <li>• Peaking strategies</li>
-                  <li>• Competition preparation</li>
-                  <li>• Fine-tuning technique</li>
-                </ul>
-                <p className="text-purple-600 text-xs">Expected gains: 1-3 inches in 12-16 weeks</p>
-              </div>
-            </div>
-            
-            <div className="mt-6 text-center">
-              <Link 
-                to="/vertical-jump-training/programs"
-                className="inline-flex items-center px-6 py-3 bg-orange-600 text-white font-semibold rounded-lg hover:bg-orange-700 transition-colors"
-              >
-                See Full Details & Downloadable Schedules: Vertical Jump Training Programs (All Levels)
-                <ArrowRight className="w-4 h-4 ml-2" />
-              </Link>
-            </div>
-          </div>
-
-          {/* Progress Tracking */}
+          {/* Nutrition */}
           <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
             <div className="flex items-center mb-6">
-              <TrendingUp className="w-8 h-8 text-orange-600 mr-3" />
-              <h2 className="text-3xl font-bold text-gray-900">
-                Tracking Your Progress and Staying Motivated Throughout Your Journey
-              </h2>
+              <Apple className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">Fueling Your Jumps: Essential Nutrition Strategies</h2>
             </div>
+            
             <div className="grid md:grid-cols-2 gap-8">
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Effective Progress Tracking:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Keep a training log:</strong> Record workouts, weights, reps, and how you felt</li>
-                  <li>• <strong>Test vertical jump monthly:</strong> Consistent measurement conditions</li>
-                  <li>• <strong>Take progress photos/videos:</strong> Visual documentation of improvements</li>
-                  <li>• <strong>Track other metrics:</strong> Strength gains, plyometric performance</li>
-                  <li>• <strong>Note subjective feelings:</strong> Energy levels, confidence, explosiveness</li>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Key Nutrients for Jumpers:</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Protein:</strong> Essential for muscle repair and growth. Aim for 1.6-2.2 grams per kg of bodyweight.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Carbohydrates:</strong> Primary energy source for high-intensity training. Choose complex carbs like whole grains and vegetables.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Healthy Fats:</strong> Important for hormone production and overall health. Include sources like avocados, nuts, and olive oil.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Micronutrients:</strong> Vitamins and minerals play crucial roles in energy production, muscle function, and recovery.</span>
+                  </li>
                 </ul>
               </div>
+              
               <div>
-                <h3 className="text-xl font-semibold text-gray-900 mb-4">Staying Motivated:</h3>
-                <ul className="space-y-2 text-gray-600">
-                  <li>• <strong>Celebrate small wins:</strong> Every inch gained is progress</li>
-                  <li>• <strong>Find a training partner:</strong> Accountability and competition</li>
-                  <li>• <strong>Set mini-goals:</strong> Weekly and monthly targets</li>
-                  <li>• <strong>Visualize success:</strong> Imagine yourself dunking</li>
-                  <li>• <strong>Track non-scale victories:</strong> Feeling more explosive, jumping with ease</li>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Sample Meal Plan:</h3>
+                <div className="space-y-4">
+                  <div className="p-4 bg-blue-50 rounded-lg">
+                    <h4 className="font-semibold text-blue-800 mb-2">Breakfast</h4>
+                    <p className="text-blue-700 text-sm">Oatmeal with berries and nuts, protein shake</p>
+                  </div>
+                  <div className="p-4 bg-green-50 rounded-lg">
+                    <h4 className="font-semibold text-green-800 mb-2">Lunch</h4>
+                    <p className="text-green-700 text-sm">Grilled chicken salad with mixed greens and avocado</p>
+                  </div>
+                  <div className="p-4 bg-purple-50 rounded-lg">
+                    <h4 className="font-semibold text-purple-800 mb-2">Dinner</h4>
+                    <p className="text-purple-700 text-sm">Baked salmon with quinoa and roasted vegetables</p>
+                  </div>
+                  <div className="p-4 bg-yellow-50 rounded-lg">
+                    <h4 className="font-semibold text-yellow-800 mb-2">Snacks</h4>
+                    <p className="text-yellow-700 text-sm">Greek yogurt, fruit, protein bar</p>
+                  </div>
+                </div>
+                
+                <div className="mt-6 p-4 bg-orange-50 rounded-lg">
+                  <p className="text-orange-700 text-sm">
+                    <strong>Hydration Tip:</strong> Drink plenty of water throughout the day, especially before, during, and after training.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Injury Prevention */}
+          <div className="bg-white rounded-xl shadow-lg p-8 mb-8">
+            <div className="flex items-center mb-6">
+              <Shield className="w-8 h-8 text-orange-600 mr-3" />
+              <h2 className="text-3xl font-bold text-gray-900">Staying Healthy: Injury Prevention Strategies for Jumpers</h2>
+            </div>
+            
+            <div className="grid md:grid-cols-2 gap-8">
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Common Jumping-Related Injuries:</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Patellar Tendinitis:</strong> Inflammation of the tendon connecting the kneecap to the shinbone.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Ankle Sprains:</strong> Injuries to the ligaments supporting the ankle joint.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>ACL Tears:</strong> Tears in the anterior cruciate ligament, a major knee stabilizer.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-red-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Shin Splints:</strong> Pain along the shinbone caused by overuse and inflammation.</span>
+                  </li>
+                </ul>
+              </div>
+              
+              <div>
+                <h3 className="text-xl font-semibold text-gray-900 mb-4">Prevention Strategies:</h3>
+                <ul className="space-y-3 text-gray-600">
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Proper Warm-up:</strong> Prepare your muscles and joints for activity with dynamic stretching and light cardio.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Strength Training:</strong> Strengthen the muscles surrounding your knees, ankles, and hips to provide support and stability.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Flexibility Training:</strong> Improve your range of motion with static stretching and mobility drills.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Proper Landing Technique:</strong> Practice landing softly with bent knees and controlled movements.</span>
+                  </li>
+                  <li className="flex items-start">
+                    <span className="inline-block w-2 h-2 bg-green-500 rounded-full mt-2 mr-3"></span>
+                    <span><strong>Progressive Overload:</strong> Gradually increase the intensity and volume of your training to avoid overuse injuries.</span>
+                  </li>
                 </ul>
               </div>
             </div>
           </div>
 
-          {/* Conclusion & CTA */}
+          {/* CTA Section */}
           <div className="text-center bg-gradient-to-r from-orange-600 to-red-600 rounded-xl p-8 text-white">
-            <h2 className="text-3xl font-bold mb-4">Your Journey to New Heights Starts Now!</h2>
-            <p className="text-xl mb-6 opacity-90">
-              You now have the knowledge foundation to dramatically improve your vertical jump. 
-              The only thing left is to take action and remain consistent with your training.
+            <h2 className="text-3xl font-bold mb-4">Ready to Take Your Vertical Jump to the Next Level?</h2>
+            <p className="text-xl mb-6">
+              Explore our training programs and resources to unlock your full jumping potential!
             </p>
             <div className="space-x-4">
               <Link 
-                to="/"
+                to="/vertical-jump-training/programs"
                 className="inline-flex items-center px-6 py-3 bg-white text-orange-600 font-semibold rounded-lg hover:bg-gray-100 transition-colors"
               >
-                <Calculator className="w-5 h-5 mr-2" />
-                Calculate Your Current Dunk Potential & Start Tracking!
+                <TrendingUp className="w-5 h-5 mr-2" />
+                See Training Programs
               </Link>
               <Link 
-                to="/vertical-jump-training/programs"
+                to="/calculators/vertical-jump-test"
                 className="inline-block px-6 py-3 border-2 border-white text-white font-semibold rounded-lg hover:bg-white hover:text-orange-600 transition-colors"
               >
-                Explore Our Detailed Jump Training Programs & Start Today!
+                Measure Your Vertical Jump →
               </Link>
             </div>
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

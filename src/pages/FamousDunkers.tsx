@@ -1,17 +1,20 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, Crown, Star, TrendingUp, Target } from "lucide-react";
+import { ArrowLeft, Star, Trophy, Target, TrendingUp, Users } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const FamousDunkers = () => {
   return (
     <>
       <Helmet>
-        <title>Famous Dunkers: Secrets & Highlights of NBA Legends (Jordan, Vince Carter, Dr. J)</title>
-        <meta name="description" content="Get inspired by the greatest dunkers in basketball history! Learn about the techniques, athleticism & stories of legends like Michael Jordan, Vince Carter, Dr. J & more." />
-        <meta name="keywords" content="famous dunkers, Michael Jordan, Vince Carter, Dr J, NBA dunks, basketball legends, slam dunk contest" />
+        <title>Famous Basketball Dunkers: Greatest Dunkers of All Time & Their Stories</title>
+        <meta name="description" content="Explore the greatest dunkers in basketball history from Michael Jordan to Vince Carter. Learn about their techniques, iconic dunks, and what made them legendary." />
+        <meta name="keywords" content="famous basketball dunkers, greatest dunkers all time, Michael Jordan dunks, Vince Carter dunks, basketball legends" />
         <link rel="canonical" href="https://dunkcalculator.com/dunking-skills/famous-dunkers/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -528,6 +531,8 @@ const FamousDunkers = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

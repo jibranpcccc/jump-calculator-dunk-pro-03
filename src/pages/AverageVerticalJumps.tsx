@@ -1,17 +1,20 @@
-
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
-import { ArrowLeft, BarChart3, Users, TrendingUp, Target } from "lucide-react";
+import { ArrowLeft, BarChart3, Users, Target, TrendingUp, Award } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const AverageVerticalJumps = () => {
   return (
     <>
       <Helmet>
-        <title>Average Vertical Jump: Compare Yours by Age, Gender & Sport Level (2025)</title>
-        <meta name="description" content="How does your vertical jump stack up? See average vertical jump heights for males & females by age group, and for athletes from high school to NBA/WNBA pros." />
-        <meta name="keywords" content="average vertical jump, vertical jump by age, NBA vertical jump, basketball vertical jump standards, vertical jump comparison" />
+        <title>Average Vertical Jump by Age, Sport & Position: Complete Benchmarks 2025</title>
+        <meta name="description" content="Compare your vertical jump to average benchmarks by age, basketball position, and sport. See where you stand and set realistic improvement goals." />
+        <meta name="keywords" content="average vertical jump, vertical jump benchmarks, basketball vertical jump average, vertical jump by age, athletic benchmarks" />
         <link rel="canonical" href="https://dunkcalculator.com/dunking-skills/average-vertical-jumps/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -445,6 +448,8 @@ const AverageVerticalJumps = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
