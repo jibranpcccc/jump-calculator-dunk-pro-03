@@ -2,6 +2,8 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Zap, AlertTriangle, Target, Clock, TrendingUp, Calendar } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const PlyometricExercises = () => {
   return (
@@ -12,6 +14,8 @@ const PlyometricExercises = () => {
         <meta name="keywords" content="plyometric exercises, vertical jump training, explosive exercises, basketball plyometrics, jump training" />
         <link rel="canonical" href="https://dunkcalculator.com/vertical-jump-training/plyometrics/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -295,6 +299,8 @@ const PlyometricExercises = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };

@@ -2,6 +2,8 @@
 import { Helmet } from "react-helmet";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Target, Users, Zap, AlertTriangle, TrendingUp, CheckCircle } from "lucide-react";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const FirstDunkGuide = () => {
   return (
@@ -12,6 +14,8 @@ const FirstDunkGuide = () => {
         <meta name="keywords" content="how to dunk basketball, first dunk guide, dunking for beginners, basketball dunk technique, slam dunk tutorial" />
         <link rel="canonical" href="https://dunkcalculator.com/dunking-skills/first-dunk-guide/" />
       </Helmet>
+
+      <Header />
 
       <div className="min-h-screen bg-gradient-to-br from-orange-50 to-red-50">
         <div className="container mx-auto px-4 py-8">
@@ -347,6 +351,8 @@ const FirstDunkGuide = () => {
           </div>
         </div>
       </div>
+
+      <Footer />
     </>
   );
 };
